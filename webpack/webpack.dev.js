@@ -17,20 +17,20 @@ module.exports = {
     },
     devtool: "source-map",
     entry: {
-        app: [ path.resolve(rootDir, "src", "bootstrap") ],
+        app: [ path.resolve(rootDir, "src", "app", "main") ],
         vendor: [ path.resolve(rootDir, "src", "vendor") ]
     },
     module: {
         loaders: [
             {
                 exclude: /node_modules/,
-                loader: "tslint",
+                loader: "tslint-loader",
                 test: /\.ts$/,
                 enforce: "pre"
             },
             {
                 exclude: /node_modules/,
-                loader: "ts",
+                loader: "ts-loader",
                 test: /\.ts$/
             },
             {
@@ -58,7 +58,7 @@ module.exports = {
         new HtmlWebpack({
             filename: "index.html",
             inject: "body",
-            template: path.resolve(rootDir, "src", "app", "index.html")
+            template: path.resolve(rootDir, "src", "index.html")
         })
     ],
     resolve: {
