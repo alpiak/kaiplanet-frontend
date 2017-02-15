@@ -18,30 +18,45 @@ module.exports = {
     devtool: "source-map",
     entry: {
         app: [ path.resolve(rootDir, "src", "app", "main") ],
-        vendor: [ path.resolve(rootDir, "src", "vendor") ]
+        vendor: [ path.resolve(rootDir, "src", "script", "vendor") ]
     },
     module: {
-        loaders: [
+        rules: [
             {
+                test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: "tslint-loader",
-                test: /\.ts$/,
                 enforce: "pre"
             },
             {
+                test: /\.ts$/,
                 exclude: /node_modules/,
-                loader: "ts-loader",
-                test: /\.ts$/
+                loader: "ts-loader"
             },
             {
+                test: /\.(?:png|jpg)$/,
                 exclude: /node_modules/,
-                loaders: ["style-loader", "css-loader", "sass-loader"],
-                test: /\.scss$/
+                loader: "url-loader?limit=8192"
             },
             {
+                test: /\.scss$/,
+                include: [ path.resolve(rootDir, "src", "app"), ],
+                loaders: [ "css-to-string-loader", "css-loader", "sass-loader" ]
+            },
+            {
+                test: /\.scss$/,
+                include: [ path.resolve(rootDir, "src", "style"), ],
+                loaders: [ "style-loader", "css-loader", "sass-loader" ]
+            },
+            {
+                test: /\.css$/,
+                exclude: /(?:node_modules|src\/app)/,
+                loaders: [ "style-loader", "css-loader" ]
+            },
+            {
+                test: /\.pug$/,
                 exclude: /node_modules/,
-                loader: "pug-loader",
-                test: /\.pug$/
+                loader: "pug-loader"
             }
         ]
     },
@@ -62,6 +77,6 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [ '.js', '.ts' ]
+        extensions: [ ".js", ".ts", ".scss", ".css" ]
     }
 };

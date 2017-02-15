@@ -6,6 +6,13 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "app",
-    template: `<h1>Hello {{name}}</h1>`
+    template: `
+        <div class="jumbotron">
+            <div class="mdl-grid">
+                <h1>Hello</h1>
+            </div>
+        </div>
+    `,
+    styles: [require("./app.component.scss")]
 })
-export class AppComponent { name = "Angular"; }
+export class AppComponent {}
