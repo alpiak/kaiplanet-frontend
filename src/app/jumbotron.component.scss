@@ -5,6 +5,7 @@
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto 100%;
+  -webkit-mask-image: -webkit-radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 @media screen and (min-width: 768px) {
   .jumbotron {

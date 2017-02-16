@@ -57,6 +57,11 @@ module.exports = {
                 test: /\.pug$/,
                 exclude: /node_modules/,
                 loader: "pug-loader"
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "js-loader"
             }
         ]
     },
