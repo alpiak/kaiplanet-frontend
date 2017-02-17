@@ -18,6 +18,7 @@
     "url": "https://github.com/bubblesoft/bubblesoft-frontend/issues"
   },
   "homepage": "https://github.com/bubblesoft/bubblesoft-frontend#readme",
+  "types": "./src/script/parallax.d.ts",
   "dependencies": {
     "@angular/common": "^2.4.7",
     "@angular/compiler": "^2.4.7",
