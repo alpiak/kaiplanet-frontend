@@ -1,15 +1,16 @@
-.jumbotron {
+.background {
   height: 600px;
   background-color: #000;
   background-image: url("../img/h8nxgssjqxs-jonatan-pie.jpg");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto 100%;
-  -webkit-mask-image: -webkit-radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  -webkit-mask-image:
+          linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%),
+          radial-gradient(ellipse farthest-corner at 50% 80%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
 }
 @media screen and (min-width: 768px) {
-  .jumbotron {
-    height: 800px;
+  .background {
     background-image: url("../img/h8nxgssjqxs-jonatan-pie.jpg");
     background-size: 100% auto;
   }

@@ -60,10 +60,12 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
-                loader: "js-loader"
+                loader: "babel-loader"
             }
         ]
+    },
+    externals: {
+        "jquery": "window.jQuery"
     },
     output: {
         filename: "[name].bundle.js",
@@ -82,6 +84,6 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [ ".js", ".ts", ".scss", ".css" ]
+        extensions: [ ".ts", ".scss", ".js", ".css" ]
     }
 };

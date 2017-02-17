@@ -32,6 +32,8 @@
   "devDependencies": {
     "@types/core-js": "^0.9.35",
     "@types/node": "^7.0.5",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.3.2",
     "css-loader": "^0.26.1",
     "css-to-string-loader": "^0.1.2",
     "file-loader": "^0.10.0",
