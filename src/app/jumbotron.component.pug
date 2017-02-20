@@ -1,0 +1,16 @@
+//
+   Created by qhyang on 2017/2/20.
+
+ul.scene#scene(
+    "[style.height]"="height + 'px'"
+    "[style.width]"="width + 'px'"
+)
+    li.background.stars-cluster.layer(data-depth="0.20")
+        - for (var x = 1; x <=40; x++)
+            .star(class="star-" + x)
+    li.layer(data-depth="0.40")
+        h1 Hello
+    li.layer(data-depth="0.80")
+    li.layer(data-depth="1.00")
+    li.layer(data-depth="0.60")
+        home-nav

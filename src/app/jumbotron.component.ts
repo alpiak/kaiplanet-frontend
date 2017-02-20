@@ -9,32 +9,24 @@ import { BomService } from "./bom.service";
 
 @Component({
     selector: "jumbotron",
-    template: `
-        <ul class="scene" id="scene">
-            <li class="layer background" [style.height] = "height + 'px'" data-depth="0.20"></li>
-            <li class="layer mdl-grid" data-depth="0.40">
-                <h1>Hello</h1>
-            </li>
-            <li class="layer" data-depth="0.60"></li>
-            <li class="layer" data-depth="0.80"></li>
-            <li class="layer" data-depth="1.00">
-                <home-nav></home-nav>
-            </li>
-        </ul>
-    `,
+    template: require("./jumbotron.component.pug")(),
     styles: [require("./jumbotron.component.scss")]
 })
 export class JumbotronComponent implements OnInit{
     height: number;
+    width: number;
 
     constructor(private bomService: BomService) {
-        this.height = window.innerHeight - 100;
+        this.height = window.innerHeight;
     }
 
     ngOnInit() {
         new Parallax(document.getElementById("scene"));
         this.bomService.windowResize()
-            .map((event: any) => event.target.innerHeight)
-            .subscribe((height: number) => this.height = height - 100);
+            .map((event: any) => event.target)
+            .subscribe((target: Window) => {
+                this.height = target.innerHeight;
+                this.width = target.innerWidth;
+            });
     }
 }

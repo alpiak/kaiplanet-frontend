@@ -2,9 +2,7 @@
  * Created by qhyang on 2017/2/17.
  */
 
-import {Component, OnInit} from "@angular/core";
-
-import { BomService } from "./bom.service";
+import {Component} from "@angular/core";
 
 @Component({
     selector: "home-nav",
@@ -28,11 +26,4 @@ import { BomService } from "./bom.service";
     `,
     styles: [require("./home-nav.component.scss")]
 })
-export class HomeNavComponent implements OnInit{
-
-    constructor(private bomService: BomService) {
-    }
-
-    ngOnInit() {
-    }
-}
+export class HomeNavComponent{ }
