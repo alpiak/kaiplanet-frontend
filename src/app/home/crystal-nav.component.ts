@@ -5,7 +5,7 @@
 import {Component} from "@angular/core";
 
 @Component({
-    selector: "home-nav",
+    selector: "crystal-nav",
     template: `
         <nav>
           <ul>
@@ -24,6 +24,6 @@ import {Component} from "@angular/core";
           </ul>
         </nav>
     `,
-    styles: [require("./home-nav.component.scss")]
+    styles: [require("./crystal-nav.component.scss")]
 })
-export class HomeNavComponent{ }
+export class CrystalNavComponent{ }

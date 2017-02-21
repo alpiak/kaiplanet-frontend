@@ -4,16 +4,18 @@
 
 import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { HomeModule } from "./home/home.module";
+
 import { AppComponent }  from "./app.component";
-import { JumbotronComponent } from "./jumbotron.component";
-import { HomeNavComponent } from "./home-nav.component";
-import {LoggerService} from "./logger.service";
-import {BomService} from "./bom.service";
+
+import { LoggerService } from "./logger.service";
+import { BomService } from "./bom.service";
 
 @NgModule({
-    imports:      [ BrowserModule ],
+    imports:      [ BrowserModule, AppRoutingModule, HomeModule ],
     providers:    [ LoggerService, BomService ],
-    declarations: [ AppComponent, JumbotronComponent, HomeNavComponent ],
+    declarations: [ AppComponent ],
     exports:      [ AppComponent ],
     bootstrap:    [ AppComponent ]
 })

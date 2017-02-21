@@ -5,14 +5,14 @@
 import "rxjs/add/operator/map";
 import {Component, OnInit} from "@angular/core";
 
-import { BomService } from "./bom.service";
+import { BomService } from "../bom.service";
 
 @Component({
     selector: "jumbotron",
     template: require("./jumbotron.component.pug")(),
-    styles: [require("./jumbotron.component.scss")]
+    styles: [ require("./jumbotron.component.scss") ]
 })
-export class JumbotronComponent implements OnInit{
+export class JumbotronComponent implements OnInit {
     height: number;
     width: number;
 
