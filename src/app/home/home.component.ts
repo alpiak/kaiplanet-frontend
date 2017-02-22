@@ -5,6 +5,6 @@
 import { Component } from "@angular/core";
 
 @Component({
-    template: require("./home.component.pug")()
+    template: require("./home.component.pug")
 })
 export class HomeComponent { }

@@ -34,7 +34,7 @@ module.exports = {
                 loader: "ts-loader"
             },
             {
-                test: /\.(?:png|jpg)$/,
+                test: /\.(?:png|jpg|svg)$/,
                 exclude: /node_modules/,
                 loader: "url-loader?limit=8192"
             },
@@ -56,7 +56,7 @@ module.exports = {
             {
                 test: /\.pug$/,
                 exclude: /node_modules/,
-                loader: "pug-loader"
+                loaders: ["html-withimg-loader", "pug-html-loader" ]
             },
             {
                 test: /\.js$/,

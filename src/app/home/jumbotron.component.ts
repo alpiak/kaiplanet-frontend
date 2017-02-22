@@ -9,7 +9,7 @@ import { BomService } from "../bom.service";
 
 @Component({
     selector: "jumbotron",
-    template: require("./jumbotron.component.pug")(),
+    template: require("./jumbotron.component.pug"),
     styles: [ require("./jumbotron.component.scss") ]
 })
 export class JumbotronComponent implements OnInit {

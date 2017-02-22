@@ -1,13 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-html {
-  height:100%;
-  background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
-}
-
 nav {
   position: absolute;
-  left: 0; right: 0; bottom: 0;
+  left: 0; right: 0; bottom: 5%;
   max-width: 960px;
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
