@@ -51,7 +51,7 @@ h1 {
     @include generateBubbles($bubbleNo - 1);
 
     .bubble-#{$bubbleNo} {
-      @include square(random() * 20 + px);
+      @include square(10 + random() * 10 + px);
       left: percentage(random());
       $bottom: random();
       bottom: percentage($bottom * $bottom);
