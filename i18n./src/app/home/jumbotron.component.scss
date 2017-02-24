@@ -1,0 +1,218 @@
+h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 10%;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.scene {
+  margin: 0;
+  padding: 0;
+  background-size: 110%;
+  overflow: hidden;
+}
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  background-color: #000;
+  background-image: url("../../img/h8nxgssjqxs-jonatan-pie.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  -webkit-mask-image: radial-gradient(ellipse farthest-corner at 50% 80%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .background {
+    background-image: url("../../img/h8nxgssjqxs-jonatan-pie.jpg");
+    background-size: 100% auto;
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+.bubble {
+  position: absolute;
+}
+
+@mixin generateBubbles($bubbleNo: 25) {
+  @if $bubbleNo > 0 {
+    @include generateBubbles($bubbleNo - 1);
+
+    .bubble-#{$bubbleNo} {
+      @include square(10 + random() * 10 + px);
+      left: percentage(random());
+      $bottom: random();
+      bottom: percentage($bottom * $bottom);
+    }
+  }
+}
+@include generateBubbles(50);
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #02080f;
+}
+.star {
+  background-color: #f3f2d6;
+  border-radius: 50%;
+  position: absolute;
+  animation-name: pulsate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+/**
+ * ----------------------------------------
+ * star generator
+ * ---------------------------------------
+*/
+@mixin generateStars($starsNo: 25, $minSize: 2, $maxSize: 14, $clusterClass: "stars-cluster") {
+  @if $starsNo > 0 {
+    @include generateStars($starsNo - 1, $minSize, $maxSize, $clusterClass);
+
+    $currSize: (round(random() * ($maxSize - $minSize)) + $minSize) + px;
+    $currtOpacity: (random() * 0.6) + 0.2;
+
+    .#{$clusterClass} .star-#{$starsNo} {
+      @include square($currSize);
+      opacity: $currtOpacity;
+      top: percentage(random());
+      left: percentage(random());
+      animation-duration: (random()*2) + 0.4 + s;
+      animation-delay: random() + s;
+    }
+  }
+}
+
+@include generateStars(100, 1, 3, stars-cluster);
+
+.stars-cluster {
+  position: absolute;
+  left: 3%;
+  right: 3%;
+  top: 3%;
+  bottom: 3%;
+  .star-7,
+  .star-22,
+  .star-30 {
+    animation: shooting-star 10s ease-out 1s forwards;
+  }
+  .star-22 {
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+  }
+  .star-30 {
+    animation-delay: 7s;
+  }
+  .star-20 {
+    animation: shooting-star-2 8s ease-out 5s forwards infinite;
+  }
+  .star-11,
+  .star-16 {
+    animation: shooting-star 10s ease-out 8s forwards;
+  }
+  .star-16 {
+    animation-delay: 1s;
+  }
+  .star-7 {
+    animation-delay: 9s;
+    animation-iteration-count: infinite;
+  }
+  .star-4 {
+    animation: shooting-star-2 11s ease-out 6s forwards infinite;
+  }
+  .star-47,
+  .star-62,
+  .star-70 {
+    animation: shooting-star 10s ease-out 1s forwards;
+  }
+  .star-62 {
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+  }
+  .star-70 {
+    animation-delay: 7s;
+  }
+  .star-60 {
+    animation: shooting-star-2 8s ease-out 5s forwards infinite;
+  }
+  .star-51,
+  .star-56 {
+    animation: shooting-star 10s ease-out 8s forwards;
+  }
+  .star-56 {
+    animation-delay: 1s;
+  }
+  .star-47 {
+    animation-delay: 9s;
+    animation-iteration-count: infinite;
+  }
+  .star-44 {
+    animation: shooting-star-2 11s ease-out 6s forwards infinite;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation pulsate
+ * ---------------------------------------
+*/
+@keyframes pulsate {
+  0% {
+    transform: scale(.85);
+    opacity: .2;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation shooting-star
+ * ---------------------------------------
+*/
+@keyframes shooting-star {
+  0% {
+    transform: scale(1);
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  20%,100% {
+    transform: scale(0);
+    transform: translate(400px,200px);
+    opacity: 0;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation shooting-star-2
+ * ---------------------------------------
+*/
+@keyframes shooting-star-2 {
+  0% {
+    transform: scale(1);
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  10%,100% {
+    transform: scale(.7);
+    transform: translate(600px,150px);
+    opacity: .3;
+  }
+}

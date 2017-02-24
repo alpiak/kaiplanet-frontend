@@ -1,0 +1,26 @@
+//
+   Created by qhyang on 2017/2/20.
+
+
+ul.scene#scene(
+    "[style.height]"="height + 'px'"
+    "[style.width]"="width + 'px'"
+)
+    li.background.stars-cluster.layer(data-depth="0.20")
+        - for (var x = 1; x <=100; x++)
+            .star(class="star-" + x)
+    li.layer(data-depth="0.50")
+    li.layer(data-depth="0.80")
+        - var n = 1;
+        while n < 50
+            img.bubble(
+                class="bubble-" + n
+                src="../../img/bubble.svg"
+            )
+            - n++
+    li.layer(data-depth="1.20")
+        h1(i18n="home page jumbotron|user welcome") Welcome to the play ground!
+    li.layer(data-depth="1.60")
+    li.layer(data-depth="5.00")
+    li.layer(data-depth="0.60")
+        crystal-nav
