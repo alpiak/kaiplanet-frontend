@@ -11,6 +11,10 @@ module.exports = function(grunt) {
                 src: "./src/**",
                 dest: "./i18n"
             },
+            output: {
+                src: "./i18n/messages.xlf",
+                dest: "./src/locale/messages.xlf"
+            },
         },
         pug: {
             compile: {
@@ -25,7 +29,29 @@ module.exports = function(grunt) {
                 ext: ".component.html"
             }
         },
-        clean: ["./i18n/src"]
+        "file-creator": {
+            main: {
+                "./i18n/tsconfig.json": function(fs, fd, done) {
+                    fs.writeSync(fd, `{
+                        "compilerOptions": {
+                            "emitDecoratorMetadata": true,
+                            "experimentalDecorators": true,
+                            "module": "commonjs",
+                            "moduleResolution": "node",
+                            "noImplicitAny": true,
+                            "suppressImplicitAnyIndexErrors": true,
+                            "target": "es5",
+                            "sourceMap": true
+                        },
+                        "include": [
+                            "./"
+                        ]
+                    }`);
+                    done();
+                }
+            }
+        },
+        clean: ["./i18n", "./i18n/tsconfig.json"]
     };
     try {
         let fileMappings = grunt.file.expandMapping("src/**/*.component.ts", "./i18n");
@@ -57,10 +83,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-pug");
     grunt.loadNpmTasks("grunt-text-replace");
+    grunt.loadNpmTasks('grunt-file-creator');
     grunt.loadNpmTasks("grunt-contrib-clean");
 
-    grunt.registerTask("i18n-compile-pug", ["copy", "pug"]);
+    grunt.registerTask("i18n-compile-pug", ["file-creator", "copy:main", "pug"]);
     grunt.registerTask("i18n-load-external", ["replace"]);
-    grunt.registerTask("i18n-clean", ["clean"]);
+    grunt.registerTask("i18n-clean", ["copy:output", "clean"]);
 
 };

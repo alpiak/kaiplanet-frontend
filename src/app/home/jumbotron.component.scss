@@ -46,19 +46,55 @@ h1 {
   position: absolute;
 }
 
-@mixin generateBubbles($bubbleNo: 25) {
+@mixin generateBubbles($bubbleNo: 25, $clusterClass: "bubble-cluster-2", $depth: 0.8) {
   @if $bubbleNo > 0 {
-    @include generateBubbles($bubbleNo - 1);
+    @include generateBubbles($bubbleNo - 1, $clusterClass, $depth);
 
-    .bubble-#{$bubbleNo} {
-      @include square(10 + random() * 10 + px);
+    .#{$clusterClass} .bubble-#{$bubbleNo} {
+      @include square(5 * $depth + random() * 6 * $depth + px);
       left: percentage(random());
       $bottom: random();
       bottom: percentage($bottom * $bottom);
+      @if random() > 0.5 {
+        animation-name: flow-up-#{$depth * 10};
+      } @else {
+        animation-name: flow-down-#{$depth * 10};
+      }
+      animation-duration: (random() * random() * 6) + 10 + s;
+      animation-delay: random() * 10 + s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate-reverse;
     }
   }
 }
-@include generateBubbles(50);
+
+@include generateBubbles(60, "bubble-cluster-1", 0.50);
+@include generateBubbles(30, "bubble-cluster-2", 0.80);
+@include generateBubbles(20, "bubble-cluster-3", 1.60);
+
+// bubble animation
+@mixin generateBubbleAnimation() {
+  @each $depth in 0.50, 0.80, 1.60 {
+    @keyframes flow-up-#{$depth * 10}  {
+      0% {
+        transform: translateY(#{$depth * 80}px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    @keyframes flow-down-#{$depth * 10}  {
+      0% {
+        transform: translateY(#{$depth * -80}px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@include generateBubbleAnimation();
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 body {

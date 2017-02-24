@@ -13,7 +13,7 @@ const rootDir = path.resolve(__dirname, "..");
 
 module.exports = {
     devServer: {
-        contentBase: path.resolve(rootDir, "dist"),
+        contentBase: path.resolve(rootDir, "dist")
     },
     devtool: "source-map",
     entry: {
