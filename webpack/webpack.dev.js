@@ -61,6 +61,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.xlf$/,
+                loader: "raw-loader"
             }
         ]
     },

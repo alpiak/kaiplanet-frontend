@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="df65f09a129358528502eafd7ad7e13199327ca5" datatype="html">
+        <source>Welcome to the play ground!</source>
+        <target>欢迎来到游乐园！</target>
+        <note priority="1" from="description">user welcome</note>
+        <note priority="1" from="meaning">home page jumbotron</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

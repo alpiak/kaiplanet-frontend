@@ -5,7 +5,14 @@
 import "reflect-metadata";
 import "zone.js";
 
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule }              from './app.module';
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { getTranslationProviders } from "./i18n-providers";
+import { AppModule }              from "./app.module";
 
-platformBrowserDynamic().bootstrapModule(AppModule);
+// Detect user language
+document["locale"] = window.navigator.language || "en-US";
+
+getTranslationProviders().then(providers => {
+    const options = { providers };
+    platformBrowserDynamic().bootstrapModule(AppModule, options);
+});

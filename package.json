@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --config ./webpack/webpack.dev.js",
     "test": "karma start ./karma/karma.conf.js",
     "build": "webpack --config ./webpack/webpack.dev.js",
-    "i18n": "grunt i18n-compile-pug && grunt i18n-load-external && ng-xi18n -p ./i18n/tsconfig.json"
+    "i18n": "grunt i18n-compile-pug && grunt i18n-load-external && ng-xi18n -p ./i18n/tsconfig.json && grunt i18n-clean"
   },
   "repository": {
     "type": "git",
@@ -48,6 +48,7 @@
     "css-to-string-loader": "^0.1.2",
     "file-loader": "^0.10.0",
     "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-text-replace": "^0.4.0",
@@ -62,6 +63,7 @@
     "node-sass": "^4.5.0",
     "pug": "^2.0.0-beta11",
     "pug-html-loader": "^1.1.0",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.1",
     "ts-loader": "^2.0.0",

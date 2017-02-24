@@ -9,7 +9,7 @@ module.exports = function(grunt) {
             main: {
                 expand: true,
                 src: "./src/**",
-                dest: "./i18n",
+                dest: "./i18n"
             },
         },
         pug: {
@@ -24,14 +24,15 @@ module.exports = function(grunt) {
                 dest: "./i18n",
                 ext: ".component.html"
             }
-        }
+        },
+        clean: ["./i18n/src"]
     };
     try {
-        let filesMapping = grunt.file.expandMapping("src/**/*.component.ts", "./i18n");
+        let fileMappings = grunt.file.expandMapping("src/**/*.component.ts", "./i18n");
         let loadHtmlTasks = {};
-        for (let i = 0, len = filesMapping.length; i < len; i++) {
-            const src = filesMapping[i].src[0],
-                dest = filesMapping[i].dest;
+        for (let i = 0, len = fileMappings.length; i < len; i++) {
+            const src = fileMappings[i].src[0],
+                dest = fileMappings[i].dest;
             let replacements = [{
                 from: "require(\"." + src.substring(src.lastIndexOf("/"), src.lastIndexOf(".")) + ".pug\")",
                 to: "`" + grunt.file.read("./i18n/" + src.replace("ts", "html")) + "`"
@@ -56,8 +57,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-pug");
     grunt.loadNpmTasks("grunt-text-replace");
+    grunt.loadNpmTasks("grunt-contrib-clean");
 
     grunt.registerTask("i18n-compile-pug", ["copy", "pug"]);
     grunt.registerTask("i18n-load-external", ["replace"]);
+    grunt.registerTask("i18n-clean", ["clean"]);
 
 };
