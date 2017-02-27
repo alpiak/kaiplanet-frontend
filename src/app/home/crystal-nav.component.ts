@@ -12,7 +12,6 @@ import {Component, OnInit} from "@angular/core";
 export class CrystalNavComponent implements OnInit {
     ngOnInit() {
         let jquery = require("jquery");
-        require("jquery.ripples");
         jquery(".ripple").ripples();
     }
 }

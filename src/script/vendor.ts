@@ -11,3 +11,6 @@ import "../style/base";
 if (!window["jQuery"]) {
     window["jQuery"] = require("jquery")
 }
+
+// Load JQuery plugins
+require("jquery.ripples");

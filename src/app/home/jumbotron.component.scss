@@ -23,16 +23,26 @@ h1 {
 
 .background {
   background-color: #000;
-  background-image: url("../../img/h8nxgssjqxs-jonatan-pie.jpg");
+  background-image: url("../../img/h8nxgssjqxs-jonatan-pie-back.jpg");
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto 100%;
   -webkit-mask-image: radial-gradient(ellipse farthest-corner at 50% 80%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
   overflow: hidden;
 }
+.background-front {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-image: url("../../img/h8nxgssjqxs-jonatan-pie-front.png");
+}
 @media screen and (min-width: 768px) {
   .background {
-    background-image: url("../../img/h8nxgssjqxs-jonatan-pie.jpg");
+    background-image: url("../../img/h8nxgssjqxs-jonatan-pie-back.jpg");
+    background-size: 100% auto;
+  }
+  .background-front {
+    background-image: url("../../img/h8nxgssjqxs-jonatan-pie-front.png");
     background-size: 100% auto;
   }
 }

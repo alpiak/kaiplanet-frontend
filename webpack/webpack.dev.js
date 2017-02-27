@@ -34,14 +34,19 @@ module.exports = {
                 loader: "ts-loader"
             },
             {
-                test: /\.(?:png|jpg|svg)$/,
-                exclude: /node_modules/,
-                loader: "url-loader?limit=8192"
-            },
-            {
                 test: /\.scss$/,
                 include: [ path.resolve(rootDir, "src", "app"), ],
                 loaders: [ "css-to-string-loader", "css-loader", "sass-loader" ]
+            },
+            {
+                test: /\.pug$/,
+                exclude: /node_modules/,
+                loaders: ["html-withimg-loader", "pug-html-loader" ]
+            },
+            {
+                test: /\.(?:png|jpe?g|svg)$/,
+                exclude: /node_modules/,
+                loader: "url-loader?limit=8192"
             },
             {
                 test: /\.scss$/,
@@ -52,11 +57,6 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /(?:node_modules|src\/app)/,
                 loaders: [ "style-loader", "css-loader" ]
-            },
-            {
-                test: /\.pug$/,
-                exclude: /node_modules/,
-                loaders: ["html-withimg-loader", "pug-html-loader" ]
             },
             {
                 test: /\.js$/,
