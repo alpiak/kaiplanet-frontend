@@ -3,7 +3,7 @@
  */
 
 import "rxjs/add/operator/map";
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { BomService } from "../bom.service";
 
