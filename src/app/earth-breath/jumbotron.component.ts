@@ -28,5 +28,22 @@ export class JumbotronComponent implements OnInit {
                 this.height = target.innerHeight;
                 this.width = target.innerWidth;
             });
+
+        // ScrollMagic
+
+        let ScrollMagic = require("scrollmagic");
+
+        // init controller
+        let controller = new ScrollMagic.Controller({
+            globalSceneOptions: {
+                triggerHook: "onEnter",
+                duration: "100%"
+            }
+        });
+
+        // build scenes
+        new ScrollMagic.Scene()
+            .setPin("#scene")
+            .addTo(controller);
     }
 }

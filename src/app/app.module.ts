@@ -5,7 +5,7 @@
 import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
-import { HomeModule } from "./home/home.module";
+import { HomeModule } from "./earth-breath/earth-breath.module";
 
 import { AppComponent }  from "./app.component";
 

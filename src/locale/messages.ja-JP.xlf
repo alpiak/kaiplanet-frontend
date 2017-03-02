@@ -2,7 +2,7 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="df65f09a129358528502eafd7ad7e13199327ca5" datatype="html">
+      <trans-unit id="b66a8986bde5691530aac53942d1945099d93d58" datatype="html">
         <source>Welcome to the play ground!</source>
         <target>遊園地にようこそ！</target>
         <note priority="1" from="description">user welcome</note>

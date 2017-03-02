@@ -8,7 +8,7 @@ import { RouterModule, Routes } from "@angular/router";
 const appRoutes: Routes = [
     {
         path: "",
-        redirectTo: "/home",
+        redirectTo: "/earth-breath",
         pathMatch: "full"
     }
 ];
