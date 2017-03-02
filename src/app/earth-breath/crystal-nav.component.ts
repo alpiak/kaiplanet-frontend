@@ -5,7 +5,7 @@
 import {Component, OnInit} from "@angular/core";
 
 @Component({
-    selector: "crystal-nav",
+    selector: "[crystal-nav]",
     template: require("./crystal-nav.component.pug"),
     styles: [require("./crystal-nav.component.scss")]
 })
