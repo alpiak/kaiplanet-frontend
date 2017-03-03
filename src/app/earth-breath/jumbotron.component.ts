@@ -43,7 +43,7 @@ export class JumbotronComponent implements OnInit {
 
         // build scenes
         new ScrollMagic.Scene({
-            duration: "100%"
+            duration: "600%"
         })
             .setPin("#scene")
             .addTo(controller);
@@ -60,7 +60,7 @@ export class JumbotronComponent implements OnInit {
                 .addTo(controller);
         }
         new ScrollMagic.Scene({
-            duration: "100%"
+            duration: "220%"
         })
             .setTween("[crystal-nav]", {
                 top: "-100%"

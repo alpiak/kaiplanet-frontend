@@ -17,5 +17,35 @@ export class scrollSceneComponent implements OnInit {
 
     ngOnInit() {
 
+        // ScrollMagic
+        require("gsap/tweenLite");
+        let ScrollMagic = require("scrollmagic");
+        require("../../script/animation.gsap");
+
+        // init controller
+        let controller = new ScrollMagic.Controller({
+            globalSceneOptions: {
+                triggerHook: "onEnter"
+            }
+        });
+
+        let jQuery = require("jquery");
+
+        // build scenes
+        new ScrollMagic.Scene({
+            duration: 0,
+            offset: "1000%"
+        })
+            .on("enter", function () {
+                jQuery(".mask-layer").addClass("fixed");
+                require("../../script/astral.jquery");
+                jQuery('#scroll-scene__mask-layer').astral();
+            })
+            .on("leave", function () {
+                jQuery(".mask-layer").removeClass("fixed");
+                jQuery('#scroll-scene__mask-layer canvas').remove();
+            })
+            .addTo(controller);
+
     }
 }
