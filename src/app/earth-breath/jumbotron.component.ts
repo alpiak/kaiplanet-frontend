@@ -30,7 +30,6 @@ export class JumbotronComponent implements OnInit {
             });
 
         // ScrollMagic
-
         require("gsap/tweenLite");
         let ScrollMagic = require("scrollmagic");
         require("../../script/animation.gsap");
@@ -60,5 +59,12 @@ export class JumbotronComponent implements OnInit {
                 })
                 .addTo(controller);
         }
+        new ScrollMagic.Scene({
+            duration: "100%"
+        })
+            .setTween("[crystal-nav]", {
+                top: "-100%"
+            })
+            .addTo(controller);
     }
 }

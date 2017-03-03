@@ -8,17 +8,14 @@
   margin: 0 auto;
   padding: 60px 0;
 }
-
 :host ul {
   text-align: center;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
 }
-
 :host ul li {
   display: inline-block;
 }
-
 :host ul li a {
   padding: 18px;
   font-family: "Open Sans";
@@ -28,9 +25,13 @@
   text-decoration: none;
   display: block;
 }
-
 :host ul li a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
+}
+
+// style fix for jQuery stickUp
+:host.stuckElement.isStuck {
+  top: 0 !important;
 }

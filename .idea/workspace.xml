@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72d0a84f-6230-4863-95a2-079965d856fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/script/animation.gsap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss" afterPath="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.ts" afterPath="$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/script/vendor.ts" afterPath="$PROJECT_DIR$/src/script/vendor.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack/webpack.dev.js" afterPath="$PROJECT_DIR$/webpack/webpack.dev.js" />
     </list>
     <ignored path="bubblesoft-frontend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,20 +52,52 @@
       <file leaf-file-name="jumbotron.component.pug" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="89">
               <caret line="12" column="55" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jumbotron.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jumbotron.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+            <state relative-caret-position="529">
+              <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
               <folding>
                 <element signature="e#44#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stick-up.directive.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/stick-up.directive.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crystal-nav.component.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="700">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="earth-breath.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/earth-breath/earth-breath.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding>
+                <element signature="e#44#90#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,12 +162,10 @@
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/earth-breath.module.ts" />
         <option value="$PROJECT_DIR$/src/app/ripple.directive.ts" />
-        <option value="$PROJECT_DIR$/src/app/stick-up.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.ts" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.scss" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.pug" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.pug" />
-        <option value="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss" />
         <option value="$PROJECT_DIR$/webpack/webpack.dev.js" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$USER_HOME$/AppData/Local/Temp/animation.gsap.js" />
@@ -146,6 +173,8 @@
         <option value="$PROJECT_DIR$/src/script/vendor.ts" />
         <option value="$PROJECT_DIR$/src/script/animation.gsap.js" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/stick-up.directive.ts" />
+        <option value="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss" />
       </list>
     </option>
   </component>
@@ -413,12 +442,12 @@
       <workItem from="1488165139467" duration="415000" />
       <workItem from="1488180510535" duration="12000" />
       <workItem from="1488186184376" duration="3919000" />
-      <workItem from="1488331360997" duration="59882000" />
+      <workItem from="1488331360997" duration="64376000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280145000" />
+    <option name="totallyTimeSpent" value="284639000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -732,28 +761,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/earth-breath.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#44#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -786,14 +797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/stick-up.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -892,21 +895,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.pug">
+    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/earth-breath.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="55" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="55" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding>
+            <element signature="e#44#90#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="55" column="29" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+        <state relative-caret-position="529">
+          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
           <folding>
             <element signature="e#44#75#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/stick-up.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="12" column="55" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
