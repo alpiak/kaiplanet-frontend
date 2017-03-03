@@ -30,6 +30,9 @@
     "@angular/platform-browser-dynamic": "^2.4.7",
     "@angular/platform-server": "^2.4.8",
     "@angular/router": "^3.4.7",
+    "@types/core-js": "^0.9.35",
+    "@types/jquery": "^2.0.40",
+    "@types/node": "^7.0.5",
     "gsap": "^1.19.1",
     "jquery": "^3.1.1",
     "jquery.ripples": "^0.5.3",
@@ -40,8 +43,6 @@
     "zone.js": "^0.7.6"
   },
   "devDependencies": {
-    "@types/core-js": "^0.9.35",
-    "@types/node": "^7.0.5",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.3.2",
     "css-loader": "^0.26.1",

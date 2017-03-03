@@ -89,6 +89,10 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [ ".ts", ".scss", ".js", ".css" ]
+        extensions: [ ".ts", ".scss", ".js", ".css" ],
+        alias: {
+            "TweenMax": "gsap/tweenMax",
+            "TimelineMax": "gsap/timelineMax"
+        }
     }
 };
