@@ -4,8 +4,8 @@
 
 import { NgModule }      from "@angular/core";
 
-import { HomeComponent } from "./earth-breath.component";
-import { HomeRoutingModule } from "./earth-breath-routing.module";
+import { EarthBreathComponent } from "./earth-breath.component";
+import { EarthBreathRoutingModule } from "./earth-breath-routing.module";
 
 import { JumbotronComponent } from "./jumbotron.component";
 import { CrystalNavComponent } from "./crystal-nav.component";
@@ -15,9 +15,9 @@ import { RippleDirective } from "../ripple.directive";
 import { StickUpDirective } from "../stick-up.directive";
 
 @NgModule({
-    imports:      [ HomeRoutingModule ],
+    imports:      [ EarthBreathRoutingModule ],
     declarations: [
-        HomeComponent,
+        EarthBreathComponent,
         JumbotronComponent,
         CrystalNavComponent,
         scrollSceneComponent,
@@ -25,4 +25,4 @@ import { StickUpDirective } from "../stick-up.directive";
         StickUpDirective
     ]
 })
-export class HomeModule { }
+export class EarthBreathModule { }

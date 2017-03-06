@@ -7,7 +7,7 @@
 import "../style/bootstrap.min";
 import "../script/parallax";
 
-import "../style/base";
+import "../style/base.scss";
 
 // Fallback to loading jQuery from a local path if the CDN is unavailable
 // if (!window["jQuery"]) {

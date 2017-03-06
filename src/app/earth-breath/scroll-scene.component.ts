@@ -2,7 +2,7 @@
  * Created by qhyang on 2017/3/1.
  */
 
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "scroll-scene",

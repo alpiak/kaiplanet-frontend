@@ -36,7 +36,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                include: [ path.resolve(rootDir, "src", "app"), ],
+                include: [ path.resolve(rootDir, "src", "app") ],
                 loaders: [ "css-to-string-loader", "css-loader", "sass-loader" ]
             },
             {
@@ -51,7 +51,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                include: [ path.resolve(rootDir, "src", "style"), ],
+                include: [ path.resolve(rootDir, "src", "style") ],
                 loaders: [ "style-loader", "css-loader", "sass-loader" ]
             },
             {
@@ -65,6 +65,7 @@ module.exports = {
             },
             {
                 test: /\.xlf$/,
+                exclude: /node_modules/,
                 loader: "raw-loader"
             }
         ]
@@ -89,7 +90,7 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: [ ".ts", ".scss", ".js", ".css" ],
+        extensions: [ ".ts", ".scss", ".pug", ".js", ".css", ".xlf" ],
         alias: {
             "TweenMax": "gsap/tweenMax",
             "TimelineMax": "gsap/timelineMax"

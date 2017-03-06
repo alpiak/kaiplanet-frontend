@@ -142,19 +142,12 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 396);
+/******/ 	return __webpack_require__(__webpack_require__.s = 410);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 147:
-/***/ (function(module, exports) {
-
-module.exports = window.jQuery;
-
-/***/ }),
-
-/***/ 238:
+/***/ 241:
 /***/ (function(module, exports) {
 
 /*
@@ -170,7 +163,7 @@ var stylesInDom = {},
 		};
 	},
 	isOldIE = memoize(function() {
-		return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
 	}),
 	getHeadElement = memoize(function () {
 		return document.head || document.getElementsByTagName("head")[0];
@@ -407,7 +400,7 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 243:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -415,18 +408,20 @@ function updateLink(linkElement, obj) {
  * Created by qhyang on 2017/2/13.
  */
 
-__webpack_require__(384);
-__webpack_require__(370);
-__webpack_require__(383);
+// import { jQuery, $ } from "jquery";
+__webpack_require__(395);
+__webpack_require__(378);
+__webpack_require__(394);
 // Fallback to loading jQuery from a local path if the CDN is unavailable
-if (!window["jQuery"]) {
-    window["jQuery"] = __webpack_require__(147);
-}
+// if (!window["jQuery"]) {
+//     window["jQuery"] = jQuery;
+//     window["$"] = jQuery;
+// }
 
 
 /***/ }),
 
-/***/ 370:
+/***/ 378:
 /***/ (function(module, exports) {
 
 //============================================================
@@ -1043,10 +1038,10 @@ if (!window["jQuery"]) {
 
 /***/ }),
 
-/***/ 373:
+/***/ 382:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(87)();
+exports = module.exports = __webpack_require__(57)();
 // imports
 
 
@@ -1058,10 +1053,10 @@ exports.push([module.i, "body {\r\n  background-color: #000;\r\n}", ""]);
 
 /***/ }),
 
-/***/ 374:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(87)();
+exports = module.exports = __webpack_require__(57)();
 // imports
 
 
@@ -1073,23 +1068,23 @@ exports.push([module.i, "/*!\n * Bootstrap v3.3.7 (http://getbootstrap.com)\n * 
 
 /***/ }),
 
-/***/ 383:
+/***/ 394:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(373);
+var content = __webpack_require__(382);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(238)(content, {});
+var update = __webpack_require__(241)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../node_modules/css-loader/index.js!./base.css", function() {
-			var newContent = require("!!./../../node_modules/css-loader/index.js!./base.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./base.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./base.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -1100,23 +1095,23 @@ if(false) {
 
 /***/ }),
 
-/***/ 384:
+/***/ 395:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(374);
+var content = __webpack_require__(383);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(238)(content, {});
+var update = __webpack_require__(241)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../node_modules/css-loader/index.js!./bootstrap.min.css", function() {
-			var newContent = require("!!./../../node_modules/css-loader/index.js!./bootstrap.min.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./bootstrap.min.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./bootstrap.min.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -1127,15 +1122,15 @@ if(false) {
 
 /***/ }),
 
-/***/ 396:
+/***/ 410:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(243);
+module.exports = __webpack_require__(248);
 
 
 /***/ }),
 
-/***/ 87:
+/***/ 57:
 /***/ (function(module, exports) {
 
 /*
