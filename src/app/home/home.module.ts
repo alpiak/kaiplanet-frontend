@@ -7,12 +7,14 @@ import { HomeRoutingModule } from "./home-routing.module";
 
 import { HomeComponent } from "./home.component";
 import { leftNavComponent } from "./left-nav.component";
+import { gridStackComponent } from "./grid-stack.component";
 
 @NgModule({
     imports:      [ HomeRoutingModule ],
     declarations: [
         HomeComponent,
-        leftNavComponent
+        leftNavComponent,
+        gridStackComponent
     ]
 })
 export class HomeModule { }

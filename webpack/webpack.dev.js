@@ -45,7 +45,7 @@ module.exports = {
                 loaders: ["html-withimg-loader", "pug-html-loader" ]
             },
             {
-                test: /\.(?:png|jpe?g|svg)$/,
+                test: /\.(?:png|jpe?g|svg|gif)$/,
                 exclude: /node_modules/,
                 loader: "url-loader?limit=8192"
             },
@@ -56,7 +56,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /(?:node_modules|src\/app)/,
+                exclude: /src\/app/,
                 loaders: [ "style-loader", "css-loader" ]
             },
             {
@@ -93,7 +93,8 @@ module.exports = {
         extensions: [ ".ts", ".scss", ".pug", ".js", ".css", ".xlf" ],
         alias: {
             "TweenMax": "gsap/tweenMax",
-            "TimelineMax": "gsap/timelineMax"
+            "TimelineMax": "gsap/timelineMax",
+            "jquery-ui": "jquery-ui/ui"
         }
     }
 };

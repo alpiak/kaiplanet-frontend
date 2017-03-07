@@ -10,8 +10,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class leftNavComponent implements OnInit {
     ngOnInit() {
-        const jQuery = require("jquery");
-        require("metismenu");
-        jQuery("#left-nav").metisMenu();
+
     }
 }
