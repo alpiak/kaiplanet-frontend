@@ -2,7 +2,7 @@
  * Created by qhyang on 2017/3/7.
  */
 
-import { Component, OnInit } from "@angular/core";
+import { Component, AfterViewInit } from "@angular/core";
 import "gridstack";
 import "gridstack/dist/gridstack.css";
 
@@ -11,8 +11,18 @@ import "gridstack/dist/gridstack.css";
     template: require("./grid-stack.component.pug"),
     styles: [require("./grid-stack.component.scss")]
 })
-export class gridStackComponent implements OnInit {
-    ngOnInit() {
+export class gridStackComponent implements AfterViewInit {
+    gridStackItems = [
+        {x: 0, y: 0, width: 8, height: 2},
+        {x: 8, y: 0, width: 3, height: 4},
+        {x: 0, y: 2, width: 2, height: 3},
+        {x: 2, y: 2, width: 6, height: 3},
+        {x: 8, y: 0, width: 3, height: 4},
+        {x: 0, y: 5, width: 8, height: 3},
+        {x: 11, y: 0, width: 1, height: 8}
+    ];
+
+    ngAfterViewInit() {
         let JQuery = require("jquery"),
 
             options = {
@@ -26,77 +36,5 @@ export class gridStackComponent implements OnInit {
             };
 
         JQuery(".grid-stack").gridstack(options);
-
-        let grid = JQuery('.grid-stack').data('gridstack');
-
-        JQuery(`
-            <style type="text/css">
-            
-                /*TODO: remove later*/
-                .grid-stack-item {
-                  background: #fff;
-                  border: 1px solid #000;
-                }
-                
-                .grid-stack-item-handle {
-                  height: 30px;
-                }
-            </style>
-        `).appendTo("head");
-        grid.addWidget(`
-            <div class="grid-stack-item">
-                <div class="grid-stack-item-content">
-                    <div class="grid-stack-item-handle"></div>
-                </div>
-            </div>`, 0, 0, 8, 2, true
-        );
-        grid.addWidget(`
-            <div class="grid-stack-item">
-                <div class="grid-stack-item-content">
-                    <div class="grid-stack-item-handle"></div>
-                </div>
-            </div>
-            `, 8, 0, 3, 4, true
-        );
-        grid.addWidget(`
-            <div class="grid-stack-item">
-                <div class="grid-stack-item-content">
-                    <div class="grid-stack-item-handle"></div>
-                </div>
-            </div>
-            `, 0, 2, 2, 3, true
-        );
-        grid.addWidget(`
-            <div class="grid-stack-item">
-                <div class="grid-stack-item-content">
-                    <div class="grid-stack-item-handle"></div>
-                </div>
-            </div>
-            `, 2, 2, 6, 3, true
-        );
-        grid.addWidget(`
-            <div class="grid-stack-item">
-                <div class="grid-stack-item-content">
-                    <div class="grid-stack-item-handle"></div>
-                </div>
-            </div>
-            `, 8, 0, 3, 4, true
-        );
-        grid.addWidget(`
-            <div class="grid-stack-item">
-                <div class="grid-stack-item-content">
-                    <div class="grid-stack-item-handle"></div>
-                </div>
-            </div>
-            `, 0, 5, 8, 3, true
-        );
-        grid.addWidget(`
-            <div class="grid-stack-item">
-                <div class="grid-stack-item-content">
-                    <div class="grid-stack-item-handle"></div>
-                </div>
-            </div>
-            `, 11, 0, 1, 8, true
-        );
     }
 }

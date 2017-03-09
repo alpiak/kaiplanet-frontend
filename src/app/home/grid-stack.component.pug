@@ -1,3 +1,13 @@
 //
    Created by qhyang on 2017/3/7.
 
+
+div.grid-stack-item(
+    *ngFor="let item of gridStackItems"
+    "[attr.data-gs-x]"="item.x"
+    "[attr.data-gs-y]"="item.y"
+    "[attr.data-gs-width]"="item.width"
+    "[attr.data-gs-height]"="item.height"
+)
+    div.grid-stack-item-content
+        div.grid-stack-item-handle

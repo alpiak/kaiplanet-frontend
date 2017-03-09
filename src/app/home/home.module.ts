@@ -3,6 +3,7 @@
  */
 
 import { NgModule }      from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
 import { HomeRoutingModule } from "./home-routing.module";
 
@@ -14,6 +15,7 @@ import { gridStackComponent } from "./grid-stack.component";
 
 @NgModule({
     imports:      [
+        BrowserModule,
         HomeRoutingModule,
         WidgetsModule
     ],
