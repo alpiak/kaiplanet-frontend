@@ -10,7 +10,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HomeComponent implements OnInit {
     ngOnInit() {
-        const Meny = require("../../script/meny");
+        const Meny = require("../../scripts/meny");
 
         let meny = Meny.create({
             // The element that will be animated in from off screen

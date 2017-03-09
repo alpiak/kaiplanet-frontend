@@ -19,7 +19,7 @@ module.exports = {
     devtool: "source-map",
     entry: {
         app: [ path.resolve(rootDir, "src", "app", "main") ],
-        vendor: [ path.resolve(rootDir, "src", "script", "vendor") ]
+        vendor: [ path.resolve(rootDir, "src", "scripts", "vendor") ]
     },
     module: {
         rules: [

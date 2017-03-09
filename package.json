@@ -39,6 +39,7 @@
     "rxjs": "^5.1.0",
     "scrollmagic": "^2.0.5",
     "stickUp": "^2.3.1",
+    "three": "^0.84.0",
     "zone.js": "^0.7.6"
   },
   "devDependencies": {

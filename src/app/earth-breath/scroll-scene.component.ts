@@ -20,7 +20,7 @@ export class scrollSceneComponent implements OnInit {
         // ScrollMagic
         require("gsap/tweenLite");
         let ScrollMagic = require("scrollmagic");
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
         // init controller
         let controller = new ScrollMagic.Controller({
@@ -38,7 +38,7 @@ export class scrollSceneComponent implements OnInit {
         })
             .on("enter", function () {
                 jQuery(".mask-layer").addClass("fixed");
-                require("../../script/astral.jquery");
+                require("../../scripts/astral.jquery");
                 jQuery('#scroll-scene__mask-layer').astral();
             })
             .on("leave", function () {

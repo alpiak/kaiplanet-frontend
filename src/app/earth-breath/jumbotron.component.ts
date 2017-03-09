@@ -32,7 +32,7 @@ export class JumbotronComponent implements OnInit {
         // ScrollMagic
         require("gsap/tweenLite");
         let ScrollMagic = require("scrollmagic");
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
         // init controller
         let controller = new ScrollMagic.Controller({

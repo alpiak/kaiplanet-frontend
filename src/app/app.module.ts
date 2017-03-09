@@ -6,6 +6,7 @@ import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { AppRoutingModule } from "./app-routing.module";
+
 import { HomeModule } from "./home/home.module";
 import { EarthBreathModule } from "./earth-breath/earth-breath.module";
 
@@ -15,8 +16,16 @@ import { LoggerService } from "./logger.service";
 import { BomService } from "./bom.service";
 
 @NgModule({
-    imports:      [ BrowserModule, AppRoutingModule, HomeModule, EarthBreathModule ],
-    providers:    [ LoggerService, BomService ],
+    imports:      [
+        BrowserModule,
+        AppRoutingModule,
+        HomeModule,
+        EarthBreathModule
+    ],
+    providers:    [
+        LoggerService,
+        BomService
+    ],
     declarations: [ AppComponent ],
     exports:      [ AppComponent ],
     bootstrap:    [ AppComponent ]
