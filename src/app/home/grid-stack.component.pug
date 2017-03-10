@@ -9,5 +9,7 @@ div.grid-stack-item(
     "[attr.data-gs-width]"="item.width"
     "[attr.data-gs-height]"="item.height"
 )
-    div.grid-stack-item-content
-        div.grid-stack-item-handle
+    div.grid-stack-item-handle
+    div.grid-stack-item-content(
+        "*ngComponentOutlet"="item.type | widgetComponent; ngModuleFactory: widgetsModule;"
+    )

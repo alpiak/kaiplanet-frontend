@@ -3,13 +3,14 @@
  */
 
 import { NgModule }      from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { CommonModule } from "@angular/common";
 
 import { carouselWidgetComponent } from "./carousel-widget.component";
 
 @NgModule({
-    imports:      [ BrowserModule ],
+    imports:      [ CommonModule ],
     declarations: [ carouselWidgetComponent ],
+    entryComponents: [ carouselWidgetComponent ],
     exports:      [ carouselWidgetComponent ]
 })
 export class WidgetsModule { }

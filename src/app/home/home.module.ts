@@ -13,6 +13,8 @@ import { HomeComponent } from "./home.component";
 import { leftNavComponent } from "./left-nav.component";
 import { gridStackComponent } from "./grid-stack.component";
 
+import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
+
 @NgModule({
     imports:      [
         BrowserModule,
@@ -22,7 +24,8 @@ import { gridStackComponent } from "./grid-stack.component";
     declarations: [
         HomeComponent,
         leftNavComponent,
-        gridStackComponent
+        gridStackComponent,
+        WidgetComponentPipe
     ]
 })
 export class HomeModule { }
