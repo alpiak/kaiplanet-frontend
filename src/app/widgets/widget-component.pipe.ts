@@ -12,7 +12,6 @@ import { carouselWidgetComponent } from "./carousel-widget.component";
  *   value | widgetComponent
  * Example:
  *   {{ "carousel" |  widgetComponent }}
- *   formats to: 1024
  */
 @Pipe({name: "widgetComponent"})
 export class WidgetComponentPipe implements PipeTransform {

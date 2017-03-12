@@ -3,13 +3,13 @@
 
 
 div.grid-stack-item(
-    *ngFor="let item of gridStackItems"
-    "[attr.data-gs-x]"="item.x"
-    "[attr.data-gs-y]"="item.y"
-    "[attr.data-gs-width]"="item.width"
-    "[attr.data-gs-height]"="item.height"
+    *ngFor="let widget of widgets"
+    "[attr.data-gs-x]"="widget.x"
+    "[attr.data-gs-y]"="widget.y"
+    "[attr.data-gs-width]"="widget.width"
+    "[attr.data-gs-height]"="widget.height"
 )
     div.grid-stack-item-handle
     div.grid-stack-item-content(
-        "*ngComponentOutlet"="item.type | widgetComponent; ngModuleFactory: widgetsModule;"
+        *ngComponentOutlet="widget.type | widgetComponent; ngModuleFactory: widgetsModule;"
     )

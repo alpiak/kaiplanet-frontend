@@ -13,6 +13,8 @@ import { HomeComponent } from "./home.component";
 import { leftNavComponent } from "./left-nav.component";
 import { gridStackComponent } from "./grid-stack.component";
 
+import { GridStackService } from "./grid-stack.service";
+
 import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
 
 @NgModule({
@@ -20,6 +22,9 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
         BrowserModule,
         HomeRoutingModule,
         WidgetsModule
+    ],
+    providers:    [
+        GridStackService
     ],
     declarations: [
         HomeComponent,

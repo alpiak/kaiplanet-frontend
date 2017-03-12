@@ -1117,7 +1117,7 @@ THREE.BAS.PhongAnimationMaterial.prototype._concatVertexShader = function() {
     ].join( "\n" );
 };
 
-module.exports = function (containerId) {
+module.exports = function (container) {
 
     function init() {
         var root = new THREERoot({
@@ -1162,6 +1162,8 @@ module.exports = function (containerId) {
                 tl.paused(!tl.paused());
             }
         });
+
+        return root;
     }
 
 ////////////////////
@@ -1441,11 +1443,11 @@ module.exports = function (containerId) {
             alpha: true
         });
         this.renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
-        document.getElementById(containerId).appendChild(this.renderer.domElement);
+        container.appendChild(this.renderer.domElement);
 
         this.camera = new THREE.PerspectiveCamera(
             params.fov,
-            window.innerWidth / window.innerHeight,
+            container.parentNode.clientWidth / container.parentNode.clientHeight,
             params.zNear,
             params.zfar
         );
@@ -1477,10 +1479,13 @@ module.exports = function (containerId) {
             this.renderer.render(this.scene, this.camera);
         },
         resize: function () {
-            this.camera.aspect = window.innerWidth / window.innerHeight;
+            this.camera.aspect = container.parentNode.clientWidth / container.parentNode.clientHeight;
             this.camera.updateProjectionMatrix();
 
-            this.renderer.setSize(window.innerWidth, window.innerHeight);
+            this.renderer.setSize(container.parentNode.clientWidth * 1.8, container.parentNode.clientHeight * 1.8);
+            console.log(this.renderer.domElement.style);
+            this.renderer.domElement.style.marginLeft = - container.parentNode.clientWidth * 0.4 + "px";
+            this.renderer.domElement.style.marginTop = - container.parentNode.clientHeight * 0.4 + "px";
         }
     };
 
@@ -1508,18 +1513,18 @@ module.exports = function (containerId) {
         var mouseDown = false;
         document.body.style.cursor = 'pointer';
 
-        window.addEventListener('mousedown', function(e) {
+        container.addEventListener('mousedown', function(e) {
             mouseDown = true;
             document.body.style.cursor = 'ew-resize';
             _cx = e.clientX;
             stop();
         });
-        window.addEventListener('mouseup', function(e) {
+        container.addEventListener('mouseup', function(e) {
             mouseDown = false;
             document.body.style.cursor = 'pointer';
             resume();
         });
-        window.addEventListener('mousemove', function(e) {
+        container.addEventListener('mousemove', function(e) {
             if (mouseDown === true) {
                 var cx = e.clientX;
                 var dx = cx - _cx;
@@ -1529,16 +1534,16 @@ module.exports = function (containerId) {
             }
         });
         // mobile
-        window.addEventListener('touchstart', function(e) {
+        container.addEventListener('touchstart', function(e) {
             _cx = e.touches[0].clientX;
             stop();
             e.preventDefault();
         });
-        window.addEventListener('touchend', function(e) {
+        container.addEventListener('touchend', function(e) {
             resume();
             e.preventDefault();
         });
-        window.addEventListener('touchmove', function(e) {
+        container.addEventListener('touchmove', function(e) {
             var cx = e.touches[0].clientX;
             var dx = cx - _cx;
             _cx = cx;
