@@ -1482,7 +1482,7 @@ module.exports = function (container) {
             this.camera.aspect = container.parentNode.clientWidth / container.parentNode.clientHeight;
             this.camera.updateProjectionMatrix();
 
-            this.renderer.setSize(container.parentNode.clientWidth * 1.8, container.parentNode.clientHeight * 1.8);
+            this.renderer.setSize(container.parentNode.clientWidth * 1.8, container.parentNode.clientHeight * 1.7);
             console.log(this.renderer.domElement.style);
             this.renderer.domElement.style.marginLeft = - container.parentNode.clientWidth * 0.4 + "px";
             this.renderer.domElement.style.marginTop = - container.parentNode.clientHeight * 0.4 + "px";

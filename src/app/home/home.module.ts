@@ -12,6 +12,7 @@ import { WidgetsModule } from "../widgets/widgets.module";
 import { HomeComponent } from "./home.component";
 import { leftNavComponent } from "./left-nav.component";
 import { gridStackComponent } from "./grid-stack.component";
+import { widgetFrameComponent } from "./widget-frame.component";
 
 import { GridStackService } from "./grid-stack.service";
 
@@ -30,6 +31,7 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
         HomeComponent,
         leftNavComponent,
         gridStackComponent,
+        widgetFrameComponent,
         WidgetComponentPipe
     ]
 })

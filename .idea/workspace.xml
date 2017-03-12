@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72d0a84f-6230-4863-95a2-079965d856fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/widgets/widget.component.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/home/widget-frame.component.pug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/home/widget-frame.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.component.pug" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.component.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.component.ts" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/home.module.ts" afterPath="$PROJECT_DIR$/src/app/home/home.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.pug" afterPath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.scss" afterPath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts" afterPath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/widget-component.pipe.ts" afterPath="$PROJECT_DIR$/src/app/widgets/widget-component.pipe.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/three-image-transition.js" afterPath="$PROJECT_DIR$/src/scripts/three-image-transition.js" />
     </list>
     <ignored path="bubblesoft-frontend.iws" />
@@ -35,53 +31,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="three-image-transition.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scripts/three-image-transition.js">
+      <file leaf-file-name="grid-stack.component.pug" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="1545" column="17" selection-start-line="1545" selection-start-column="17" selection-end-line="1545" selection-end-column="17" />
+            <state relative-caret-position="280">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="widget-frame.component.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/home/home.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
               <folding>
-                <element signature="e#37944#43727#0" expanded="false" />
-                <element signature="e#39041#39323#0" expanded="false" />
-                <element signature="e#39369#39652#0" expanded="false" />
-                <element signature="e#39755#41916#0" expanded="false" />
-                <element signature="e#41991#43550#0" expanded="false" />
-                <element signature="e#43564#43621#0" expanded="false" />
-                <element signature="e#43879#44075#0" expanded="false" />
-                <element signature="e#44126#44250#0" expanded="false" />
-                <element signature="e#44297#44409#0" expanded="false" />
-                <element signature="e#44713#45734#0" expanded="false" />
+                <element signature="e#43#89#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carousel-widget.component.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.scss">
+      <file leaf-file-name="widget-frame.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="carousel-widget.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid-stack.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="11" selection-end-column="56" />
-              <folding />
+            <state relative-caret-position="400">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#44#120#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,9 +84,9 @@
         <option value="tsconfig.json" />
         <option value="HTML File" />
         <option value="AMD JavaScript File" />
-        <option value="Pug File" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="Pug File" />
         <option value="SCSS File" />
       </list>
     </option>
@@ -107,9 +97,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.ts" />
-        <option value="$USER_HOME$/AppData/Local/Temp/animation.gsap.js" />
-        <option value="$PROJECT_DIR$/src/script/animation.gsap.js" />
         <option value="$PROJECT_DIR$/src/app/stick-up.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/crystal-nav.component.scss" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.scss" />
@@ -148,16 +135,19 @@
         <option value="$PROJECT_DIR$/src/app/widgets/widget-component-factory.service.ts" />
         <option value="$PROJECT_DIR$/src/app/widgets/widget-component.pipe.ts" />
         <option value="$PROJECT_DIR$/src/app/widgets/widget-componet-injector.pipe.ts" />
-        <option value="$PROJECT_DIR$/src/app/home/home.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
         <option value="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.pug" />
         <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.scss" />
         <option value="$PROJECT_DIR$/src/app/widgets/widget.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.pug" />
         <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.ts" />
         <option value="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.scss" />
         <option value="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts" />
         <option value="$PROJECT_DIR$/src/scripts/three-image-transition.js" />
+        <option value="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/home/widget-frame.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/home/widget-frame.component.pug" />
+        <option value="$PROJECT_DIR$/src/app/home/home.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/home/widget-frame.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.pug" />
       </list>
     </option>
   </component>
@@ -472,12 +462,12 @@
       <workItem from="1488331360997" duration="81585000" />
       <workItem from="1488859944987" duration="9144000" />
       <workItem from="1488882265682" duration="38419000" />
-      <workItem from="1489133635556" duration="15448000" />
+      <workItem from="1489133635556" duration="17692000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="364859000" />
+    <option name="totallyTimeSpent" value="367103000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -548,21 +538,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/earth-breath.component.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/base.css" />
     <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -826,31 +801,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/home.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
           <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
             <element signature="e#44#75#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#44#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,14 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/widgets/widget.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -903,14 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="11" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -921,8 +861,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/three-image-transition.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="1545" column="17" selection-start-line="1545" selection-start-column="17" selection-end-line="1545" selection-end-column="17" />
+        <state relative-caret-position="719">
+          <caret line="1509" column="20" selection-start-line="1509" selection-start-column="20" selection-end-line="1509" selection-end-column="20" />
           <folding>
             <element signature="e#37944#43727#0" expanded="false" />
             <element signature="e#39041#39323#0" expanded="false" />
@@ -935,6 +875,69 @@
             <element signature="e#44297#44409#0" expanded="false" />
             <element signature="e#44713#45734#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="40" selection-end-column="1" />
+          <folding>
+            <element signature="e#43#127#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/home.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding>
+            <element signature="e#43#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#44#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
