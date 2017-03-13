@@ -7,8 +7,11 @@ import { CommonModule } from "@angular/common";
 
 import { carouselWidgetComponent } from "./carousel-widget.component";
 
+import { GridStackService } from "../home/grid-stack.service";
+
 @NgModule({
     imports:      [ CommonModule ],
+    providers:    [ GridStackService ],
     declarations: [ carouselWidgetComponent ],
     entryComponents: [ carouselWidgetComponent ],
     exports:      [ carouselWidgetComponent ]

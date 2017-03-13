@@ -1,0 +1,7 @@
+.grid-stack-item-handle {
+  height: 30px;
+}
+:host > .grid-stack-item-content {
+  top: 30px;
+  overflow: visible;
+}

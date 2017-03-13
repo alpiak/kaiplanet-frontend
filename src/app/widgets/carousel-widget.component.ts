@@ -4,20 +4,32 @@
 
 import { Component, AfterViewInit, ElementRef } from "@angular/core";
 
+import { GridStackService } from "../home/grid-stack.service";
+
+let jQuery = require("jquery");
+
 @Component({
     selector: "carousel-widget",
     template: require("./carousel-widget.component.pug"),
     styles: [require("./widget.component"), require("./carousel-widget.component.scss")]
 })
 export class carouselWidgetComponent implements AfterViewInit {
-    constructor(private el: ElementRef) { }
+    gridItemContainer: HTMLElement;
+
+    constructor(private el: ElementRef, private gridStackService: GridStackService) {
+        this.gridItemContainer = jQuery(el).parent().parent()[0];
+    }
 
     ngAfterViewInit() {
-        let JQuery = require("jquery"),
-            ThreeImageTransition = require("../../scripts/three-image-transition");
+        let ThreeImageTransition = require("../../scripts/three-image-transition");
 
         setTimeout(() => {
-            ThreeImageTransition(JQuery(this.el.nativeElement).children().first()[0]);
+            let threeImageTransition = ThreeImageTransition(jQuery(this.el.nativeElement).children().first()[0]);
+            this.gridStackService.on("resizeStop").subscribe((event) => {
+                if (event.target === this.gridItemContainer) {
+                    threeImageTransition.resize();
+                }
+            });
         }, 300);
     }
 }

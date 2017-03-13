@@ -3,6 +3,7 @@
 
 
 div.grid-stack-item-handle
-div.grid-stack-item-content(
-*ngComponentOutlet="widgetType | widgetComponent; ngModuleFactory: widgetsModule;"
-)
+div.grid-stack-item-content
+    div(
+        *ngComponentOutlet="widgetType | widgetComponent; ngModuleFactory: widgetsModule;"
+    )

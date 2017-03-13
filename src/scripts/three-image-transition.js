@@ -1553,6 +1553,6 @@ module.exports = function (container) {
         });
     }
 
-    init();
+    return init();
     console.ward = function() {}; // what warnings?
 };
