@@ -9,18 +9,21 @@ import { HomeRoutingModule } from "./earth-breath-routing.module";
 
 import { JumbotronComponent } from "./jumbotron.component";
 import { CrystalNavComponent } from "./crystal-nav.component";
-import { scrollSceneComponent } from "./scroll-scene.component";
 
-import { RippleDirective } from "../ripple.directive";
+import { ScrollSceneService } from "./scroll-scene.service";
+
+import { AstralScrollSceneDirective } from "./astral-scroll-scene.directive";
 import { StickUpDirective } from "../stick-up.directive";
+import { RippleDirective } from "../ripple.directive";
 
 @NgModule({
     imports:      [ HomeRoutingModule ],
+    providers:    [ ScrollSceneService ],
     declarations: [
         HomeComponent,
         JumbotronComponent,
         CrystalNavComponent,
-        scrollSceneComponent,
+        AstralScrollSceneDirective,
         RippleDirective,
         StickUpDirective
     ]

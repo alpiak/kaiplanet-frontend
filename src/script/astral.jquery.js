@@ -7,12 +7,12 @@
     var pxs = [];
     var rint = 50;
 
-    $.fn.astral = function () {
+    $.fn.astral = function (astralAmount) {
         this.append($('<canvas id="astral"></canvas>'));
-        setup(this);
+        setup(this, astralAmount);
     };
 
-    function setup (container) {
+    function setup (container, astralAmount) {
         var windowSize = function() {
             WIDTH = container.innerWidth();
             HEIGHT = container.innerHeight();
@@ -28,7 +28,7 @@
 
         con = canvas[0].getContext('2d');
 
-        for (var i = 0; i < 60; i++) {
+        for (var i = 0; i < astralAmount; i++) {
             pxs[i] = new Circle();
             pxs[i].reset();
         }
