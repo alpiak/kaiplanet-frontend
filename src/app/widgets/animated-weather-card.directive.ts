@@ -1,0 +1,32 @@
+/**
+ * Created by qhyang on 2017/3/14.
+ */
+
+import { Directive, ElementRef, AfterViewInit } from "@angular/core";
+
+import { GridStackService } from "../home/grid-stack.service";
+
+const jQuery = require("jquery");
+
+@Directive({ selector: "[animatedWeatherCard]" })
+export class AnimatedWeatherCardDirective implements AfterViewInit {
+    gridItemContainer: HTMLElement;
+
+    constructor(private el: ElementRef, private gridStackService: GridStackService) {
+        this.gridItemContainer = jQuery(el).parent().parent()[0];
+    }
+
+    ngAfterViewInit() {
+        require("../../styles/animated-weather-cards.scss");
+
+        let AnimatedWeatherCards = require("../../scripts/animated-weather-cards"),
+            animatedWeatherCards = AnimatedWeatherCards(this.el.nativeElement);
+
+
+        this.gridStackService.on("resizeStop").subscribe((event) => {
+            if (event.target === this.gridItemContainer) {
+                animatedWeatherCards.resize();
+            }
+        });
+    }
+}

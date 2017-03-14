@@ -3,7 +3,8 @@
 
 
 div.grid-stack-item(
-    *ngFor="let widget of widgets"
+    *ngFor="let widget of widgets; let i = index"
+    "[attr.data-index]"="i"
     "[attr.data-gs-x]"="widget.x"
     "[attr.data-gs-y]"="widget.y"
     "[attr.data-gs-width]"="widget.width"

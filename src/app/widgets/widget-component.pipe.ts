@@ -5,6 +5,7 @@
 import { Pipe, PipeTransform, Component } from "@angular/core";
 
 import { carouselWidgetComponent } from "./carousel-widget.component";
+import { weatherCardWidgetComponent } from "./weather-card-widget.component";
 
 /*
  * Get the relevant Angular component to the type
@@ -16,8 +17,11 @@ import { carouselWidgetComponent } from "./carousel-widget.component";
 @Pipe({name: "widgetComponent"})
 export class WidgetComponentPipe implements PipeTransform {
     transform(value: string): Component {
-        if (value === "carousel") {
-            return carouselWidgetComponent;
+        switch (value) {
+            case "carousel":
+                return carouselWidgetComponent;
+            case "weather-card":
+                return weatherCardWidgetComponent;
         }
     }
 }
