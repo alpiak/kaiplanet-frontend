@@ -4,6 +4,7 @@
 
 import { Pipe, PipeTransform, Component } from "@angular/core";
 
+import { headerWidgetComponent } from "./header-widget.component";
 import { carouselWidgetComponent } from "./carousel-widget.component";
 import { weatherCardWidgetComponent } from "./weather-card-widget.component";
 
@@ -22,6 +23,8 @@ export class WidgetComponentPipe implements PipeTransform {
                 return carouselWidgetComponent;
             case "weather-card":
                 return weatherCardWidgetComponent;
+            case "header":
+                return headerWidgetComponent;
         }
     }
 }

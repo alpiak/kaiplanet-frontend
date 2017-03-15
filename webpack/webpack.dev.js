@@ -45,8 +45,7 @@ module.exports = {
                 loaders: ["html-withimg-loader", "pug-html-loader" ]
             },
             {
-                test: /\.(?:png|jpe?g|svg|gif)$/,
-                exclude: /node_modules/,
+                test: /\.(?:png|jpe?g|svg|gif|eot|woff2?|ttf)$/,
                 loader: "url-loader?limit=8192"
             },
             {

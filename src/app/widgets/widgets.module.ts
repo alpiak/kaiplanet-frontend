@@ -5,6 +5,7 @@
 import { NgModule }      from "@angular/core";
 import { CommonModule } from "@angular/common";
 
+import { headerWidgetComponent } from "./header-widget.component";
 import { carouselWidgetComponent } from "./carousel-widget.component";
 import { weatherCardWidgetComponent } from "./weather-card-widget.component";
 
@@ -17,12 +18,14 @@ import { GridStackService } from "../home/grid-stack.service";
     imports:      [ CommonModule ],
     providers:    [ GridStackService ],
     declarations: [
+        headerWidgetComponent,
         carouselWidgetComponent,
         weatherCardWidgetComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective
     ],
     entryComponents: [
+        headerWidgetComponent,
         carouselWidgetComponent,
         weatherCardWidgetComponent
     ],

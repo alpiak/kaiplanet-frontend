@@ -7,6 +7,8 @@ import { Component, OnInit } from "@angular/core";
 
 import { BomService } from "../bom.service";
 
+import "../../scripts/parallax";
+
 @Component({
     selector: "jumbotron",
     template: require("./jumbotron.component.pug"),

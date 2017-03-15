@@ -4,8 +4,10 @@
 
 // import { jQuery, $ } from "jquery";
 
-import "../styles/bootstrap.min";
-import ".//parallax";
+import "bootstrap/dist/css/bootstrap";
+import "material-design-lite/material.css";
+import "material-design-lite/material.js"
+import "../styles/languages";
 
 import "../styles/base.scss";
 
