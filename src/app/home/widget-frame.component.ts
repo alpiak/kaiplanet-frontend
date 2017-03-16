@@ -9,7 +9,7 @@ import { WidgetsModule } from "../widgets/widgets.module";
 @Component({
     selector: "[widget-frame]",
     template: require("./widget-frame.component.pug"),
-    styles: [require("./widget-frame.component.scss")]
+    styles: [ require("./widget-frame.component.scss") ]
 })
 export class widgetFrameComponent {
     @Input()

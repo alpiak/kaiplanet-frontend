@@ -1,0 +1,12 @@
+
+.language-switch {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.lang-lbl {
+  vertical-align: text-top;
+}
+.lang-lbl:after {
+  top: -12px;
+}

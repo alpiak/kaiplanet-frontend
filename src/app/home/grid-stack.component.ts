@@ -14,7 +14,7 @@ import { GridStackService } from "./grid-stack.service";
 @Component({
     selector: "grid-stack",
     template: require("./grid-stack.component.pug"),
-    styles: [require("./grid-stack.component.scss")]
+    styles: [ require("./grid-stack.component.scss") ]
 })
 export class gridStackComponent implements AfterViewInit {
     widgets: Object[];

@@ -7,6 +7,6 @@ import { Component } from "@angular/core";
 @Component({
     selector: "header-widget",
     template: require("./header-widget.component.pug"),
-    styles: [require("./widget.component")]
+    styles: [ require("./widget.component"), require("./header-widget.component.scss") ]
 })
 export class headerWidgetComponent { }

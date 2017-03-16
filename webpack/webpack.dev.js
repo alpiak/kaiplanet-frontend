@@ -50,7 +50,10 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                include: [ path.resolve(rootDir, "src", "style") ],
+                include: [
+                    path.resolve(rootDir, "src", "style"),
+                    path.resolve(rootDir, "node_modules")
+                ],
                 loaders: [ "style-loader", "css-loader", "sass-loader" ]
             },
             {

@@ -2,7 +2,7 @@
  * Created by qhyang on 2017/3/9.
  */
 
-import { NgModule }      from "@angular/core";
+import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { headerWidgetComponent } from "./header-widget.component";
@@ -29,6 +29,10 @@ import { GridStackService } from "../home/grid-stack.service";
         carouselWidgetComponent,
         weatherCardWidgetComponent
     ],
-    exports:      [ carouselWidgetComponent ]
+    exports:      [
+        headerWidgetComponent,
+        carouselWidgetComponent,
+        weatherCardWidgetComponent
+    ]
 })
 export class WidgetsModule { }

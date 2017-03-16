@@ -7,6 +7,6 @@ import { Component } from "@angular/core";
 @Component({
     selector: "wheather-card-widget",
     template: require("./weather-card-widget.component.pug"),
-    styles: [require("./widget.component")]
+    styles: [ require("./widget.component") ]
 })
 export class weatherCardWidgetComponent { }

@@ -7,6 +7,6 @@ import { Component } from "@angular/core";
 @Component({
     selector: "carousel-widget",
     template: require("./carousel-widget.component.pug"),
-    styles: [require("./widget.component"), require("./carousel-widget.component.scss")]
+    styles: [ require("./widget.component"), require("./carousel-widget.component.scss") ]
 })
 export class carouselWidgetComponent { }
