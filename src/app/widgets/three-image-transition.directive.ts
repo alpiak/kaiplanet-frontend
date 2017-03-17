@@ -13,7 +13,7 @@ export class ThreeImageTransitionDirective implements AfterViewInit {
     gridItemContainer: HTMLElement;
 
     constructor(private el: ElementRef, private gridStackService: GridStackService) {
-        this.gridItemContainer = jQuery(el).parent().parent()[0];
+        this.gridItemContainer = jQuery(el.nativeElement).parent().parent()[0];
     }
 
     ngAfterViewInit() {

@@ -7,6 +7,6 @@ import { Component } from "@angular/core";
 @Component({
     selector: "drawing-board-widget",
     template: require("./drawing-board-widget.component.pug"),
-    styles: [ require("./widget.component") ]
+    styles: [ require("./widget.component"), require("./drawing-board-widget.component.scss") ]
 })
 export class drawingBoardWidgetComponent { }

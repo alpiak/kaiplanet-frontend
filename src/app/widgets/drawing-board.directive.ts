@@ -4,17 +4,35 @@
 
 import { Directive, ElementRef, AfterViewInit } from "@angular/core";
 
+import { GridStackService } from "../home/grid-stack.service";
 
 @Directive({ selector: "[DrawingBoard]" })
 export class DrawingBoardDirective implements AfterViewInit {
-    constructor(private el: ElementRef) { }
+    gridItemContainer: HTMLElement;
+
+    constructor(private el: ElementRef, private gridStackService: GridStackService) {
+        const jQuery = require("jquery");
+
+        this.gridItemContainer = jQuery(el.nativeElement).parent().parent()[0];
+    }
 
     ngAfterViewInit() {
         require("../../styles/drawingboard");
         require("../../scripts/drawingboard");
 
-        new window["DrawingBoard"].Board(this.el.nativeElement, {
-            droppable: true
+        let drawingBoard: any;
+
+        setTimeout(() => {
+            drawingBoard = new window["DrawingBoard"].Board(this.el.nativeElement, {
+                droppable: true
+            });
+        }, 200);
+
+        this.gridStackService.on("resizeStop").subscribe((event) => {
+            if (event.target === this.gridItemContainer) {
+                setTimeout(() => drawingBoard.resize(), 300);
+
+            }
         });
     }
 }

@@ -6,14 +6,14 @@ import { Directive, ElementRef, AfterViewInit } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 
-const jQuery = require("jquery");
-
 @Directive({ selector: "[animatedWeatherCard]" })
 export class AnimatedWeatherCardDirective implements AfterViewInit {
     gridItemContainer: HTMLElement;
 
     constructor(private el: ElementRef, private gridStackService: GridStackService) {
-        this.gridItemContainer = jQuery(el).parent().parent()[0];
+        const jQuery = require("jquery");
+
+        this.gridItemContainer = jQuery(el.nativeElement).parent().parent()[0];
     }
 
     ngAfterViewInit() {
@@ -21,7 +21,6 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
 
         let AnimatedWeatherCards = require("../../scripts/animated-weather-cards"),
             animatedWeatherCards = AnimatedWeatherCards(this.el.nativeElement);
-
 
         this.gridStackService.on("resizeStop").subscribe((event) => {
             if (event.target === this.gridItemContainer) {

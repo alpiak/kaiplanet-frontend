@@ -1,9 +1,10 @@
 .grid-stack-item-handle {
-  height: 30px;
+  height: 20px;
+  cursor: move;
 }
 :host > .grid-stack-item-content {
   left: 0;
-  top: 30px;
+  top: 20px;
   right: 0;
   overflow: visible;
 }
