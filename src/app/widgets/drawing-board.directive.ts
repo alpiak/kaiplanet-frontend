@@ -28,6 +28,9 @@ export class DrawingBoardDirective implements AfterViewInit {
             });
         }, 200);
 
+        window.addEventListener("resize", () => {
+            setTimeout(() => drawingBoard.resize(), 300);
+        });
         this.gridStackService.on("resizeStop").subscribe((event) => {
             if (event.target === this.gridItemContainer) {
                 setTimeout(() => drawingBoard.resize(), 300);
