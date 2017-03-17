@@ -9,10 +9,12 @@ import { headerWidgetComponent } from "./header-widget.component";
 import { carouselWidgetComponent } from "./carousel-widget.component";
 import { weatherCardWidgetComponent } from "./weather-card-widget.component";
 import { drawingBoardWidgetComponent } from "./drawing-board-widget.component";
+import { windAndSandWidgetComponent } from "./wind-and-sand-widget.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
 import { DrawingBoardDirective } from "./drawing-board.directive";
+import { WindAndSandDirective } from "./wind-and-sand.directive";
 
 import { GridStackService } from "../home/grid-stack.service";
 
@@ -24,21 +26,25 @@ import { GridStackService } from "../home/grid-stack.service";
         carouselWidgetComponent,
         weatherCardWidgetComponent,
         drawingBoardWidgetComponent,
+        windAndSandWidgetComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
-        DrawingBoardDirective
+        DrawingBoardDirective,
+        WindAndSandDirective
     ],
     entryComponents: [
         headerWidgetComponent,
         carouselWidgetComponent,
         weatherCardWidgetComponent,
-        drawingBoardWidgetComponent
+        drawingBoardWidgetComponent,
+        windAndSandWidgetComponent
     ],
     exports:      [
         headerWidgetComponent,
         carouselWidgetComponent,
         weatherCardWidgetComponent,
-        drawingBoardWidgetComponent
+        drawingBoardWidgetComponent,
+        windAndSandWidgetComponent
     ]
 })
 export class WidgetsModule { }

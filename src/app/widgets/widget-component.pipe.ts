@@ -8,6 +8,7 @@ import { headerWidgetComponent } from "./header-widget.component";
 import { carouselWidgetComponent } from "./carousel-widget.component";
 import { weatherCardWidgetComponent } from "./weather-card-widget.component";
 import { drawingBoardWidgetComponent } from "./drawing-board-widget.component";
+import { windAndSandWidgetComponent } from "./wind-and-sand-widget.component";
 
 /*
  * Get the relevant Angular component to the type
@@ -28,6 +29,8 @@ export class WidgetComponentPipe implements PipeTransform {
                 return headerWidgetComponent;
             case "drawing-board":
                 return drawingBoardWidgetComponent;
+            case "wind-and-sand":
+                return windAndSandWidgetComponent;
         }
     }
 }
