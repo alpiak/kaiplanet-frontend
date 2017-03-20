@@ -191,6 +191,8 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
 
         sizes.container.width = container.width();
         sizes.container.height = container.height();
+        card.width(container.width() * 0.8);
+        card.height(container.height() * 0.5);
         sizes.card.width = card.width();
         sizes.card.height = card.height();
         sizes.card.offset.left = card.offset().left - container.offset().left;

@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="72d0a84f-6230-4863-95a2-079965d856fe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.component.pug" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.component.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.component.scss" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.component.ts" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/home.component.scss" afterPath="$PROJECT_DIR$/src/app/home/home.component.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/widget-frame.component.pug" afterPath="$PROJECT_DIR$/src/app/home/widget-frame.component.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/widget-frame.component.scss" afterPath="$PROJECT_DIR$/src/app/home/widget-frame.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/drawing-board.directive.ts" afterPath="$PROJECT_DIR$/src/app/widgets/drawing-board.directive.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" afterPath="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" afterPath="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
     </list>
     <ignored path="bubblesoft-frontend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,102 +30,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="drawing-board.directive.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/widgets/drawing-board.directive.ts">
+      <file leaf-file-name="animated-weather-card.directive.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
+            <state relative-caret-position="380">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.component.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/home.component.pug">
+      <file leaf-file-name="animated-weather-cards.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scripts/animated-weather-cards.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.component.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/home.component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid-stack.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="21" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid-stack.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widget-frame.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widget-frame.component.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widget-frame.component.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid-stack.component.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grid-stack.component.pug" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.pug">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="320">
+              <caret line="15" column="83" selection-start-line="15" selection-start-column="83" selection-end-line="15" selection-end-column="86" />
+              <folding>
+                <element signature="e#14538#16040#0" expanded="false" />
+                <element signature="e#16075#16318#0" expanded="false" />
+                <element signature="e#18089#19178#0" expanded="false" />
+                <element signature="e#19205#19385#0" expanded="false" />
+                <element signature="e#19424#19564#0" expanded="false" />
+                <element signature="e#19605#19812#0" expanded="false" />
+                <element signature="e#19843#20680#0" expanded="false" />
+                <marker date="1489978346382" expanded="true" signature="363:3791" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="403:3772" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="443:1882" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="556:780" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="611:646" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="703:736" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="836:855" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="1908:2475" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="1937:2448" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="2522:3703" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="2566:3285" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="2601:2837" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="2894:2907" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="3331:3676" ph="..." />
+                <marker date="1489978346382" expanded="true" signature="3448:3616" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -166,7 +106,6 @@
         <option value="$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.pug" />
         <option value="$PROJECT_DIR$/src/scripts/snap.svg.js" />
         <option value="$PROJECT_DIR$/src/styles/animated-weather-cards.scss" />
-        <option value="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
         <option value="$PROJECT_DIR$/src/styles/languages.css" />
         <option value="$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.ts" />
         <option value="$PROJECT_DIR$/src/app/material-design/material-design.module.ts" />
@@ -187,7 +126,6 @@
         <option value="$PROJECT_DIR$/src/app/widgets/drawing-board-widget.component.scss" />
         <option value="$PROJECT_DIR$/src/app/widgets/drawing-board-widget.component.pug" />
         <option value="$PROJECT_DIR$/src/app/widgets/three-image-transition.directive.ts" />
-        <option value="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/widgets/drawing-board-widget.component.ts" />
         <option value="$PROJECT_DIR$/src/styles/drawingboard.css" />
         <option value="$PROJECT_DIR$/src/app/widgets/wind-and-sand.component.ts" />
@@ -199,12 +137,14 @@
         <option value="$PROJECT_DIR$/src/scripts/wind-and-sand.js" />
         <option value="$PROJECT_DIR$/src/app/home/home.component.scss" />
         <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.pug" />
-        <option value="$PROJECT_DIR$/src/app/home/widget-frame.component.pug" />
-        <option value="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
         <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.scss" />
-        <option value="$PROJECT_DIR$/src/app/home/widget-frame.component.scss" />
         <option value="$PROJECT_DIR$/src/app/widgets/drawing-board.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/home/widget-frame.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/home/widget-frame.component.pug" />
+        <option value="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
+        <option value="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
+        <option value="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" />
       </list>
     </option>
   </component>
@@ -532,12 +472,12 @@
       <workItem from="1489388010973" duration="3710000" />
       <workItem from="1489399719628" duration="44950000" />
       <workItem from="1489636954002" duration="14770000" />
-      <workItem from="1489714041679" duration="19005000" />
+      <workItem from="1489714041679" duration="23784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="449538000" />
+    <option name="totallyTimeSpent" value="454317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -608,59 +548,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/styles/animated-weather-cards.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="230" column="21" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="21" />
-          <folding>
-            <element signature="e#2921#2977#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/earth-breath/jumbotron.component.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/animated-weather-cards.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding>
-            <element signature="e#14446#15948#0" expanded="false" />
-            <element signature="e#15983#16226#0" expanded="false" />
-            <element signature="e#17997#19086#0" expanded="false" />
-            <element signature="e#19113#19293#0" expanded="false" />
-            <element signature="e#19332#19472#0" expanded="false" />
-            <element signature="e#19513#19720#0" expanded="false" />
-            <element signature="e#19751#20588#0" expanded="false" />
-            <marker date="1489563824408" expanded="true" signature="363:3791" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="403:3772" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="443:1882" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="556:780" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="611:646" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="703:736" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="836:855" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="1908:2475" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="1937:2448" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="2522:3703" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="2566:3285" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="2601:2837" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="2894:2907" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="3331:3676" ph="..." />
-            <marker date="1489563824408" expanded="true" signature="3448:3616" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -779,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/vendor.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -806,16 +690,6 @@
         <state relative-caret-position="200">
           <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#44#113#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -941,34 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -981,6 +831,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/home.component.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/animated-weather-cards.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4560">
+          <caret line="230" column="21" selection-start-line="230" selection-start-column="17" selection-end-line="230" selection-end-column="21" />
+          <folding>
+            <element signature="e#2921#2977#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <marker date="1489978260754" expanded="true" signature="584:855" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -989,10 +899,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/widget-frame.component.scss">
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        <state relative-caret-position="80">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1005,19 +923,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="18" column="44" selection-start-line="18" selection-start-column="44" selection-end-line="21" selection-end-column="59" />
+        <state relative-caret-position="380">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/scripts/animated-weather-cards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="320">
+          <caret line="15" column="83" selection-start-line="15" selection-start-column="83" selection-end-line="15" selection-end-column="86" />
+          <folding>
+            <element signature="e#14538#16040#0" expanded="false" />
+            <element signature="e#16075#16318#0" expanded="false" />
+            <element signature="e#18089#19178#0" expanded="false" />
+            <element signature="e#19205#19385#0" expanded="false" />
+            <element signature="e#19424#19564#0" expanded="false" />
+            <element signature="e#19605#19812#0" expanded="false" />
+            <element signature="e#19843#20680#0" expanded="false" />
+            <marker date="1489978346382" expanded="true" signature="363:3791" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="403:3772" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="443:1882" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="556:780" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="611:646" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="703:736" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="836:855" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="1908:2475" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="1937:2448" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="2522:3703" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="2566:3285" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="2601:2837" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="2894:2907" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="3331:3676" ph="..." />
+            <marker date="1489978346382" expanded="true" signature="3448:3616" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
