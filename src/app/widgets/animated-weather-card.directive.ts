@@ -20,7 +20,7 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
         require("../../styles/animated-weather-cards.scss");
 
         let AnimatedWeatherCards = require("../../scripts/animated-weather-cards"),
-            animatedWeatherCards;
+            animatedWeatherCards: any;
 
         setTimeout(() => animatedWeatherCards = AnimatedWeatherCards(this.el.nativeElement), 300);
         this.gridStackService.on("resizeStop").subscribe((event) => {

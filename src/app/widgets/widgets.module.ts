@@ -10,6 +10,7 @@ import { carouselWidgetComponent } from "./carousel-widget.component";
 import { weatherCardWidgetComponent } from "./weather-card-widget.component";
 import { drawingBoardWidgetComponent } from "./drawing-board-widget.component";
 import { windAndSandWidgetComponent } from "./wind-and-sand-widget.component";
+import { moonOceanWidgetComponent } from "./moon-ocean-widget.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
@@ -26,6 +27,7 @@ import { GridStackService } from "../home/grid-stack.service";
         carouselWidgetComponent,
         weatherCardWidgetComponent,
         drawingBoardWidgetComponent,
+        moonOceanWidgetComponent,
         windAndSandWidgetComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
@@ -37,6 +39,7 @@ import { GridStackService } from "../home/grid-stack.service";
         carouselWidgetComponent,
         weatherCardWidgetComponent,
         drawingBoardWidgetComponent,
+        moonOceanWidgetComponent,
         windAndSandWidgetComponent
     ],
     exports:      [
@@ -44,6 +47,7 @@ import { GridStackService } from "../home/grid-stack.service";
         carouselWidgetComponent,
         weatherCardWidgetComponent,
         drawingBoardWidgetComponent,
+        moonOceanWidgetComponent,
         windAndSandWidgetComponent
     ]
 })
