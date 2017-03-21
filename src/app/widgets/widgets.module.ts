@@ -9,12 +9,14 @@ import { headerWidgetComponent } from "./header-widget.component";
 import { carouselWidgetComponent } from "./carousel-widget.component";
 import { weatherCardWidgetComponent } from "./weather-card-widget.component";
 import { drawingBoardWidgetComponent } from "./drawing-board-widget.component";
-import { windAndSandWidgetComponent } from "./wind-and-sand-widget.component";
 import { moonOceanWidgetComponent } from "./moon-ocean-widget.component";
+import { waterfallWidgetComponent } from "./waterfall-widget.component";
+import { windAndSandWidgetComponent } from "./wind-and-sand-widget.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
 import { DrawingBoardDirective } from "./drawing-board.directive";
+import { WaterfallDirective } from "./waterfall.directive";
 import { WindAndSandDirective } from "./wind-and-sand.directive";
 
 import { GridStackService } from "../home/grid-stack.service";
@@ -28,10 +30,12 @@ import { GridStackService } from "../home/grid-stack.service";
         weatherCardWidgetComponent,
         drawingBoardWidgetComponent,
         moonOceanWidgetComponent,
+        waterfallWidgetComponent,
         windAndSandWidgetComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,
+        WaterfallDirective,
         WindAndSandDirective
     ],
     entryComponents: [
@@ -40,6 +44,7 @@ import { GridStackService } from "../home/grid-stack.service";
         weatherCardWidgetComponent,
         drawingBoardWidgetComponent,
         moonOceanWidgetComponent,
+        waterfallWidgetComponent,
         windAndSandWidgetComponent
     ],
     exports:      [
@@ -48,6 +53,7 @@ import { GridStackService } from "../home/grid-stack.service";
         weatherCardWidgetComponent,
         drawingBoardWidgetComponent,
         moonOceanWidgetComponent,
+        waterfallWidgetComponent,
         windAndSandWidgetComponent
     ]
 })
