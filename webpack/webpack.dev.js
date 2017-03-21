@@ -46,6 +46,7 @@ module.exports = {
             },
             {
                 test: /\.(?:png|jpe?g|svg|gif|eot|woff2?|ttf)$/,
+                exclude: [ path.resolve(rootDir, "node_modules", "material-design-icons") ],
                 loader: "url-loader?limit=8192"
             },
             {
@@ -66,8 +67,11 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.xlf$/,
-                exclude: /node_modules/,
+                test: /\.(?:xlf|svg)$/,
+                include: [
+                    path.resolve(rootDir, "node_modules", "material-design-icons"),
+                    path.resolve(rootDir, "src", "locale")
+                ],
                 loader: "raw-loader"
             }
         ]

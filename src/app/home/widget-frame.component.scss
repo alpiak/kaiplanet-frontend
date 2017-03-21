@@ -1,10 +1,12 @@
-.grid-stack-item-actions {
+.grid-stack-item-handle {
   height: 20px;
+  background-color: #eee;
   cursor: move;
 }
 :host > .grid-stack-item-content {
   left: 0;
   top: 20px;
   right: 0;
+  background-color: #fff;
   overflow: visible;
 }

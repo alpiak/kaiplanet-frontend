@@ -1,8 +1,19 @@
 
-.language-switch {
+:host {
+  background-color: #607d8b;
+}
+.tool-pane {
   position: absolute;
   bottom: 0;
   right: 0;
+
+}
+.tool-pane__button {
+  display: inline-block;
+  color: #fff;
+}
+.item__text {
+  vertical-align: middle;
 }
 .lang-lbl {
   vertical-align: text-top;
@@ -12,4 +23,9 @@
 }
 .mdl-menu .lang-lbl:after {
   top: -18px;
+}
+.svg-ic_widgets_20px-dims {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }

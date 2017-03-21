@@ -1443,11 +1443,12 @@ module.exports = function (container) {
             alpha: true
         });
         this.renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+        this.renderer.domElement.style.pointerEvents = "none";
         container.appendChild(this.renderer.domElement);
 
         this.camera = new THREE.PerspectiveCamera(
             params.fov,
-            container.parentNode.clientWidth / container.parentNode.clientHeight,
+            container.clientWidth / container.clientHeight,
             params.zNear,
             params.zfar
         );
@@ -1479,13 +1480,13 @@ module.exports = function (container) {
             this.renderer.render(this.scene, this.camera);
         },
         resize: function () {
-            this.camera.aspect = container.parentNode.clientWidth / container.parentNode.clientHeight;
+            this.camera.aspect = container.clientWidth / container.clientHeight;
             this.camera.updateProjectionMatrix();
 
-            this.renderer.setSize(container.parentNode.clientWidth * 1.8, container.parentNode.clientHeight * 1.7);
+            this.renderer.setSize(container.clientWidth * 1.8, container.clientHeight * 1.7);
             console.log(this.renderer.domElement.style);
-            this.renderer.domElement.style.marginLeft = - container.parentNode.clientWidth * 0.4 + "px";
-            this.renderer.domElement.style.marginTop = - container.parentNode.clientHeight * 0.4 + "px";
+            this.renderer.domElement.style.marginLeft = - container.clientWidth * 0.4 + "px";
+            this.renderer.domElement.style.marginTop = - container.clientHeight * 0.34 + "px";
         }
     };
 

@@ -32,7 +32,7 @@ export class gridStackComponent implements AfterViewInit {
                 verticalMargin: 10,
                 alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
                 animate: true,
-                handle: ".grid-stack-item-actions",
+                handle: ".grid-stack-item-handle",
                 removable: true
             };
 
