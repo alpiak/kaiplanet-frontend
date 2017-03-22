@@ -2,17 +2,17 @@
  * Created by qhyang on 2017/3/13.
  */
 
-import { Directive, ElementRef, OnInit, Input } from "@angular/core";
+import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
 
 import { ScrollSceneService } from "./scroll-scene.service"
 
 @Directive({ selector: "[astralScrollScene]" })
-export class AstralScrollSceneDirective implements OnInit {
+export class AstralScrollSceneDirective implements AfterViewInit {
     @Input("astralScrollScene") astralAmount: number;
 
     constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService) { }
 
-    ngOnInit() {
+    ngAfterViewInit() {
 
         // ScrollMagic
         require("gsap/tweenLite");
@@ -24,7 +24,7 @@ export class AstralScrollSceneDirective implements OnInit {
         // build scroll scene
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
-                duration: 0,
+                duration: "200%",
                 offset: "1000%"
             })
                 .on("enter", () => {

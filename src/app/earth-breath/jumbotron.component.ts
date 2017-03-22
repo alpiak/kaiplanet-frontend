@@ -55,7 +55,7 @@ export class JumbotronComponent implements OnInit {
                 duration: 100 / jQuery(".bubble-cluster-" + i).attr("data-depth") + "%"
             })
                 .setTween(".bubble-cluster-" + i, {
-                    top: "-100%"
+                    top: "-110%"
                 })
                 .addTo(controller);
         }
