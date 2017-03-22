@@ -28,43 +28,5 @@ export class JumbotronComponent implements OnInit {
                 this.height = target.innerHeight;
                 this.width = target.innerWidth;
             });
-
-        // ScrollMagic
-        require("gsap/tweenLite");
-        let ScrollMagic = require("scrollmagic");
-        require("../../script/animation.gsap");
-
-        // init controller
-        let controller = new ScrollMagic.Controller({
-            globalSceneOptions: {
-                triggerHook: "onEnter"
-            }
-        });
-
-        // build scenes
-        new ScrollMagic.Scene({
-            duration: "600%"
-        })
-            .setPin("#scene")
-            .addTo(controller);
-
-        let jQuery = require("jquery");
-
-        for (let i = 1; i <= 3; i++) {
-            new ScrollMagic.Scene({
-                duration: 100 / jQuery(".bubble-cluster-" + i).attr("data-depth") + "%"
-            })
-                .setTween(".bubble-cluster-" + i, {
-                    top: "-110%"
-                })
-                .addTo(controller);
-        }
-        new ScrollMagic.Scene({
-            duration: "220%"
-        })
-            .setTween("[crystal-nav]", {
-                top: "-100%"
-            })
-            .addTo(controller);
     }
 }

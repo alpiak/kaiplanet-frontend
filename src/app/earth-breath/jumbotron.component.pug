@@ -5,44 +5,51 @@
 ul.scene#scene(
     "[style.height]"="height + 'px'"
     "[style.width]"="width + 'px'"
+    scrollPin="600%"
 )
-    li.background.stars-cluster.layer.layer_fullsize(data-depth="0.10")
+    li.background.stars-cluster.layer(data-depth="0.10")
         - for (var x = 1; x <=100; x++)
             .star(class="star-" + x)
     li.background-front.stars-cluster.layer.layer_fullsize(data-depth="0.20")
-    li.bubble-cluster-1.layer.layer_fullsize(data-depth="0.50")
-        - var n = 1;
-        while n < 60
-            img.bubble(
-            class="bubble-" + n
-            src="../../img/bubble.svg"
-            )
-            - n++
-    li.bubble-cluster-2.layer.layer_fullsize(data-depth="0.80")
-        - var n = 1;
-        while n < 30
-            img.bubble(
+    li.layer(data-depth="0.50")
+        div.bubble-cluster-1(scrollUp="200%")
+            - var n = 1;
+            while n < 60
+                img.bubble(
                 class="bubble-" + n
                 src="../../img/bubble.svg"
-            )
-            - n++
-    li.layer.layer_fullsize(
+                )
+                - n++
+    li.layer(data-depth="0.80")
+        div.bubble-cluster-2(scrollUp="125%")
+            - var n = 1;
+            while n < 30
+                img.bubble(
+                    class="bubble-" + n
+                    src="../../img/bubble.svg"
+                )
+                - n++
+    li.layer(
         data-depth="1.20"
         astralScrollScene="50"
-        fallingLeavesScrollScene="20"
     )
+        div(fallingLeavesScrollScene="20")
         h1(i18n="earth-breath page jumbotron|user welcome") Welcome to the play ground!
-    li.bubble-cluster-3.layer.layer_fullsize(data-depth="1.60")
-        - var n = 1;
-        while n < 20
-            img.bubble(
-                class="bubble-" + n
-                src="../../img/bubble.svg"
-            )
-            - n++
-    li.layer.layer_fullsize(data-depth="5.00")
+    li.layer(data-depth="1.60")
+        div.bubble-cluster-3(scrollUp="62.5%")
+            - var n = 1;
+            while n < 20
+                img.bubble(
+                    class="bubble-" + n
+                    src="../../img/bubble.svg"
+                )
+                - n++
+    li.layer(data-depth="5.00")
     li.layer(
-        crystal-nav
         data-depth="0.60"
-        bsStickUp
     )
+        div(scrollUp="220%")
+            div(
+                crystal-nav
+                bsStickUp
+            )

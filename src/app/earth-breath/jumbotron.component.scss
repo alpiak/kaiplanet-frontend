@@ -10,13 +10,14 @@ h1 {
   text-align: center;
 }
 .scene {
+  min-height: 200px;
   margin: 0;
   padding: 0;
   overflow: hidden;
   transform: none !important;
   transform-style: flat !important;
 }
-.layer_fullsize {
+.layer {
   position: absolute;
   width: 100%;
   height: 100%;

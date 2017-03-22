@@ -12,6 +12,8 @@ import { CrystalNavComponent } from "./crystal-nav.component";
 
 import { ScrollSceneService } from "./scroll-scene.service";
 
+import { ScrollPinDirective } from "./scroll-pin.directive";
+import { ScrollUpDirective } from "./scroll-up.directive";
 import { AstralScrollSceneDirective } from "./astral-scroll-scene.directive";
 import { FallingLeavesScrollSceneDirective } from "./falling-leaves-scroll-scene.directive";
 import { StickUpDirective } from "../stick-up.directive";
@@ -24,6 +26,8 @@ import { RippleDirective } from "../ripple.directive";
         HomeComponent,
         JumbotronComponent,
         CrystalNavComponent,
+        ScrollPinDirective,
+        ScrollUpDirective,
         AstralScrollSceneDirective,
         FallingLeavesScrollSceneDirective,
         RippleDirective,
