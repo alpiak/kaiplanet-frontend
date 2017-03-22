@@ -12,8 +12,8 @@ import "../styles/languages";
 import "../styles/base.scss";
 
 let jQuery = require("jquery"),
-    materialDesignSvgSpriteDeviceSymbol = require("material-design-icons/sprites/svg-sprite/svg-sprite-device-symbol.svg"),
-    materialDesignSvgSpriteContentSymbol = require("material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg");
+    materialDesignSvgSpriteDeviceSymbol = require("material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg"),
+    materialDesignSvgSpriteContentSymbol = require("material-design-icons/sprites/svg-sprite/svg-sprite-navigation-symbol.svg");
 
 materialDesignSvgSpriteDeviceSymbol = materialDesignSvgSpriteDeviceSymbol.substr(0, 43) +
         " style='display:none'" +

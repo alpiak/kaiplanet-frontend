@@ -2,6 +2,13 @@
    Created by qhyang on 2017/3/12.
 
 div.grid-stack-item-handle
+    div.toolbar__button-group
+        button.toolbar__button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect.mdl-button--colored
+            svg.svg-ic_widgets_15px-dims
+                use(xlink:href="#ic_more_vert_24px")
+        button.toolbar__button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect.mdl-button--colored
+            svg.svg-ic_widgets_15px-dims
+                use(xlink:href="#ic_close_24px")
 div.grid-stack-item-content.mdl-card__actions.mdl-card--border
     div(
         *ngComponentOutlet="widgetType | widgetComponent; ngModuleFactory: widgetsModule;"

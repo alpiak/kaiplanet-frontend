@@ -10,3 +10,20 @@
   background-color: #fff;
   overflow: visible;
 }
+.toolbar__button-group {
+  float: right;
+  margin-right: 5px;
+}
+.toolbar__button {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  font-size: 0;
+}
+.mdl-button--colored svg {
+  fill: #607d8b;
+}
+.svg-ic_widgets_15px-dims {
+  width: 15px;
+  height: 15px;
+}

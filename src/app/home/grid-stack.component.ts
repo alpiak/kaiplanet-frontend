@@ -37,7 +37,7 @@ export class gridStackComponent implements AfterViewInit {
                 removable: true
             };
 
-        this.gridStackService.init(options);
+        this.gridStackService.init(jQuery(".grid-stack")[0], options);
         this.gridStackService.on("resizestart").subscribe((event) => {
             jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
         });
