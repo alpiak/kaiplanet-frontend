@@ -12,7 +12,7 @@ let JQuery = require("jquery");
 @Injectable()
 export class GridStackService {
     widgets = [
-        // { x: 0, y: 0, width: 12, height: 2, type: "header", zIndex: 3 },
+        { x: 0, y: 0, width: 12, height: 2, type: "header", zIndex: 3 },
         // { x: 0, y: 2, width: 8, height: 2, type: "drawing-board" },
         // { x: 8, y: 2, width: 3, height: 4, type: "weather-card" },
         // { x: 0, y: 4, width: 2, height: 3, type: "wind-and-sand" },
@@ -29,12 +29,31 @@ export class GridStackService {
         JQuery(".grid-stack").gridstack(options);
     }
     on(eventType: string): Observable<any> {
-        if (eventType === "resizeStop") {
-            return Observable.create(function (subscriber: Subscriber<any>) {
-                JQuery('.grid-stack').on('resizestop', function(event: Event) {
-                    subscriber.next(event.target);
+        switch (eventType) {
+            case "resizestop":
+                return Observable.create(function (subscriber: Subscriber<any>) {
+                    JQuery('.grid-stack').on("resizestop", function(event: Event) {
+                        subscriber.next(event);
+                    });
                 });
-            });
+            case "resizestart":
+                return Observable.create(function (subscriber: Subscriber<any>) {
+                    JQuery('.grid-stack').on("resizestart", function(event: Event) {
+                        subscriber.next(event);
+                    });
+                });
+            case "dragstart":
+                return Observable.create(function (subscriber: Subscriber<any>) {
+                    JQuery('.grid-stack').on("dragstart", function(event: Event) {
+                        subscriber.next(event);
+                    });
+                });
+            case "dragstop":
+                return Observable.create(function (subscriber: Subscriber<any>) {
+                    JQuery('.grid-stack').on("dragstop", function(event: Event) {
+                        subscriber.next(event);
+                    });
+                });
         }
     }
 }

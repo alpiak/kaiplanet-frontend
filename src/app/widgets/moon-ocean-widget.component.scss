@@ -1,4 +1,8 @@
 
+:host {
+  overflow: hidden;
+}
+
 $color-bg: #CBBEB5;
 $color-moon: #FFF1F9;
 $color-sea: #286d8a;
@@ -33,17 +37,6 @@ $color-sky: #1B3040;
 @mixin wave($percent: 2%) {
   width: 200%;
   height: 50%;
-  //background:
-  //  linear-gradient(
-  //    top,
-  //    transparent 45%,
-  //    $color-sea 80%
-  //  ),
-  //  radial-gradient(
-  //    center -30px, circle,
-  //    transparent, transparent 70px,
-  //    lighten($color-sea, $percent) 0
-  //  );
   background:
     linear-gradient(
       to bottom,

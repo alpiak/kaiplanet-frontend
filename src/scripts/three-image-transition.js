@@ -1483,7 +1483,7 @@ module.exports = function (container) {
             this.camera.aspect = container.clientWidth / container.clientHeight;
             this.camera.updateProjectionMatrix();
 
-            this.renderer.setSize(container.clientWidth * 1.8, container.clientHeight * 1.7);
+            this.renderer.setSize(container.clientWidth * 1.8, container.clientHeight * 1.66);
             console.log(this.renderer.domElement.style);
             this.renderer.domElement.style.marginLeft = - container.clientWidth * 0.4 + "px";
             this.renderer.domElement.style.marginTop = - container.clientHeight * 0.34 + "px";
