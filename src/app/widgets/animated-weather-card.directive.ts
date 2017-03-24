@@ -23,11 +23,13 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
             animatedWeatherCards: any;
 
         setTimeout(() => animatedWeatherCards = AnimatedWeatherCards(this.el.nativeElement), 300);
-        this.gridStackService.on("resizestop").subscribe((event) => {
-            console.log(event);
-            if (event.target === this.gridItemContainer) {
-                animatedWeatherCards.resize();
-            }
+        this.gridStackService.on("init").subscribe(() => {
+            this.gridStackService.on("resizestop").subscribe((event) => {
+                console.log(event);
+                if (event.target === this.gridItemContainer) {
+                    animatedWeatherCards.resize();
+                }
+            });
         });
     }
 }

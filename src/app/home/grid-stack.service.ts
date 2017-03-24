@@ -37,6 +37,10 @@ export class GridStackService {
     ];
     private initObservable: Observable<any>;
     private initObservableSubscriber: Subscriber<any>;
+    private resizeStartObservable: Observable<any>;
+    private resizeStopObservable: Observable<any>;
+    private dragStartObservable: Observable<any>;
+    private dragStopObservable: Observable<any>;
 
     constructor() {
         this.initObservable = Observable.create((subscriber: Subscriber<any>) => {
@@ -49,7 +53,27 @@ export class GridStackService {
     }
     init(el: HTMLElement, options: Object): void {
         this.gridStack = el;
-        jQuery(this.gridStack).gridstack(options);
+        jQuery(el).gridstack(options);
+        this.resizeStartObservable = Observable.create((subscriber: Subscriber<any>) => {
+            jQuery(el).on("resizestart", (event: Event) => {
+                subscriber.next(event);
+            });
+        });
+        this.resizeStopObservable = Observable.create((subscriber: Subscriber<any>) => {
+            jQuery(el).on("resizestop", (event: Event) => {
+                subscriber.next(event);
+            });
+        });
+        this.dragStartObservable = Observable.create((subscriber: Subscriber<any>) => {
+            jQuery(el).on("dragstart", (event: Event) => {
+                subscriber.next(event);
+            });
+        });
+        this.dragStopObservable = Observable.create((subscriber: Subscriber<any>) => {
+            jQuery(el).on("dragstop", (event: Event) => {
+                subscriber.next(event);
+            });
+        });
         this.initObservableSubscriber.next();
         this.initObservableSubscriber.complete();
     }
@@ -70,30 +94,14 @@ export class GridStackService {
         switch (eventType) {
             case "init":
                 return this.initObservable;
-            case "resizestop":
-                return Observable.create((subscriber: Subscriber<any>) => {
-                    jQuery(this.gridStack).on("resizestop", (event: Event) => {
-                        subscriber.next(event);
-                    });
-                });
             case "resizestart":
-                return Observable.create((subscriber: Subscriber<any>) => {
-                    jQuery(this.gridStack).on("resizestart", (event: Event) => {
-                        subscriber.next(event);
-                    });
-                });
+                return this.resizeStartObservable;
+            case "resizestop":
+                return this.resizeStopObservable;
             case "dragstart":
-                return Observable.create((subscriber: Subscriber<any>) => {
-                    jQuery(this.gridStack).on("dragstart", (event: Event) => {
-                        subscriber.next(event);
-                    });
-                });
+                return this.dragStartObservable;
             case "dragstop":
-                return Observable.create((subscriber: Subscriber<any>) => {
-                    jQuery(this.gridStack).on("dragstop", (event: Event) => {
-                        subscriber.next(event);
-                    });
-                });
+                return this.dragStopObservable;
         }
     }
 }

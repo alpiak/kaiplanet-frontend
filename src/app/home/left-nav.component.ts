@@ -10,6 +10,13 @@ import { Component, OnInit } from "@angular/core";
 })
 export class leftNavComponent implements OnInit {
     ngOnInit() {
+        const jQuery = require("jquery");
 
+        require("../../styles/stairway-hover-nav");
+        require("../../scripts/stairway-hover-nav");
+
+        jQuery("#left-nav").stairwayNav({
+            stairs: 2
+        });
     }
 }
