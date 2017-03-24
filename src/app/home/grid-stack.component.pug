@@ -10,6 +10,8 @@ div.grid-stack-item.mdl-card.mdl-shadow--2dp(
     "[attr.data-gs-width]"="widget.width"
     "[attr.data-gs-height]"="widget.height"
     widget-frame
+    "[index]"="i"
     "[widgetType]"="widget.type"
     "[style.z-index]"="widget.zIndex"
+    "(onClose)"="onClose($event)"
 )
