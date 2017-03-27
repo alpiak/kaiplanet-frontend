@@ -6,24 +6,25 @@ import { Directive, ElementRef, AfterViewInit } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 
-const jQuery = require("jquery");
-
 @Directive({ selector: "[threeImageTransition]" })
 export class ThreeImageTransitionDirective implements AfterViewInit {
     gridItemContainer: HTMLElement;
 
-    constructor(private el: ElementRef, private gridStackService: GridStackService) {
-        this.gridItemContainer = jQuery(el.nativeElement).parent().parent()[0];
-    }
+    constructor(private el: ElementRef, private gridStackService: GridStackService) { }
 
     ngAfterViewInit() {
-        let ThreeImageTransition = require("../../scripts/three-image-transition");
+        const jQuery = require("jquery");
+
+        this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);
+
+        const ThreeImageTransition = require("../../scripts/three-image-transition");
 
         setTimeout(() => {
             let threeImageTransition = ThreeImageTransition(this.el.nativeElement);
+
             this.gridStackService.on("init").subscribe(() => {
                 this.gridStackService.on("resizestop").subscribe((event) => {
-                    if (event.target.target === this.gridItemContainer) {
+                    if (event.target === this.gridItemContainer) {
                         setTimeout(() => threeImageTransition.resize(), 300);
                     }
                 });

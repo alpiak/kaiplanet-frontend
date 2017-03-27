@@ -19,11 +19,8 @@ import { DrawingBoardDirective } from "./drawing-board.directive";
 import { WaterfallDirective } from "./waterfall.directive";
 import { WindAndSandDirective } from "./wind-and-sand.directive";
 
-import { GridStackService } from "../home/grid-stack.service";
-
 @NgModule({
     imports:      [ CommonModule ],
-    providers:    [ GridStackService ],
     declarations: [
         headerWidgetComponent,
         carouselWidgetComponent,

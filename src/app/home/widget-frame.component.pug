@@ -26,6 +26,4 @@ div.grid-stack-item-handle
             svg.svg-ic_widgets_15px-dims
                 use(xlink:href="#ic_close_24px")
 div.grid-stack-item-content.mdl-card__actions.mdl-card--border
-    div(
-        *ngComponentOutlet="widgetType | widgetComponent; ngModuleFactory: widgetsModule;"
-    )
+    div(*ngComponentOutlet="widgetType | widgetComponent; ngModuleFactory: widgetsModule;")

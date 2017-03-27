@@ -14,6 +14,7 @@ import { AppComponent }  from "./app.component";
 
 import { LoggerService } from "./logger.service";
 import { BomService } from "./bom.service";
+import { GridStackService } from "./home/grid-stack.service";
 
 @NgModule({
     imports:      [
@@ -24,7 +25,8 @@ import { BomService } from "./bom.service";
     ],
     providers:    [
         LoggerService,
-        BomService
+        BomService,
+        GridStackService
     ],
     declarations: [ AppComponent ],
     exports:      [ AppComponent ],

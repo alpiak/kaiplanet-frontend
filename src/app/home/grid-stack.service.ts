@@ -3,12 +3,15 @@
  */
 
 import { Observable } from "rxjs/Observable";
+import { Subject } from "rxjs/Subject";
 import { Subscriber } from "rxjs/Subscriber";
-import "rxjs/add/observable/fromEvent";
+import { share } from "rxjs/operator/share";
 
 import { Injectable } from "@angular/core";
 
 import { Widget } from "../../scripts/interfaces";
+
+Observable.prototype.share = share;
 
 let jQuery = require("jquery");
 
@@ -35,17 +38,14 @@ export class GridStackService {
         { x: 0, y: 7, width: 8, height: 3, type: "moon-ocean" },
         { x: 11, y: 2, width: 1, height: 8, type: "waterfall" }
     ];
-    private initObservable: Observable<any>;
-    private initObservableSubscriber: Subscriber<any>;
+    private initSubject: Subject<any>;
     private resizeStartObservable: Observable<any>;
     private resizeStopObservable: Observable<any>;
     private dragStartObservable: Observable<any>;
     private dragStopObservable: Observable<any>;
 
     constructor() {
-        this.initObservable = Observable.create((subscriber: Subscriber<any>) => {
-            this.initObservableSubscriber = subscriber;
-        });
+        this.initSubject = new Subject();
     }
 
     getWidgetData(): Widget[] {
@@ -74,8 +74,8 @@ export class GridStackService {
                 subscriber.next(event);
             });
         });
-        this.initObservableSubscriber.next();
-        this.initObservableSubscriber.complete();
+        this.initSubject.next();
+        this.initSubject.complete();
     }
     getWidgetTypes(): string[] {
         return this.widgetTypes;
@@ -93,15 +93,15 @@ export class GridStackService {
     on(eventType: string): Observable<any> {
         switch (eventType) {
             case "init":
-                return this.initObservable;
+                return this.initSubject;
             case "resizestart":
-                return this.resizeStartObservable;
+                return this.resizeStartObservable.share();
             case "resizestop":
-                return this.resizeStopObservable;
+                return this.resizeStopObservable.share();
             case "dragstart":
-                return this.dragStartObservable;
+                return this.dragStartObservable.share();
             case "dragstop":
-                return this.dragStopObservable;
+                return this.dragStopObservable.share();
         }
     }
 }

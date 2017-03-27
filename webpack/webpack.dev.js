@@ -31,7 +31,7 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                exclude: /node_modules/,
+                // exclude: /node_modules/,
                 loader: "ts-loader"
             },
             {

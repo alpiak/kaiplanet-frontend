@@ -10,13 +10,13 @@ import { GridStackService } from "../home/grid-stack.service";
 export class DrawingBoardDirective implements AfterViewInit {
     gridItemContainer: HTMLElement;
 
-    constructor(private el: ElementRef, private gridStackService: GridStackService) {
-        const jQuery = require("jquery");
-
-        this.gridItemContainer = jQuery(el.nativeElement).parent().parent()[0];
-    }
+    constructor(private el: ElementRef, private gridStackService: GridStackService) { }
 
     ngAfterViewInit() {
+        const jQuery = require("jquery");
+
+        this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);
+
         require("../../styles/drawingboard");
         require("../../scripts/drawingboard");
 

@@ -10,22 +10,22 @@ import { GridStackService } from "../home/grid-stack.service";
 export class AnimatedWeatherCardDirective implements AfterViewInit {
     gridItemContainer: HTMLElement;
 
-    constructor(private el: ElementRef, private gridStackService: GridStackService) {
-        const jQuery = require("jquery");
-
-        this.gridItemContainer = jQuery(el.nativeElement).parent().parent()[0];
-    }
+    constructor(private el: ElementRef, private gridStackService: GridStackService) { }
 
     ngAfterViewInit() {
+        const jQuery = require("jquery");
+
+        this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);
+
         require("../../styles/animated-weather-cards.scss");
 
-        let AnimatedWeatherCards = require("../../scripts/animated-weather-cards"),
-            animatedWeatherCards: any;
+        const AnimatedWeatherCards = require("../../scripts/animated-weather-cards");
+
+        let animatedWeatherCards: any;
 
         setTimeout(() => animatedWeatherCards = AnimatedWeatherCards(this.el.nativeElement), 300);
         this.gridStackService.on("init").subscribe(() => {
             this.gridStackService.on("resizestop").subscribe((event) => {
-                console.log(event);
                 if (event.target === this.gridItemContainer) {
                     animatedWeatherCards.resize();
                 }
