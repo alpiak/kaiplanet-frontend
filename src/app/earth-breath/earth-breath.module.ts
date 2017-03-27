@@ -16,6 +16,7 @@ import { ScrollPinDirective } from "./scroll-pin.directive";
 import { ScrollUpDirective } from "./scroll-up.directive";
 import { AstralScrollSceneDirective } from "./astral-scroll-scene.directive";
 import { FallingLeavesScrollSceneDirective } from "./falling-leaves-scroll-scene.directive";
+import { ScrollSceneTextDirective } from "./scroll-scene-text.directive";
 import { StickUpDirective } from "../stick-up.directive";
 import { RippleDirective } from "../ripple.directive";
 
@@ -30,6 +31,7 @@ import { RippleDirective } from "../ripple.directive";
         ScrollUpDirective,
         AstralScrollSceneDirective,
         FallingLeavesScrollSceneDirective,
+        ScrollSceneTextDirective,
         RippleDirective,
         StickUpDirective
     ]
