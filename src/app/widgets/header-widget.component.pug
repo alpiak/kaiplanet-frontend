@@ -3,11 +3,11 @@
 
 
 div.tool-pane
-    button#widget-operation-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect
+    button#hearder-widget__widget-operation-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect
         svg.svg-ic_widgets_20px-dims(fill="#fff")
             use(xlink:href="#ic_apps_24px")
         span.item__text(i18n="Button text|the text of a button to open a menu for managing widgets") Widgets
-    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="widget-operation-button")
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__widget-operation-button")
         li.mdl-menu__item
             svg.svg-ic_widgets_20px-dims
                 use(xlink:href="#ic_add_box_24px")
@@ -16,9 +16,13 @@ div.tool-pane
             svg.svg-ic_widgets_20px-dims
                 use(xlink:href="#ic_create_24px")
             span.item__text(i18n="Option text|the text of an option to enter the wigdets-managing mode") Manage widgets
-    button#language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
+    button#hearder-widget__login-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect((click)="logIn()")
+        svg.svg-ic_widgets_20px-dims(fill="#fff")
+            use(xlink:href="#ic_face_24px")
+        span.item__text(i18n="Button text|the text of a button to open dialog to log in or sign up") Log in
+    button#hearder-widget__language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
         span.lang-xs.lang-lbl(lang="zh")
-    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="language-switch")
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__language-switch")
         li.mdl-menu__item
             span.lang-xs.lang-lbl(lang="zh")
         li.mdl-menu__item

@@ -9,4 +9,9 @@ import { Component } from "@angular/core";
     template: require("./header-widget.component.pug"),
     styles: [ require("./widget.component"), require("./header-widget.component.scss") ]
 })
-export class headerWidgetComponent { }
+export class headerWidgetComponent {
+    logIn() {
+        // TODO: remove after the login feature added
+        setTimeout(() => alert("login feature will be included in the next release!"), 300);
+    }
+}
