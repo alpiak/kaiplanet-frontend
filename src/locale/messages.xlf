@@ -2,6 +2,42 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="64146209927b967aca185aa08be6f54566bbaf97" datatype="html">
+        <source>Widgets</source>
+        <target/>
+        <note priority="1" from="description">the text of a button to open a menu for managing widgets</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="27994c58bd7ae6a172cb7641e90c41bb9e0903df" datatype="html">
+        <source>Add a widget</source>
+        <target/>
+        <note priority="1" from="description">the text of an option to open a dialog for adding a widget</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="26c40cfbe32edc7af7c77e95f3b14429d2a3aafc" datatype="html">
+        <source>Manage widgets</source>
+        <target/>
+        <note priority="1" from="description">the text of an option to enter the wigdets-managing mode</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="e528cb0f83bad4fa91f93d4362ce32be1490506c" datatype="html">
+        <source>Log in</source>
+        <target/>
+        <note priority="1" from="description">the text of a button to open dialog to log in or sign up</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="d47fb79541d930ba3019ec7bf4ea21029292c621" datatype="html">
+        <source>Settings</source>
+        <target/>
+        <note priority="1" from="description">the text of an option to open a widget settings dialog</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="6e36eb58a1e939715da253f8674a1aa5f301fc9b" datatype="html">
+        <source>Resize</source>
+        <target/>
+        <note priority="1" from="description">the text of an option to enter the wigdets-managing mode of a specific widget</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
       <trans-unit id="b66a8986bde5691530aac53942d1945099d93d58" datatype="html">
         <source>Welcome to the play ground!</source>
         <target/>
