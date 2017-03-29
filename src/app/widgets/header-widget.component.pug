@@ -21,13 +21,13 @@ div.tool-pane
             use(xlink:href="#ic_face_24px")
         span.item__text(i18n="Button text|the text of a button to open dialog to log in or sign up") Log in
     button#hearder-widget__language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
-        span.lang-xs.lang-lbl(lang="zh")
+        span.lang-xs.lang-lbl([attr.lang]="currentLocale.substr(0, 2)")
     ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__language-switch")
-        li.mdl-menu__item
+        li.mdl-menu__item((click)="changeLocale('zh-CN')")
             span.lang-xs.lang-lbl(lang="zh")
-        li.mdl-menu__item
+        li.mdl-menu__item((click)="changeLocale('en-US')")
             span.lang-xs.lang-lbl(lang="en")
-        li.mdl-menu__item
+        li.mdl-menu__item((click)="changeLocale('ja-JP')")
             span.lang-xs.lang-lbl(lang="ja")
         li.mdl-menu__item
             span.lang-xs.lang-lbl(lang="ko")
