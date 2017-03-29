@@ -10,8 +10,12 @@ import { Component } from "@angular/core";
     styles: [ require("./widget.component"), require("./header-widget.component.scss") ]
 })
 export class headerWidgetComponent {
-    logIn() {
+    openLoginDialog() {
         // TODO: remove after the login feature added
-        setTimeout(() => alert("login feature will be included in the next release!"), 300);
+        setTimeout(() => alert("Login feature will be included in the next release!"), 300);
+    }
+    openThemeDialog() {
+        // TODO: remove after the login feature added
+        setTimeout(() => alert("Theming feature will be included in the next release!"), 300);
     }
 }

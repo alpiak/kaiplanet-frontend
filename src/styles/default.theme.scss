@@ -1,0 +1,54 @@
+
+// Theme color definitions
+$primary: rgb(96, 125, 139);
+$accent: rgb(255, 193, 7);
+
+// Left Nav
+$leftNavPrimary: $primary;
+$leftNavHighlight: $accent;
+
+@mixin active-1 {
+  background: $leftNavPrimary;
+  .active-1 {
+    background: lighten($leftNavHighlight, 15%);
+  }
+}
+@mixin active-2 {
+  .active-2 {
+    background: lighten($leftNavPrimary, 8%);
+  }
+}
+@mixin active-3 {
+  .active-3 {
+    background: lighten($leftNavPrimary, 5%);
+  }
+}
+@mixin active-4 {
+  .active-4 {
+    background: lighten($leftNavPrimary, 5%);
+  }
+}
+
+left-nav .one-step {
+  @include active-1;
+}
+left-nav .two-step {
+  @include active-1;
+  @include active-2;
+}
+left-nav .three-step {
+  @include active-1;
+  @include active-2;
+  @include active-3;
+}
+left-nav .four-step {
+  @include active-1;
+  @include active-2;
+  @include active-3;
+  @include active-4;
+}
+
+// Header widget
+header-widget {
+  background-color: $primary;
+}

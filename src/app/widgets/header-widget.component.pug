@@ -4,20 +4,20 @@
 
 div.tool-pane
     button#hearder-widget__widget-operation-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect
-        svg.svg-ic_widgets_20px-dims(fill="#fff")
+        svg.item__icon_with-text.svg-ic_20px-dims(fill="#fff")
             use(xlink:href="#ic_apps_24px")
-        span.item__text(i18n="Button text|the text of a button to open a menu for managing widgets") Widgets
+        span.item__text(i18n="Button text|the text of a button to open a menu to manage widgets") Widgets
     ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__widget-operation-button")
         li.mdl-menu__item
-            svg.svg-ic_widgets_20px-dims
+            svg.item__icon_with-text.svg-ic_20px-dims
                 use(xlink:href="#ic_add_box_24px")
             span.item__text(i18n="Option text|the text of an option to open a dialog for adding a widget") Add a widget
         li.mdl-menu__item
-            svg.svg-ic_widgets_20px-dims
+            svg.item__icon_with-text.svg-ic_20px-dims
                 use(xlink:href="#ic_create_24px")
             span.item__text(i18n="Option text|the text of an option to enter the wigdets-managing mode") Manage widgets
-    button#hearder-widget__login-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect((click)="logIn()")
-        svg.svg-ic_widgets_20px-dims(fill="#fff")
+    button#hearder-widget__login-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect((click)="openLoginDialog()")
+        svg.item__icon_with-text.svg-ic_20px-dims(fill="#fff")
             use(xlink:href="#ic_face_24px")
         span.item__text(i18n="Button text|the text of a button to open dialog to log in or sign up") Log in
     button#hearder-widget__language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
@@ -31,3 +31,11 @@ div.tool-pane
             span.lang-xs.lang-lbl(lang="ja")
         li.mdl-menu__item
             span.lang-xs.lang-lbl(lang="ko")
+    button#hearder-widget__more-button.tool-pane__button.widget-operation-button.mdl-button.mdl-button--icon.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+        svg.svg-ic_20px-dims(fill="#fff")
+            use(xlink:href="#ic_more_vert_24px")
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__more-button")
+        li.mdl-menu__item((click)="openThemeDialog()")
+            svg.item__icon_with-text.svg-ic_20px-dims
+                use(xlink:href="#ic_picture_in_picture_24px")
+            span.item__text(i18n="Option text|the text of an option to open a dialog to change theme of the page") Change theme

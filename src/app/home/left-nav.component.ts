@@ -6,7 +6,8 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
     selector: "left-nav",
-    template: require("./left-nav.component.pug")
+    template: require("./left-nav.component.pug"),
+    styles: [ require("./left-nav.component.scss") ]
 })
 export class leftNavComponent implements OnInit {
     ngOnInit() {

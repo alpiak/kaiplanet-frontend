@@ -9,7 +9,8 @@ import "material-design-lite/material.css";
 import "material-design-lite/material.js";
 import "../styles/languages";
 
-import "../styles/base.scss";
+import "../styles/base";
+import "../styles/default.theme";
 
 // Fallback to loading jQuery from a local path if the CDN is unavailable
 if (!window["jQuery"]) {

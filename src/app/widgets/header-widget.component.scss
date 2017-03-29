@@ -1,11 +1,9 @@
 
-:host {
-  background-color: #607d8b;
-}
 .tool-pane {
   position: absolute;
   bottom: 0;
   right: 0;
+  margin-right: 30px;
 
 }
 .tool-pane__button {
@@ -24,8 +22,10 @@
 .mdl-menu .lang-lbl:after {
   top: -18px;
 }
-.svg-ic_widgets_20px-dims {
+.svg-ic_20px-dims {
   width: 20px;
   height: 20px;
+}
+.item__icon_with-text {
   margin-right: 5px;
 }
