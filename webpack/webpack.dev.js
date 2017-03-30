@@ -8,6 +8,7 @@ const HtmlWebpack = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 const ChunkWebpack = webpack.optimize.CommonsChunkPlugin;
+const BannerWebpack = require("banner-webpack-plugin");
 
 const rootDir = path.resolve(__dirname, "..");
 
@@ -19,7 +20,7 @@ module.exports = {
     devtool: "source-map",
     entry: {
         app: [ path.resolve(rootDir, "src", "app", "main") ],
-        vendor: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
+        vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },
     module: {
         rules: [
@@ -31,7 +32,7 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                // exclude: /node_modules/,
+                exclude: /node_modules/,
                 loader: "ts-loader"
             },
             {
@@ -85,14 +86,58 @@ module.exports = {
     },
     plugins: [
         new ChunkWebpack({
-            filename: "vendor.bundle.js",
+            filename: "vendors.bundle.js",
             minChunks: Infinity,
-            name: "vendor"
+            name: "vendors"
         }),
         new HtmlWebpack({
             filename: "index.html",
             inject: "body",
             template: path.resolve(rootDir, "src", "index.html")
+        }),
+        new BannerWebpack({
+            chunks: {
+                app: {
+                    beforeContent: `
+                    (function() {   
+                        if ($ && TweenLite) {
+                            var $counter = $(".app-loading__counter");
+                            var loading = {
+                                progress: $counter.data("loaded-percent") || 0
+                            };
+                            TweenLite.to(loading, 0.5, {
+                                progress: 90,
+                                onUpdate: function() {
+                                    $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
+                                    $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
+                                }
+                            });
+                            $counter.data("loaded-percent", 90);
+                        }
+                    }());
+                `
+                },
+                vendors: {
+                    beforeContent: `
+                    (function() {    
+                        if ($ && TweenLite) {
+                            var $counter = $(".app-loading__counter");
+                            var loading = {
+                                progress: $counter.data("loaded-percent") || 0
+                            };
+                            TweenLite.to(loading, 0.5, {
+                                progress: 20,
+                                onUpdate: function() {
+                                    $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
+                                    $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
+                                }
+                            });
+                            $counter.data("loaded-percent", 20);
+                        }
+                    }());
+                `
+                }
+            }
         })
     ],
     resolve: {

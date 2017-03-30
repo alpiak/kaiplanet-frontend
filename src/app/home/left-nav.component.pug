@@ -3,8 +3,13 @@
 
 
 nav#left-nav.two-step
-    a Home
-    a The Breath of the Earth
-    a Looking for some music
-    a Strike! (In development)
-    a Pokemon Star (In development)
+    -
+        var items = [
+            "Home",
+            "The Breath of the Earth",
+            "Looking for some music",
+            "Strike! (In development)",
+            "Pokemon Star (In development)"
+        ]
+    each item in items
+        a(href="javascript:;")= item
