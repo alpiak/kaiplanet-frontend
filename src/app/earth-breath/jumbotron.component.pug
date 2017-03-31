@@ -5,7 +5,7 @@
 ul.scene#scene(
     "[style.height]"="height + 'px'"
     "[style.width]"="width + 'px'"
-    scrollPin="600%"
+    scrollPin="8000%"
 )
     li.background.stars-cluster.layer(data-depth="0.10")
         - for (var x = 1; x <=100; x++)
@@ -34,7 +34,12 @@ ul.scene#scene(
         astralScrollScene="50"
     )
         div(fallingLeavesScrollScene="20")
-        h1(i18n="earth-breath page jumbotron|user welcome") Welcome to the play ground!
+        h1(
+            scrollSceneText
+            offset="-20%"
+            duration="50%"
+            i18n="earth-breath page jumbotron|user welcome"
+        ) Welcome to the play ground!
     li.layer(data-depth="1.60")
         div.bubble-cluster-3(scrollUp="62.5%")
             - var n = 1;

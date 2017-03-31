@@ -4,13 +4,14 @@
 
 import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
 
+import { BomService } from "../bom.service";
 import { ScrollSceneService } from "./scroll-scene.service"
 
 @Directive({ selector: "[fallingLeavesScrollScene]" })
 export class FallingLeavesScrollSceneDirective implements AfterViewInit {
     @Input("fallingLeavesScrollScene") leafAmount: number;
 
-    constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService) { }
+    constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
 
     ngAfterViewInit() {
 
@@ -29,8 +30,8 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
         // build scroll scene
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
-                duration: "200%",
-                offset: "2000%"
+                duration: "300%",
+                offset: 5 * this.bomService.getWindowHeight()
             })
                 .on("enter", () => {
                     jQuery(this.el.nativeElement).addClass("fixed falling-leaves");
