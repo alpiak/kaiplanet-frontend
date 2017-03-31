@@ -235,6 +235,8 @@
                     var loading = {
                         progress: $counter.data("loaded-percent") || 0
                     };
+
+                    $counter.data("loaded-percent", progress);
                     TweenLite.to(loading, 0.5, {
                         progress: progress,
                         onUpdate: function() {
@@ -242,7 +244,6 @@
                             $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
                         }
                     });
-                    $counter.data("loaded-percent", progress);
                 }
 
                 if ($ && TweenLite) {

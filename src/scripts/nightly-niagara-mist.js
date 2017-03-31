@@ -5,7 +5,7 @@
 let PIXI = require("pixi.js/bin/pixi");
 let tinycolor = require("tinycolor2");
 
-module.exports = function NightlyNiagaraMist(container) {
+module.exports = function NightlyNiagaraMist(container, backgroundColor, frontColor) {
     +!~-(function(PIXI, window, document, undefined) {
         var waterfallCanvas = function(c, cw, ch) {
             var _this = this;
@@ -35,9 +35,15 @@ module.exports = function NightlyNiagaraMist(container) {
                 this.vy = 0;
                 this.width = newWidth;
                 this.height = newHeight;
-                this.hue = _this.rand(200, 220);
-                this.saturation = _this.rand(30, 60);
-                this.lightness = _this.rand(30, 60);
+                if (frontColor) {
+                    this.hue = _this.rand(tinycolor(frontColor).toHsl().h - 10, tinycolor(frontColor).toHsl().h + 10);
+                    this.saturation = _this.rand(tinycolor(frontColor).toHsl().s * 100 + 10, tinycolor(frontColor).toHsl().s + 40);
+                    this.lightness = _this.rand(tinycolor(frontColor).toHsl().l * 100 - 5, tinycolor(frontColor).toHsl().l + 25);
+                } else {
+                    this.hue = _this.rand(200, 220);
+                    this.saturation = _this.rand(30, 60);
+                    this.lightness = _this.rand(30, 60);
+                }
             };
             this.Particle.prototype.update = function(i) {
                 this.vx += this.vx;
@@ -149,7 +155,7 @@ module.exports = function NightlyNiagaraMist(container) {
 
         function init() {
             renderer = PIXI.autoDetectRenderer(container.innerWidth, container.innerHeight * 0.9, {
-                backgroundColor: '0x' + tinycolor('hsl(200, 50%, 10%)').toHex()
+                backgroundColor: '0x' + tinycolor(backgroundColor || 'hsl(200, 50%, 10%)').toHex()
             });
             stage = new PIXI.Container();
             waveCount = 1000;
@@ -176,13 +182,13 @@ module.exports = function NightlyNiagaraMist(container) {
             partTexture = null;
             waveGraphics = new PIXI.Graphics();
             waveGraphics.cacheAsBitmap = true;
-            waveGraphics.beginFill('0x' + tinycolor('hsl(200, 74%, 40%)').toHex(), 0.15);
+            waveGraphics.beginFill('0x' + tinycolor(frontColor || 'hsl(200, 74%, 40%)').toHex(), 0.15);
             waveGraphics.drawCircle(0, 0, 20);
             waveGraphics.endFill();
             waveTexture = waveGraphics.generateTexture();
             partGraphics = new PIXI.Graphics();
             partGraphics.cacheAsBitmap = true;
-            partGraphics.beginFill('0x' + tinycolor('hsl(200, 70%, 40%)').toHex(), 0.2);
+            partGraphics.beginFill('0x' + tinycolor(frontColor || 'hsl(200, 70%, 40%)').toHex(), 0.2);
             partGraphics.drawCircle(0, 0, 15);
             partGraphics.endFill();
             partTexture = partGraphics.generateTexture();

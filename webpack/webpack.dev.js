@@ -105,6 +105,8 @@ module.exports = {
                             var loading = {
                                 progress: $counter.data("loaded-percent") || 0
                             };
+                            
+                            $counter.data("loaded-percent", 90);
                             TweenLite.to(loading, 0.5, {
                                 progress: 90,
                                 onUpdate: function() {
@@ -112,11 +114,9 @@ module.exports = {
                                     $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
                                 }
                             });
-                            $counter.data("loaded-percent", 90);
                         }
                     }());
-                `
-                },
+                `},
                 vendors: {
                     beforeContent: `
                     (function() {    
@@ -125,6 +125,8 @@ module.exports = {
                             var loading = {
                                 progress: $counter.data("loaded-percent") || 0
                             };
+                            
+                            $counter.data("loaded-percent", 20);
                             TweenLite.to(loading, 0.5, {
                                 progress: 20,
                                 onUpdate: function() {
@@ -132,11 +134,9 @@ module.exports = {
                                     $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
                                 }
                             });
-                            $counter.data("loaded-percent", 20);
                         }
                     }());
-                `
-                }
+                `}
             }
         })
     ],

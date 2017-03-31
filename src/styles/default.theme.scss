@@ -10,6 +10,7 @@ $leftNavHighlight: $accent;
 @mixin active-1 {
   background: $leftNavPrimary;
   .active-1 {
+    color: #fff;
     background: lighten($leftNavHighlight, 15%);
   }
 }
