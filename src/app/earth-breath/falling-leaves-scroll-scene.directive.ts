@@ -18,13 +18,13 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
         // ScrollMagic
         require("gsap/tweenLite");
 
-        let ScrollMagic = require("scrollmagic");
+        const ScrollMagic = require("scrollmagic");
 
         require("../../script/animation.gsap");
 
         require("../../style/falling-leaves");
 
-        let jQuery = require("jquery"),
+        const jQuery = require("jquery"),
             LeafScene = require("../../script/falling-leaves");
 
         // build scroll scene

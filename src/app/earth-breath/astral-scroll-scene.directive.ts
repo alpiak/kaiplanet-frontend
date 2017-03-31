@@ -18,11 +18,11 @@ export class AstralScrollSceneDirective implements AfterViewInit {
         // ScrollMagic
         require("gsap/tweenLite");
 
-        let ScrollMagic = require("scrollmagic");
+        const ScrollMagic = require("scrollmagic");
 
         require("../../script/animation.gsap");
 
-        let jQuery = require("jquery");
+        const jQuery = require("jquery");
 
         // build scroll scene
         this.scrollSceneService.addScene(

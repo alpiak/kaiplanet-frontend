@@ -9,6 +9,7 @@ import { HomeRoutingModule } from "./earth-breath-routing.module";
 
 import { JumbotronComponent } from "./jumbotron.component";
 import { CrystalNavComponent } from "./crystal-nav.component";
+import { globeComponent } from "./globe.component";
 
 import { ScrollSceneService } from "./scroll-scene.service";
 
@@ -27,6 +28,7 @@ import { RippleDirective } from "../ripple.directive";
         HomeComponent,
         JumbotronComponent,
         CrystalNavComponent,
+        globeComponent,
         ScrollPinDirective,
         ScrollUpDirective,
         AstralScrollSceneDirective,
