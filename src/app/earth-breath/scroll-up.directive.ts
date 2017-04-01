@@ -26,7 +26,7 @@ export class ScrollUpDirective implements AfterViewInit {
 
         let ScrollMagic = require("scrollmagic");
 
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
         // build scroll scene
         this.scrollSceneService.addScene(

@@ -19,7 +19,7 @@ module.exports = {
     devtool: "source-map",
     entry: {
         app: [ path.resolve(rootDir, "src", "app", "main") ],
-        vendor: [ path.resolve(rootDir, "src", "script", "vendor") ]
+        vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },
     module: {
         rules: [
@@ -78,9 +78,9 @@ module.exports = {
     },
     plugins: [
         new ChunkWebpack({
-            filename: "vendor.bundle.js",
+            filename: "vendors.bundle.js",
             minChunks: Infinity,
-            name: "vendor"
+            name: "vendors"
         }),
         new HtmlWebpack({
             filename: "index.html",

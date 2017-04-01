@@ -16,17 +16,12 @@ export class JumbotronComponent implements OnInit {
     height: number;
     width: number;
 
-    constructor(private bomService: BomService) {
-        this.height = window.innerHeight;
-    }
+    constructor(private bomService: BomService) { }
 
     ngOnInit() {
+        this.height = this.bomService.getWindowHeight();
         new Parallax(document.getElementById("scene"));
         this.bomService.windowResize()
-            .map((event: any) => event.target)
-            .subscribe((target: Window) => {
-                this.height = target.innerHeight;
-                this.width = target.innerWidth;
-            });
+            .subscribe(() => this.height = this.bomService.getWindowHeight());
     }
 }

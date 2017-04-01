@@ -20,6 +20,7 @@ import { FallingLeavesScrollSceneDirective } from "./falling-leaves-scroll-scene
 import { ScrollSceneTextDirective } from "./scroll-scene-text.directive";
 import { StickUpDirective } from "../stick-up.directive";
 import { RippleDirective } from "../ripple.directive";
+import { ScrollSceneBackgroundColorDirective } from "./scroll-scene-background-color.directive";
 
 @NgModule({
     imports:      [ HomeRoutingModule ],
@@ -35,7 +36,8 @@ import { RippleDirective } from "../ripple.directive";
         FallingLeavesScrollSceneDirective,
         ScrollSceneTextDirective,
         RippleDirective,
-        StickUpDirective
+        StickUpDirective,
+        ScrollSceneBackgroundColorDirective
     ]
 })
 export class HomeModule { }

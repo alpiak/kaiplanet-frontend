@@ -10,6 +10,8 @@ import { ScrollSceneService } from "./scroll-scene.service"
 @Directive({ selector: "[fallingLeavesScrollScene]" })
 export class FallingLeavesScrollSceneDirective implements AfterViewInit {
     @Input("fallingLeavesScrollScene") leafAmount: number;
+    @Input() offset: string;
+    @Input() duration: string;
 
     constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
 
@@ -20,18 +22,18 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
 
         const ScrollMagic = require("scrollmagic");
 
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
-        require("../../style/falling-leaves");
+        require("../../styles/falling-leaves");
 
         const jQuery = require("jquery"),
-            LeafScene = require("../../script/falling-leaves");
+            LeafScene = require("../../scripts/falling-leaves");
 
         // build scroll scene
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
-                duration: "300%",
-                offset: 5 * this.bomService.getWindowHeight()
+                duration: this.duration,
+                offset: parseInt(this.offset) / 100 * this.bomService.getWindowHeight()
             })
                 .on("enter", () => {
                     jQuery(this.el.nativeElement).addClass("fixed falling-leaves");

@@ -13,7 +13,7 @@ export class ScrollSceneService {
         // ScrollMagic
         require("gsap/tweenLite");
         let ScrollMagic = require("scrollmagic");
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
         // init controller
         this.controller = new ScrollMagic.Controller({

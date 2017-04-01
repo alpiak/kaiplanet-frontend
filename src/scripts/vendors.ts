@@ -4,10 +4,10 @@
 
 // import { jQuery, $ } from "jquery";
 
-import "../style/bootstrap.min";
-import "../script/parallax";
+import "../styles/bootstrap.min";
+import ".//parallax";
 
-import "../style/base";
+import "../styles/base";
 
 // Fallback to loading jQuery from a local path if the CDN is unavailable
 // if (!window["jQuery"]) {

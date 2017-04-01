@@ -7,11 +7,13 @@ import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
 import { BomService } from "../bom.service";
 import { ScrollSceneService } from "./scroll-scene.service"
 
+import { ScrollSceneDirective } from "../../scripts/classes";
+
 @Directive({ selector: "[astralScrollScene]" })
-export class AstralScrollSceneDirective implements AfterViewInit {
+export class AstralScrollSceneDirective extends ScrollSceneDirective implements AfterViewInit {
     @Input("astralScrollScene") astralAmount: number;
 
-    constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
+    constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { super(); }
 
     ngAfterViewInit() {
 
@@ -20,20 +22,20 @@ export class AstralScrollSceneDirective implements AfterViewInit {
 
         const ScrollMagic = require("scrollmagic");
 
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
         const jQuery = require("jquery");
 
         // build scroll scene
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
-                duration: "300%",
-                offset: 2 * this.bomService.getWindowHeight()
+                duration: this.duration,
+                offset: parseInt(this.offset) / 100 * this.bomService.getWindowHeight()
             })
                 .on("enter", () => {
                     jQuery(this.el.nativeElement).addClass("fixed");
 
-                    require("../../script/astral.jquery");
+                    require("../../scripts/astral.jquery");
 
                     jQuery(this.el.nativeElement).astral(this.astralAmount);
                 })

@@ -17,7 +17,7 @@ export class ScrollPinDirective implements AfterViewInit {
         // ScrollMagic
         require("gsap/tweenLite");
         let ScrollMagic = require("scrollmagic");
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
         // build scroll scene
         this.scrollSceneService.addScene(

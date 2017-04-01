@@ -25,7 +25,7 @@ export class ScrollSceneTextDirective implements OnInit, AfterViewInit {
 
         const ScrollMagic = require("scrollmagic");
 
-        require("../../script/animation.gsap");
+        require("../../scripts/animation.gsap");
 
         // build scroll scenes
         this.scrollSceneService.addScene(
@@ -39,7 +39,8 @@ export class ScrollSceneTextDirective implements OnInit, AfterViewInit {
                 })
                 .setTween(this.el.nativeElement, {
                     y: -20,
-                    opacity: 1
+                    opacity: 1,
+                    ease: "Expo.easeOut"
                 })
         );
         this.scrollSceneService.addScene(
@@ -49,7 +50,8 @@ export class ScrollSceneTextDirective implements OnInit, AfterViewInit {
             })
                 .setTween(this.el.nativeElement, {
                     y: -100,
-                    opacity: 0
+                    opacity: 0,
+                    ease: "Expo.easeIn"
                 })
         );
     }
