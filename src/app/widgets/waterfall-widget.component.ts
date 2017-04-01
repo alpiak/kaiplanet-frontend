@@ -9,4 +9,4 @@ import { Component } from "@angular/core";
     template: require("./waterfall-widget.component.pug"),
     styles: [ require("./widget.component"), require("./waterfall-widget.component.scss") ]
 })
-export class waterfallWidgetComponent { }
+export class WaterfallWidgetComponent { }

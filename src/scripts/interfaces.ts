@@ -9,6 +9,11 @@ interface Widget {
     height: number;
     type: string;
     zIndex?: number;
+    config?: WidgetConfig;
 }
 
-export { Widget };
+interface WidgetConfig {
+    type?: string;
+}
+
+export { Widget, WidgetConfig };

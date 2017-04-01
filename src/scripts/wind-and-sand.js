@@ -71,7 +71,7 @@
         }
     }
 
-    window.onload = function() {
+    // window.onload = function() {
         document.onmousemove = handleMouseMove;
         context.drawImage(img, 0, 0 );
         myData = context.getImageData(0, 0, img.width, img.height);
@@ -80,7 +80,7 @@
         mouseX=0;
         mouseY=0;
         requestAnimationFrame(loop);
-    };
+    // };
 
 
     function handleMouseMove(event){
@@ -127,10 +127,10 @@
             p.repulse(mouseX,mouseY);
             if (!p.inplace){
                 var pos = ((p.currentY*canvas.width)+p.currentX)*4;
-                newData.data[pos] += 196;
-                newData.data[pos+1] += 154;
-                newData.data[pos+2] += 108;
-                newData.data[pos+3] += 255;
+                newData.data[pos] = 255;
+                newData.data[pos+1] = 193;
+                newData.data[pos+2] = 7;
+                newData.data[pos+3] = 255;
                 needRender = true;
             }
         }

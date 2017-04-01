@@ -9,4 +9,4 @@ import { Component } from "@angular/core";
     template: require("./carousel-widget.component.pug"),
     styles: [ require("./widget.component"), require("./carousel-widget.component.scss") ]
 })
-export class carouselWidgetComponent { }
+export class CarouselWidgetComponent { }

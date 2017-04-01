@@ -9,4 +9,4 @@ import { Component } from "@angular/core";
     template: require("./weather-card-widget.component.pug"),
     styles: [ require("./widget.component") ]
 })
-export class weatherCardWidgetComponent { }
+export class WeatherCardWidgetComponent { }

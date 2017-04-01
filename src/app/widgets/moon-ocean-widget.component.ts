@@ -9,4 +9,4 @@ import { Component } from "@angular/core";
     template: require("./moon-ocean-widget.component.pug"),
     styles: [ require("./widget.component"), require("./moon-ocean-widget.component.scss") ]
 })
-export class moonOceanWidgetComponent { }
+export class MoonOceanWidgetComponent { }

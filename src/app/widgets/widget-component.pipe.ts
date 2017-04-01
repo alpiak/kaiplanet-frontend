@@ -4,13 +4,13 @@
 
 import { Pipe, PipeTransform, Component } from "@angular/core";
 
-import { headerWidgetComponent } from "./header-widget.component";
-import { carouselWidgetComponent } from "./carousel-widget.component";
-import { weatherCardWidgetComponent } from "./weather-card-widget.component";
-import { drawingBoardWidgetComponent } from "./drawing-board-widget.component";
-import { moonOceanWidgetComponent } from "./moon-ocean-widget.component";
-import {waterfallWidgetComponent} from "./waterfall-widget.component";
-import { windAndSandWidgetComponent } from "./wind-and-sand-widget.component";
+import { HeaderWidgetComponent } from "./header-widget.component";
+import { CarouselWidgetComponent } from "./carousel-widget.component";
+import { WeatherCardWidgetComponent } from "./weather-card-widget.component";
+import { DrawingBoardWidgetComponent } from "./drawing-board-widget.component";
+import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
+import {WaterfallWidgetComponent} from "./waterfall-widget.component";
+import { PlainWidgetComponent } from "./plain-widget.component";
 
 /*
  * Get the relevant Angular component to the type
@@ -24,19 +24,19 @@ export class WidgetComponentPipe implements PipeTransform {
     transform(value: string): Component {
         switch (value) {
             case "carousel":
-                return carouselWidgetComponent;
+                return CarouselWidgetComponent;
             case "weather-card":
-                return weatherCardWidgetComponent;
+                return WeatherCardWidgetComponent;
             case "header":
-                return headerWidgetComponent;
+                return HeaderWidgetComponent;
             case "drawing-board":
-                return drawingBoardWidgetComponent;
+                return DrawingBoardWidgetComponent;
             case "moon-ocean":
-                return moonOceanWidgetComponent;
+                return MoonOceanWidgetComponent;
             case "waterfall":
-                return waterfallWidgetComponent;
-            case "wind-and-sand":
-                return windAndSandWidgetComponent;
+                return WaterfallWidgetComponent;
+            case "plain":
+                return PlainWidgetComponent;
         }
     }
 }

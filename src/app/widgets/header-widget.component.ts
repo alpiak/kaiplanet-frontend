@@ -11,7 +11,7 @@ import { LocaleService } from "../locale.service";
     template: require("./header-widget.component.pug"),
     styles: [ require("./widget.component"), require("./header-widget.component.scss") ]
 })
-export class headerWidgetComponent {
+export class HeaderWidgetComponent {
     currentLocale: string;
 
     constructor(private localeService: LocaleService) {

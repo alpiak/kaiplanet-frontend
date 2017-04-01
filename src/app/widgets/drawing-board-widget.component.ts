@@ -9,4 +9,4 @@ import { Component } from "@angular/core";
     template: require("./drawing-board-widget.component.pug"),
     styles: [ require("./widget.component"), require("./drawing-board-widget.component.scss") ]
 })
-export class drawingBoardWidgetComponent { }
+export class DrawingBoardWidgetComponent { }
