@@ -1,0 +1,18 @@
+//
+   Created by qhyang on 2017/4/1.
+
+
+button.tool-pane__button.mdl-button.mdl-js-button
+    svg.svg-ic_20px-dims(xlink:href="#ic_play_for_work_24px")
+    span.item__text(i18n="button text|text of the button to skip the showcase and go to the bottom directly on the earth page") Skip
+button#earth-breath__language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
+    span.lang-xs.lang-lbl(lang="zh")
+ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="earth-breath__language-switch")
+    li.mdl-menu__item((click)="changeLocale('zh-CN')")
+        span.lang-xs.lang-lbl(lang="zh")
+    li.mdl-menu__item((click)="changeLocale('en-US')")
+        span.lang-xs.lang-lbl(lang="en")
+    li.mdl-menu__item((click)="changeLocale('ja-JP')")
+        span.lang-xs.lang-lbl(lang="ja")
+    li.mdl-menu__item
+        span.lang-xs.lang-lbl(lang="ko")

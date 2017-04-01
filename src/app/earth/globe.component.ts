@@ -11,7 +11,7 @@ import { BomService } from "../bom.service";
     template: require("./globe.component.pug"),
     styles: [ require("./globe.component.scss") ]
 })
-export class globeComponent implements OnInit {
+export class GlobeComponent implements OnInit {
     private height: number;
 
     constructor(private bomService: BomService) { }

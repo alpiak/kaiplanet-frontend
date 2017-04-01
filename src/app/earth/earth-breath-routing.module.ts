@@ -7,7 +7,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./earth-breath.component";
 
 const homeRoutes: Routes = [
-    { path: "earth-breath",  component: HomeComponent }
+    { path: "earth",  component: HomeComponent }
 ];
 
 @NgModule({

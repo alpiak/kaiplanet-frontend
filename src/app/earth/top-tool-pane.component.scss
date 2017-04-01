@@ -1,0 +1,25 @@
+
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.item__text {
+  vertical-align: middle;
+}
+.lang-lbl {
+  vertical-align: text-top;
+}
+.lang-lbl:after {
+  top: -12.8px;
+}
+.mdl-menu .lang-lbl:after {
+  top: -18px;
+}
+.svg-ic_20px-dims {
+  width: 20px;
+  height: 20px;
+}
+.item__icon_before-text {
+  margin-right: 5px;
+}

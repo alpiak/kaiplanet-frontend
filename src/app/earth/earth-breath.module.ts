@@ -8,8 +8,9 @@ import { HomeComponent } from "./earth-breath.component";
 import { HomeRoutingModule } from "./earth-breath-routing.module";
 
 import { JumbotronComponent } from "./jumbotron.component";
+import { GlobeComponent } from "./globe.component";
 import { CrystalNavComponent } from "./crystal-nav.component";
-import { globeComponent } from "./globe.component";
+import { TopToolPaneComponent } from "./top-tool-pane.component";
 
 import { ScrollSceneService } from "./scroll-scene.service";
 
@@ -28,8 +29,9 @@ import { ScrollSceneBackgroundColorDirective } from "./scroll-scene-background-c
     declarations: [
         HomeComponent,
         JumbotronComponent,
+        GlobeComponent,
         CrystalNavComponent,
-        globeComponent,
+        TopToolPaneComponent,
         ScrollPinDirective,
         ScrollUpDirective,
         AstralScrollSceneDirective,
