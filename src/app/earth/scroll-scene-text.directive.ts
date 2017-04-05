@@ -30,8 +30,8 @@ export class ScrollSceneTextDirective implements OnInit, AfterViewInit {
         // build scroll scenes
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
-                duration: 200,
-                offset: parseInt(this.offset) / 100 * this.bomService.getWindowHeight()
+                offset: parseInt(this.offset) / 100 * this.bomService.getWindowHeight(),
+                duration: 200
             })
                 .on("enter", () => {
                     jQuery(this.el.nativeElement).css("display", "block");
@@ -45,13 +45,31 @@ export class ScrollSceneTextDirective implements OnInit, AfterViewInit {
         );
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
-                duration: 200,
-                offset: (parseInt(this.offset, 10) + parseInt(this.duration, 10)) / 100 * this.bomService.getWindowHeight()
+                offset: (parseInt(this.offset, 10) + parseInt(this.duration, 10)) / 100 * this.bomService.getWindowHeight(),
+                duration: 200
             })
                 .setTween(this.el.nativeElement, {
                     y: -100,
                     opacity: 0,
                     ease: "Expo.easeIn"
+                })
+        );
+
+        let tweenObj = {
+            blur: 3
+        };
+
+        this.scrollSceneService.addScene(
+            new ScrollMagic.Scene({
+                offset: parseInt(this.offset) / 100 * this.bomService.getWindowHeight(),
+                duration: 500
+            })
+                .setTween(tweenObj, {
+                    blur: 0,
+                    ease: "Sine.easeOut",
+                    onUpdate: () => {
+                        jQuery(this.el.nativeElement).css("filter", "blur(" + tweenObj.blur + "px)");
+                    }
                 })
         );
     }

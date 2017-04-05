@@ -5,26 +5,38 @@
 ul.scene#scene(
     "[style.height]"="height + 'px'"
     "[style.width]"="width + 'px'"
-    scrollPin="800%"
+    scrollPin="1900%"
 )
-    li.background.stars-cluster.layer.full-size(data-depth="0.10")
+    li.background.stars-cluster.layer.full-size(
+        data-depth="0.10"
+        scrollUp
+        offset="1500%"
+        duration="300%"
+    )
         - for (var x = 1; x <=100; x++)
             .star(class="star-" + x)
-    li.background-front.stars-cluster.layer.full-size(data-depth="0.20")
+    li.background-front.stars-cluster.layer.full-size(
+        data-depth="0.20"
+        scrollUp
+        offset="1500%"
+        duration="300%"
+    )
+        div.full-size(
+            scrollSceneBackgroundColor
+            "[toColor]"="['rgba(64, 96, 128, .2)', 'rgba(128, 108, 64, .2)']"
+            "[offset]"="['600%', '1050%']"
+            "[duration]"="['450%', '450%']"
+            "[tweenBack]"="[false, true]"
+        )
     li.layer.full-size(
         data-depth="0.50"
-        scrollSceneBackgroundColor
-        "[toColor]"="['rgba(64, 96, 128, .2)', 'rgba(128, 108, 64, .2)']"
-        "[offset]"="['200%', '500%']"
-        "[duration]"="['300%', '300%']"
-        "[tweenBack]"="[false, true]"
     )
         div.full-size(
             astralScrollScene="60"
-            offset="200%"
-            duration="300%"
+            offset="600%"
+            duration="450%"
         )
-        div.bubble-cluster-1(scrollUp="200%")
+        div.bubble-cluster-1(scrollUp offset="0%" duration="200%")
             - var n = 1;
             while n < 60
                 img.bubble(
@@ -33,7 +45,7 @@ ul.scene#scene(
                 )
                 - n++
     li.layer.full-size(data-depth="0.80")
-        div.bubble-cluster-2(scrollUp="125%")
+        div.bubble-cluster-2(scrollUp offset="0%" duration="125%")
             - var n = 1;
             while n < 30
                 img.bubble(
@@ -44,22 +56,63 @@ ul.scene#scene(
     li.layer.full-size(data-depth="1.20")
         div.full-size(
             astralScrollScene="30"
-            offset="200%"
-            duration="300%"
+            offset="600%"
+            duration="450%"
         )
         div.full-size(
             fallingLeavesScrollScene="20"
-            offset="500%"
-            duration="300%"
+            offset="1050%"
+            duration="450%"
         )
-        h1(
-            scrollSceneText
-            offset="-20%"
-            duration="50%"
-            i18n="user welcome|the text showed after enter the earth page"
-        ) Welcome to the play ground!
+        div.scroll-scene-text(style="height: 30%")
+            h1(
+                scrollSceneText
+                offset="-30%"
+                duration="230%"
+                i18n="User welcome|The text showed after enter the earth page"
+            ) Welcome to the play ground!
+            h1(
+                scrollSceneText
+                offset="90%"
+                duration="150%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) Here I found star lights, sweet breezes...
+        div.scroll-scene-text(style="height: 15%")
+            h1(
+                scrollSceneText
+                offset="290%"
+                duration="200%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) and a beating heart
+        div.scroll-scene-text(style="height: 30%")
+            h1(
+                scrollSceneText
+                offset="580%"
+                duration="360%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) Look, the shooting stars in the sky...
+            h1(
+                scrollSceneText
+                offset="730%"
+                duration="230%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) and the mysterious fireflies around
+        div.scroll-scene-text(style="height: 15%")
+            h1(
+                scrollSceneText
+                offset="1040%"
+                duration="360%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) And, the wind starts...
+        div.scroll-scene-text(style="height: 15%")
+            h1(
+                scrollSceneText
+                offset="1660%"
+                duration="1000%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) Can you hear the breathe of the Earth?
     li.layer.full-size(data-depth="1.60")
-        div.bubble-cluster-3(scrollUp="62.5%")
+        div.bubble-cluster-3(scrollUp offset="0%" duration="62.5%")
             - var n = 1;
             while n < 20
                 img.bubble(
@@ -71,7 +124,7 @@ ul.scene#scene(
     li.layer.full-size(
         data-depth="0.60"
     )
-        div(scrollUp="220%")
+        div(scrollUp offset="0%" duration="220%")
             div(
                 crystal-nav
                 bsStickUp

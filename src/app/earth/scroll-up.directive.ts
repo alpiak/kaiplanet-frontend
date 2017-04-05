@@ -4,13 +4,15 @@
 
 import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
 
+import { BomService } from "../bom.service";
 import { ScrollSceneService } from "./scroll-scene.service"
 
 @Directive({ selector: "[scrollUp]" })
 export class ScrollUpDirective implements AfterViewInit {
-    @Input("scrollUp") duration: string;
+    @Input() offset: string;
+    @Input() duration: string;
 
-    constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService) { }
+    constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
 
     ngAfterViewInit() {
         this.el.nativeElement.style.cssText = `
@@ -31,6 +33,7 @@ export class ScrollUpDirective implements AfterViewInit {
         // build scroll scene
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
+                offset: parseInt(this.offset, 10) / 100 * this.bomService.getWindowHeight(),
                 duration: this.duration
             })
                 .setTween(this.el.nativeElement, {
