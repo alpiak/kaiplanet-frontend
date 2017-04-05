@@ -284,7 +284,7 @@ DrawingBoard.Utils.compareColors = function(a, b, tolerance) {
 window.DrawingBoard = typeof DrawingBoard !== "undefined" ? DrawingBoard : {};
 
 /**
- * pass the id of the html element to put the drawing board into
+ * pass the html element to put the drawing board into
  * and some options : {
  *	controls: array of controls to initialize with the drawingboard. 'Colors', 'Size', and 'Navigation' by default
  *		instead of simple strings, you can pass an object to define a control opts
@@ -299,11 +299,12 @@ window.DrawingBoard = typeof DrawingBoard !== "undefined" ? DrawingBoard : {};
  *	stretchImg: default behavior of image setting on the canvas: set to the canvas width/height or not? false by default
  * }
  */
-DrawingBoard.Board = function(el, opts) {
+DrawingBoard.Board = function(el, id, opts) {
 	this.opts = this.mergeOptions(opts);
 
 	this.ev = new DrawingBoard.Utils.MicroEvent();
 
+	this.id = id;
 	this.el = el;
 	this.$el = $(el);
 	if (!this.$el.length)

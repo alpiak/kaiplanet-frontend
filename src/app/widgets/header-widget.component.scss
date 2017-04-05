@@ -1,4 +1,20 @@
 
+:host{
+  background-image: url(../../assets/logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 992px) {
+  :host {
+    background-position: 10%;
+    background-size: 90px 60px;
+  }
+}
+@media (max-width: 768px) {
+  :host {
+    background-size: 60px 40px;
+  }
+}
 .tool-pane {
   position: absolute;
   bottom: 0;

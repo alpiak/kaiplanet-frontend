@@ -10,10 +10,13 @@ interface Widget {
     type: string;
     zIndex?: number;
     config?: WidgetConfig;
+    data?: WidgetData;
 }
-
 interface WidgetConfig {
     type?: string;
+}
+interface WidgetData {
+    imgUrl?: string;
 }
 
 export { Widget, WidgetConfig };
