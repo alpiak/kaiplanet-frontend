@@ -2,7 +2,11 @@
  * Created by qhyang on 2017/4/1.
  */
 
-module.exports = function (canvas) {
+module.exports = function(container) {
+    var canvas = document.createElement("canvas");
+
+    container.appendChild(canvas);
+
     var ctx = canvas.getContext('2d');
     var SIZE = 1;
     var STEP_SIZE = 2; // change to 1 to get true walkers without spacing
@@ -35,8 +39,8 @@ module.exports = function (canvas) {
 
 // set initial canvas size
     function setCanvasSize() {
-        ctx.canvas.width = window.innerWidth;
-        ctx.canvas.height = window.innerHeight;
+        ctx.canvas.width = container.offsetWidth;
+        ctx.canvas.height = container.offsetHeight;
     }
 
 // set size of canvas to be size of window
@@ -113,4 +117,9 @@ module.exports = function (canvas) {
 
     requestAnimationFrame(repeat);
 
+    var randomWalkers = {};
+
+    randomWalkers.resize = setCanvasSize;
+
+    return randomWalkers;
 };

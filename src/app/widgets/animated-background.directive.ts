@@ -4,25 +4,35 @@
 
 import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
 
+import { GridStackService } from "../home/grid-stack.service";
+
 @Directive({ selector: "[animated-background]" })
 export class AnimatedBackgroundDirective implements AfterViewInit {
     @Input() type: string;
+    gridItemContainer: HTMLElement;
 
-    constructor(private el: ElementRef) { }
+    constructor(private el: ElementRef, private gridStackService: GridStackService) { }
 
     ngAfterViewInit() {
+        const jQuery = require("jquery");
+
+        this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);
+
         setTimeout(() => {
             if (this.type === "wind-and-sand") {
                 let windAndSand = require("../../scripts/wind-and-sand");
 
                 windAndSand(this.el.nativeElement);
             } else if (this.type === "random-walkers") {
-                const jQuery = require("jquery"),
-                    randomWalkers = require("../../scripts/random-walkers");
+                const RandomWalkers = require("../../scripts/random-walkers");
 
-                let canvas = jQuery("<canvas>").appendTo(this.el.nativeElement).get(0);
+                let randomWalkers = RandomWalkers(this.el.nativeElement);
 
-                randomWalkers(canvas);
+                this.gridStackService.on("resizestop").subscribe((event) => {
+                    if (event.target === this.gridItemContainer) {
+                        setTimeout(() => randomWalkers.resize(), 300);
+                    }
+                });
             }
         }, 200);
     }

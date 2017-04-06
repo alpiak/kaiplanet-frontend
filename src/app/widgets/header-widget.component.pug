@@ -2,13 +2,14 @@
    Created by qhyang on 2017/3/15.
 
 
+img.logo(src="../../assets/logo.svg" alt="logo")
 div.tool-pane
     button#hearder-widget__widget-operation-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect
         svg.item__icon_with-text.svg-ic_20px-dims(fill="#fff")
             use(xlink:href="#ic_apps_24px")
         span.item__text(i18n="Button text|the text of a button to open a menu to manage widgets") Widgets
     ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__widget-operation-button")
-        li.mdl-menu__item
+        li.mdl-menu__item((click)="openAddWidgetDialog()")
             svg.item__icon_with-text.svg-ic_20px-dims
                 use(xlink:href="#ic_add_box_24px")
             span.item__text(i18n="Option text|the text of an option to open a dialog for adding a widget") Add a widget
@@ -39,3 +40,16 @@ div.tool-pane
             svg.item__icon_with-text.svg-ic_20px-dims
                 use(xlink:href="#ic_picture_in_picture_24px")
             span.item__text(i18n="Option text|the text of an option to open a dialog to change theme of the page") Change theme
+dialog#hearder-widget__dialog.mdl-dialog
+    h4.mdl-dialog__title(i18n="Dialog title|the title of a dialog for adding a widget") Add a widget
+    div.mdl-dialog__content
+        add-widget-form([widgetTypes]="widgetTypes")
+    div.mdl-dialog__actions
+        button.mdl-button(
+            type="button"
+            i18n="Button text|the text of a button to add a widget to the widget board"
+        ) Add
+        button.mdl-button.close(
+            type="button"
+            i18n="Button text|the text of a button to close the dialog for adding a widget without adding any widget to the widget board"
+        ) Cancel

@@ -12,6 +12,7 @@ import { DrawingBoardWidgetComponent } from "./drawing-board-widget.component";
 import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
 import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
+import { AddWidgetFormComponent } from "../home/add-widget-form.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
@@ -29,6 +30,7 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
         MoonOceanWidgetComponent,
         WaterfallWidgetComponent,
         PlainWidgetComponent,
+        AddWidgetFormComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,

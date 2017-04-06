@@ -1,18 +1,30 @@
 
 :host{
-  background-image: url(../../assets/logo.svg);
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url(../../assets/34.jpg);
+  background-position: bottom center;
+  background-size: cover;
+}
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  height: 80px;
+  margin: auto;
 }
 @media (max-width: 992px) {
-  :host {
-    background-position: 10%;
-    background-size: 90px 60px;
+  .logo {
+    margin-left: 10%;
+    width: 90px;
+    height: 60px;
   }
 }
 @media (max-width: 768px) {
-  :host {
-    background-size: 60px 40px;
+  .logo {
+    width: 60px;
+    height: 40px;
   }
 }
 .tool-pane {
@@ -44,4 +56,8 @@
 }
 .item__icon_with-text {
   margin-right: 5px;
+}
+.mdl-dialog {
+  width: 60%;
+  min-width: 500px;
 }

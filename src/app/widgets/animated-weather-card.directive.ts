@@ -8,7 +8,7 @@ import { GridStackService } from "../home/grid-stack.service";
 
 @Directive({ selector: "[animatedWeatherCard]" })
 export class AnimatedWeatherCardDirective implements AfterViewInit {
-    gridItemContainer: HTMLElement;
+    private gridItemContainer: HTMLElement;
 
     constructor(private el: ElementRef, private gridStackService: GridStackService) { }
 

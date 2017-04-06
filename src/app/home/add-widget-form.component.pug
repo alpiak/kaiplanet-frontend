@@ -1,0 +1,52 @@
+//
+   Created by qhyang on 2017/4/6.
+
+form.form-horizontal
+    div.form-group
+        label.col-sm-3.control-label(for="add-widget-form__type-select") Widget type:
+        div.col-sm-7
+            select#add-widget-form__type-select.form-control
+                option(
+                    *ngFor="let widgetType of widgetTypes"
+                    "[attr.value]"="widgetType.key"
+                ) {{ widgetType.text }}
+    fieldset
+        legend Widget position & size
+        div.form-group
+            div.col-sm-6.mdl-grid
+                label.mdl-cell--4-col.mdl-cell--4-col-tablet(for="add-widget-form__field-x") x:
+                div.mdl-cell--8-col.mdl-cell--8-col-tablet.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    input#add-widget-form__field-x.mdl-textfield__input(
+                        type="text"
+                        pattern="-?[0-9]*(\.[0-9]+)?"
+                    )
+                    label.mdl-textfield__label(for="add-widget-form__field-x") Number...
+                    span.mdl-textfield__error Input is not a number!
+            div.col-sm-6.mdl-grid
+                label.mdl-cell--4-col.mdl-cell--4-col-tablet(for="add-widget-form__field-y") y:
+                div.mdl-cell--8-col.mdl-cell--8-col-tablet.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    input#add-widget-form__field-y.mdl-textfield__input(
+                        type="text"
+                        pattern="-?[0-9]*(\.[0-9]+)?"
+                    )
+                    label.mdl-textfield__label(for="add-widget-form__field-y") Number...
+                    span.mdl-textfield__error Input is not a number!
+        div.form-group
+            div.col-sm-6.mdl-grid
+                label.mdl-cell--4-col.mdl-cell--4-col-tablet(for="add-widget-form__field-width") Width:
+                div.mdl-cell--8-col.mdl-cell--8-col-tablet.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    input#add-widget-form__field-width.mdl-textfield__input(
+                        type="text"
+                        pattern="-?[0-9]*(\.[0-9]+)?"
+                    )
+                    label.mdl-textfield__label(for="add-widget-form__field-width") Number...
+                    span.mdl-textfield__error Input is not a number!
+            div.col-sm-6.mdl-grid
+                label.mdl-cell--4-col.mdl-cell--4-col-tablet(for="add-widget-form__field-height") Height:
+                div.mdl-cell--8-col.mdl-cell--8-col-tablet.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                    input#add-widget-form__field-height.mdl-textfield__input(
+                        type="text"
+                        pattern="-?[0-9]*(\.[0-9]+)?"
+                    )
+                    label.mdl-textfield__label(for="add-widget-form__field-height") Number...
+                    span.mdl-textfield__error Input is not a number!

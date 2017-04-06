@@ -17,13 +17,13 @@ let jQuery = require("jquery");
 export class GridStackService {
     private gridStack: HTMLElement;
     private widgetTypes = [
-        "plain",
-        "header",
-        "carousel",
-        "drawing-board",
-        "moon-ocean",
-        "weather-card",
-        "waterfall"
+        { text: "Plain", key: "plain" },
+        { text: "Header", key: "header" },
+        { text: "Carousel", key: "carousel" },
+        { text: "Drawing board", key: "drawing-board" },
+        { text: "Moon and Ocean", key: "moon-ocean" },
+        { text: "Weather card", key: "weather-card" },
+        { text: "Waterfall", key: "waterfall" }
     ];
     private widgets: Widget[] = [
         { x: 0, y: 0, width: 12, height: 2, type: "header", zIndex: 3 },
@@ -74,7 +74,7 @@ export class GridStackService {
         this.initSubject.next();
         this.initSubject.complete();
     }
-    getWidgetTypes(): string[] {
+    getWidgetTypes(): Object[] {
         return this.widgetTypes;
     }
     removeWidget(index: number): void {

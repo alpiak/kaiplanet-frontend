@@ -8,12 +8,13 @@ import "bootstrap/dist/css/bootstrap";
 import "material-design-lite/material.css";
 import "material-design-lite/material.js";
 import "../styles/languages";
+import "dialog-polyfill/dialog-polyfill.css";
 
 import "../styles/base";
 import "../styles/default.theme";
 
 // Fallback to loading jQuery from a local path if the CDN is unavailable
-if (!window["jQuery"]) {
+if (!window["$"] && !window["jQuery"]) {
     window["jQuery"] = require("jquery/dist/jquery");
     window["$"] = require("jquery/dist/jquery");
 }
