@@ -1,6 +1,10 @@
 
+select {
+  border-radius: 0;
+}
 legend {
   margin-bottom: 0;
+  color: inherit;
   font-size: medium;
 }
 label {
@@ -9,4 +13,14 @@ label {
 }
 .mdl-grid {
   display: block;
+}
+.mdl-grid>label {
+  padding-right: 10px;
+  text-align: right;
+}
+@media (max-width: 839px) {
+  .mdl-grid label {
+    padding-right: 0;
+    text-align: left;
+  }
 }

@@ -4,6 +4,7 @@
 
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 import { HeaderWidgetComponent } from "./header-widget.component";
 import { CarouselWidgetComponent } from "./carousel-widget.component";
@@ -20,8 +21,13 @@ import { DrawingBoardDirective } from "./drawing-board.directive";
 import { WaterfallDirective } from "./waterfall.directive";
 import { AnimatedBackgroundDirective } from "./animated-background.directive";
 
+import { ArrayPipe } from "../array.pipe";
+
 @NgModule({
-    imports:      [ CommonModule ],
+    imports:      [
+        CommonModule,
+        FormsModule
+    ],
     declarations: [
         HeaderWidgetComponent,
         CarouselWidgetComponent,
@@ -35,7 +41,8 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,
         WaterfallDirective,
-        AnimatedBackgroundDirective
+        AnimatedBackgroundDirective,
+        ArrayPipe
     ],
     entryComponents: [
         HeaderWidgetComponent,

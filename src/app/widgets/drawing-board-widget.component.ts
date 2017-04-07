@@ -21,6 +21,12 @@ export class DrawingBoardWidgetComponent implements AfterViewInit{
         const jQuery = require("jquery");
 
         this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
-        this.imgUrl = this.gridStackService.getWidgetData()[this.index].data.imgUrl;
+
+        let widgetData = this.gridStackService.getWidgetData(),
+            imgUrl = widgetData[this.index].data && widgetData[this.index].data.imgUrl;
+
+        if (imgUrl) {
+            this.imgUrl = imgUrl;
+        }
     }
 }

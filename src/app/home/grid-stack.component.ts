@@ -28,16 +28,7 @@ export class gridStackComponent implements AfterViewInit {
     }
 
     ngAfterViewInit() {
-        let jQuery = require("jquery"),
-            options = {
-                acceptWidgets: true,
-                cellHeight: "auto",
-                verticalMargin: 10,
-                alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-                animate: true,
-                handle: ".grid-stack-item-handle",
-                removable: true
-            };
+        let jQuery = require("jquery");
 
         this.gridStackService.on("init").subscribe(() => {
             this.gridStackService.on("resizestart").subscribe((event) => {
@@ -53,6 +44,17 @@ export class gridStackComponent implements AfterViewInit {
                 jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
             });
         });
+
+        let options = {
+            acceptWidgets: true,
+            cellHeight: "auto",
+            verticalMargin: 10,
+            alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+            animate: true,
+            handle: ".grid-stack-item-handle",
+            removable: true
+        };
+
         this.gridStackService.init(jQuery(".grid-stack")[0], options);
     }
     onClose(index: number) {

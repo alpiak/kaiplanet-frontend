@@ -60,4 +60,11 @@
 .mdl-dialog {
   width: 60%;
   min-width: 500px;
+  max-width: 800px;
+  max-height: 100%;
+  overflow: auto;
+}
+.mdl-dialog .close {
+  padding: 0 16px;
+  opacity: 1;
 }

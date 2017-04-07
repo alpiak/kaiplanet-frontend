@@ -2,19 +2,26 @@
  * Created by qhyang on 2017/3/15.
  */
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 import { LocaleService } from "../locale.service";
 import { GridStackService } from "../home/grid-stack.service";
 
-@Component({
+import { AddWidgetFormComponent } from "../home/add-widget-form.component";
+
+import { Widget } from "../../scripts/interfaces";
+
+const jQuery = require("jquery");
+
+    @Component({
     selector: "header-widget",
     template: require("./header-widget.component.pug"),
     styles: [ require("./widget.component"), require("./header-widget.component.scss") ]
 })
 export class HeaderWidgetComponent implements OnInit{
     currentLocale: string;
-    private widgetTypes: Object[];
+    private widgetTypes: Object;
+    @ViewChild(AddWidgetFormComponent) private addWidgetFormComponent: AddWidgetFormComponent;
 
     constructor(private localeService: LocaleService, private gridStackService: GridStackService) {
         this.currentLocale = localeService.currentLocale;
@@ -28,8 +35,7 @@ export class HeaderWidgetComponent implements OnInit{
         setTimeout(() => alert("Login feature will be included in the next release!"), 300);
     }
     openAddWidgetDialog() {
-        const jQuery = require("jquery"),
-            dialogPolyfill = require("dialog-polyfill/dialog-polyfill.js");
+        const dialogPolyfill = require("dialog-polyfill/dialog-polyfill.js");
 
         let dialog: any = jQuery("#hearder-widget__dialog").get(0);
 
@@ -39,8 +45,9 @@ export class HeaderWidgetComponent implements OnInit{
         dialog.showModal();
         jQuery(dialog).find(".close").bind("click", () => dialog.close());
     }
-    addWidget(config: Object) {
-
+    addWidget(widget: Widget) {
+        this.gridStackService.addWidget(widget);
+        jQuery("#hearder-widget__dialog").get(0).close();
     }
     changeLocale(locale: string) {
         this.localeService.setLocale(locale);
