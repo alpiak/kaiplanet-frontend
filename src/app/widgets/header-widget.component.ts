@@ -43,10 +43,14 @@ export class HeaderWidgetComponent implements OnInit{
             dialogPolyfill.registerDialog(dialog);
         }
         dialog.showModal();
-        jQuery(dialog).find(".close").bind("click", () => dialog.close());
+        jQuery(dialog).find(".close").bind("click", () => {
+            this.addWidgetFormComponent.clearConfig();
+            dialog.close();
+        });
     }
     addWidget(widget: Widget) {
         this.gridStackService.addWidget(widget);
+        this.addWidgetFormComponent.clearConfig();
         jQuery("#hearder-widget__dialog").get(0).close();
     }
     changeLocale(locale: string) {

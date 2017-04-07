@@ -13,7 +13,7 @@ import { GridStackService } from "../home/grid-stack.service";
 export class DrawingBoardDirective implements AfterViewInit {
     @Input("drawingBoard") index: number;
     @Input() imgUrl: string;
-    gridItemContainer: HTMLElement;
+    private gridItemContainer: HTMLElement;
 
     constructor(private el: ElementRef, private gridStackService: GridStackService, private bomService: BomService) { }
 
@@ -32,16 +32,9 @@ export class DrawingBoardDirective implements AfterViewInit {
             drawingBoard = new window["DrawingBoard"].Board(this.el.nativeElement, this.index, {
                 controlsPosition: "top right",
                 droppable: true,
-                stretchImg: true,
-                color: "rgb(255, 193, 7)"
+                stretchImg: true
             });
             drawingBoard.restoreWebStorage();
-        }, 200);
-
-        window.addEventListener("resize", () => {
-            setTimeout(() => drawingBoard.resize(), 300);
-        });
-        this.gridStackService.on("init").subscribe(() => {
             this.gridStackService.on("resizestart").subscribe((event) => {
                 if (event.target === this.gridItemContainer) {
                     jQuery(this.el.nativeElement).hide();
@@ -56,6 +49,10 @@ export class DrawingBoardDirective implements AfterViewInit {
                     }, 300);
                 }
             });
+        }, 300);
+
+        window.addEventListener("resize", () => {
+            setTimeout(() => drawingBoard.resize(), 300);
         });
         delay.call(this.bomService.windowResize(), 300)
             .subscribe(() => {

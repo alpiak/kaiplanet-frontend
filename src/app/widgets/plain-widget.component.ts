@@ -20,7 +20,9 @@ export class PlainWidgetComponent implements AfterViewInit{
     ngAfterViewInit() {
         const jQuery = require("jquery");
 
-        this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
-        this.type = this.gridStackService.getWidgetData()[this.index].config.type;
+        setTimeout(() => {
+            this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
+            this.type = this.gridStackService.getWidgetData()[this.index].config.type;
+        }, 200);
     }
 }

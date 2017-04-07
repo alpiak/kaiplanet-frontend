@@ -23,14 +23,11 @@ export class ThreeImageTransitionDirective implements AfterViewInit {
             const ThreeImageTransition = require("../../scripts/three-image-transition");
 
             threeImageTransition = ThreeImageTransition(this.el.nativeElement);
-        }, 200);
-
-        this.gridStackService.on("init").subscribe(() => {
             this.gridStackService.on("resizestop").subscribe((event) => {
                 if (event.target === this.gridItemContainer && threeImageTransition) {
                     setTimeout(() => threeImageTransition.resize(), 300);
                 }
             });
-        });
+        }, 200);
     }
 }

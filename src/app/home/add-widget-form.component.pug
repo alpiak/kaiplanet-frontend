@@ -75,7 +75,7 @@ form.form-horizontal
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-width") Number...
                     span.mdl-textfield__error Input is not a number!
-    fieldset
+    fieldset([style.display]="type === 'plain' ? 'block' : 'none'")
         legend Settings
         div.form-group(*ngIf="type === 'plain'")
             br

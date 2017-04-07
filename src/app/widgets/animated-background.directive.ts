@@ -14,11 +14,10 @@ export class AnimatedBackgroundDirective implements AfterViewInit {
     constructor(private el: ElementRef, private gridStackService: GridStackService) { }
 
     ngAfterViewInit() {
-        const jQuery = require("jquery");
-
-        this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);
-
         setTimeout(() => {
+            const jQuery = require("jquery");
+
+            this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);
             if (this.type === "wind-and-sand") {
                 let windAndSand = require("../../scripts/wind-and-sand");
 
@@ -34,6 +33,6 @@ export class AnimatedBackgroundDirective implements AfterViewInit {
                     }
                 });
             }
-        }, 200);
+        }, 300);
     }
 }
