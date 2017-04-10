@@ -7,6 +7,10 @@ $accent: rgb(255, 193, 7);
 $leftNavPrimary: $primary;
 $leftNavHighlight: $accent;
 
+.meny {
+  background-color: $leftNavPrimary;
+}
+
 @mixin active-1 {
   background: $leftNavPrimary;
   .active-1 {

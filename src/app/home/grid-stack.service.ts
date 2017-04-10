@@ -60,7 +60,7 @@ export class GridStackService {
         { x: 8, y: 2, width: 3, height: 4, type: "weather-card" },
         { x: 0, y: 4, width: 2, height: 3, type: "plain", config: { type: "wind-and-sand" } },
         { x: 2, y: 4, width: 6, height: 3, type: "carousel", zIndex: 2 },
-        // { x: 8, y: 6, width: 3, height: 4, type: "plain" },
+        { x: 8, y: 6, width: 3, height: 4, type: "sns", config: { types: [ { key: "weibo", text: "Weibo", src: "https://passport.weibo.cn/signin/welcome" }, { key: "mop", text: "Mop", src: "http://m.mop.com/login.html" } ] } },
         { x: 0, y: 7, width: 8, height: 3, type: "moon-ocean" },
         { x: 11, y: 2, width: 1, height: 8, type: "plain", config: { type: "random-walkers" } }
     ];

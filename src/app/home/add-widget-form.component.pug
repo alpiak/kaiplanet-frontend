@@ -25,10 +25,12 @@ form.form-horizontal
                         [(ngModel)]="x"
                         name="x"
                         type="text"
-                        pattern="-?[0-9]*(\.[0-9]+)?"
+                        pattern="[0-9]"
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-x") Number...
-                    span.mdl-textfield__error Input is not a number!
+                    span.mdl-textfield__error(
+                        i18n="Warning text of a input field|Warn the user the input is not valid"
+                    ) Input is not a integer between 0~9!
             div.col-sm-6.mdl-grid
                 label.mdl-cell--6-col(for="add-widget-form__field-y") Y:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
@@ -36,10 +38,12 @@ form.form-horizontal
                         [(ngModel)]="y"
                         name="y"
                         type="text"
-                        pattern="-?[0-9]*(\.[0-9]+)?"
+                        pattern="[0-9]*"
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-y") Number...
-                    span.mdl-textfield__error Input is not a number!
+                    span.mdl-textfield__error(
+                        i18n="Warning text of a input field|Warn the user the input is not valid"
+                    ) Input is not a integer between 0~9!
         div.row
             div.col-sm-6.mdl-grid
                 label.mdl-cell--6-col(for="add-widget-form__field-width") Width:
@@ -48,10 +52,12 @@ form.form-horizontal
                         [(ngModel)]="width"
                         name="width"
                         type="text"
-                        pattern="-?[0-9]*(\.[0-9]+)?"
+                        pattern="[0-9]"
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-width") Number...
-                    span.mdl-textfield__error Input is not a number!
+                    span.mdl-textfield__error(
+                        i18n="Warning text of a input field|Warn the user the input is not valid"
+                    ) Input is not a integer between 0~9!
             div.col-sm-6.mdl-grid
                 label.mdl-cell--6-col(for="add-widget-form__field-height") Height:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
@@ -59,10 +65,12 @@ form.form-horizontal
                         [(ngModel)]="height"
                         name="height"
                         type="text"
-                        pattern="-?[0-9]*(\.[0-9]+)?"
+                        pattern="[0-9]"
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-height") Number...
-                    span.mdl-textfield__error Input is not a number!
+                    span.mdl-textfield__error(
+                        i18n="Warning text of a input field|Warn the user the input is not valid"
+                    ) Input is not a integer between 0~9!
         div.row
             div.col-sm-6.mdl-grid
                 label.mdl-cell--6-col(for="add-widget-form__field-z-index") Z-index:
@@ -71,10 +79,12 @@ form.form-horizontal
                     [(ngModel)]="zIndex"
                     name="z-index"
                     type="text"
-                    pattern="-?[0-9]*(\.[0-9]+)?"
+                    pattern="[0-9]*"
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-width") Number...
-                    span.mdl-textfield__error Input is not a number!
+                    span.mdl-textfield__error(
+                        i18n="Warning text of a input field|Warn the user the input is not valid"
+                    ) Input is not a integer bigger than 0!
     fieldset([style.display]="type === 'plain' ? 'block' : 'none'")
         legend Settings
         div.form-group(*ngIf="type === 'plain'")

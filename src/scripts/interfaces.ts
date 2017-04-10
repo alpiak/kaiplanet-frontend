@@ -14,6 +14,7 @@ interface Widget {
 }
 interface WidgetConfig {
     type?: string;
+    types?: Object[];
 }
 interface WidgetData {
     imgUrl?: string;

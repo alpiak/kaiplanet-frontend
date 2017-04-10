@@ -13,6 +13,7 @@ import { DrawingBoardWidgetComponent } from "./drawing-board-widget.component";
 import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
 import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
+import { SNSWidgetComponent } from "./sns-widget.component";
 import { AddWidgetFormComponent } from "../home/add-widget-form.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
@@ -36,6 +37,7 @@ import { ArrayPipe } from "../array.pipe";
         MoonOceanWidgetComponent,
         WaterfallWidgetComponent,
         PlainWidgetComponent,
+        SNSWidgetComponent,
         AddWidgetFormComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
@@ -51,16 +53,18 @@ import { ArrayPipe } from "../array.pipe";
         DrawingBoardWidgetComponent,
         MoonOceanWidgetComponent,
         WaterfallWidgetComponent,
-        PlainWidgetComponent
+        PlainWidgetComponent,
+        SNSWidgetComponent
     ],
-    exports:      [
+    exports: [
         HeaderWidgetComponent,
         CarouselWidgetComponent,
         WeatherCardWidgetComponent,
         DrawingBoardWidgetComponent,
         MoonOceanWidgetComponent,
         WaterfallWidgetComponent,
-        PlainWidgetComponent
+        PlainWidgetComponent,
+        SNSWidgetComponent
     ]
 })
 export class WidgetsModule { }
