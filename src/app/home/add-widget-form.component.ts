@@ -32,9 +32,9 @@ export class AddWidgetFormComponent {
     getConfig(): Widget {
         let config = {};
 
-        if (this.config["type"]) {
-            config["type"] = this.config["type"];
-        }
+        // if (this.config["type"]) {
+            config["type"] = this.config["type"] || "wind-and-sand";
+        // }
         if (this.config["types"].length) {
             config["types"] = [];
             for (let i = 0; i < this.config["types"].length; i++) {
@@ -49,11 +49,11 @@ export class AddWidgetFormComponent {
         }
 
         return {
-            type: this.type,
-            x: this.x,
-            y: this.y,
-            width: this.width,
-            height: this.height,
+            type: this.type || "carousel",
+            x: this.x || 0,
+            y: this.y || 2,
+            width: this.width || 6,
+            height: this.height|| 3,
             config: config
         };
     }

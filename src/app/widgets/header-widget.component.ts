@@ -49,6 +49,9 @@ export class HeaderWidgetComponent implements OnInit{
         });
     }
     addWidget(widget: Widget) {
+        if (widget.x) {
+
+        }
         this.gridStackService.addWidget(widget);
         this.addWidgetFormComponent.clearConfig();
         jQuery("#hearder-widget__dialog").get(0).close();
