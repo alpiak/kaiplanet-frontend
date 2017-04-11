@@ -2,7 +2,7 @@
    Created by qhyang on 2017/4/10.
 
 
-div.mdl-tabs
+div.mdl-tabs(bsMdlUpgrade="mdl-tabs")
     div.mdl-tabs__tab-bar
         a.mdl-tabs__tab(
             *ngFor="let type of types; let i=index"
@@ -14,4 +14,4 @@ div.mdl-tabs
         "[id]"="type.key"
         "[class.is-active]"="i === 0"
     )
-        iframe([attr.data-src]="domSanitizer.bypassSecurityTrustResourceUrl(type.src)")
+        iframe([attr.data-src]="type.src")

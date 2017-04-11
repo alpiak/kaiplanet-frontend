@@ -5,10 +5,10 @@
 import { NgModule }             from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { EarthBreathComponent } from "./earth-breath.component";
+import { EarthComponent } from "./earth.component";
 
 const earthBreathRoutes: Routes = [
-    { path: "earth-breath",  component: EarthBreathComponent }
+    { path: "earth",  component: EarthComponent }
 ];
 
 @NgModule({
@@ -19,4 +19,4 @@ const earthBreathRoutes: Routes = [
         RouterModule
     ]
 })
-export class EarthBreathRoutingModule { }
+export class EarthRoutingModule { }

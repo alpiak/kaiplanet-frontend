@@ -9,9 +9,9 @@ export class RippleDirective implements AfterViewInit {
     constructor(private el: ElementRef) { }
 
     ngAfterViewInit() {
-        let JQuery = require("jquery");
+        let jQuery = require("jquery");
 
         require("jquery.ripples");
-        JQuery(this.el.nativeElement).ripples();
+        jQuery(this.el.nativeElement).ripples();
     }
 }

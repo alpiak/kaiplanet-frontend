@@ -7,9 +7,12 @@ import { NgModule }      from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { HomeModule } from "./home/home.module";
-import { EarthBreathModule } from "./earth-breath/earth-breath.module";
+import { WidgetsModule } from "./widgets/widgets.module";
+import { EarthModule } from "./earth/earth.module";
 
 import { AppComponent }  from "./app.component";
+
+import { MDLUpgradeDirective } from "./mdl-upgrade.directive";
 
 import { LoggerService } from "./logger.service";
 import { BomService } from "./bom.service";
@@ -20,7 +23,8 @@ import { GridStackService } from "./home/grid-stack.service";
     imports:      [
         AppRoutingModule,
         HomeModule,
-        EarthBreathModule,
+        WidgetsModule,
+        EarthModule,
     ],
     providers:    [
         LoggerService,
@@ -28,7 +32,10 @@ import { GridStackService } from "./home/grid-stack.service";
         LocaleService,
         GridStackService
     ],
-    declarations: [ AppComponent ],
+    declarations: [
+        AppComponent,
+        MDLUpgradeDirective
+    ],
     exports:      [ AppComponent ],
     bootstrap:    [ AppComponent ]
 })

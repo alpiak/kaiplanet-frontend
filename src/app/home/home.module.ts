@@ -4,6 +4,7 @@
 
 import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule }   from "@angular/forms";
 
 import { HomeRoutingModule } from "./home-routing.module";
 
@@ -19,6 +20,7 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
 @NgModule({
     imports:      [
         BrowserModule,
+        FormsModule,
         HomeRoutingModule,
         WidgetsModule
     ],

@@ -23,18 +23,38 @@ export class AddWidgetFormComponent {
     private data: Object;
 
     constructor() {
-        this.config = {};
+        this.config = {
+            types: []
+        };
         this.data = {};
     }
 
     getConfig(): Widget {
+        let config = {};
+
+        if (this.config["type"]) {
+            config["type"] = this.config["type"];
+        }
+        if (this.config["types"].length) {
+            config["types"] = [];
+            for (let i = 0; i < this.config["types"].length; i++) {
+                if (this.config["types"][i] === true) {
+                    config["types"].push({
+                        text: this.widgetTypes["sns"].config.types[i].text,
+                        src: this.widgetTypes["sns"].config.types[i].src,
+                        key: this.widgetTypes["sns"].config.types[i].key
+                    });
+                }
+            }
+        }
+
         return {
             type: this.type,
             x: this.x,
             y: this.y,
             width: this.width,
             height: this.height,
-            config: this.config
+            config: config
         };
     }
     clearConfig(): void {
@@ -43,6 +63,8 @@ export class AddWidgetFormComponent {
         this.y = null;
         this.width = null;
         this.height = null;
-        this.config = {};
+        this.config = {
+            types: []
+        };
     }
 }

@@ -3,7 +3,6 @@
  */
 
 import { Component, AfterViewInit, ElementRef } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
 
 import { GridStackService } from "../home/grid-stack.service";
 
@@ -16,7 +15,7 @@ export class SNSWidgetComponent implements AfterViewInit{
     private index: number;
     private types: Object[];
 
-    constructor(private gridStackService: GridStackService, private domSanitizer: DomSanitizer, private el: ElementRef) { }
+    constructor(private gridStackService: GridStackService, private el: ElementRef) { }
 
     ngAfterViewInit() {
         const jQuery = require("jquery");
@@ -31,6 +30,12 @@ export class SNSWidgetComponent implements AfterViewInit{
                     .addClass("mdl-js-tabs mdl-js-ripple-effect")
                     .each(function() {
                         window["componentHandler"].upgradeElements(this)
+                    });
+                jQuery(this.el.nativeElement)
+                    .find("iframe")
+                    .each(function() {
+                        jQuery(this)
+                            .attr("src", jQuery(this).attr("data-src"))
                     });
             }, 200);
         }, 200);

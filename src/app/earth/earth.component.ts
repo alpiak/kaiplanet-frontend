@@ -5,6 +5,6 @@
 import { Component } from "@angular/core";
 
 @Component({
-    template: require("./earth-breath.component.pug")
+    template: require("./earth.component.pug")
 })
-export class EarthBreathComponent { }
+export class EarthComponent { }

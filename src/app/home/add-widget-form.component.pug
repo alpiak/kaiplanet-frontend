@@ -85,7 +85,7 @@ form.form-horizontal
                     span.mdl-textfield__error(
                         i18n="Warning text of a input field|Warn the user the input is not valid"
                     ) Input is not a integer bigger than 0!
-    fieldset([style.display]="type === 'plain' ? 'block' : 'none'")
+    fieldset([style.display]="type === 'plain' || type === 'sns' ? 'block' : 'none'")
         legend Settings
         div.form-group(*ngIf="type === 'plain'")
             br
@@ -99,3 +99,20 @@ form.form-horizontal
                         *ngFor="let type of widgetTypes.plain.config.types"
                         "[attr.value]"="type.key"
                     ) {{ type.text }}
+        div.form-group(
+            [style.display]="type === 'sns' ? 'block' : 'none'"
+            bsMdlUpgrade="mdl-checkbox"
+        )
+            br
+            div.col-sm-5.col-sm-offset-1(
+                *ngFor="let type of widgetTypes.sns.config.types; let i=index"
+            )
+                label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect([for]="'add-widget-form__checkbox-' + type.key")
+                    input.mdl-checkbox__input(
+                        [value]="i"
+                        "[(ngModel)]"="config.types[i]"
+                        "[name]"="'checkbox-' + type.key"
+                        "[id]"="'add-widget-form__checkbox-' + type.key"
+                        type="checkbox"
+                    )
+                    span.mdl-checkbox__label {{ type.text }}
