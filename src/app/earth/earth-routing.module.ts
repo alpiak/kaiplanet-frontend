@@ -4,10 +4,10 @@
 
 import { NgModule }             from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { HomeComponent } from "./earth-breath.component";
+import { EarthComponent } from "./earth.component";
 
 const homeRoutes: Routes = [
-    { path: "earth",  component: HomeComponent }
+    { path: "earth",  component: EarthComponent }
 ];
 
 @NgModule({

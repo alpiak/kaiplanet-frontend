@@ -5,7 +5,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "app",
+    selector: "bs-app",
     template: require("./app.component.pug")
 })
 export class AppComponent { }

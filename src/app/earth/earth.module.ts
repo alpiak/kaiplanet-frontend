@@ -4,8 +4,8 @@
 
 import { NgModule }      from "@angular/core";
 
-import { HomeComponent } from "./earth-breath.component";
-import { HomeRoutingModule } from "./earth-breath-routing.module";
+import { EarthComponent } from "./earth.component";
+import { HomeRoutingModule } from "./earth-routing.module";
 
 import { JumbotronComponent } from "./jumbotron.component";
 import { GlobeComponent } from "./globe.component";
@@ -22,12 +22,13 @@ import { ScrollSceneTextDirective } from "./scroll-scene-text.directive";
 import { StickUpDirective } from "../stick-up.directive";
 import { RippleDirective } from "../ripple.directive";
 import { ScrollSceneBackgroundColorDirective } from "./scroll-scene-background-color.directive";
+import { PageLoadingDirective } from "../page-loading.directive";
 
 @NgModule({
     imports:      [ HomeRoutingModule ],
     providers:    [ ScrollSceneService ],
     declarations: [
-        HomeComponent,
+        EarthComponent,
         JumbotronComponent,
         GlobeComponent,
         CrystalNavComponent,
@@ -39,7 +40,8 @@ import { ScrollSceneBackgroundColorDirective } from "./scroll-scene-background-c
         ScrollSceneTextDirective,
         RippleDirective,
         StickUpDirective,
-        ScrollSceneBackgroundColorDirective
+        ScrollSceneBackgroundColorDirective,
+        PageLoadingDirective
     ]
 })
-export class HomeModule { }
+export class EarthModule { }

@@ -70,7 +70,8 @@ module.exports = {
         ]
     },
     externals: {
-        "jquery": "window.jQuery"
+        "jquery": "window.jQuery",
+        "TweenLite": "window.TweenLite"
     },
     output: {
         filename: "[name].bundle.js",
