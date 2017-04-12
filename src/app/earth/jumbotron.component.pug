@@ -2,43 +2,130 @@
    Created by qhyang on 2017/2/20.
 
 
-ul.scene#scene(
+ul.scene#parallax-scene(
     "[style.height]"="height + 'px'"
     "[style.width]"="width + 'px'"
+    scrollPin="1900%"
 )
-    li.background.stars-cluster.layer.layer_fullsize(data-depth="0.10")
+    li.background.stars-cluster.layer.full-size(
+        data-depth="0.10"
+        scrollUp
+        offset="1500%"
+        duration="300%"
+    )
         - for (var x = 1; x <=100; x++)
             .star(class="star-" + x)
-    li.background-front.stars-cluster.layer.layer_fullsize(data-depth="0.20")
-    li.bubble-cluster-1.layer.layer_fullsize(data-depth="0.50")
-        - var n = 1;
-        while n < 60
-            img.bubble(
-            class="bubble-" + n
-            src="../../assets/bubble.svg"
-            )
-            - n++
-    li.bubble-cluster-2.layer.layer_fullsize(data-depth="0.80")
-        - var n = 1;
-        while n < 30
-            img.bubble(
-                class="bubble-" + n
-                src="../../assets/bubble.svg"
-            )
-            - n++
-    li.layer.layer_fullsize(data-depth="1.20")
-        h1(i18n="earth page jumbotron|user welcome") Welcome to the play ground!
-    li.bubble-cluster-3.layer.layer_fullsize(data-depth="1.60")
-        - var n = 1;
-        while n < 20
-            img.bubble(
-            class="bubble-" + n
-            src="../../assets/bubble.svg"
-            )
-            - n++
-    li.layer.layer_fullsize(data-depth="5.00")
-    li.layer(
-        crystal-nav
-        data-depth="0.60"
-        bsStickUp
+    li.background-front.stars-cluster.layer.full-size(
+        data-depth="0.20"
+        scrollUp
+        offset="1500%"
+        duration="300%"
     )
+        div.full-size(
+            scrollSceneBackgroundColor
+            "[toColor]"="['rgba(64, 96, 128, .2)', 'rgba(128, 108, 64, .2)']"
+            "[offset]"="['600%', '1050%']"
+            "[duration]"="['450%', '450%']"
+            "[tweenBack]"="[false, true]"
+        )
+    li.layer.full-size(
+        data-depth="0.50"
+    )
+        div.full-size(
+            astralScrollScene="60"
+            offset="600%"
+            duration="450%"
+        )
+        div.bubble-cluster-1(scrollUp offset="0%" duration="200%")
+            - var n = 1;
+            while n < 60
+                img.bubble(
+                    class="bubble-" + n
+                    src="../../assets/bubble.svg"
+                )
+                - n++
+    li.layer.full-size(data-depth="0.80")
+        div.bubble-cluster-2(scrollUp offset="0%" duration="125%")
+            - var n = 1;
+            while n < 30
+                img.bubble(
+                    class="bubble-" + n
+                    src="../../assets/bubble.svg"
+                )
+                - n++
+    li.layer.full-size(data-depth="1.20")
+        div.full-size(
+            astralScrollScene="30"
+            offset="600%"
+            duration="450%"
+        )
+        div.full-size(
+            fallingLeavesScrollScene="30"
+            offset="1050%"
+            duration="450%"
+        )
+        div.scroll-scene-text(style="height: 20%")
+            h3(
+                scrollSceneText
+                offset="-30%"
+                duration="230%"
+                i18n="User welcome|The text showed after enter the earth page"
+            ) Welcome to the play ground!
+            h3(
+                scrollSceneText
+                offset="90%"
+                duration="150%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) Here I found star lights, sweet breezes...
+        div.scroll-scene-text(style="height: 10%")
+            h3(
+                scrollSceneText
+                offset="290%"
+                duration="200%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) and a beating heart
+        div.scroll-scene-text(style="height: 20%")
+            h3(
+                scrollSceneText
+                offset="580%"
+                duration="360%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) Look, the shooting stars in the sky...
+            h3(
+                scrollSceneText
+                offset="730%"
+                duration="230%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) and the amazing fireflies around
+        div.scroll-scene-text(style="height: 10%")
+            h3(
+                scrollSceneText
+                offset="1040%"
+                duration="360%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) then the wind starts...
+        div.scroll-scene-text(style="height: 10%")
+            h3(
+                scrollSceneText
+                offset="1660%"
+                duration="1000%"
+                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+            ) Can you hear the breathe of the Earth?
+    li.layer.full-size(data-depth="1.60")
+        div.bubble-cluster-3(scrollUp offset="0%" duration="62.5%")
+            - var n = 1;
+            while n < 20
+                img.bubble(
+                    class="bubble-" + n
+                    src="../../assets/bubble.svg"
+                )
+                - n++
+    li.layer.full-size(data-depth="5.00")
+    li.layer.full-size(
+        data-depth="0.60"
+    )
+        div(scrollUp offset="0%" duration="220%")
+            div(
+                crystal-nav
+                bsStickUp
+            )

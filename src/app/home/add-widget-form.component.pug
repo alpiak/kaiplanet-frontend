@@ -99,10 +99,7 @@ form.form-horizontal
                         *ngFor="let type of widgetTypes.plain.config.types"
                         "[attr.value]"="type.key"
                     ) {{ type.text }}
-        div.form-group(
-            [style.display]="type === 'sns' ? 'block' : 'none'"
-            bsMdlUpgrade="mdl-checkbox"
-        )
+        div.form-group([style.display]="type === 'sns' ? 'block' : 'none'")
             br
             div.col-sm-5.col-sm-offset-1(
                 *ngFor="let type of widgetTypes.sns.config.types; let i=index"

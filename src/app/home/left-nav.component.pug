@@ -3,13 +3,25 @@
 
 
 nav#left-nav.two-step
-    -
-        var items = [
-            "Home",
-            "Earth (experimental showcase)",
-            "Looking for some music (in development)",
-            "Strike! (in development)",
-            "Pokemon Star (in development)"
-        ]
-    each item in items
-        a(href="javascript:;")= item
+    a(
+        routerLink="/home"
+        i18n="navigation option text|the text of a nav option to route to another page"
+        href="javascript:;"
+    ) Home
+    a(
+        routerLink="/earth"
+        i18n="navigation option text|the text of a nav option to route to another page"
+        href="javascript:;"
+    ) Earth (experimental showcase)
+    a(
+        i18n="navigation option text|the text of a nav option to route to another page"
+        href="javascript:;"
+    ) Music of the day (in development)
+    a(
+        i18n="navigation option text|the text of a nav option to route to another page"
+        href="javascript:;"
+    ) Strike! (in development)
+    a(
+        i18n="navigation option text|the text of a nav option to route to another page"
+        href="javascript:;"
+    ) Pokemon Star (in development)

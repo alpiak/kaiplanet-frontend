@@ -15,8 +15,6 @@ export class PageLoadingDirective implements OnInit {
         let jQuery = require("jquery"),
             imagesLoaded = require("imagesloaded");
 
-        console.log("init");
-
         imagesLoaded.makeJQueryPlugin(jQuery);
         if (this.page === "earth") {
             jQuery("#parallax-scene .background")

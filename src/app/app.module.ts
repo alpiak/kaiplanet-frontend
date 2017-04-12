@@ -12,8 +12,6 @@ import { EarthModule } from "./earth/earth.module";
 
 import { AppComponent }  from "./app.component";
 
-import { MDLUpgradeDirective } from "./mdl-upgrade.directive";
-
 import { LoggerService } from "./logger.service";
 import { BomService } from "./bom.service";
 import { LoadingService } from "./loading.service";
@@ -34,10 +32,7 @@ import { GridStackService } from "./home/grid-stack.service";
         GridStackService,
         LoadingService
     ],
-    declarations: [
-        AppComponent,
-        MDLUpgradeDirective
-    ],
+    declarations: [ AppComponent ],
     exports:      [ AppComponent ],
     bootstrap:    [ AppComponent ]
 })

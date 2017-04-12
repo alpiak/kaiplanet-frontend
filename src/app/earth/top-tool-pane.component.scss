@@ -5,6 +5,10 @@
   right: 0;
   z-index: 10;
 }
+.tool-pane__button {
+  display: inline-block;
+  color: #fff;
+}
 .item__text {
   vertical-align: middle;
 }
@@ -20,7 +24,4 @@
 .svg-ic_20px-dims {
   width: 20px;
   height: 20px;
-}
-.item__icon_before-text {
-  margin-right: 5px;
 }
