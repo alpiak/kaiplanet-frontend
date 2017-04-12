@@ -38,7 +38,7 @@ form.form-horizontal
                         [(ngModel)]="y"
                         name="y"
                         type="text"
-                        pattern="[0-9]*"
+                        pattern="[0-9]"
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-y") Number...
                     span.mdl-textfield__error(
@@ -76,10 +76,10 @@ form.form-horizontal
                 label.mdl-cell--6-col(for="add-widget-form__field-z-index") Z-index:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                     input#add-widget-form__field-z-index.mdl-textfield__input(
-                    [(ngModel)]="zIndex"
-                    name="z-index"
-                    type="text"
-                    pattern="[0-9]*"
+                        [(ngModel)]="zIndex"
+                        name="z-index"
+                        type="text"
+                        pattern="[0-9]*"
                     )
                     label.mdl-textfield__label(for="add-widget-form__field-width") Number...
                     span.mdl-textfield__error(

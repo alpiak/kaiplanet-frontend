@@ -49,12 +49,11 @@ export class HeaderWidgetComponent implements OnInit{
         });
     }
     addWidget(widget: Widget) {
-        if (widget.x) {
-
+        if ((widget.x ? /^[0-9]?$/.test(widget.x.toString()) : true) && (widget.y ? /^[0-9]?$/.test(widget.y.toString()) : true) && (widget.width ? /^[0-9]?$/.test(widget.width.toString()) : true) && (widget.height ? /^[0-9]?$/.test(widget.height.toString()) : true) && (widget.zIndex ? /^[0-9]*$/.test(widget.zIndex.toString()) : true)) {
+            this.gridStackService.addWidget(widget);
+            this.addWidgetFormComponent.clearConfig();
+            jQuery("#hearder-widget__dialog").get(0).close();
         }
-        this.gridStackService.addWidget(widget);
-        this.addWidgetFormComponent.clearConfig();
-        jQuery("#hearder-widget__dialog").get(0).close();
     }
     changeLocale(locale: string) {
         this.localeService.setLocale(locale);
