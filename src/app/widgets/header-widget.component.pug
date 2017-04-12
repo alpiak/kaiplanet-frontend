@@ -1,0 +1,56 @@
+//
+   Created by qhyang on 2017/3/15.
+
+
+img.logo(src="../../assets/logo.svg" alt="logo")
+div.tool-pane
+    button#hearder-widget__widget-operation-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect
+        svg.item__icon_with-text.svg-ic_20px-dims(fill="#fff")
+            use(xlink:href="#ic_apps_24px")
+        span.item__text(i18n="Button text|the text of a button to open a menu to manage widgets") Widgets
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__widget-operation-button")
+        li.mdl-menu__item((click)="openAddWidgetDialog()")
+            svg.item__icon_with-text.svg-ic_20px-dims
+                use(xlink:href="#ic_add_box_24px")
+            span.item__text(i18n="Option text|the text of an option to open a dialog for adding a widget") Add a widget
+        li.mdl-menu__item
+            svg.item__icon_with-text.svg-ic_20px-dims
+                use(xlink:href="#ic_create_24px")
+            span.item__text(i18n="Option text|the text of an option to enter the wigdets-managing mode") Manage widgets
+    button#hearder-widget__login-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect((click)="openLoginDialog()")
+        svg.item__icon_with-text.svg-ic_20px-dims(fill="#fff")
+            use(xlink:href="#ic_face_24px")
+        span.item__text(i18n="Button text|the text of a button to open dialog to log in or sign up") Log in
+    button#hearder-widget__language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
+        span.lang-xs.lang-lbl([attr.lang]="currentLocale.substr(0, 2)")
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__language-switch")
+        li.mdl-menu__item((click)="changeLocale('zh-CN')")
+            span.lang-xs.lang-lbl(lang="zh")
+        li.mdl-menu__item((click)="changeLocale('en-US')")
+            span.lang-xs.lang-lbl(lang="en")
+        li.mdl-menu__item((click)="changeLocale('ja-JP')")
+            span.lang-xs.lang-lbl(lang="ja")
+        li.mdl-menu__item
+            span.lang-xs.lang-lbl(lang="ko")
+    button#hearder-widget__more-button.tool-pane__button.widget-operation-button.mdl-button.mdl-button--icon.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+        svg.svg-ic_20px-dims(fill="#fff")
+            use(xlink:href="#ic_more_vert_24px")
+    ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="hearder-widget__more-button")
+        li.mdl-menu__item((click)="openThemeDialog()")
+            svg.item__icon_with-text.svg-ic_20px-dims
+                use(xlink:href="#ic_picture_in_picture_24px")
+            span.item__text(i18n="Option text|the text of an option to open a dialog to change theme of the page") Change theme
+dialog#hearder-widget__dialog.mdl-dialog
+    h6.mdl-dialog__title(i18n="Dialog title|the title of a dialog for adding a widget") Add a widget
+    div.mdl-dialog__content
+        add-widget-form([widgetTypes]="widgetTypes")
+    div.mdl-dialog__actions
+        button.mdl-button.mdl-js-button.mdl-js-ripple-effect(
+            (click)="addWidget(addWidgetFormComponent.getConfig())"
+            type="button"
+            i18n="Button text|the text of a button to add a widget to the widget board"
+        ) Add
+        button.close.mdl-button.mdl-js-button.mdl-js-ripple-effect(
+            type="button"
+            i18n="Button text|the text of a button to close the dialog for adding a widget without adding any widget to the widget board"
+        ) Cancel

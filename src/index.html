@@ -211,56 +211,56 @@
     </style>
 </head>
 <body>
-<div class="app-loading">
-    <div class="app-loading__counter">
-        <h1>0%</h1>
-        <hr>
+    <div class="app-loading">
+        <div class="app-loading__counter">
+            <h1>0%</h1>
+            <hr>
+        </div>
+        <div class="app-loading__loader">
+            <div>G</div>
+            <div>N</div>
+            <div>I</div>
+            <div>D</div>
+            <div>A</div>
+            <div>O</div>
+            <div>L</div>
+        </div>
     </div>
-    <div class="app-loading__loader">
-        <div>G</div>
-        <div>N</div>
-        <div>I</div>
-        <div>D</div>
-        <div>A</div>
-        <div>O</div>
-        <div>L</div>
-    </div>
-</div>
-<bs-app></bs-app>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
-<script>
-    (function() {
-        function updateProgress(progress) {
-            var $counter = $(".app-loading__counter");
-            var loading = {
-                progress: $counter.data("loaded-percent") || 0
-            };
+    <bs-app></bs-app>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+    <script>
+        (function() {
+            function updateProgress(progress) {
+                var $counter = $(".app-loading__counter");
+                var loading = {
+                    progress: $counter.data("loaded-percent") || 0
+                };
 
-            $counter.data("loaded-percent", progress);
-            TweenLite.to(loading, 0.5, {
-                progress: progress,
-                onUpdate: function() {
-                    $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
-                    $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
+                $counter.data("loaded-percent", progress);
+                TweenLite.to(loading, 0.5, {
+                    progress: progress,
+                    onUpdate: function() {
+                        $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
+                        $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
+                    }
+                });
+            }
+
+            if (window.$ && window.TweenLite) {
+                updateProgress(10);
+            } else {
+                document.getElementsByClassName("app-loading__counter")[0].style.display = "none";
+            }
+            window.addEventListener("load", function() {
+                if ($ && TweenLite) {
+                    updateProgress(100);
+                    $(".app-loading").fadeOut();
+                } else {
+                    document.getElementsByClassName("app-loading")[0].style.display = "none";
                 }
             });
-        }
-
-        if (window.$ && window.TweenLite) {
-            updateProgress(10);
-        } else {
-            document.getElementsByClassName("app-loading__counter")[0].style.display = "none";
-        }
-        window.addEventListener("load", function() {
-            if ($ && TweenLite) {
-                updateProgress(100);
-                $(".app-loading").fadeOut();
-            } else {
-                document.getElementsByClassName("app-loading")[0].style.display = "none";
-            }
-        });
-    }());
-</script>
+        }());
+    </script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+
+:host {
+  overflow: hidden;
+}
+.waterfall-container {
+  box-shadow: inset 0 1px 0 #444, 0 -1px 0 #000;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  background: #222;
+  color: white;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.waterfall {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 93%;
+  will-change: transform;
+  transform: translateZ(0);
+  z-index: 1;
+}
+
+.emma {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+
+h1 {
+  color: #0af;
+  font-size: 30vw;
+}
+
+.surface {
+  animation: fade-in 3000ms forwards;
+  display: block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

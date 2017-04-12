@@ -15,7 +15,7 @@ for (let i = 0; i < locales.length; i++) {
 export function getTranslationProviders(): Promise<Object[]> {
 
     // Get the locale id from the global
-    const locale = document["locale"] as string;
+    const locale = sessionStorage.getItem("locale") as string;
 
     // Return no providers if fail to get translation file for locale
     const noProviders: Object[] = [];

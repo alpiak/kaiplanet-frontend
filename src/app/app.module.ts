@@ -3,20 +3,41 @@
  */
 
 import { NgModule }      from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+
 import { AppRoutingModule } from "./app-routing.module";
+
+import { HomeModule } from "./home/home.module";
+import { WidgetsModule } from "./widgets/widgets.module";
 import { EarthModule } from "./earth/earth.module";
 
 import { AppComponent }  from "./app.component";
 
+import { MDLUpgradeDirective } from "./mdl-upgrade.directive";
+
 import { LoggerService } from "./logger.service";
 import { BomService } from "./bom.service";
 import { LoadingService } from "./loading.service";
+import { LocaleService } from "./locale.service";
+import { GridStackService } from "./home/grid-stack.service";
 
 @NgModule({
-    imports:      [ BrowserModule, AppRoutingModule, EarthModule ],
-    providers:    [ LoggerService, BomService, LoadingService ],
-    declarations: [ AppComponent ],
+    imports:      [
+        AppRoutingModule,
+        HomeModule,
+        WidgetsModule,
+        EarthModule,
+    ],
+    providers:    [
+        LoggerService,
+        BomService,
+        LocaleService,
+        GridStackService,
+        LoadingService
+    ],
+    declarations: [
+        AppComponent,
+        MDLUpgradeDirective
+    ],
     exports:      [ AppComponent ],
     bootstrap:    [ AppComponent ]
 })

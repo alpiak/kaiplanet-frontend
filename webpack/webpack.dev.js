@@ -8,6 +8,7 @@ const HtmlWebpack = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 const ChunkWebpack = webpack.optimize.CommonsChunkPlugin;
+const BannerWebpack = require("banner-webpack-plugin");
 
 const rootDir = path.resolve(__dirname, "..");
 
@@ -36,7 +37,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                include: [ path.resolve(rootDir, "src", "app"), ],
+                include: [ path.resolve(rootDir, "src", "app") ],
                 loaders: [ "css-to-string-loader", "css-loader", "sass-loader" ]
             },
             {
@@ -45,18 +46,21 @@ module.exports = {
                 loaders: ["html-withimg-loader", "pug-html-loader" ]
             },
             {
-                test: /\.(?:png|jpe?g|svg)$/,
-                exclude: /node_modules/,
+                test: /\.(?:png|jpe?g|svg|gif|eot|woff2?|ttf)$/,
+                exclude: [ path.resolve(rootDir, "node_modules", "material-design-icons") ],
                 loader: "url-loader?limit=8192"
             },
             {
                 test: /\.scss$/,
-                include: [ path.resolve(rootDir, "src", "style"), ],
+                include: [
+                    path.resolve(rootDir, "src", "style"),
+                    path.resolve(rootDir, "node_modules")
+                ],
                 loaders: [ "style-loader", "css-loader", "sass-loader" ]
             },
             {
                 test: /\.css$/,
-                exclude: /(?:node_modules|src\/app)/,
+                exclude: /src\/app/,
                 loaders: [ "style-loader", "css-loader" ]
             },
             {
@@ -64,7 +68,11 @@ module.exports = {
                 loader: "babel-loader"
             },
             {
-                test: /\.xlf$/,
+                test: /\.(?:xlf|svg)$/,
+                include: [
+                    path.resolve(rootDir, "node_modules", "material-design-icons"),
+                    path.resolve(rootDir, "src", "locale")
+                ],
                 loader: "raw-loader"
             }
         ]
@@ -87,13 +95,58 @@ module.exports = {
             filename: "index.html",
             inject: "body",
             template: path.resolve(rootDir, "src", "index.html")
+        }),
+        new BannerWebpack({
+            chunks: {
+                app: {
+                    beforeContent: `
+                    (function() {   
+                        if ($ && TweenLite) {
+                            var $counter = $(".app-loading__counter");
+                            var loading = {
+                                progress: $counter.data("loaded-percent") || 0
+                            };
+                            
+                            $counter.data("loaded-percent", 90);
+                            TweenLite.to(loading, 0.5, {
+                                progress: 90,
+                                onUpdate: function() {
+                                    $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
+                                    $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
+                                }
+                            });
+                        }
+                    }());
+                `},
+                vendors: {
+                    beforeContent: `
+                    (function() {    
+                        if ($ && TweenLite) {
+                            var $counter = $(".app-loading__counter");
+                            var loading = {
+                                progress: $counter.data("loaded-percent") || 0
+                            };
+                            
+                            $counter.data("loaded-percent", 20);
+                            TweenLite.to(loading, 0.5, {
+                                progress: 20,
+                                onUpdate: function() {
+                                    $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
+                                    $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
+                                }
+                            });
+                        }
+                    }());
+                `}
+            }
         })
     ],
     resolve: {
-        extensions: [ ".ts", ".scss", ".js", ".css" ],
+        extensions: [ ".ts", ".scss", ".pug", ".js", ".css", ".xlf" ],
         alias: {
             "TweenMax": "gsap/tweenMax",
-            "TimelineMax": "gsap/timelineMax"
+            "TimelineMax": "gsap/timelineMax",
+            "jquery-ui": "jquery-ui/ui"
         }
     }
 };

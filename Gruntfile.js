@@ -61,11 +61,11 @@ module.exports = function(grunt) {
                 dest = fileMappings[i].dest;
             let replacements = [{
                 from: "require(\"." + src.substring(src.lastIndexOf("/"), src.lastIndexOf(".")) + ".pug\")",
-                to: "`" + grunt.file.read("./i18n/" + src.replace("ts", "html")) + "`"
+                to: "`" + grunt.file.read("./i18n/" + src.replace(".ts", ".html")) + "`"
             }];
-            if (grunt.file.read(src).indexOf("require(\"." + src.substring(src.lastIndexOf("/"), src.lastIndexOf(".")) + ".scss\")") !== -1) {
+            if (grunt.file.read(src).indexOf("styles") !== -1) {
                 replacements.push({
-                    from: "require(\"." + src.substring(src.lastIndexOf("/"), src.lastIndexOf(".")) + ".scss\")",
+                    from: /styles:(?:.|\n)*?]/g,
                     to: ""
                 });
             }

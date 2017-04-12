@@ -1,0 +1,70 @@
+
+:host{
+  background-image: url(../../assets/34.jpg);
+  background-position: bottom center;
+  background-size: cover;
+}
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+  height: 80px;
+  margin: auto;
+}
+@media (max-width: 992px) {
+  .logo {
+    margin-left: 10%;
+    width: 90px;
+    height: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;
+    height: 40px;
+  }
+}
+.tool-pane {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+
+}
+.tool-pane__button {
+  display: inline-block;
+  color: #fff;
+}
+.item__text {
+  vertical-align: middle;
+}
+.lang-lbl {
+  vertical-align: text-top;
+}
+.lang-lbl:after {
+  top: -12.8px;
+}
+.mdl-menu .lang-lbl:after {
+  top: -18px;
+}
+.svg-ic_20px-dims {
+  width: 20px;
+  height: 20px;
+}
+.item__icon_with-text {
+  margin-right: 5px;
+}
+.mdl-dialog {
+  width: 60%;
+  min-width: 500px;
+  max-width: 800px;
+  max-height: 100%;
+  overflow: auto;
+}
+.mdl-dialog .close {
+  padding: 0 16px;
+  opacity: 1;
+}

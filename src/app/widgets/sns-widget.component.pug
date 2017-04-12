@@ -1,0 +1,17 @@
+//
+   Created by qhyang on 2017/4/10.
+
+
+div.mdl-tabs(bsMdlUpgrade="mdl-tabs")
+    div.mdl-tabs__tab-bar
+        a.mdl-tabs__tab(
+            *ngFor="let type of types; let i=index"
+            "[href]"="'#' + type.key"
+            "[class.is-active]"="i === 0"
+        ) {{ type.text }}
+    div.mdl-tabs__panel(
+        *ngFor="let type of types; let i=index"
+        "[id]"="type.key"
+        "[class.is-active]"="i === 0"
+    )
+        iframe([attr.data-src]="type.src")

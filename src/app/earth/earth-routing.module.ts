@@ -4,18 +4,19 @@
 
 import { NgModule }             from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+
 import { EarthComponent } from "./earth.component";
 
-const homeRoutes: Routes = [
+const earthBreathRoutes: Routes = [
     { path: "earth",  component: EarthComponent }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forChild(homeRoutes)
+        RouterModule.forChild(earthBreathRoutes)
     ],
     exports: [
         RouterModule
     ]
 })
-export class HomeRoutingModule { }
+export class EarthRoutingModule { }

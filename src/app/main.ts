@@ -10,7 +10,9 @@ import { getTranslationProviders } from "./i18n-providers";
 import { AppModule }              from "./app.module";
 
 // Detect user language
-document["locale"] = window.navigator.language || "en-US";
+if (!sessionStorage.getItem("locale")) {
+    sessionStorage.setItem("locale", window.navigator.language || "en-US");
+}
 
 getTranslationProviders().then(providers => {
     const options = { providers };
