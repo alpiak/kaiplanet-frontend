@@ -1,5 +1,5 @@
 /**
- * Created by qhyang on 2017/3/22.
+ * Created by qhyang on 2017/4/12.
  */
 
 import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
@@ -7,21 +7,14 @@ import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
 import { BomService } from "../bom.service";
 import { ScrollSceneService } from "./scroll-scene.service"
 
-@Directive({ selector: "[scrollUp]" })
-export class ScrollUpDirective implements AfterViewInit {
+@Directive({ selector: "[bsScrollRoll]" })
+export class ScrollRollDirective implements AfterViewInit {
     @Input() offset: string;
     @Input() duration: string;
 
     constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
 
     ngAfterViewInit() {
-        this.el.nativeElement.style.cssText = `
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        `;
 
         // ScrollMagic
         require("gsap/tweenLite");
@@ -30,6 +23,8 @@ export class ScrollUpDirective implements AfterViewInit {
 
         require("../../scripts/animation.gsap");
 
+        console.log(parseInt(this.offset, 10) / 100 * this.bomService.getWindowHeight(), 360 * parseInt(this.offset, 10) / 100);
+
         // build scroll scene
         this.scrollSceneService.addScene(
             new ScrollMagic.Scene({
@@ -37,7 +32,7 @@ export class ScrollUpDirective implements AfterViewInit {
                 duration: this.duration
             })
                 .setTween(this.el.nativeElement, {
-                    top: "-120%"
+                    rotation: 360 * parseInt(this.duration, 10) / 100
                 })
         );
     }

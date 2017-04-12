@@ -24,6 +24,7 @@ import { RippleDirective } from "../ripple.directive";
 import { ScrollSceneBackgroundColorDirective } from "./scroll-scene-background-color.directive";
 import { PageLoadingDirective } from "../page-loading.directive";
 import { ScrollToDirective } from "../scroll-to.directive";
+import { ScrollRollDirective } from "./scroll-roll.directive";
 
 @NgModule({
     imports:      [ EarthRoutingModule ],
@@ -43,7 +44,8 @@ import { ScrollToDirective } from "../scroll-to.directive";
         StickUpDirective,
         ScrollSceneBackgroundColorDirective,
         PageLoadingDirective,
-        ScrollToDirective
+        ScrollToDirective,
+        ScrollRollDirective
     ]
 })
 export class EarthModule { }
