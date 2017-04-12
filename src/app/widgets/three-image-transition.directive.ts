@@ -4,13 +4,16 @@
 
 import { Directive, ElementRef, AfterViewInit } from "@angular/core";
 
+import { delay } from "rxjs/operator/delay";
+
 import { GridStackService } from "../home/grid-stack.service";
+import { BomService } from "../bom.service";
 
 @Directive({ selector: "[threeImageTransition]" })
 export class ThreeImageTransitionDirective implements AfterViewInit {
     gridItemContainer: HTMLElement;
 
-    constructor(private el: ElementRef, private gridStackService: GridStackService) { }
+    constructor(private el: ElementRef, private gridStackService: GridStackService, private bomService: BomService) { }
 
     ngAfterViewInit() {
         const jQuery = require("jquery");
@@ -28,6 +31,8 @@ export class ThreeImageTransitionDirective implements AfterViewInit {
                     setTimeout(() => threeImageTransition.resize(), 300);
                 }
             });
+            delay.call(this.bomService.windowResize(), 300)
+                .subscribe(() => threeImageTransition.resize());
         }, 200);
     }
 }

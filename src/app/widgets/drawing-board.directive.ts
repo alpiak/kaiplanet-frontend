@@ -2,9 +2,9 @@
  * Created by qhyang on 2017/3/16.
  */
 
-import { delay } from "rxjs/operator/delay";
-
 import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
+
+import { delay } from "rxjs/operator/delay";
 
 import { BomService } from "../bom.service";
 import { GridStackService } from "../home/grid-stack.service";
