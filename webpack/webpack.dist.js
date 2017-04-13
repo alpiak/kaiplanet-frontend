@@ -9,12 +9,13 @@ const path = require("path");
 const webpack = require("webpack");
 const ChunkWebpack = webpack.optimize.CommonsChunkPlugin;
 const BannerWebpack = require("banner-webpack-plugin");
+const UglifyJSWebpack = require('uglifyjs-webpack-plugin');
 
 const rootDir = path.resolve(__dirname, "..");
 
 module.exports = {
     entry: {
-        app: [ path.resolve(rootDir, "src", "app", "main") ],
+        app: [ path.resolve(rootDir, "src", "app", "main-dist") ],
         vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },
     module: {
@@ -73,7 +74,8 @@ module.exports = {
         ]
     },
     externals: {
-        "jquery": "window.jQuery"
+        "jquery": "window.jQuery",
+        "TweenLite": "window.TweenLite"
     },
     output: {
         filename: "[name].bundle.js",
@@ -133,7 +135,8 @@ module.exports = {
                     }());
                 `}
             }
-        })
+        }),
+        new UglifyJSWebpack()
     ],
     resolve: {
         extensions: [ ".ts", ".scss", ".pug", ".js", ".css", ".xlf" ],

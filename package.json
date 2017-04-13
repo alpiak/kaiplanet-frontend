@@ -8,6 +8,7 @@
     "start": "webpack-dev-server --config ./webpack/webpack.dev.js",
     "test": "karma start ./karma/karma.conf.js",
     "build": "webpack --config ./webpack/webpack.dev.js",
+    "dist": "webpack --config ./webpack/webpack.dist.js",
     "i18n": "grunt i18n-compile-pug && grunt i18n-load-external && ng-xi18n -p ./i18n/tsconfig.json && grunt i18n-clean"
   },
   "repository": {
@@ -54,8 +55,10 @@
     "@types/core-js": "^0.9.35",
     "@types/metismenu": "^2.6.0",
     "@types/node": "^7.0.5",
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.3.3",
     "babel-preset-es2015": "^6.24.0",
     "banner-webpack-plugin": "^0.2.3",
     "css-loader": "^0.26.1",
@@ -85,6 +88,7 @@
     "tslint": "^4.4.2",
     "tslint-loader": "^3.3.0",
     "typescript": "^2.1.6",
+    "uglifyjs-webpack-plugin": "^0.4.2",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
