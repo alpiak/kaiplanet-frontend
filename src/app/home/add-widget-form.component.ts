@@ -53,7 +53,8 @@ export class AddWidgetFormComponent {
             x: this.x || 0,
             y: this.y || 2,
             width: this.width || 6,
-            height: this.height|| 3,
+            height: this.height || 3,
+            zIndex: this.zIndex || 0,
             config: config
         };
     }

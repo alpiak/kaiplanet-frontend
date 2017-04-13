@@ -10,6 +10,9 @@ $leftNavHighlight: $accent;
 .meny {
   background-color: $leftNavPrimary;
 }
+.meny-arrow {
+  border-left: 16px solid $leftNavPrimary !important;
+}
 
 @mixin active-1 {
   background: $leftNavPrimary;
