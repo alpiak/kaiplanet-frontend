@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72d0a84f-6230-4863-95a2-079965d856fe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/earth/scroll-fade.directive.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/assets/leaf.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth/crystal-nav.component.pug" afterPath="$PROJECT_DIR$/src/app/earth/crystal-nav.component.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth/earth.module.ts" afterPath="$PROJECT_DIR$/src/app/earth/earth.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth/falling-leaves-scroll-scene.directive.ts" afterPath="$PROJECT_DIR$/src/app/earth/falling-leaves-scroll-scene.directive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth/jumbotron.component.pug" afterPath="$PROJECT_DIR$/src/app/earth/jumbotron.component.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth/jumbotron.component.scss" afterPath="$PROJECT_DIR$/src/app/earth/jumbotron.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/earth/scroll-up.directive.ts" afterPath="$PROJECT_DIR$/src/app/earth/scroll-up.directive.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/falling-leaves.scss" afterPath="$PROJECT_DIR$/src/styles/falling-leaves.scss" />
     </list>
     <ignored path="bubblesoft-frontend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scroll-scene-text.directive.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/earth/scroll-scene-text.directive.ts">
+      <file leaf-file-name="crystal-nav.component.pug" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/earth/crystal-nav.component.pug">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="50" column="50" selection-start-line="50" selection-start-column="50" selection-end-line="50" selection-end-column="50" />
+            <state relative-caret-position="600">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,10 +95,11 @@
       <file leaf-file-name="earth.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/earth/earth.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="940">
-              <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+            <state relative-caret-position="610">
+              <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
               <folding>
                 <element signature="e#44#90#0" expanded="true" />
+                <marker date="1492083787433" expanded="false" signature="0:42" ph="/** Created by qhyang on 2017/2/21. ...*/" />
               </folding>
             </state>
           </provider>
@@ -131,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leaf.svg" pinned="false" current-in-tab="true">
+      <file leaf-file-name="leaf.svg" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/leaf.svg">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="140">
@@ -204,15 +198,15 @@
         <option value="$PROJECT_DIR$/src/app/widgets/header-widget.component.pug" />
         <option value="$PROJECT_DIR$/src/app/earth/top-tool-pane.component.pug" />
         <option value="$PROJECT_DIR$/src/app/home/left-nav.component.pug" />
-        <option value="$PROJECT_DIR$/src/app/earth/crystal-nav.component.pug" />
         <option value="$PROJECT_DIR$/src/app/earth/astral-scroll-scene.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/earth/jumbotron.component.scss" />
         <option value="$PROJECT_DIR$/src/styles/falling-leaves.scss" />
         <option value="$PROJECT_DIR$/src/app/earth/falling-leaves-scroll-scene.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/earth/scroll-up.directive.ts" />
         <option value="$PROJECT_DIR$/src/app/earth/scroll-fade.directive.ts" />
-        <option value="$PROJECT_DIR$/src/app/earth/earth.module.ts" />
         <option value="$PROJECT_DIR$/src/app/earth/jumbotron.component.pug" />
+        <option value="$PROJECT_DIR$/src/app/earth/earth.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/earth/crystal-nav.component.pug" />
       </list>
     </option>
   </component>
@@ -554,12 +548,12 @@
       <workItem from="1491025301535" duration="2435000" />
       <workItem from="1491039219178" duration="7904000" />
       <workItem from="1491895522019" duration="11716000" />
-      <workItem from="1492066051299" duration="10952000" />
+      <workItem from="1492066051299" duration="11362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366904000" />
+    <option name="totallyTimeSpent" value="367314000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -895,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/earth/crystal-nav.component.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1005,16 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/earth/earth.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="940">
-          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
-          <folding>
-            <element signature="e#44#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/earth/jumbotron.component.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -1051,6 +1027,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/earth/earth.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="47" column="26" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding>
+            <element signature="e#44#90#0" expanded="true" />
+            <marker date="1492083787433" expanded="false" signature="0:42" ph="/** Created by qhyang on 2017/2/21. ...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/earth/crystal-nav.component.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
