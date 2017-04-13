@@ -27,7 +27,10 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
         require("../../styles/falling-leaves");
 
         const jQuery = require("jquery"),
+            TweenLite = require("TweenLite"),
             LeafScene = require("../../scripts/falling-leaves");
+
+        jQuery(this.el.nativeElement).css("opacity", "0");
 
         // build scroll scene
         this.scrollSceneService.addScene(
@@ -44,10 +47,21 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
 
                     leaves.init();
                     leaves.render();
+                    TweenLite.to(this.el.nativeElement, 2, {
+                        opacity: 1,
+                        ease: "Sine.easeOut"
+                    });
                 })
                 .on("leave", () => {
-                    jQuery(this.el.nativeElement).removeClass("fixed falling-leaves");
-                    jQuery(this.el.nativeElement).empty();
-                }));
+                    TweenLite.to(this.el.nativeElement, 2, {
+                        opacity: 0,
+                        ease: "Sine.easeOut",
+                        onComplete: () => {
+                            jQuery(this.el.nativeElement).removeClass("fixed falling-leaves");
+                            jQuery(this.el.nativeElement).empty();
+                        }
+                    });
+                })
+        );
     }
 }

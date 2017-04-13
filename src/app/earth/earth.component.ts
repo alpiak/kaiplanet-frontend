@@ -11,6 +11,6 @@ export class EarthComponent implements AfterViewInit{
     ngAfterViewInit() {
         const jQuery = require("jquery");
 
-        setTimeout(() => window["componentHandler"].upgradeElements(jQuery("body").get(0)), 200)
+        setTimeout(() => window["componentHandler"].upgradeElements(jQuery("body").get(0)), 200);
     }
 }

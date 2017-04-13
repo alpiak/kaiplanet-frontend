@@ -2,13 +2,13 @@
  * Created by qhyang on 2017/3/6.
  */
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 
 @Component({
     template: require("./home.component.pug"),
     styles: [ require("./home.component.scss") ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         const Meny = require("../../scripts/meny");
 
@@ -52,5 +52,10 @@ export class HomeComponent implements OnInit {
             // Use touch swipe events to open/close
             touch: true
         });
+    }
+    ngAfterViewInit() {
+        const jQuery = require("jquery");
+
+        setTimeout(() => window["componentHandler"].upgradeElements(jQuery("body").get(0)), 200);
     }
 }

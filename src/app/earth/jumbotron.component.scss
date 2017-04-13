@@ -270,3 +270,59 @@
     opacity: .3;
   }
 }
+
+.scroll-mark {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  height: 40px;
+  width: 100px;
+  margin-left: -50px;
+  z-index: 100;
+}
+.scroll-mark .scroll-mark__mouse {
+  margin: 0 auto 7px auto;
+  width: 22px;
+  height: 37px;
+  border: solid 2px #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.scroll-mark .scroll-mark__mouse .mouse__wheel {
+  position: absolute;
+  width: 2px;
+  height: 7px;
+  background-color: #fff;
+  top: 10%;
+  left: 50%;
+  margin-left: -1px;
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+@keyframes sdb {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0
+  }
+  15% {
+    opacity: 1;
+  }
+  30% {
+    transform: translate(0, 15px);
+    opacity:0;
+  }
+  45% {
+    opacity:0;
+  }
+  100% {
+    opacity:0;
+  }
+}

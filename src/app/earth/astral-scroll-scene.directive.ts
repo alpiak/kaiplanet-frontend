@@ -24,7 +24,8 @@ export class AstralScrollSceneDirective extends ScrollSceneDirective implements 
 
         require("../../scripts/animation.gsap");
 
-        const jQuery = require("jquery");
+        const jQuery = require("jquery"),
+            TweenLite = require("TweenLite");
 
         // build scroll scene
         this.scrollSceneService.addScene(
@@ -38,10 +39,20 @@ export class AstralScrollSceneDirective extends ScrollSceneDirective implements 
                     require("../../scripts/astral.jquery");
 
                     jQuery(this.el.nativeElement).astral(this.astralAmount);
+                    TweenLite.to(this.el.nativeElement, 2, {
+                        opacity: 1,
+                        ease: "Sine.easeOut"
+                    });
                 })
                 .on("leave", () => {
-                    jQuery(this.el.nativeElement).removeClass("fixed");
-                    jQuery(this.el.nativeElement).find("canvas").remove();
+                    TweenLite.to(this.el.nativeElement, 2, {
+                        opacity: 0,
+                        ease: "Sine.easeOut",
+                        onComplete: () => {
+                            jQuery(this.el.nativeElement).removeClass("fixed");
+                            jQuery(this.el.nativeElement).find("canvas").remove();
+                        }
+                    });
                 }));
     }
 }

@@ -2,6 +2,14 @@
    Created by qhyang on 2017/4/1.
 
 
+a.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect(
+    href="https://github.com/bubblesoft/bubblesoft-frontend"
+    target="_blank"
+)
+    span.item__text(
+        style="font-weight: bold; color: rgb(255, 193, 7)"
+        i18n="Button text|the text of a button to go to the GitHub repository of the site"
+    ) Watch me on GitHub
 button.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect(
     bsScrollTo="bottom"
     "[duration]"="3000"
@@ -10,7 +18,7 @@ button.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect(
         use(xlink:href="#ic_play_for_work_24px")
     span.item__text(i18n="button text|text of the button to skip the scroll scene and go to the bottom directly on the earth page") Skip
 button#earth-breath__language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
-    span.lang-xs.lang-lbl(lang="zh")
+    span.lang-xs.lang-lbl([attr.lang]="currentLocale.substr(0, 2)")
 ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="earth-breath__language-switch")
     li.mdl-menu__item((click)="changeLocale('zh-CN')")
         span.lang-xs.lang-lbl(lang="zh")

@@ -26,7 +26,7 @@ export class ScrollUpDirective implements AfterViewInit {
         // ScrollMagic
         require("gsap/tweenLite");
 
-        let ScrollMagic = require("scrollmagic");
+        const ScrollMagic = require("scrollmagic");
 
         require("../../scripts/animation.gsap");
 

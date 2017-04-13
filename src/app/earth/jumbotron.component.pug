@@ -121,11 +121,18 @@ ul.scene#parallax-scene(
                 )
                 - n++
     li.layer.full-size(data-depth="5.00")
-    li.layer.full-size(
-        data-depth="0.60"
-    )
+    li.layer.full-size(data-depth="0.60")
         div(scrollUp offset="0%" duration="220%")
             div(
                 crystal-nav
                 bsStickUp
             )
+div.scroll-mark(
+    bsScrollFade
+    offset="0%"
+    duration="100%"
+)
+    div.scroll-mark__mouse
+        div.mouse__body
+            div.mouse__wheel
+    span SCROLL

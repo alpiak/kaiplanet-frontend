@@ -25,6 +25,7 @@ import { ScrollSceneBackgroundColorDirective } from "./scroll-scene-background-c
 import { PageLoadingDirective } from "../page-loading.directive";
 import { ScrollToDirective } from "../scroll-to.directive";
 import { ScrollRollDirective } from "./scroll-roll.directive";
+import { ScrollFadeDirective } from "./scroll-fade.directive";
 
 @NgModule({
     imports:      [ EarthRoutingModule ],
@@ -45,7 +46,8 @@ import { ScrollRollDirective } from "./scroll-roll.directive";
         ScrollSceneBackgroundColorDirective,
         PageLoadingDirective,
         ScrollToDirective,
-        ScrollRollDirective
+        ScrollRollDirective,
+        ScrollFadeDirective
     ]
 })
 export class EarthModule { }

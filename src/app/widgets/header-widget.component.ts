@@ -23,11 +23,10 @@ export class HeaderWidgetComponent implements OnInit{
     private widgetTypes: Object;
     @ViewChild(AddWidgetFormComponent) private addWidgetFormComponent: AddWidgetFormComponent;
 
-    constructor(private localeService: LocaleService, private gridStackService: GridStackService) {
-        this.currentLocale = localeService.currentLocale;
-    }
+    constructor(private localeService: LocaleService, private gridStackService: GridStackService) { }
 
     ngOnInit() {
+        this.currentLocale = this.localeService.currentLocale;
         this.widgetTypes = this.gridStackService.getWidgetTypes();
     }
     openLoginDialog() {
