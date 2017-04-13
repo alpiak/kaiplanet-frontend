@@ -1,5 +1,5 @@
 /**
- * Created by qhyang on 2017/2/10.
+ * Created by qhyang on 2017/4/13.
  */
 
 "use strict";
@@ -13,11 +13,6 @@ const BannerWebpack = require("banner-webpack-plugin");
 const rootDir = path.resolve(__dirname, "..");
 
 module.exports = {
-    devServer: {
-        contentBase: path.resolve(rootDir, "dist"),
-        port: "9999"
-    },
-    devtool: "source-map",
     entry: {
         app: [ path.resolve(rootDir, "src", "app", "main") ],
         vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
@@ -82,7 +77,7 @@ module.exports = {
     },
     output: {
         filename: "[name].bundle.js",
-        path: path.resolve(rootDir, "build")
+        path: path.resolve(rootDir, "dist")
     },
     plugins: [
         new ChunkWebpack({

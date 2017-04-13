@@ -1117,7 +1117,7 @@ THREE.BAS.PhongAnimationMaterial.prototype._concatVertexShader = function() {
     ].join( "\n" );
 };
 
-module.exports = function (container) {
+module.exports = function (container, images) {
 
     function init() {
         var root = new THREERoot({
@@ -1136,7 +1136,7 @@ module.exports = function (container) {
         var slide = new Slide(width, height, 'out');
         var l1 = new THREE.ImageLoader();
         l1.setCrossOrigin('Anonymous');
-        l1.load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/winter.jpg', function(img) {
+        l1.load(images[0], function(img) {
             slide.setImage(img);
         })
         root.scene.add(slide);
@@ -1144,7 +1144,7 @@ module.exports = function (container) {
         var slide2 = new Slide(width, height, 'in');
         var l2 = new THREE.ImageLoader();
         l2.setCrossOrigin('Anonymous');
-        l2.load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/175711/spring.jpg', function(img) {
+        l2.load(images[1], function(img) {
             slide2.setImage(img);
         })
 
