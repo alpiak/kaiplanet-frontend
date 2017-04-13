@@ -4,7 +4,10 @@
 form.form-horizontal
     br
     div.form-group
-        label.col-sm-4.control-label(for="add-widget-form__type-select") Widget type:
+        label.col-sm-4.control-label(
+            for="add-widget-form__type-select"
+            i18n="Label text|Label of input field"
+        ) Widget type:
         div.col-sm-7
             select#add-widget-form__type-select.form-control(
                 [(ngModel)]="type"
@@ -19,7 +22,10 @@ form.form-horizontal
         legend Position & size
         div.row
             div.col-sm-6.mdl-grid
-                label.mdl-cell--6-col(for="add-widget-form__field-x") X:
+                label.mdl-cell--6-col(
+                    for="add-widget-form__field-x"
+                    i18n="Label text|Label of input field"
+                ) X:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                     input#add-widget-form__field-x.mdl-textfield__input(
                         [(ngModel)]="x"
@@ -27,12 +33,18 @@ form.form-horizontal
                         type="text"
                         pattern="[0-9]"
                     )
-                    label.mdl-textfield__label(for="add-widget-form__field-x") Number...
+                    label.mdl-textfield__label(
+                        for="add-widget-form__field-x"
+                        i18n="Text of a tip|Tip of input field"
+                    ) Number...
                     span.mdl-textfield__error(
                         i18n="Warning text of a input field|Warn the user the input is not valid"
                     ) Input is not a integer between 0~9!
             div.col-sm-6.mdl-grid
-                label.mdl-cell--6-col(for="add-widget-form__field-y") Y:
+                label.mdl-cell--6-col(
+                    for="add-widget-form__field-y"
+                    i18n="Label text|Label of input field"
+                ) Y:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                     input#add-widget-form__field-y.mdl-textfield__input(
                         [(ngModel)]="y"
@@ -40,13 +52,19 @@ form.form-horizontal
                         type="text"
                         pattern="[0-9]"
                     )
-                    label.mdl-textfield__label(for="add-widget-form__field-y") Number...
+                    label.mdl-textfield__label(
+                        for="add-widget-form__field-y"
+                        i18n="Text of a tip|Tip of input field"
+                    ) Number...
                     span.mdl-textfield__error(
                         i18n="Warning text of a input field|Warn the user the input is not valid"
                     ) Input is not a integer between 0~9!
         div.row
             div.col-sm-6.mdl-grid
-                label.mdl-cell--6-col(for="add-widget-form__field-width") Width:
+                label.mdl-cell--6-col(
+                    for="add-widget-form__field-width"
+                    i18n="Label text|Label of input field"
+                ) Width:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                     input#add-widget-form__field-width.mdl-textfield__input(
                         [(ngModel)]="width"
@@ -54,12 +72,18 @@ form.form-horizontal
                         type="text"
                         pattern="[0-9]"
                     )
-                    label.mdl-textfield__label(for="add-widget-form__field-width") Number...
+                    label.mdl-textfield__label(
+                        for="add-widget-form__field-width"
+                        i18n="Text of a tip|Tip of input field"
+                    ) Number...
                     span.mdl-textfield__error(
                         i18n="Warning text of a input field|Warn the user the input is not valid"
                     ) Input is not a integer between 0~9!
             div.col-sm-6.mdl-grid
-                label.mdl-cell--6-col(for="add-widget-form__field-height") Height:
+                label.mdl-cell--6-col(
+                    for="add-widget-form__field-height"
+                    i18n="Label text|Label of input field"
+                ) Height:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                     input#add-widget-form__field-height.mdl-textfield__input(
                         [(ngModel)]="height"
@@ -67,13 +91,19 @@ form.form-horizontal
                         type="text"
                         pattern="[0-9]"
                     )
-                    label.mdl-textfield__label(for="add-widget-form__field-height") Number...
+                    label.mdl-textfield__label(
+                        for="add-widget-form__field-height"
+                        i18n="Text of a tip|Tip of input field"
+                    ) Number...
                     span.mdl-textfield__error(
                         i18n="Warning text of a input field|Warn the user the input is not valid"
                     ) Input is not a integer between 0~9!
         div.row
             div.col-sm-6.mdl-grid
-                label.mdl-cell--6-col(for="add-widget-form__field-z-index") Z-index:
+                label.mdl-cell--6-col(
+                    for="add-widget-form__field-z-index"
+                    i18n="Label text|Label of input field"
+                ) Z-index:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                     input#add-widget-form__field-z-index.mdl-textfield__input(
                         [(ngModel)]="zIndex"
@@ -81,7 +111,10 @@ form.form-horizontal
                         type="text"
                         pattern="[0-9]*"
                     )
-                    label.mdl-textfield__label(for="add-widget-form__field-width") Number...
+                    label.mdl-textfield__label(
+                        for="add-widget-form__field-width"
+                        i18n="Text of a tip|Tip of input field"
+                    ) Number...
                     span.mdl-textfield__error(
                         i18n="Warning text of a input field|Warn the user the input is not valid"
                     ) Input is not a integer bigger than 0!
@@ -89,7 +122,10 @@ form.form-horizontal
         legend Settings
         div.form-group(*ngIf="type === 'plain'")
             br
-            label.col-sm-3.control-label(for="plain-widget-config__type-select") Type:
+            label.col-sm-3.control-label(
+                for="plain-widget-config__type-select"
+                i18n="Label text|Label of input field"
+            ) Type:
             div.col-sm-7.col-sm-offset-1
                 select#plain-widget-config__type-select.form-control(
                     [(ngModel)]="config.type"
@@ -104,15 +140,17 @@ form.form-horizontal
             bsMdlUpgrade="mdl-checkbox"
         )
             br
-            div.col-sm-5.col-sm-offset-1(
-                *ngFor="let type of widgetTypes.sns.config.types; let i=index"
-            )
-                label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect([for]="'add-widget-form__checkbox-' + type.key")
-                    input.mdl-checkbox__input(
-                        [value]="i"
-                        "[(ngModel)]"="config.types[i]"
-                        "[name]"="'checkbox-' + type.key"
-                        "[id]"="'add-widget-form__checkbox-' + type.key"
-                        type="checkbox"
-                    )
-                    span.mdl-checkbox__label {{ type.text }}
+            label.col-sm-3.col-sm-offset-1(i18n="Label text|Label of input field") Types:
+            div.col-sm-8
+                div.col-sm-6(
+                    *ngFor="let type of widgetTypes.sns.config.types; let i=index"
+                )
+                    label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect([for]="'add-widget-form__checkbox-' + type.key")
+                        input.mdl-checkbox__input(
+                            [value]="i"
+                            "[(ngModel)]"="config.types[i]"
+                            "[name]"="'checkbox-' + type.key"
+                            "[id]"="'add-widget-form__checkbox-' + type.key"
+                            type="checkbox"
+                        )
+                        span.mdl-checkbox__label {{ type.text }}
