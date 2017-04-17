@@ -19,6 +19,7 @@ module.exports = {
     },
     devtool: "source-map",
     entry: {
+        coreJS: [ "core-js" ],
         app: [ path.resolve(rootDir, "src", "app", "main") ],
         vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },

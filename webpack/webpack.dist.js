@@ -15,6 +15,7 @@ const rootDir = path.resolve(__dirname, "..");
 
 module.exports = {
     entry: {
+        coreJS: [ "core-js" ],
         app: [ path.resolve(rootDir, "src", "app", "main-dist") ],
         vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },
@@ -61,6 +62,31 @@ module.exports = {
             },
             {
                 test: /\.js$/,
+                exclude: [
+                    path.resolve(rootDir, "node_modules"),
+                    path.resolve(rootDir, "src", "scripts", "meny.js"),
+                    path.resolve(rootDir, "src", "scripts", "drawingboard.js"),
+                    path.resolve(rootDir, "src", "scripts", "stairway-hover-nav.js"),
+                    path.resolve(rootDir, "src", "scripts", "animated-weather-cards.js"),
+                    path.resolve(rootDir, "src", "scripts", "snap.svg.js"),
+                    path.resolve(rootDir, "src", "scripts", "wind-and-sand.js")
+                ],
+                loader: "babel-loader",
+                options: {
+                    presets: [ "env" ]
+                }
+            },
+            {
+                test: /\.js$/,
+                include: [
+                    path.resolve(rootDir, "node_modules"),
+                    path.resolve(rootDir, "src", "scripts", "meny.js"),
+                    path.resolve(rootDir, "src", "scripts", "drawingboard.js"),
+                    path.resolve(rootDir, "src", "scripts", "stairway-hover-nav.js"),
+                    path.resolve(rootDir, "src", "scripts", "animated-weather-cards.js"),
+                    path.resolve(rootDir, "src", "scripts", "snap.svg.js"),
+                    path.resolve(rootDir, "src", "scripts", "wind-and-sand.js")
+                ],
                 loader: "babel-loader"
             },
             {

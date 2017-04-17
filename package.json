@@ -33,6 +33,7 @@
     "@angular/platform-server": "^2.4.8",
     "@angular/router": "^4.0.0-rc.2",
     "bootstrap": "^3.3.7",
+    "core-js": "^2.4.1",
     "dialog-polyfill": "^0.4.7",
     "gridstack": "^0.2.6",
     "gsap": "^1.19.1",

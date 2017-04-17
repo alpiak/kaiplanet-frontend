@@ -2,11 +2,251 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="b66a8986bde5691530aac53942d1945099d93d58" datatype="html">
+      <trans-unit id="723b7d821a6fa8aab397fdb9515db5ece0b65e91" datatype="html">
+        <source>Widget type:</source>
+        <target>ウィジェット類型：</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="231a8d473783ab8a5ab149977f1e64805d396b2d" datatype="html">
+        <source>X:</source>
+      <target>X:</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="41ce5ae442971f8cc1b7fdb7eac66da3b4f1e03f" datatype="html">
+        <source>Number...</source>
+        <target>数字...</target>
+        <note priority="1" from="description">Tip of input field</note>
+        <note priority="1" from="meaning">Text of a tip</note>
+      </trans-unit>
+      <trans-unit id="2022499921c1cfe779802f718edbddb18a01c1df" datatype="html">
+        <source>Input is not a integer between 0~9!</source>
+        <target>入力は整数ではありません！</target>
+        <note priority="1" from="description">Warn the user the input is not valid</note>
+        <note priority="1" from="meaning">Warning text of a input field</note>
+      </trans-unit>
+      <trans-unit id="a70d9477ea00a2c678819adbd201f14520768b42" datatype="html">
+        <source>Y:</source>
+        <target>Y:</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="d496e68cb7b0250425f9c254818a62fd0c08da3c" datatype="html">
+        <source>Width:</source>
+        <target>幅：</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="081998eb9a1d0921d0cc520ca68c500f9cbcec03" datatype="html">
+        <source>Height:</source>
+        <target>高さ：</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="9aa8513894cdac40982132566e6b207d21de9a6e" datatype="html">
+        <source>Z-index:</source>
+        <target>Z-index:</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="0636d959e942f3bf75cc9fb990571bf2266c3884" datatype="html">
+        <source>Input is not a integer bigger than 0!</source>
+        <target>入力はゼロ以上の整数ではありません！</target>
+        <note priority="1" from="description">Warn the user the input is not valid</note>
+        <note priority="1" from="meaning">Warning text of a input field</note>
+      </trans-unit>
+      <trans-unit id="e7328c5e5ae4a12814c21f11b9787921eaaf0f2c" datatype="html">
+        <source>Type:</source>
+        <target>類型：</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="a9967a13167a95928072f3db194a328558f7b425" datatype="html">
+        <source>Types:</source>
+        <target>類型：</target>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="29539eb85866ab331f5345afc6e1df20c6c92a25" datatype="html">
+        <source>Fork me on GitHub</source>
+        <target>Fork me on GitHub</target>
+        <note priority="1" from="description">the text of a button to go to the GitHub repository of the site</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="64146209927b967aca185aa08be6f54566bbaf97" datatype="html">
+        <source>Widgets</source>
+        <target>ウィジェット</target>
+        <note priority="1" from="description">the text of a button to open a menu to manage widgets</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="27994c58bd7ae6a172cb7641e90c41bb9e0903df" datatype="html">
+        <source>Add a widget</source>
+        <target>ウィジェット追加</target>
+        <note priority="1" from="description">the text of an option to open a dialog for adding a widget</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="26c40cfbe32edc7af7c77e95f3b14429d2a3aafc" datatype="html">
+        <source>Manage widgets</source>
+        <target>ウィジェット管理</target>
+        <note priority="1" from="description">the text of an option to enter the wigdets-managing mode</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="e528cb0f83bad4fa91f93d4362ce32be1490506c" datatype="html">
+        <source>Log in</source>
+        <target>ログイン</target>
+        <note priority="1" from="description">the text of a button to open dialog to log in or sign up</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="6732b7869034a4db2809713413f15292f127a920" datatype="html">
+        <source>Change theme</source>
+        <target>テーマ変更</target>
+        <note priority="1" from="description">the text of an option to open a dialog to change theme of the page</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="79530f9da8b6cca540550d2a519957135cf71933" datatype="html">
+        <source>Add a widget</source>
+        <target>ウィジェット追加</target>
+        <note priority="1" from="description">the title of a dialog for adding a widget</note>
+        <note priority="1" from="meaning">Dialog title</note>
+      </trans-unit>
+      <trans-unit id="ffb76f558a46046484b5bb4cda396b3d1f77cb98" datatype="html">
+        <source>Add</source>
+        <target>追加</target>
+        <note priority="1" from="description">the text of a button to add a widget to the widget board</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="ad64a0228a93e65c6bce3a11fd902598fecd387b" datatype="html">
+        <source>Cancel</source>
+        <target>閉じる</target>
+        <note priority="1" from="description">the text of a button to close the dialog for adding a widget without adding any widget to the widget board</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="1c7b50f3ee735a3ae2e423aa217c296a4c465ed1" datatype="html">
+        <source>Home</source>
+        <target>ホーム</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="42f2bbe3f1190a2c7c3e4cf6e92c99f860f5f433" datatype="html">
+        <source>Earth (experimental showcase)</source>
+        <target>地球(実験展示)</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="82efbc0e620e897652aad4139e8048bec64696de" datatype="html">
+        <source>Music of the day (in development)</source>
+        <target>今日のうた（開発中）</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="2274b9875ebf558694d6f58cb033e41136c9c559" datatype="html">
+        <source>Strike! (in development)</source>
+        <target>ストライク!（開発中）</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="6c5a42a42dc32994217b12b5a5c7dbfd15aef6d3" datatype="html">
+        <source>Pokemon Star (in development)</source>
+        <target>ポケモン•スター（開発中）</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="d47fb79541d930ba3019ec7bf4ea21029292c621" datatype="html">
+        <source>Settings</source>
+        <target>セッティング</target>
+        <note priority="1" from="description">the text of an option to open a widget settings dialog</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="6e36eb58a1e939715da253f8674a1aa5f301fc9b" datatype="html">
+        <source>Resize</source>
+        <target>サイズ変更</target>
+        <note priority="1" from="description">the text of an option to enter the wigdets-managing mode of a specific widget</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="56af3f492cecd0c52d55a295ae351280dbd82a6a" datatype="html">
         <source>Welcome to the play ground!</source>
         <target>遊園地にようこそ！</target>
-        <note priority="1" from="description">user welcome</note>
-        <note priority="1" from="meaning">home page jumbotron</note>
+        <note priority="1" from="description">The text showed after enter the earth page</note>
+        <note priority="1" from="meaning">User welcome</note>
+      </trans-unit>
+      <trans-unit id="623dfcf5047411b7c67d9d622006a9e64a5b2929" datatype="html">
+        <source>Here I found star lights, sweet breezes...</source>
+        <target>ここには美しい星空が見える</target>
+        <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
+        <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="0a0be9ff9574abce4d8fbef7d5c8c76a3786c067" datatype="html">
+        <source>and a beating heart</source>
+        <target>そのうえ、わくわくしてるこころだ</target>
+        <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
+        <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="9fd224fde5264bff3fd7dd0912c8f918f6e53872" datatype="html">
+        <source>Look, the shooting stars in the sky...</source>
+        <target>ほら、流れ星</target>
+        <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
+        <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="2596c1cf2dcf0d70d647016018ca5d6cf068c9d1" datatype="html">
+        <source>and the amazing fireflies around</source>
+        <target>そして、周りに奇妙な火垂るもいっぱいだ</target>
+        <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
+        <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="b6dfce680d09e955ab7c3c7a51ad4a8944bb9152" datatype="html">
+        <source>then the wind starts...</source>
+        <target>ちょっと、かぜが起きた</target>
+        <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
+        <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="42cf71b5ee90d189220ff6a94356d2ef6b1466ca" datatype="html">
+        <source>Do you hear the breathe of the Earth?</source>
+        <target>この地球の呼吸が聞こえるか</target>
+        <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
+        <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="e5da37fce31753991e825c2a2395d1ae6d6c8963" datatype="html">
+        <source>SCROLL</source>
+        <target>SCROLL</target>
+        <note priority="1" from="description">Text of a tip to let the user to scroll down</note>
+        <note priority="1" from="meaning">Tip text</note>
+      </trans-unit>
+      <trans-unit id="528665650a7eae5968e2375c892d5e5c694d5032" datatype="html">
+        <source>Earth</source>
+        <target>地球</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="997b26a486d082a7ec2c66e0ba11897e937cabf4" datatype="html">
+        <source>Music of the day</source>
+        <target>今日のうた</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="8a10fbdf5a128c6f322a5740f6487a4f9ff71577" datatype="html">
+        <source>Strike!</source>
+        <target>ストライク!</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="2d9a3fda2a55b9839720682f4df29f8cbb0b24c9" datatype="html">
+        <source>Pokemon Star</source>
+        <target>ポケモン•スター</target>
+        <note priority="1" from="description">the text of a nav option to route to another page</note>
+        <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="e2833c9ac0a99381cb764b9c9a3d348c0518f836" datatype="html">
+        <source>Fork me on GitHub</source>
+        <target>Fork me on GitHub</target>
+        <note priority="1" from="description">the text of a button to go to the GitHub repository of the site</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="26b51c69149a22f1d6ad0b9bed40b39a61ee0fa6" datatype="html">
+        <source>Skip</source>
+        <target>下へ</target>
+        <note priority="1" from="description">text of the button to skip the scroll scene and go to the bottom directly on the earth page</note>
+        <note priority="1" from="meaning">button text</note>
       </trans-unit>
     </body>
   </file>

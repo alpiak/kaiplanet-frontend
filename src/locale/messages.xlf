@@ -200,11 +200,17 @@
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
-      <trans-unit id="729d2581d5974729e8bd9535c852afc7ecb96cc4" datatype="html">
-        <source>Can you hear the breathe of the Earth?</source>
+      <trans-unit id="42cf71b5ee90d189220ff6a94356d2ef6b1466ca" datatype="html">
+        <source>Do you hear the breathe of the Earth?</source>
         <target/>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="e5da37fce31753991e825c2a2395d1ae6d6c8963" datatype="html">
+        <source>SCROLL</source>
+        <target/>
+        <note priority="1" from="description">Text of a tip to let the user to scroll down</note>
+        <note priority="1" from="meaning">Tip text</note>
       </trans-unit>
       <trans-unit id="528665650a7eae5968e2375c892d5e5c694d5032" datatype="html">
         <source>Earth</source>
@@ -229,12 +235,6 @@
         <target/>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
-      </trans-unit>
-      <trans-unit id="e2833c9ac0a99381cb764b9c9a3d348c0518f836" datatype="html">
-        <source>Watch me on GitHub</source>
-        <target/>
-        <note priority="1" from="description">the text of a button to go to the GitHub repository of the site</note>
-        <note priority="1" from="meaning">Button text</note>
       </trans-unit>
       <trans-unit id="26b51c69149a22f1d6ad0b9bed40b39a61ee0fa6" datatype="html">
         <source>Skip</source>

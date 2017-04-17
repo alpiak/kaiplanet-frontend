@@ -31,11 +31,9 @@
 @media screen and (min-width: 768px) {
   .background {
     background-image: url("../../assets/h8nxgssjqxs-jonatan-pie-back.jpg");
-    background-size: 100% auto;
   }
   .background-front {
     background-image: url("../../assets/h8nxgssjqxs-jonatan-pie-front.png");
-    background-size: 100% auto;
   }
 }
 
@@ -98,6 +96,8 @@
 
 @include generateBubbleAnimation();
 
+@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+
 .scroll-scene-text {
   position: absolute;
   left: 0;
@@ -110,7 +110,8 @@
   text-align: center;
   text-shadow: 2px 2px 40px rgba(150, 150, 150, 1);
 }
-.scroll-scene-text h1 {
+.scroll-scene-text h3 {
+  font-family: "Reenie Beanie", sans-serif;
   filter: blur(3px);
 }
 

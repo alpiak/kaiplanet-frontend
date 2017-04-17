@@ -160,85 +160,91 @@
       </trans-unit>
       <trans-unit id="6e36eb58a1e939715da253f8674a1aa5f301fc9b" datatype="html">
         <source>Resize</source>
-        <target/>
+        <target>更改大小</target>
         <note priority="1" from="description">the text of an option to enter the wigdets-managing mode of a specific widget</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="56af3f492cecd0c52d55a295ae351280dbd82a6a" datatype="html">
         <source>Welcome to the play ground!</source>
-        <target/>
+        <target>欢迎来到游乐园！</target>
         <note priority="1" from="description">The text showed after enter the earth page</note>
         <note priority="1" from="meaning">User welcome</note>
       </trans-unit>
       <trans-unit id="623dfcf5047411b7c67d9d622006a9e64a5b2929" datatype="html">
         <source>Here I found star lights, sweet breezes...</source>
-        <target/>
+        <target>这里有星光、蝉鸣...</target>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="0a0be9ff9574abce4d8fbef7d5c8c76a3786c067" datatype="html">
         <source>and a beating heart</source>
-        <target/>
+        <target>还有藏不住悸动的心</target>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="9fd224fde5264bff3fd7dd0912c8f918f6e53872" datatype="html">
         <source>Look, the shooting stars in the sky...</source>
-        <target/>
+        <target>看，天空中的流星...</target>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="2596c1cf2dcf0d70d647016018ca5d6cf068c9d1" datatype="html">
         <source>and the amazing fireflies around</source>
-        <target/>
+        <target>还有四周奇妙的微光</target>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="b6dfce680d09e955ab7c3c7a51ad4a8944bb9152" datatype="html">
         <source>then the wind starts...</source>
-        <target/>
+        <target>然后，起风了...</target>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
-      <trans-unit id="729d2581d5974729e8bd9535c852afc7ecb96cc4" datatype="html">
-        <source>Can you hear the breathe of the Earth?</source>
-        <target/>
+      <trans-unit id="42cf71b5ee90d189220ff6a94356d2ef6b1466ca" datatype="html">
+        <source>Do you hear the breathe of the Earth?</source>
+        <target>听到地球的呼吸了吗？</target>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
+      </trans-unit>
+      <trans-unit id="e5da37fce31753991e825c2a2395d1ae6d6c8963" datatype="html">
+        <source>SCROLL</source>
+        <target>向下滚动</target>
+        <note priority="1" from="description">Text of a tip to let the user to scroll down</note>
+        <note priority="1" from="meaning">Tip text</note>
       </trans-unit>
       <trans-unit id="528665650a7eae5968e2375c892d5e5c694d5032" datatype="html">
         <source>Earth</source>
-        <target/>
+        <target>地球</target>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="997b26a486d082a7ec2c66e0ba11897e937cabf4" datatype="html">
         <source>Music of the day</source>
-        <target/>
+        <target>来点音乐</target>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="8a10fbdf5a128c6f322a5740f6487a4f9ff71577" datatype="html">
         <source>Strike!</source>
-        <target/>
+        <target>Strike!</target>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="2d9a3fda2a55b9839720682f4df29f8cbb0b24c9" datatype="html">
-        <source>Pokemon Star</source>
+          <target>口袋妖怪之星</target>
         <target/>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="e2833c9ac0a99381cb764b9c9a3d348c0518f836" datatype="html">
         <source>Watch me on GitHub</source>
-        <target/>
+        <target>Watch me on GitHub</target>
         <note priority="1" from="description">the text of a button to go to the GitHub repository of the site</note>
         <note priority="1" from="meaning">Button text</note>
       </trans-unit>
       <trans-unit id="26b51c69149a22f1d6ad0b9bed40b39a61ee0fa6" datatype="html">
         <source>Skip</source>
-        <target/>
+        <target>电梯直达</target>
         <note priority="1" from="description">text of the button to skip the scroll scene and go to the bottom directly on the earth page</note>
         <note priority="1" from="meaning">button text</note>
       </trans-unit>
