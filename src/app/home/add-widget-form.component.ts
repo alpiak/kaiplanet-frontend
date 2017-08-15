@@ -42,7 +42,7 @@ export class AddWidgetFormComponent {
                     config["types"].push({
                         text: this.widgetTypes["sns"].config.types[i].text,
                         src: this.widgetTypes["sns"].config.types[i].src,
-                        key: this.widgetTypes["sns"].config.types[i].key
+                        id: this.widgetTypes["sns"].config.types[i].id
                     });
                 }
             }

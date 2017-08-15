@@ -2,8 +2,10 @@
  * Created by qhyang on 2017/2/13.
  */
 
-import { NgModule }      from "@angular/core";
+import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+import { MaterialModule } from "./material.module";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { HomeModule } from "./home/home.module";
@@ -20,13 +22,15 @@ import { LocaleService } from "./locale.service";
 import { GridStackService } from "./home/grid-stack.service";
 
 @NgModule({
-    imports:      [
+    imports: [
+        BrowserAnimationsModule,
+        MaterialModule,
         AppRoutingModule,
         HomeModule,
         WidgetsModule,
         EarthModule,
     ],
-    providers:    [
+    providers: [
         LoggerService,
         BomService,
         LocaleService,
@@ -36,7 +40,7 @@ import { GridStackService } from "./home/grid-stack.service";
         AppComponent,
         MDLUpgradeDirective
     ],
-    exports:      [ AppComponent ],
-    bootstrap:    [ AppComponent ]
+    exports: [ AppComponent ],
+    bootstrap: [ AppComponent ]
 })
 export class AppModule { }

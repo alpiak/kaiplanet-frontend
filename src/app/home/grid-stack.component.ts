@@ -55,7 +55,7 @@ export class gridStackComponent implements AfterViewInit {
             removable: true
         };
 
-        this.gridStackService.init(jQuery(".grid-stack")[0], options);
+        this.gridStackService.init(jQuery(".grid-stack").get(0), options);
     }
     onClose(index: number) {
         if (this.widgets[index].type !== "header") {

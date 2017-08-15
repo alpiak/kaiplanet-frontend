@@ -2,6 +2,84 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="723b7d821a6fa8aab397fdb9515db5ece0b65e91" datatype="html">
+        <source>Widget type:</source>
+        <target/>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="4e34ecbe2511a50ac09c27d5d58cdb9fe89afd35" datatype="html">
+        <source>Position &amp; size</source>
+        <target/>
+        <note priority="1" from="description">Legend of a form Group</note>
+        <note priority="1" from="meaning">Text of a legend</note>
+      </trans-unit>
+      <trans-unit id="231a8d473783ab8a5ab149977f1e64805d396b2d" datatype="html">
+        <source>X:</source>
+        <target/>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="41ce5ae442971f8cc1b7fdb7eac66da3b4f1e03f" datatype="html">
+        <source>Number...</source>
+        <target/>
+        <note priority="1" from="description">Tip of a input field</note>
+        <note priority="1" from="meaning">Text of a tip</note>
+      </trans-unit>
+      <trans-unit id="2022499921c1cfe779802f718edbddb18a01c1df" datatype="html">
+        <source>Input is not a integer between 0~9!</source>
+        <target/>
+        <note priority="1" from="description">Warn the user the input is not valid</note>
+        <note priority="1" from="meaning">Warning text of a input field</note>
+      </trans-unit>
+      <trans-unit id="a70d9477ea00a2c678819adbd201f14520768b42" datatype="html">
+        <source>Y:</source>
+        <target/>
+        <note priority="1" from="description">Label of a input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="d496e68cb7b0250425f9c254818a62fd0c08da3c" datatype="html">
+        <source>Width:</source>
+        <target/>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="081998eb9a1d0921d0cc520ca68c500f9cbcec03" datatype="html">
+        <source>Height:</source>
+        <target/>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="9aa8513894cdac40982132566e6b207d21de9a6e" datatype="html">
+        <source>Z-index:</source>
+        <target/>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="0636d959e942f3bf75cc9fb990571bf2266c3884" datatype="html">
+        <source>Input is not a integer bigger than 0!</source>
+        <target/>
+        <note priority="1" from="description">Warn the user the input is not valid</note>
+        <note priority="1" from="meaning">Warning text of a input field</note>
+      </trans-unit>
+      <trans-unit id="e7328c5e5ae4a12814c21f11b9787921eaaf0f2c" datatype="html">
+        <source>Type:</source>
+        <target/>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="a9967a13167a95928072f3db194a328558f7b425" datatype="html">
+        <source>Types:</source>
+        <target/>
+        <note priority="1" from="description">Label of input field</note>
+        <note priority="1" from="meaning">Label text</note>
+      </trans-unit>
+      <trans-unit id="29539eb85866ab331f5345afc6e1df20c6c92a25" datatype="html">
+        <source>Fork me on GitHub</source>
+        <target/>
+        <note priority="1" from="description">the text of a button to go to the GitHub repository of the site</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
       <trans-unit id="64146209927b967aca185aa08be6f54566bbaf97" datatype="html">
         <source>Widgets</source>
         <target/>

@@ -15,11 +15,11 @@ form.form-horizontal
             )
                 option(
                     *ngFor="let widgetType of widgetTypes | array"
-                    "[attr.value]"="widgetType.value.key"
+                    "[attr.value]"="widgetType.value.id"
                 ) {{ widgetType.value.text }}
     br
     fieldset.form-group
-        legend Position & size
+        legend(i18n="Text of a legend|Legend of a form Group") Position & size
         div.row
             div.col-sm-6.mdl-grid
                 label.mdl-cell--6-col(
@@ -35,7 +35,7 @@ form.form-horizontal
                     )
                     label.mdl-textfield__label(
                         for="add-widget-form__field-x"
-                        i18n="Text of a tip|Tip of input field"
+                        i18n="Text of a tip|Tip of a input field"
                     ) Number...
                     span.mdl-textfield__error(
                         i18n="Warning text of a input field|Warn the user the input is not valid"
@@ -43,7 +43,7 @@ form.form-horizontal
             div.col-sm-6.mdl-grid
                 label.mdl-cell--6-col(
                     for="add-widget-form__field-y"
-                    i18n="Label text|Label of input field"
+                    i18n="Label text|Label of a input field"
                 ) Y:
                 div.mdl-cell--6-col.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
                     input#add-widget-form__field-y.mdl-textfield__input(
@@ -133,7 +133,7 @@ form.form-horizontal
                 )
                     option(
                         *ngFor="let type of widgetTypes.plain.config.types"
-                        "[attr.value]"="type.key"
+                        "[attr.value]"="type.id"
                     ) {{ type.text }}
         div.form-group(
             [style.display]="type === 'sns' ? 'block' : 'none'"
@@ -145,12 +145,12 @@ form.form-horizontal
                 div.col-sm-6(
                     *ngFor="let type of widgetTypes.sns.config.types; let i=index"
                 )
-                    label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect([for]="'add-widget-form__checkbox-' + type.key")
+                    label.mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect([for]="'add-widget-form__checkbox-' + type.id")
                         input.mdl-checkbox__input(
                             [value]="i"
                             "[(ngModel)]"="config.types[i]"
-                            "[name]"="'checkbox-' + type.key"
-                            "[id]"="'add-widget-form__checkbox-' + type.key"
+                            "[name]"="'checkbox-' + type.id"
+                            "[id]"="'add-widget-form__checkbox-' + type.id"
                             type="checkbox"
                         )
                         span.mdl-checkbox__label {{ type.text }}

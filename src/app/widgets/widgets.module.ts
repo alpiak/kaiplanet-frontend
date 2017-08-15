@@ -15,6 +15,7 @@ import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
 import { SNSWidgetComponent } from "./sns-widget.component";
 import { AddWidgetFormComponent } from "../home/add-widget-form.component";
+import { LoginDialogComponent } from "../home/login-dialog.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
@@ -39,6 +40,7 @@ import { ArrayPipe } from "../array.pipe";
         WaterfallWidgetComponent,
         PlainWidgetComponent,
         AddWidgetFormComponent,
+        LoginDialogComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,
@@ -54,7 +56,8 @@ import { ArrayPipe } from "../array.pipe";
         MoonOceanWidgetComponent,
         WaterfallWidgetComponent,
         PlainWidgetComponent,
-        SNSWidgetComponent
+        SNSWidgetComponent,
+        LoginDialogComponent
     ],
     exports: [
         HeaderWidgetComponent,

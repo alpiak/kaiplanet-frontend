@@ -5,9 +5,11 @@
 // import { jQuery, $ } from "jquery";
 
 import "bootstrap/dist/css/bootstrap";
-import "material-design-lite/material.css";
+import "@angular/material/prebuilt-themes/deeppurple-amber";
+import "material-design-lite/dist/material.blue_grey-amber.min";
 import "material-design-lite/material.js";
 import "../styles/languages";
+import "./parallax";
 import "dialog-polyfill/dialog-polyfill.css";
 
 import "../styles/base";
