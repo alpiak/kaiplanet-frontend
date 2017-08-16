@@ -5,7 +5,6 @@
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { MaterialModule } from "./material.module";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { HomeModule } from "./home/home.module";
@@ -24,7 +23,6 @@ import { GridStackService } from "./home/grid-stack.service";
 @NgModule({
     imports: [
         BrowserAnimationsModule,
-        MaterialModule,
         AppRoutingModule,
         HomeModule,
         WidgetsModule,

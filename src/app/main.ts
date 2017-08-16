@@ -8,7 +8,7 @@ import "hammerjs";
 
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { getTranslationProviders } from "./i18n-providers";
-import { AppModule }              from "./app.module";
+import { AppModule } from "./app.module";
 
 // Detect user language
 if (!sessionStorage.getItem("locale")) {

@@ -1,0 +1,28 @@
+//
+   Created by qhyang on 2017/8/15.
+
+h5(
+    md-dialog-title
+    i18n="dialog header text|the header text of the login dialog"
+) Login
+md-dialog-content
+    div(i18n="dialog title|the title of the login dialog") Choose a login method
+    br
+    md-grid-list(
+        cols="3"
+        rowHeight="3:2"
+    )
+        a(
+            *ngFor="let method of authMethods"
+            "[href]"="method.url"
+        )
+            md-grid-tile
+                md-grid-tile-header {{ method.displayName }}
+                img([src]="method.icon")
+                md-grid-tile-footer {{ method.description }}
+    br
+md-dialog-actions
+    button(
+        md-button
+        md-dialog-close
+    ) Close

@@ -3,10 +3,10 @@
  */
 
 import { NgModule } from "@angular/core";
-import { MdDialogModule } from "@angular/material";
+import {MdButtonModule, MdDialogModule, MdGridListModule} from "@angular/material";
 
 @NgModule({
-    imports: [ MdDialogModule ],
-    exports: [ MdDialogModule ],
+    imports: [ MdButtonModule, MdDialogModule, MdGridListModule ],
+    exports: [ MdButtonModule, MdDialogModule, MdGridListModule ],
 })
 export class MaterialModule { }

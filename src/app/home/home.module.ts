@@ -18,7 +18,7 @@ import { widgetFrameComponent } from "./widget-frame.component";
 import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
 
 @NgModule({
-    imports:      [
+    imports: [
         BrowserModule,
         FormsModule,
         HomeRoutingModule,

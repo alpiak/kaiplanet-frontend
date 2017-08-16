@@ -9,7 +9,7 @@ import { LocaleService } from "../locale.service";
 import { GridStackService } from "../home/grid-stack.service";
 
 import { AddWidgetFormComponent } from "../home/add-widget-form.component";
-import { LoginDialogComponent } from "../home/login-dialog.component";
+import { LoginDialogComponent } from "../login-dialog.component";
 
 import { Widget } from "../../scripts/interfaces";
 
@@ -21,7 +21,7 @@ const jQuery = require("jquery");
     styles: [ require("./widget.component"), require("./header-widget.component.scss") ]
 })
 export class HeaderWidgetComponent implements OnInit{
-    currentLocale: string;
+    private currentLocale: string;
     private widgetTypes: Object;
     @ViewChild(AddWidgetFormComponent) private addWidgetFormComponent: AddWidgetFormComponent;
 
@@ -33,8 +33,6 @@ export class HeaderWidgetComponent implements OnInit{
         this.widgetTypes = this.gridStackService.getWidgetTypes();
     }
     openLoginDialog() {
-        // TODO: remove after the login feature added
-        // setTimeout(() => alert("Login feature will be included in the next release!"), 300);
         this.dialog.open(LoginDialogComponent);
     }
     openAddWidgetDialog() {

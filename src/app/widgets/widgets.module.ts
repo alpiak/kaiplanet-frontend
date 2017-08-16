@@ -6,6 +6,8 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
+import { MaterialModule } from "../material.module";
+
 import { HeaderWidgetComponent } from "./header-widget.component";
 import { CarouselWidgetComponent } from "./carousel-widget.component";
 import { WeatherCardWidgetComponent } from "./weather-card-widget.component";
@@ -15,7 +17,7 @@ import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
 import { SNSWidgetComponent } from "./sns-widget.component";
 import { AddWidgetFormComponent } from "../home/add-widget-form.component";
-import { LoginDialogComponent } from "../home/login-dialog.component";
+import { LoginDialogComponent } from "../login-dialog.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
@@ -26,9 +28,10 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
 import { ArrayPipe } from "../array.pipe";
 
 @NgModule({
-    imports:      [
+    imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        MaterialModule
     ],
     declarations: [
         HeaderWidgetComponent,

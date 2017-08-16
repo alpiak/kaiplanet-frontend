@@ -11,7 +11,7 @@ export class MDLUpgradeDirective implements AfterViewInit {
     constructor(private el: ElementRef) { }
 
     ngAfterViewInit() {
-        let jQuery = require("jquery");
+        const jQuery = require("jquery");
 
         setTimeout(() => {
             if (this.type = "mdl-tabs") {
