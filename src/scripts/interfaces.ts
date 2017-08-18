@@ -20,4 +20,8 @@ interface WidgetData {
     imgUrl?: string;
 }
 
-export { Widget, WidgetConfig };
+interface User {
+    userId: number
+}
+
+export { Widget, WidgetConfig, User };

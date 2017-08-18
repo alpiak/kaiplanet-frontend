@@ -13,7 +13,7 @@ div.tool-pane
             i18n="Button text|the text of a button to go to the GitHub repository of the site"
         ) Fork me on GitHub
     button#header-widget__widget-operation-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect
-        svg.item__icon_with-text.svg-ic_20px-dims(fill="#fff")
+        svg.item__icon_with-text.svg-ic_20px-dims(style="fill:#fff")
             use(xlink:href="#ic_apps_24px")
         span.item__text(i18n="Button text|the text of a button to open a menu to manage widgets") Widgets
     ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="header-widget__widget-operation-button")
@@ -25,10 +25,32 @@ div.tool-pane
             svg.item__icon_with-text.svg-ic_20px-dims
                 use(xlink:href="#ic_create_24px")
             span.item__text(i18n="Option text|the text of an option to enter the wigdets-managing mode") Manage widgets
-    button#header-widget__login-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect((click)="openLoginDialog()")
-        svg.item__icon_with-text.svg-ic_20px-dims(fill="#fff")
+    button#header-widget__login-button.tool-pane__button.widget-operation-button.mdl-button.mdl-js-button.mdl-js-ripple-effect(
+        [ngStyle]="{ 'display': user ? 'none' : 'inline-block' }"
+        "(click)"="openLoginDialog()"
+    )
+        svg.item__icon_with-text.svg-ic_20px-dims(style="fill:#fff")
             use(xlink:href="#ic_face_24px")
-        span.item__text(i18n="Button text|the text of a button to open dialog to log in or sign up") Log in
+        span.item__text(i18n="Button text|the text of a button to open dialog to log in") Log in
+    div([ngStyle]="{ 'display': user ? 'inline-block' : 'none' }")
+        button.tool-pane__button(
+            [mdMenuTriggerFor]="userMenu"
+            md-button
+        ) {{ user?.nickName }}
+        md-menu(
+            #userMenu="mdMenu"
+        )
+            button(md-menu-item)
+                svg.item__icon_with-text.svg-ic_20px-dims
+                    use(xlink:href="#ic_create_24px")
+                span.item__text(i18n="Option text|the text of an option to open user profile dialog") Profile
+            button(
+                (click)="logOut()"
+                md-menu-item
+            )
+                svg.item__icon_with-text.svg-ic_20px-dims
+                    use(xlink:href="#ic_create_24px")
+                span.item__text(i18n="Option text|the text of an option log out") Log out
     button#header-widget__language-switch.tool-pane__button.mdl-button.mdl-js-button.mdl-js-ripple-effect
         span.lang-xs.lang-lbl([attr.lang]="currentLocale.substr(0, 2)")
     ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="header-widget__language-switch")
@@ -41,7 +63,7 @@ div.tool-pane
         li.mdl-menu__item
             span.lang-xs.lang-lbl(lang="ko")
     button#header-widget__more-button.tool-pane__button.widget-operation-button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
-        svg.svg-ic_20px-dims(fill="#fff")
+        svg.svg-ic_20px-dims(style="fill:#fff")
             use(xlink:href="#ic_more_vert_24px")
     ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="header-widget__more-button")
         li.mdl-menu__item((click)="openThemeDialog()")

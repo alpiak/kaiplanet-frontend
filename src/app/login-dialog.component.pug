@@ -14,7 +14,7 @@ md-dialog-content
     )
         a(
             *ngFor="let method of authMethods"
-            "[href]"="method.url"
+            "[href]"="method.loginPageUrl"
         )
             md-grid-tile
                 md-grid-tile-header {{ method.displayName }}

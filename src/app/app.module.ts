@@ -3,6 +3,7 @@
  */
 
 import { NgModule } from "@angular/core";
+import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -15,13 +16,15 @@ import { AppComponent }  from "./app.component";
 
 import { MDLUpgradeDirective } from "./mdl-upgrade.directive";
 
-import { LoggerService } from "./logger.service";
-import { BomService } from "./bom.service";
-import { LocaleService } from "./locale.service";
+import {UserService} from "./user.service";
 import { GridStackService } from "./home/grid-stack.service";
+import { LocaleService } from "./locale.service";
+import { BomService } from "./bom.service";
+import { LoggerService } from "./logger.service";
 
 @NgModule({
     imports: [
+        HttpModule,
         BrowserAnimationsModule,
         AppRoutingModule,
         HomeModule,
@@ -29,10 +32,11 @@ import { GridStackService } from "./home/grid-stack.service";
         EarthModule,
     ],
     providers: [
-        LoggerService,
-        BomService,
+        UserService,
+        GridStackService,
         LocaleService,
-        GridStackService
+        BomService,
+        LoggerService
     ],
     declarations: [
         AppComponent,
