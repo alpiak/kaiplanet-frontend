@@ -11,7 +11,7 @@ export class UserService {
     constructor(private http: Http) { }
 
     getUserInfo():Observable<any> {
-        return this.http.post(require("../config.json").urlBase + "/user/info", null);
+        return this.http.post(require("../config.json").urlBase + "/user/info/get", null);
     }
     logOut() {
         this.http.post(require("../config.json").urlBase + "/user/logout", null).subscribe(function () {

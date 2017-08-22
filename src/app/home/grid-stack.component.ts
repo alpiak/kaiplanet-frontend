@@ -23,7 +23,6 @@ export class gridStackComponent implements AfterViewInit {
     widgetsModule: NgModuleFactory<any>;
 
     constructor(compiler: Compiler, private gridStackService: GridStackService) {
-        this.widgets = gridStackService.getWidgetData();
         this.widgetsModule = compiler.compileModuleSync(WidgetsModule);
     }
 
@@ -49,13 +48,21 @@ export class gridStackComponent implements AfterViewInit {
             acceptWidgets: true,
             cellHeight: "auto",
             verticalMargin: 10,
-            alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+            alwaysShowResizeHandle: true,
             animate: true,
+            disableDrag: true,
+            disableResize: true,
             handle: ".grid-stack-item-handle",
             removable: true
         };
 
-        this.gridStackService.init(jQuery(".grid-stack").get(0), options);
+        this.gridStackService.on("prepare").subscribe(() => {
+            this.widgets = this.gridStackService.getWidgetData();
+            setTimeout(() => {
+                this.gridStackService.init(jQuery(".grid-stack").get(0), options);
+            }, 200);
+        });
+        this.gridStackService.prepare();
     }
     onClose(index: number) {
         if (this.widgets[index].type !== "header") {

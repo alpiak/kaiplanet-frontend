@@ -35,7 +35,7 @@ export class HeaderWidgetComponent implements OnInit{
         this.widgetTypes = this.gridStackService.getWidgetTypes();
         this.userService.getUserInfo().subscribe((res) => {
             res = res.json();
-            if (res.status === 1) {
+            if (res.code === 1) {
                 this.user = res.data;
             }
         });
@@ -56,6 +56,9 @@ export class HeaderWidgetComponent implements OnInit{
             this.addWidgetFormComponent.clearConfig();
             dialog.close();
         });
+    }
+    enterManageMode() {
+        this.gridStackService.enterManageMode();
     }
     logOut() {
         this.userService.logOut();

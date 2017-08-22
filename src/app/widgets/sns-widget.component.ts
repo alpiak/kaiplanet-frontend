@@ -18,9 +18,9 @@ export class SNSWidgetComponent implements AfterViewInit{
     constructor(private gridStackService: GridStackService, private el: ElementRef) { }
 
     ngAfterViewInit() {
-        const jQuery = require("jquery");
-
         setTimeout(() => {
+            const jQuery = require("jquery");
+
             this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
             this.types = this.gridStackService.getWidgetData()[this.index].config.types;
 

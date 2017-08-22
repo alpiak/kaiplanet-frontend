@@ -3,6 +3,9 @@
   background-color: #eee;
   cursor: move;
 }
+:host-context(.grid-stack.static) .grid-stack-item-handle {
+  cursor: default;
+}
 :host > .grid-stack-item-content {
   left: 0;
   top: 20px;
@@ -19,6 +22,9 @@
   height: 20px;
   min-width: 20px;
   font-size: 0;
+}
+:host-context(.grid-stack.static) .toolbar__button:last-child {
+  display: none;
 }
 .mdl-button--colored svg {
   fill: #607d8b;
