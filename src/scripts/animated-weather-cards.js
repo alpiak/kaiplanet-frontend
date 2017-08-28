@@ -2,7 +2,7 @@
  * Created by qhyang on 2017/3/14.
  */
 
-module.exports = function AnimatedWeatherCards(widgetContainer) {
+module.exports = function AnimatedWeatherCards(widgetContainer, options, viewContainer) {
     var widegetContainerClass = "animated-weather-cards-" + Math.round(Math.random() * 1000);
     $(widgetContainer)
         .addClass("animated-weather-cards")
@@ -24,15 +24,15 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
                     c32.7-19,68.1-32,105.2-38.6L-8-46.1C-13-45.2-17.8-43.4-22.2-40.8z M22-40.9c-4.4-2.6-9.2-4.3-14.2-5.1l47.1-273.6
                     c37.2,6.4,72.7,19.2,105.4,38L22-40.9z"/>
                     </svg>
-                    <nav>
-                        <ul>
-                            <li><a class="button-snow active"><i class="wi wi-snow"></i></a></li>
-                            <li><a class="button-wind"><i class="wi wi-strong-wind"></i></a></li>
-                            <li><a class="button-rain"><i class="wi wi-rain"></i></a></li>
-                            <li><a class="button-thunder"><i class="wi wi-lightning"></i></a></li>
-                            <li><a class="button-sun"><i class="wi wi-day-sunny"></i></a></li>
-                        </ul>
-                    </nav>
+                    <!--<nav>-->
+                        <!--<ul>-->
+                            <!--<li><a class="button-snow active"><i class="wi wi-snow"></i></a></li>-->
+                            <!--<li><a class="button-wind"><i class="wi wi-strong-wind"></i></a></li>-->
+                            <!--<li><a class="button-rain"><i class="wi wi-rain"></i></a></li>-->
+                            <!--<li><a class="button-thunder"><i class="wi wi-lightning"></i></a></li>-->
+                            <!--<li><a class="button-sun"><i class="wi wi-day-sunny"></i></a></li>-->
+                        <!--</ul>-->
+                    <!--</nav>-->
                     <div class="card weather">
                         <svg class="inner">
                             <defs>
@@ -47,18 +47,18 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
                             <g class="cloud1 cloud"></g>
                         </svg>
                         <div class="details">
-                            <div class="temp">20<span>c</span></div>
+                            <div class="temp">` + options.temperature + `<span>c</span></div>
                             <div class="right">
-                                <div class="date">Monday 22 August</div>
-                                <div class="summary"></div>
+                                <div class="date">` + options.day + ' ' + options.date + ' ' + options.month + `</div>
+                                <div class="summary">` + options.summary + `</div>
                             </div>
                             
                         </div>
                     </div>
-                    <svg class="outer"></svg>
                 </div>
             </div>    
         `);
+    $(viewContainer || document).append('<svg class="animated-weather-card__outer"></svg>');
 
     var Snap = require('./snap.svg');
 
@@ -66,10 +66,11 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
 
     // 📝 Fetch all DOM nodes in jQuery and Snap SVG
 
+    var view = $(document);
     var container = $('.' + widegetContainerClass + ' .container');
     var card = $('.' + widegetContainerClass + ' .card');
     var innerSVG = Snap('.' + widegetContainerClass + ' .inner');
-    var outerSVG = Snap('.' + widegetContainerClass + ' .outer');
+    var outerSVG = Snap('.animated-weather-card__outer');
     var backSVG = Snap('.' + widegetContainerClass + ' .back');
     var summary = $('.' + widegetContainerClass + ' .summary');
     var date = $('.' + widegetContainerClass + ' .date');
@@ -103,7 +104,8 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
 // create sizes object, we update this later
 
     var sizes = {
-        container: {width: 0, height: 0},
+        view: {width: 0, height: 0},
+        container: {width: 0, height: 0, offset: {}},
         card: {width: 0, height: 0, offset: {}}
     }
 
@@ -122,7 +124,8 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
         { type: 'wind', name: 'Windy'},
         { type: 'rain', name: 'Rain'},
         { type: 'thunder', name: 'Storms'},
-        { type: 'sun', name: 'Sunny'}
+        { type: 'sun', name: 'Sunny'},
+        { type: 'cloud', name: 'Cloudy'}
     ];
 
 // 🛠 app settings
@@ -182,15 +185,25 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
         // ☀️ set initial weather
 
         TweenMax.set(sunburst.node, {opacity: 0});
-        changeWeather(weather[0]);
+        // changeWeather(weather[0]);
+
+        weather.forEach(function (el, index) {
+            if (el.type === options.type) {
+                changeWeather(weather[index]);
+            }
+        });
     }
 
     function onResize()
     {
         // 📏 grab window and card sizes
 
+        sizes.view.height = view.height();
+        sizes.view.width = view.width();
         sizes.container.width = container.width();
         sizes.container.height = container.height();
+        sizes.container.offset.left = container.offset().left;
+        sizes.container.offset.top = container.offset().top;
         card.width(container.width() * 0.8);
         card.height(container.height() * 0.5);
         sizes.card.width = card.width();
@@ -206,8 +219,8 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
         });
 
         outerSVG.attr({
-            width: sizes.container.width,
-            height: sizes.container.height
+            width: sizes.view.width,
+            height: sizes.view.height
         });
 
         backSVG.attr({
@@ -223,7 +236,8 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
         // container, it is full window height and starts on the left
         // inline with the card
 
-        leafMask.attr({x: sizes.card.offset.left, y: 0, width: sizes.container.width - sizes.card.offset.left,  height: sizes.container.height});
+        // leafMask.attr({x: sizes.card.offset.left, y: 0, width: sizes.container.width - sizes.card.offset.left,  height: sizes.container.height});
+        leafMask.attr({x: 0, y: 0, width: sizes.view.width,  height: sizes.view.height});
     }
 
     function drawCloud(cloud, i)
@@ -341,7 +355,8 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
         var splashBounce = type == 'thunder' ? 120 : 100;
 
         // this sets how far down the line can fall
-        var splashDistance = 80;
+        // var splashDistance = 80;
+        var splashDistance = sizes.view.height - sizes.container.offset.top - sizes.card.offset.top - sizes.card.height;
 
         // because the storm rain is longer we want the animation
         // to last slighly longer so the overall speed is roughly
@@ -372,8 +387,10 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
         // We animate the dasharray to have the line travel along the path
 
         var pathLength = Snap.path.getTotalLength(splash);
-        var xOffset = sizes.card.offset.left;//(sizes.container.width - sizes.card.width) / 2
-        var yOffset = sizes.card.offset.top + sizes.card.height;
+        // var xOffset = sizes.card.offset.left;//(sizes.container.width - sizes.card.width) / 2
+        var xOffset = sizes.container.offset.left + sizes.card.offset.left;//(sizes.container.width - sizes.card.width) / 2
+        // var yOffset = sizes.card.offset.top + sizes.card.height;
+        var yOffset = sizes.container.offset.top + sizes.card.offset.top + sizes.card.height;
         splash.node.style.strokeDasharray = splashLength + ' ' + pathLength;
 
         // Start the splash animation, calling onSplashComplete when finished
@@ -408,12 +425,12 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
                 .attr({
                     fill: color
                 })
-            y = y + sizes.card.offset.top / 2;
-            endY = endY + sizes.card.offset.top / 2;
+            y = y + sizes.container.offset.top + sizes.card.offset.top / 2;
+            endY = endY + sizes.container.offset.top + sizes.card.offset.top / 2;
 
             x = sizes.card.offset.left - 100;
             xBezier = x + (sizes.container.width - sizes.card.offset.left) / 2;
-            endX = sizes.container.width + 50;
+            endX = sizes.view.width + 50;
         }
         else
         {
@@ -551,7 +568,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
 
     function updateSummaryText()
     {
-        summary.html(currentWeather.name);
+        // summary.html(currentWeather.name);
         TweenMax.fromTo(summary, 1.5, {x: 30}, {opacity: 1, x: 0, ease: Power4.easeOut});
     }
 
@@ -662,6 +679,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
         switch(weather.type)
         {
             case 'sun':
+            case 'cloud':
                 TweenMax.to(sun.node, 4, {x: sizes.card.width / 2, y: sizes.card.height / 2, ease: Power2.easeInOut});
                 TweenMax.to(sunburst.node, 4, {scale: 1, opacity: 0.8, y: (sizes.card.height/2) + (sizes.card.offset.top), ease: Power2.easeInOut});
                 break;
@@ -679,4 +697,4 @@ module.exports = function AnimatedWeatherCards(widgetContainer) {
     animatedWeatherCards.resize = onResize;
 
     return animatedWeatherCards;
-}
+};

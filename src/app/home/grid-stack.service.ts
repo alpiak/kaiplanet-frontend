@@ -64,7 +64,7 @@ export class GridStackService {
                     },
                     {
                         text: "Mop",
-                        src: "http://m.mop.com/login.html",
+                        src: "http://m.mop.com/passport.html?targetUrl=//3g3.mop.com/hi/index.html#/loginByAccount",
                         id: "mop"
                     }
                 ]

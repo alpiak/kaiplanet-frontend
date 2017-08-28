@@ -17,7 +17,7 @@ import "../styles/default.theme";
 
 // Fallback to loading jQuery from a local path if the CDN is unavailable
 if (!window["$"] && !window["jQuery"]) {
-    window["jQuery"] = window["$"] = require("jquery/dist/jquery");
+    window["$"] = window["jQuery"] = require("jquery/dist/jquery");
 }
 
 let jQuery = require("jquery");

@@ -177,13 +177,24 @@ $speed: 2s;
     }
   }
 
-  .outer, .back
+  .back
   {
     position: absolute;
     pointer-events: none;
 
   }
 
+}
+
+.animated-weather-card__outer
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
 }
 
 $container: animated-weather-cards;

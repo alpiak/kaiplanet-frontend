@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72d0a84f-6230-4863-95a2-079965d856fe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/time.service.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/weather.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" afterPath="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user.service.ts" afterPath="$PROJECT_DIR$/src/app/user.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" afterPath="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.ts" afterPath="$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" afterPath="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/vendors.ts" afterPath="$PROJECT_DIR$/src/scripts/vendors.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/animated-weather-cards.scss" afterPath="$PROJECT_DIR$/src/styles/animated-weather-cards.scss" />
     </list>
     <ignored path="bubblesoft-frontend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,27 +36,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="grid-stack.service.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
+      <file leaf-file-name="animated-weather-cards.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scripts/animated-weather-cards.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="103" column="50" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
+            <state relative-caret-position="440">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="24" selection-end-line="34" selection-end-column="30" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#44#89#0" expanded="true" />
+                <marker date="1503915861446" expanded="true" signature="387:3926" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="427:3907" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="467:1906" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="580:804" ph="..." />
+                <marker date="1503915861446" expanded="false" signature="635:670" ph="..." />
+                <marker date="1503915861446" expanded="false" signature="727:760" ph="..." />
+                <marker date="1503915861446" expanded="false" signature="860:879" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="1936:2559" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="1972:2525" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="2609:3884" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="2653:3372" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="2688:2924" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="2981:2994" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="3418:3465" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="3418:3857" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="3560:3611" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="3560:3612" ph="..." />
+                <marker date="1503915861446" expanded="true" signature="3560:3797" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/user.service.ts">
+      <file leaf-file-name="animated-weather-card.directive.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-              <folding>
-                <element signature="e#44#87#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="690">
+              <caret line="98" column="53" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weather.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/weather.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="animated-weather-cards.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/animated-weather-cards.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="581">
+              <caret line="197" column="1" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,13 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/earth/crystal-nav.component.scss" />
-        <option value="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
-        <option value="$PROJECT_DIR$/src/app/earth/top-tool-pane.component.pug" />
-        <option value="$PROJECT_DIR$/.babelrc" />
-        <option value="$PROJECT_DIR$/webpack/webpack.dist.js" />
-        <option value="$PROJECT_DIR$/webpack/webpack.dev.js" />
-        <option value="$PROJECT_DIR$/src/app/earth/jumbotron.component.scss" />
         <option value="$PROJECT_DIR$/src/app/earth/jumbotron.component.pug" />
         <option value="$PROJECT_DIR$/src/locale/messages.zh-CN.xlf" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -107,10 +143,7 @@
         <option value="$PROJECT_DIR$/src/styles/base.scss" />
         <option value="$PROJECT_DIR$/src/app/login-dialog.component.scss" />
         <option value="$PROJECT_DIR$/src/scripts/interfaces.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/bom.service.ts" />
-        <option value="$PROJECT_DIR$/src/scripts/vendors.ts" />
         <option value="$PROJECT_DIR$/src/app/login-dialog.component.pug" />
         <option value="$PROJECT_DIR$/src/app/widgets/header-widget.component.scss" />
         <option value="$PROJECT_DIR$/src/app/widgets/header-widget.component.pug" />
@@ -122,7 +155,17 @@
         <option value="$PROJECT_DIR$/src/app/home/grid-stack.component.ts" />
         <option value="$PROJECT_DIR$/src/app/widgets/header-widget.component.ts" />
         <option value="$PROJECT_DIR$/src/app/user.service.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.pug" />
+        <option value="$PROJECT_DIR$/src/app/time.service.ts" />
+        <option value="$PROJECT_DIR$/src/scripts/vendors.ts" />
         <option value="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/weather.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" />
+        <option value="$PROJECT_DIR$/src/styles/animated-weather-cards.scss" />
+        <option value="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
       </list>
     </option>
   </component>
@@ -138,8 +181,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="270" />
-    <option name="width" value="1650" />
+    <option name="x" value="272" />
+    <option name="width" value="1648" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -429,12 +472,12 @@
       <workItem from="1503021193492" duration="41000" />
       <workItem from="1503021243697" duration="10000" />
       <workItem from="1503021262950" duration="15458000" />
-      <workItem from="1503295067435" duration="31969000" />
+      <workItem from="1503295067435" duration="85008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="552111000" />
+    <option name="totallyTimeSpent" value="605150000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -446,10 +489,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="270" y="0" width="1650" height="1040" extended-state="0" />
+    <frame x="272" y="0" width="1648" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25597483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24559194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -507,119 +550,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/locale/messages.zh-CN.xlf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/locale/messages.ja-JP.xlf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-890">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/home.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/widget.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/sns-widget.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/moon-ocean-widget.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/left-nav.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/mdl-upgrade.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/array.pipe.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/waterfall-widget.component.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/widgets/waterfall.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -671,20 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts/vendors.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/auth.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -697,6 +614,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+          <folding>
+            <element signature="e#44#94#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -764,14 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -809,38 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/drawing-board.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="31" column="96" selection-start-line="31" selection-start-column="96" selection-end-line="31" selection-end-column="96" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/drawing-board-widget.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/bom.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/sns-widget.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -874,31 +758,244 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/scripts/drawingboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1491962292104" expanded="true" signature="31637:31664" ph="..." />
+            <marker date="1491962292104" expanded="true" signature="31889:31916" ph="..." />
+            <marker date="1491962292104" expanded="true" signature="35574:35580" ph="←" />
+            <marker date="1491962292104" expanded="true" signature="35681:35687" ph="→" />
+            <marker date="1491962292104" expanded="true" signature="35784:35791" ph="×" />
+            <marker date="1491962292104" expanded="true" signature="39333:39398" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/drawing-board-widget.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/drawing-board.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="38" column="62" selection-start-line="38" selection-start-column="62" selection-end-line="38" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/animated-background.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/user.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+        <state relative-caret-position="40">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
           <folding>
-            <element signature="e#44#87#0" expanded="true" />
+            <element signature="e#44#87#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding>
+            <element signature="e#44#85#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/Rx.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3762">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/operator/bufferCount.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-496">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/Observable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1805">
+          <caret line="111" column="35" selection-start-line="111" selection-start-column="25" selection-end-line="111" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/operator/merge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="56" column="15" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.dist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/webpack.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4331">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/sns-widget.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="4" column="7" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="103" column="50" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
+        <state relative-caret-position="480">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#44#89#0" expanded="true" />
+            <element signature="e#44#89#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/time.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#44#78#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/vendors.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <element signature="e#84#122#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="98" column="53" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/weather.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/animated-weather-cards.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="197" column="1" selection-start-line="197" selection-start-column="1" selection-end-line="197" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/animated-weather-cards.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="24" selection-end-line="34" selection-end-column="30" />
+          <folding>
+            <marker date="1503915861446" expanded="true" signature="387:3926" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="427:3907" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="467:1906" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="580:804" ph="..." />
+            <marker date="1503915861446" expanded="false" signature="635:670" ph="..." />
+            <marker date="1503915861446" expanded="false" signature="727:760" ph="..." />
+            <marker date="1503915861446" expanded="false" signature="860:879" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="1936:2559" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="1972:2525" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="2609:3884" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="2653:3372" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="2688:2924" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="2981:2994" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="3418:3465" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="3418:3857" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="3560:3611" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="3560:3612" ph="..." />
+            <marker date="1503915861446" expanded="true" signature="3560:3797" ph="..." />
           </folding>
         </state>
       </provider>
