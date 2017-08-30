@@ -24,15 +24,15 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
                     c32.7-19,68.1-32,105.2-38.6L-8-46.1C-13-45.2-17.8-43.4-22.2-40.8z M22-40.9c-4.4-2.6-9.2-4.3-14.2-5.1l47.1-273.6
                     c37.2,6.4,72.7,19.2,105.4,38L22-40.9z"/>
                     </svg>
-                    <!--<nav>-->
-                        <!--<ul>-->
-                            <!--<li><a class="button-snow active"><i class="wi wi-snow"></i></a></li>-->
-                            <!--<li><a class="button-wind"><i class="wi wi-strong-wind"></i></a></li>-->
-                            <!--<li><a class="button-rain"><i class="wi wi-rain"></i></a></li>-->
-                            <!--<li><a class="button-thunder"><i class="wi wi-lightning"></i></a></li>-->
-                            <!--<li><a class="button-sun"><i class="wi wi-day-sunny"></i></a></li>-->
-                        <!--</ul>-->
-                    <!--</nav>-->
+                    <nav>
+                        <ul>
+                            <li><a class="button-snow active"><i class="wi wi-snow"></i></a></li>
+                            <li><a class="button-wind"><i class="wi wi-strong-wind"></i></a></li>
+                            <li><a class="button-rain"><i class="wi wi-rain"></i></a></li>
+                            <li><a class="button-thunder"><i class="wi wi-lightning"></i></a></li>
+                            <li><a class="button-sun"><i class="wi wi-day-sunny"></i></a></li>
+                        </ul>
+                    </nav>
                     <div class="card weather">
                         <svg class="inner">
                             <defs>
@@ -58,7 +58,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
                 </div>
             </div>    
         `);
-    $(viewContainer || document).append('<svg class="animated-weather-card__outer"></svg>');
+    $(viewContainer || document).append('<svg class="' + widegetContainerClass + ' animated-weather-card__outer"></svg>');
 
     var Snap = require('./snap.svg');
 
@@ -66,11 +66,11 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
 
     // 📝 Fetch all DOM nodes in jQuery and Snap SVG
 
-    var view = $(document);
+    var view = $(viewContainer);
     var container = $('.' + widegetContainerClass + ' .container');
     var card = $('.' + widegetContainerClass + ' .card');
     var innerSVG = Snap('.' + widegetContainerClass + ' .inner');
-    var outerSVG = Snap('.animated-weather-card__outer');
+    var outerSVG = Snap('.' + widegetContainerClass + '.animated-weather-card__outer');
     var backSVG = Snap('.' + widegetContainerClass + ' .back');
     var summary = $('.' + widegetContainerClass + ' .summary');
     var date = $('.' + widegetContainerClass + ' .date');
@@ -89,6 +89,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
     var leaf = Snap.select('.' + widegetContainerClass + ' .leaf');
     var sun = Snap.select('.' + widegetContainerClass + ' .sun');
     var sunburst = Snap.select('.' + widegetContainerClass + ' .sunburst');
+    var outerRainHolder = outerSVG.group();
     var outerSplashHolder = outerSVG.group();
     var outerLeafHolder = outerSVG.group();
     var outerSnowHolder = outerSVG.group();
@@ -280,11 +281,14 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
     {
         // 💧 This is where we draw one drop of rain
 
+        var scale = 0.9 + Math.random() * 0.3;
+
         // first we set the line width of the line, we use this
         // to dictate which svg group it'll be added to and
         // whether it'll generate a splash
 
-        var lineWidth = Math.random() * 3;
+        // var lineWidth = Math.random() * 3;
+        var lineWidth = Math.random() * 3 * scale;
 
         // ⛈ line length is made longer for stormy weather
 
@@ -293,11 +297,19 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
         // Start the drop at a random point at the top but leaving
         // a 20px margin
 
-        var x = Math.random() * (sizes.card.width - 40) + 20;
+        // var x = Math.random() * (sizes.card.width - 40) + 20;
+        var x = Math.random() * ((scale > 1 ? sizes.view.width : sizes.card.width) - 40) + 20;
+
+        var endY = (scale > 1 ? sizes.view.height : sizes.card.height) + lineLength * 2;
 
         // Draw the line
 
-        var line = innerRainHolders['innerRainHolder' + (3 - Math.floor(lineWidth))].path('M0,0 0,' + lineLength).attr({
+        // var line = innerRainHolders['innerRainHolder' + (3 - Math.floor(lineWidth))].path('M0,0 0,' + lineLength).attr({
+        //     fill: 'none',
+        //     stroke: currentWeather.type == 'thunder' ? '#777' : '#0000ff',
+        //     strokeWidth: lineWidth
+        // });
+        var line = (scale > 1 ? outerRainHolder : innerRainHolders['innerRainHolder' + (3 - Math.floor(lineWidth))]).path('M0,0 0,' + lineLength).attr({
             fill: 'none',
             stroke: currentWeather.type == 'thunder' ? '#777' : '#0000ff',
             strokeWidth: lineWidth
@@ -311,7 +323,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
         // Start the falling animation, calls onRainEnd when the
         // animation finishes.
 
-        TweenMax.fromTo(line.node, 1, {x: x, y: 0- lineLength}, {delay: Math.random(), y: sizes.card.height, ease: Power2.easeIn, onComplete: onRainEnd, onCompleteParams: [line, lineWidth, x, currentWeather.type]});
+        TweenMax.fromTo(line.node, 1, {x: x, y: 0- lineLength}, {delay: Math.random(), y: endY, ease: Power2.easeIn, onComplete: onRainEnd, onCompleteParams: [line, lineWidth, x, currentWeather.type]});
     }
 
     function onRainEnd(line, width, x, type)
@@ -356,7 +368,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
 
         // this sets how far down the line can fall
         // var splashDistance = 80;
-        var splashDistance = sizes.view.height - sizes.container.offset.top - sizes.card.offset.top - sizes.card.height;
+        var splashDistance = Math.min(sizes.view.height - sizes.container.offset.top - sizes.card.offset.top - sizes.card.height, 200);
 
         // because the storm rain is longer we want the animation
         // to last slighly longer so the overall speed is roughly
@@ -448,7 +460,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
 
 
         var bezier = [{x:x, y:y}, {x: xBezier, y:(Math.random() * endY) + (endY / 3)}, {x: endX, y:endY}]
-        TweenMax.fromTo(newLeaf.node, 2, {rotation: Math.random()* 180, x: x, y: y, scale:scale}, {rotation: Math.random()* 360, bezier: bezier, onComplete: onLeafEnd, onCompleteParams: [newLeaf], ease: Power0.easeIn})
+        TweenMax.fromTo(newLeaf.node, 9 / settings.windSpeed, {rotation: Math.random()* 180, x: x, y: y, scale:scale}, {rotation: Math.random()* 360, bezier: bezier, onComplete: onLeafEnd, onCompleteParams: [newLeaf], ease: Power0.easeIn})
     }
 
     function onLeafEnd(leaf)
@@ -469,23 +481,25 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
 
     function makeSnow()
     {
-        var scale = 0.5 + (Math.random() * 0.5);
+        var scale = 0.8 + (Math.random() * 0.2);
         var newSnow;
 
-        var x = 20 + (Math.random() * (sizes.card.width - 40));
+        // var x = 20 + (Math.random() * (sizes.card.width - 40));
+        var x = 20 + (Math.random() * ((scale > 0.8 ? sizes.view.width : sizes.card.width) - 40));
         var endX; // = x - ((Math.random() * (areaX * 2)) - areaX)
         var y = -10;
         var endY;
 
-        if(scale > 0.8)
+        if(scale > 0.9)
         {
             newSnow = outerSnowHolder.circle(0, 0, 5)
                 .attr({
                     fill: 'white'
                 });
-            endY = sizes.container.height + 10;
-            y = sizes.card.offset.top + settings.cloudHeight;
-            x =  x + sizes.card.offset.left;
+            endY = sizes.view.height + 10;
+            // y = sizes.card.offset.top + settings.cloudHeight;
+            y = -10;
+            // x =  x + sizes.card.offset.left;
             //xBezier = x + (sizes.container.width - sizes.card.offset.left) / 2;
             //endX = sizes.container.width + 50;
         }
@@ -628,10 +642,10 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
                 TweenMax.to(settings, 3, {windSpeed: 3, ease: Power2.easeInOut});
                 break;
             case 'sun':
-                TweenMax.to(settings, 3, {windSpeed: 20, ease: Power2.easeInOut});
+                TweenMax.to(settings, 3, {windSpeed: 1, ease: Power2.easeInOut});
                 break;
             default:
-                TweenMax.to(settings, 3, {windSpeed: 0.5, ease: Power2.easeOut});
+                TweenMax.to(settings, 3, {windSpeed: 1, ease: Power2.easeOut});
                 break;
         }
 
@@ -640,10 +654,10 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
         switch(weather.type)
         {
             case 'rain':
-                TweenMax.to(settings, 3, {rainCount: 10, ease: Power2.easeInOut});
+                TweenMax.to(settings, 3, {rainCount: 20, ease: Power2.easeInOut});
                 break;
             case 'thunder':
-                TweenMax.to(settings, 3, {rainCount: 60, ease: Power2.easeInOut});
+                TweenMax.to(settings, 3, {rainCount: 120, ease: Power2.easeInOut});
                 break;
             default:
                 TweenMax.to(settings, 1, {rainCount: 0, ease: Power2.easeOut});
@@ -657,6 +671,10 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
             case 'wind':
                 TweenMax.to(settings, 3, {leafCount: 5, ease: Power2.easeInOut});
                 break;
+            case 'sun':
+            case 'cloud':
+                TweenMax.to(settings, 3, {leafCount: 1, ease: Power2.easeInOut});
+                break;
             default:
                 TweenMax.to(settings, 1, {leafCount: 0, ease: Power2.easeOut});
                 break;
@@ -667,7 +685,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
         switch(weather.type)
         {
             case 'snow':
-                TweenMax.to(settings, 3, {snowCount: 40, ease: Power2.easeInOut});
+                TweenMax.to(settings, 3, {snowCount: 200, ease: Power2.easeInOut});
                 break;
             default:
                 TweenMax.to(settings, 1, {snowCount: 0, ease: Power2.easeOut});

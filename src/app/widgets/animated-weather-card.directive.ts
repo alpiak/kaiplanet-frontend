@@ -36,7 +36,7 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
         const weatherObservable = this.weatherService.getCurrentWeather();
         const timeObservable = this.timeService.getCurrentServerTime();
         bufferCount.call(merge.call(weatherObservable, timeObservable), 2).subscribe((x:Array<any>) => {
-            x.forEach((el) => {
+            x.forEach(el => {
                 if (el.type || el.summary || el.temperature) {
                     this.type = el.type || "";
                     this.summary = el.summary || "";

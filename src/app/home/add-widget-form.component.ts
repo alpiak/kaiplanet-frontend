@@ -2,7 +2,7 @@
  * Created by qhyang on 2017/4/6.
  */
 
-import { Component, Input } from "@angular/core";
+import { Component, Input, ElementRef } from "@angular/core";
 
 import { Widget } from "../../scripts/interfaces";
 
@@ -22,7 +22,7 @@ export class AddWidgetFormComponent {
     private config: Object;
     private data: Object;
 
-    constructor() {
+    constructor(private el: ElementRef) {
         this.config = {
             types: []
         };
@@ -67,5 +67,6 @@ export class AddWidgetFormComponent {
         this.config = {
             types: []
         };
+        window["componentHandler"].upgradeElements(this.el)
     }
 }
