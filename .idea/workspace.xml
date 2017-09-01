@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="72d0a84f-6230-4863-95a2-079965d856fe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/home/add-widget-form.component.ts" afterPath="$PROJECT_DIR$/src/app/home/add-widget-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" afterPath="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts" afterPath="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" afterPath="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scripts/three-image-transition.js" afterPath="$PROJECT_DIR$/src/scripts/three-image-transition.js" />
     </list>
     <ignored path="bubblesoft-frontend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,31 +28,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="animated-weather-cards.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scripts/animated-weather-cards.js">
+      <file leaf-file-name="three-image-transition.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scripts/three-image-transition.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="34" selection-end-column="26" />
-              <folding>
-                <marker date="1504080455212" expanded="true" signature="387:3863" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="427:3844" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="467:1906" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="580:804" ph="..." />
-                <marker date="1504080455212" expanded="false" signature="635:670" ph="..." />
-                <marker date="1504080455212" expanded="false" signature="727:760" ph="..." />
-                <marker date="1504080455212" expanded="false" signature="860:879" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="1932:2499" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="1961:2472" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="2546:3821" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="2590:3309" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="2625:2861" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="2918:2931" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="3355:3402" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="3355:3794" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="3497:3548" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="3497:3549" ph="..." />
-                <marker date="1504080455212" expanded="true" signature="3497:3734" ph="..." />
-              </folding>
+            <state relative-caret-position="3070">
+              <caret line="1189" column="40" selection-start-line="1189" selection-start-column="40" selection-end-line="1189" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="grid-stack.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="carousel-widget.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="three-image-transition.directive.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/widgets/three-image-transition.directive.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,8 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/locale/messages.zh-CN.xlf" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/app/home/home.component.scss" />
         <option value="$PROJECT_DIR$/src/app/widgets/sns-widget.component.pug" />
         <option value="$PROJECT_DIR$/src/app/materail.module.ts" />
@@ -176,13 +185,15 @@
         <option value="$PROJECT_DIR$/src/app/widgets/weather-card-widget.component.pug" />
         <option value="$PROJECT_DIR$/src/app/time.service.ts" />
         <option value="$PROJECT_DIR$/src/scripts/vendors.ts" />
-        <option value="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
         <option value="$PROJECT_DIR$/src/app/weather.service.ts" />
         <option value="$PROJECT_DIR$/src/styles/animated-weather-cards.scss" />
         <option value="$USER_HOME$/AppData/Local/Temp/开发者社区.url" />
         <option value="$PROJECT_DIR$/src/app/home/add-widget-form.component.ts" />
         <option value="$PROJECT_DIR$/src/app/widgets/animated-weather-card.directive.ts" />
         <option value="$PROJECT_DIR$/src/scripts/animated-weather-cards.js" />
+        <option value="$PROJECT_DIR$/src/scripts/three-image-transition.js" />
+        <option value="$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/home/grid-stack.service.ts" />
       </list>
     </option>
   </component>
@@ -491,12 +502,12 @@
       <workItem from="1503021262950" duration="15458000" />
       <workItem from="1503295067435" duration="85700000" />
       <workItem from="1503971925344" duration="16190000" />
-      <workItem from="1504080418774" duration="637000" />
+      <workItem from="1504080418774" duration="26277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="622669000" />
+    <option name="totallyTimeSpent" value="648309000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -508,27 +519,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="260" y="0" width="1660" height="1040" extended-state="1" />
+    <frame x="260" y="0" width="1660" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32855567" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -569,13 +580,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/styles/base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/login-dialog.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -601,6 +605,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-246">
           <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -660,24 +665,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/material.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/widgets/three-image-transition.directive.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -871,13 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="113" column="57" selection-start-line="113" selection-start-column="57" selection-end-line="114" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/mdl-upgrade.directive.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -931,28 +915,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scripts/animated-weather-cards.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="34" selection-end-column="26" />
+        <state relative-caret-position="380">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="24" selection-end-line="34" selection-end-column="30" />
           <folding>
-            <marker date="1504080455212" expanded="true" signature="387:3863" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="427:3844" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="467:1906" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="580:804" ph="..." />
-            <marker date="1504080455212" expanded="false" signature="635:670" ph="..." />
-            <marker date="1504080455212" expanded="false" signature="727:760" ph="..." />
-            <marker date="1504080455212" expanded="false" signature="860:879" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="1932:2499" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="1961:2472" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="2546:3821" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="2590:3309" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="2625:2861" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="2918:2931" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="3355:3402" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="3355:3794" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="3497:3548" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="3497:3549" ph="..." />
-            <marker date="1504080455212" expanded="true" signature="3497:3734" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="387:3926" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="427:3907" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="467:1906" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="580:804" ph="..." />
+            <marker date="1504084883335" expanded="false" signature="635:670" ph="..." />
+            <marker date="1504084883335" expanded="false" signature="727:760" ph="..." />
+            <marker date="1504084883335" expanded="false" signature="860:879" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="1936:2559" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="1972:2525" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="2609:3884" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="2653:3372" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="2688:2924" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="2981:2994" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="3418:3465" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="3418:3857" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="3560:3611" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="3560:3612" ph="..." />
+            <marker date="1504084883335" expanded="true" signature="3560:3797" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts/three-image-transition.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3070">
+          <caret line="1189" column="40" selection-start-line="1189" selection-start-column="40" selection-end-line="1189" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/three-image-transition.directive.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/widgets/carousel-widget.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/home/grid-stack.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

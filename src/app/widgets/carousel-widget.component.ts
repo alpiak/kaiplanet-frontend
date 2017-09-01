@@ -16,7 +16,7 @@ export class CarouselWidgetComponent implements OnInit{
     constructor(private router: Router) { }
 
     ngOnInit() {
-        this.images = [ require("../../assets/screenshot1.jpg"), require("../../assets/screenshot2.jpg") ];
+        this.images = [ require("../../assets/screenshot1.jpg"), require("../../assets/screenshot2.jpg"), "http://localhost:9999/fd3081c6c60cceccf9d1decadf7ec1fa.jpg" ];
     }
     navigateTo(dir: string) {
         this.router.navigate([ dir ]);
