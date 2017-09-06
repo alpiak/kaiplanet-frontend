@@ -2,4 +2,8 @@
    Created by qhyang on 2017/3/16.
 
 
-div.container("[drawingBoard]"="index" "[imgUrl]"="imgUrl")
+div.container(
+    "[drawingBoard]"="index"
+    "[imgUrl]"="imgUrl"
+    "(onDrew)"="onDrew($event)"
+)

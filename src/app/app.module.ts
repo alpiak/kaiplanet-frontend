@@ -20,8 +20,9 @@ import {UserService} from "./user.service";
 import { GridStackService } from "./home/grid-stack.service";
 import { LocaleService } from "./locale.service";
 import { BomService } from "./bom.service";
-import { WeatherService } from "./weather.service";
 import { TimeService } from "./time.service";
+import { UploadService } from "./upload.service";
+import { WeatherService } from "./weather.service";
 import { LoggerService } from "./logger.service";
 
 @NgModule({
@@ -38,8 +39,9 @@ import { LoggerService } from "./logger.service";
         GridStackService,
         LocaleService,
         BomService,
-        WeatherService,
         TimeService,
+        UploadService,
+        WeatherService,
         LoggerService
     ],
     declarations: [

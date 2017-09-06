@@ -57,10 +57,12 @@ export class gridStackComponent implements AfterViewInit {
         };
 
         this.gridStackService.on("prepare").subscribe(() => {
-            this.widgets = this.gridStackService.getWidgetData();
-            setTimeout(() => {
-                this.gridStackService.init(jQuery(".grid-stack").get(0), options);
-            }, 200);
+            this.gridStackService.getWidgetData().subscribe((gridStackData: any) => {
+                this.widgets = gridStackData;
+                setTimeout(() => {
+                    this.gridStackService.init(jQuery(".grid-stack").get(0), options);
+                }, 200);
+            });
         });
         this.gridStackService.prepare();
     }

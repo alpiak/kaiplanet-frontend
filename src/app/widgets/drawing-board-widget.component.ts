@@ -14,6 +14,7 @@ import { GridStackService } from "../home/grid-stack.service";
 export class DrawingBoardWidgetComponent implements AfterViewInit{
     private index: number;
     private imgUrl: string;
+    private widgetData: any;
 
     constructor(private el: ElementRef, private gridStackService: GridStackService) { }
 
@@ -21,14 +22,29 @@ export class DrawingBoardWidgetComponent implements AfterViewInit{
         setTimeout(() => {
             const jQuery = require("jquery");
 
-            this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
+            this.index = jQuery(this.el.nativeElement)
+                .parent()
+                .parent()
+                .attr("data-index");
 
-            let widgetData = this.gridStackService.getWidgetData(),
-                imgUrl = widgetData[this.index].data && widgetData[this.index].data.imgUrl;
-
-            if (imgUrl) {
-                this.imgUrl = imgUrl;
-            }
+            this.gridStackService.getWidgetData().subscribe(gridStackData => {
+                this.widgetData = gridStackData[this.index];
+                if (!this.widgetData.data) {
+                    this.widgetData.data = {};
+                }
+                let imgUrl = this.widgetData.data.imgUrl;
+                if (imgUrl) {
+                    this.imgUrl = imgUrl;
+                }
+            });
         }, 200);
+    }
+    onDrew(imgUrl: string) {
+        Object.assign(this.widgetData.data, { imgUrl: imgUrl});
+
+        let widgetData = {};
+
+        Object.assign(widgetData, this.widgetData);
+        this.gridStackService.updateGridStackData(this.index, widgetData);
     }
 }

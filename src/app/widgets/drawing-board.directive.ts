@@ -2,20 +2,23 @@
  * Created by qhyang on 2017/3/16.
  */
 
-import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
+import { Directive, ElementRef, AfterViewInit, EventEmitter, Input, Output } from "@angular/core";
 
 import { delay } from "rxjs/operator/delay";
 
+import { UserService } from "../user.service";
 import { BomService } from "../bom.service";
 import { GridStackService } from "../home/grid-stack.service";
+import { UploadService } from "../upload.service";
 
 @Directive({ selector: "[drawingBoard]" })
 export class DrawingBoardDirective implements AfterViewInit {
     @Input("drawingBoard") index: number;
     @Input() imgUrl: string;
+    @Output() onDrew = new EventEmitter<string>();
     private gridItemContainer: HTMLElement;
 
-    constructor(private el: ElementRef, private gridStackService: GridStackService, private bomService: BomService) { }
+    constructor(private el: ElementRef, private userService: UserService, private bomService: BomService, private gridStackService: GridStackService, private uploadService: UploadService) { }
 
     ngAfterViewInit() {
         const jQuery = require("jquery");
@@ -33,6 +36,20 @@ export class DrawingBoardDirective implements AfterViewInit {
                 controlsPosition: "top right",
                 droppable: true,
                 stretchImg: true
+            });
+            drawingBoard.ev.bind("board:stopDrawing", () => {
+                let imgBase64 = drawingBoard.getImg().split(",")[1];
+
+                this.userService.getUserInfo().subscribe(() => {
+                    this.uploadService.uploadBase64Encoded(imgBase64, this.index + "_" + "drawingboard.png").subscribe((res: any) => {
+                        res = res.json();
+                        if (res.code === 1) {
+                            this.onDrew.emit(res.data.img.url);
+                        } else if (res.code === -1) {
+                            //TODO: add reminder for upload failure
+                        }
+                    });
+                });
             });
             drawingBoard.restoreWebStorage();
             this.gridStackService.on("resizestart").subscribe((event) => {

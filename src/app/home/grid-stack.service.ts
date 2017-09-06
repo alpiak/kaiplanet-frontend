@@ -94,8 +94,16 @@ export class GridStackService {
         this.leaveManageModeSubject = new Subject();
     }
 
-    getWidgetData(): Widget[] {
-        return this.widgets;
+    getWidgetData(): Observable<any> {
+        return Observable.create((subscriber: Subscriber<any>) => {
+            if (this.widgets.length) {
+                subscriber.next(jQuery.extend([], this.widgets));
+            } else {
+                this.prepareSubject.subscribe(() => {
+                    subscriber.next(jQuery.extend([], this.widgets));
+                });
+            }
+        });
     }
     prepare() {
         this.userService.getUserGridStackData().subscribe((res:any) => {
@@ -170,7 +178,7 @@ export class GridStackService {
                         .last()
                         .get(0)
                 );
-            this.updateGridStackData();
+            this.updateGridStackPositionData();
         }, 200);
         this.updateSubject.next({ add: [ len - 1 ] });
 
@@ -184,7 +192,7 @@ export class GridStackService {
         let snackBarRef = this.snackBar.open("Click \"Finish\" to apply the changes", "Finish");
         this.enterManageModeSubject.next();
         snackBarRef.onAction().subscribe(() => {
-            this.updateGridStackData();
+            this.updateGridStackPositionData();
             this.leaveManageMode();
             snackBarRef.dismiss();
         });
@@ -196,7 +204,7 @@ export class GridStackService {
             .disable();
         this.leaveManageModeSubject.next();
     }
-    updateGridStackData() {
+    updateGridStackPositionData() {
         jQuery(this.gridStack)
             .children(".grid-stack-item")
             .each((index:number, el:HTMLElement) => {
@@ -205,6 +213,11 @@ export class GridStackService {
                 this.widgets[index].width = jQuery(el).attr("data-gs-width");
                 this.widgets[index].height = jQuery(el).attr("data-gs-height");
             });
+        this.userService.updateGridStackData(JSON.stringify(this.widgets));
+    }
+    updateGridStackData(index: number, gridData: any) {
+        this.widgets[index] = gridData;
+
         this.userService.updateGridStackData(JSON.stringify(this.widgets));
     }
     on(eventType: string): Observable<any> {
