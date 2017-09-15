@@ -20,7 +20,7 @@ export class WeatherService {
                 if (res.code === 1) {
                     subscriber.next({
                         type: (() => {
-                            switch (res.data.currently.icon) {
+                            switch (res.data.detail.currently.icon) {
                                 case "clear-day":
                                 case "clear-night":
                                     return "sun";
@@ -41,7 +41,7 @@ export class WeatherService {
                             }
                         })(),
                         summary: (() => {
-                            switch (res.data.currently.icon) {
+                            switch (res.data.detail.currently.icon) {
                                 case "clear-day":
                                     return "Sunny";
                                 case "clear-night":
@@ -66,7 +66,8 @@ export class WeatherService {
                                     return "Tornado";
                             }
                         })(),
-                        temperature: (res.data.currently.temperature - 32) * 5 / 9
+                        temperature: (res.data.detail.currently.temperature - 32) * 5 / 9,
+                        location: res.data.location.city
                     });
                 }
             });

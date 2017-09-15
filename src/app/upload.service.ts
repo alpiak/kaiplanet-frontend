@@ -16,6 +16,6 @@ export class UploadService {
         urlSearchParams.set("data", data);
         urlSearchParams.set("name", name);
 
-        return this.http.post(require("../config.json").urlBase + "/upload/base64", urlSearchParams.toString(), { headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded" }) });
+        return this.http.post(require("../config.json").urlBase + "/user/drawingboardimg", urlSearchParams.toString().replace(/\+/g, '%2B'), { headers: new Headers({ "Content-Type": "application/x-www-form-urlencoded" }) });
     }
 }

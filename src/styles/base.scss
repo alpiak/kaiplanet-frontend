@@ -2,3 +2,94 @@
 body {
   background-color: #000;
 }
+
+//Home page widget shake in managing mode
+@keyframes spaceboots {
+  0% { transform: translate(2px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(0px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(2px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(2px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.grid-stack-item__shake {
+  animation-name: spaceboots;
+  animation-duration: 0.8s;
+  transform-origin:50% 50%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.grid-stack-item__shake:hover {
+  animation-name: none;
+}
+
+//Color picker hack
+#hslPicker {
+  .oned, .extras {
+    .pointer{
+      .shape {
+        position: absolute;
+        background: 0;
+        margin: 0;
+        right: -3px;
+        left: -3px;
+        border-width: 4px 3px;
+        border-style: solid;
+        border-color: #aaa;
+        width: auto;
+        height: 3px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        opacity: .9;
+        z-index: 5;
+        cursor: ns-resize;
+        box-sizing: content-box;
+      }
+      .shape:before {
+        content: " ";
+        position: absolute;
+        left: -2px;
+        right: -2px;
+        top: -3px;
+        bottom: -3px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+#hslPicker .twod .pointer .shape {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  margin-left: 0;
+  margin-top: 0;
+  background: transparent;
+  border: 1.5px solid #aaa;
+  border-radius: 50%;
+  border-color: rgba(128,128,128,.5);
+  box-shadow: none;
+  cursor: move;
+  opacity: 1;
+  z-index: 10;
+  box-sizing: content-box;
+}
+#hslPicker .twod .pointer .shape:after {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  left: -2px;
+  top: -2px;
+  border: 1.5px solid #f9f9f9;
+  border-color: rgba(255,255,255,.8);
+  border-radius: 50%;
+  content: " ";
+  box-sizing: content-box;
+}

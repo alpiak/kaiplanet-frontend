@@ -6,6 +6,8 @@ import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
 
+import { MaterialModule } from "../material.module";
+
 import { HomeRoutingModule } from "./home-routing.module";
 
 import { WidgetsModule } from "../widgets/widgets.module";
@@ -14,6 +16,9 @@ import { HomeComponent } from "./home.component";
 import { leftNavComponent } from "./left-nav.component";
 import { gridStackComponent } from "./grid-stack.component";
 import { widgetFrameComponent } from "./widget-frame.component";
+import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.component";
+
+import { ColorPickerDirective } from "./color-picker.directive";
 
 import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
 
@@ -21,6 +26,7 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
     imports: [
         BrowserModule,
         FormsModule,
+        MaterialModule,
         HomeRoutingModule,
         WidgetsModule
     ],
@@ -29,7 +35,10 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
         leftNavComponent,
         gridStackComponent,
         widgetFrameComponent,
+        WidgetSettingsDialogComponent,
+        ColorPickerDirective,
         WidgetComponentPipe
-    ]
+    ],
+    entryComponents: [ WidgetSettingsDialogComponent ]
 })
 export class HomeModule { }

@@ -4,7 +4,7 @@
 
 import { Component, Input, ElementRef } from "@angular/core";
 
-import { Widget } from "../../scripts/interfaces";
+import { Widget } from "../interfaces";
 
 @Component({
     selector: "add-widget-form",
@@ -31,6 +31,9 @@ export class AddWidgetFormComponent {
 
     getConfig(): Widget {
         let config = {};
+
+        config["background"] = {};
+        config["background"]["color"] = "#fff";
 
         // if (this.config["type"]) {
             config["type"] = this.config["type"] || "wind-and-sand";

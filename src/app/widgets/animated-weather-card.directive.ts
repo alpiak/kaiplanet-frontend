@@ -17,6 +17,7 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
     summary: string;
     temperature: string;
     time: Date;
+    location: string;
     private gridItemContainer: HTMLElement;
 
     constructor(private weatherService: WeatherService, private timeService: TimeService, private el: ElementRef, private gridStackService: GridStackService) { }
@@ -41,6 +42,7 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
                     this.type = el.type || "";
                     this.summary = el.summary || "";
                     this.temperature = el.temperature || "";
+                    this.location = el.location || "";
                 } else {
                     this.time = el;
                 }
@@ -95,7 +97,8 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
                         case 11:
                             return "December";
                     }
-                })()
+                })(),
+                location: this.location
             }, jQuery(".meny-left .contents .grid-stack").get(0));
         });
 

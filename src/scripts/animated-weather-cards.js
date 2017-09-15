@@ -54,6 +54,11 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
                             </div>
                             
                         </div>
+                        <div class="details-bottom details">
+                            <div class="right">
+                                <div class="location">` + options.location + `</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>    

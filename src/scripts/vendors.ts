@@ -20,8 +20,6 @@ if (!window["$"] && !window["jQuery"]) {
     window["$"] = window["jQuery"] = require("jquery/dist/jquery");
 }
 
-let jQuery = require("jquery");
-
 // Material Design SVG symbol sprite icons
 let action = require("material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg"),
     device = require("material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg"),
@@ -30,5 +28,7 @@ let action = require("material-design-icons/sprites/svg-sprite/svg-sprite-action
 action = action.substr(0, 43) + " style='display:none'" + action.substr(43);
 device = device.substr(0, 43) + " style='display:none'" + device.substr(43);
 content = content.substr(0, 43) + " style='display:none'" + content.substr(43);
+
+const jQuery = require("jquery");
 
 jQuery("body").prepend(action + device + content);

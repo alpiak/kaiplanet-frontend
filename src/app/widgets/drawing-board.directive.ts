@@ -30,7 +30,7 @@ export class DrawingBoardDirective implements AfterViewInit {
 
         let drawingBoard: any;
 
-        setTimeout(() => {
+        this.gridStackService.on("init").subscribe(() => {
             sessionStorage.setItem("drawing-board-" + this.index, this.imgUrl);
             drawingBoard = new window["DrawingBoard"].Board(this.el.nativeElement, this.index, {
                 controlsPosition: "top right",
@@ -66,7 +66,7 @@ export class DrawingBoardDirective implements AfterViewInit {
                     }, 300);
                 }
             });
-        }, 300);
+        });
 
         window.addEventListener("resize", () => {
             setTimeout(() => drawingBoard.resize(), 300);

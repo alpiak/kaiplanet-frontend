@@ -2,7 +2,7 @@
  * Created by qhyang on 2017/3/15.
  */
 
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from "@angular/core";
 import { MdDialog } from "@angular/material";
 
 import { UserService } from "../user.service";
@@ -12,22 +12,24 @@ import { GridStackService } from "../home/grid-stack.service";
 import { AddWidgetFormComponent } from "../home/add-widget-form.component";
 import { LoginDialogComponent } from "../login-dialog.component";
 
-import { Widget, User } from "../../scripts/interfaces";
+import { WidgetComponent } from "./widget.component";
+import { Widget, User } from "../interfaces";
 
 const jQuery = require("jquery");
 
 @Component({
     selector: "header-widget",
     template: require("./header-widget.component.pug"),
-    styles: [ require("./widget.component"), require("./header-widget.component.scss") ]
+    styles: [ require("./widget.component.scss"), require("./header-widget.component.scss") ]
 })
-export class HeaderWidgetComponent implements OnInit{
+export class HeaderWidgetComponent extends WidgetComponent implements OnInit, OnDestroy {
     private user: User;
     private currentLocale: string;
     private widgetTypes: Object;
     @ViewChild(AddWidgetFormComponent) private addWidgetFormComponent: AddWidgetFormComponent;
 
-    constructor(private userService: UserService, private localeService: LocaleService, private gridStackService: GridStackService, private dialog: MdDialog) {
+    constructor(private userService: UserService, private localeService: LocaleService, protected gridStackService: GridStackService, private dialog: MdDialog, protected el:ElementRef) {
+        super(gridStackService, el);
         this.currentLocale = localeService.currentLocale;
     }
 
@@ -39,6 +41,9 @@ export class HeaderWidgetComponent implements OnInit{
                 this.user = res.data;
             }
         });
+    }
+    ngOnDestroy() {
+        this.gridStackService.leaveManageMode();
     }
     openLoginDialog() {
         this.dialog.open(LoginDialogComponent);

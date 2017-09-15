@@ -121,7 +121,7 @@ $speed: 2s;
         margin: 4px 0;
       }
 
-      .summary
+      .summary, .location
       {
         font-weight: 600;
         font-size: 22px;
@@ -141,6 +141,12 @@ $speed: 2s;
         }
 
       }
+    }
+
+    .details-bottom {
+      top: auto;
+      bottom: 0;
+      justify-content: flex-end;
     }
   }
 

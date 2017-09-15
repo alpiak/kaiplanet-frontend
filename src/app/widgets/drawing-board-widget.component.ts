@@ -6,17 +6,17 @@ import { Component, AfterViewInit, ElementRef } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 
+import { WidgetComponent } from "./widget.component";
+
 @Component({
     selector: "drawing-board-widget",
     template: require("./drawing-board-widget.component.pug"),
-    styles: [ require("./widget.component"), require("./drawing-board-widget.component.scss") ]
+    styles: [ require("./widget.component.scss"), require("./drawing-board-widget.component.scss") ]
 })
-export class DrawingBoardWidgetComponent implements AfterViewInit{
-    private index: number;
+export class DrawingBoardWidgetComponent extends WidgetComponent implements AfterViewInit{
     private imgUrl: string;
-    private widgetData: any;
 
-    constructor(private el: ElementRef, private gridStackService: GridStackService) { }
+    constructor(gridStackService: GridStackService, el: ElementRef) { super(gridStackService, el); }
 
     ngAfterViewInit() {
         setTimeout(() => {

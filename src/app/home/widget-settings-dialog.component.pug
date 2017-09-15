@@ -1,0 +1,22 @@
+//
+   Created by qhyang on 2017/9/13.
+
+h5(
+    md-dialog-title
+    i18n="Dialog title|the title of a dialog for changing widget settings"
+) Widget Settings
+md-dialog-content
+    form
+        md-expansion-panel(expanded)
+            md-expansion-panel-header
+                md-panel-title(i18n="Panel title|the title of a panel in a dialog for changing widget settings") Basic Settings
+            md-form-field
+                input(
+                    mdInput
+                    placeholder="Background Color"
+                )
+                svg.item__icon_with-text.svg-ic_20px-dims(
+                    mdSuffix
+                    color-picker
+                )
+                    use(xlink:href="#ic_apps_24px")

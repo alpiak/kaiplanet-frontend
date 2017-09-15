@@ -37,9 +37,7 @@ div.tool-pane
             [mdMenuTriggerFor]="userMenu"
             md-button
         ) {{ user?.nickName }}
-        md-menu(
-            #userMenu="mdMenu"
-        )
+        md-menu(#userMenu="mdMenu")
             button(md-menu-item)
                 svg.item__icon_with-text.svg-ic_20px-dims
                     use(xlink:href="#ic_create_24px")

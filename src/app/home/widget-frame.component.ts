@@ -3,8 +3,13 @@
  */
 
 import { Compiler, Component, EventEmitter, Input, Output, NgModuleFactory } from "@angular/core";
+import { MdDialog } from "@angular/material";
 
 import { WidgetsModule } from "../widgets/widgets.module";
+
+import { GridStackService } from "./grid-stack.service";
+
+import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.component";
 
 @Component({
     selector: "[widget-frame]",
@@ -14,16 +19,20 @@ import { WidgetsModule } from "../widgets/widgets.module";
 export class widgetFrameComponent {
     @Input() index: number;
     @Input() widgetType: string;
-    widgetsModule: NgModuleFactory<any>;
+    private widgetsModule: NgModuleFactory<any>;
     @Output() onClose = new EventEmitter<number>();
 
-    constructor(compiler: Compiler) {
+    constructor(private compiler: Compiler, private gridStackService: GridStackService, private dialog: MdDialog) {
         this.widgetsModule = compiler.compileModuleSync(WidgetsModule);
     }
 
     openSettings() {
-        // TODO: remove after the widget settings feature added
-        setTimeout(() => alert("Widget settings feature will be included in the next release!"), 300);
+        this.dialog.open(WidgetSettingsDialogComponent, {
+            data: { index: this.index },
+        });
+    }
+    enterManageMode() {
+        this.gridStackService.enterManageMode();
     }
     close(index: number) {
         this.onClose.emit(index);
