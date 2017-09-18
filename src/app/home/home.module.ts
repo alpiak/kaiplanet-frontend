@@ -5,6 +5,7 @@
 import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
+import { ReactiveFormsModule }   from "@angular/forms";
 
 import { MaterialModule } from "../material.module";
 
@@ -26,6 +27,7 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
     imports: [
         BrowserModule,
         FormsModule,
+        ReactiveFormsModule,
         MaterialModule,
         HomeRoutingModule,
         WidgetsModule

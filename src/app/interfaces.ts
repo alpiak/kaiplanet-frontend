@@ -15,6 +15,7 @@ interface Widget {
 interface WidgetConfig {
     type?: string;
     types?: Object[];
+    backgroundColor?: string;
 }
 interface WidgetData {
     imgUrl?: string;

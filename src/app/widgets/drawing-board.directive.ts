@@ -31,41 +31,44 @@ export class DrawingBoardDirective implements AfterViewInit {
         let drawingBoard: any;
 
         this.gridStackService.on("init").subscribe(() => {
-            sessionStorage.setItem("drawing-board-" + this.index, this.imgUrl);
-            drawingBoard = new window["DrawingBoard"].Board(this.el.nativeElement, this.index, {
-                controlsPosition: "top right",
-                droppable: true,
-                stretchImg: true
-            });
-            drawingBoard.ev.bind("board:stopDrawing", () => {
-                let imgBase64 = drawingBoard.getImg().split(",")[1];
+            setTimeout(() => {
+                sessionStorage.setItem("drawing-board-" + this.index, this.imgUrl);
+                drawingBoard = new window["DrawingBoard"].Board(this.el.nativeElement, this.index, {
+                    controlsPosition: "top right",
+                    droppable: true,
+                    stretchImg: true
+                });
+                drawingBoard.ev.bind("board:stopDrawing", () => {
+                    let imgBase64 = drawingBoard.getImg().split(",")[1];
 
-                this.userService.getUserInfo().subscribe(() => {
-                    this.uploadService.uploadBase64Encoded(imgBase64, this.index + "_" + "drawingboard.png").subscribe((res: any) => {
-                        res = res.json();
-                        if (res.code === 1) {
-                            this.onDrew.emit(res.data.img.url);
-                        } else if (res.code === -1) {
-                            //TODO: add reminder for upload failure
-                        }
+                    this.userService.getUserInfo().subscribe(() => {
+                        this.uploadService.uploadBase64Encoded(imgBase64, this.index + "_" + "drawingboard.png").subscribe((res: any) => {
+                            res = res.json();
+                            if (res.code === 1) {
+                                this.onDrew.emit(res.data.img.url);
+                            } else if (res.code === -1) {
+                                //TODO: add reminder for upload failure
+                            }
+                        });
                     });
                 });
-            });
-            drawingBoard.restoreWebStorage();
-            this.gridStackService.on("resizestart").subscribe((event) => {
-                if (event.target === this.gridItemContainer) {
-                    jQuery(this.el.nativeElement).hide();
-                }
-            });
-            this.gridStackService.on("resizestop").subscribe((event) => {
-                if (event.target === this.gridItemContainer) {
-                    jQuery(this.el.nativeElement).show();
-                    setTimeout(() => {
-                        drawingBoard.resize();
-                        drawingBoard.restoreWebStorage();
-                    }, 300);
-                }
-            });
+                window["drawingBoard"] = drawingBoard;
+                drawingBoard.restoreWebStorage();
+                this.gridStackService.on("resizestart").subscribe((event) => {
+                    if (event.target === this.gridItemContainer) {
+                        jQuery(this.el.nativeElement).hide();
+                    }
+                });
+                this.gridStackService.on("resizestop").subscribe((event) => {
+                    if (event.target === this.gridItemContainer) {
+                        jQuery(this.el.nativeElement).show();
+                        setTimeout(() => {
+                            drawingBoard.resize();
+                            drawingBoard.restoreWebStorage();
+                        }, 200);
+                    }
+                });
+            }, 300);
         });
 
         window.addEventListener("resize", () => {

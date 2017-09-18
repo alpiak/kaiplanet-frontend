@@ -6,9 +6,11 @@ import { AfterViewInit, ElementRef } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 
+import { Widget } from "../interfaces";
+
 export class WidgetComponent implements AfterViewInit {
     protected index: number;
-    protected widgetData: any;
+    protected widget: Widget;
     protected backgroundColor: string;
 
     constructor(protected gridStackService: GridStackService, protected el: ElementRef) { }
@@ -23,8 +25,8 @@ export class WidgetComponent implements AfterViewInit {
                 .attr("data-index");
 
             this.gridStackService.getWidgetData().subscribe(gridStackData => {
-                this.widgetData = gridStackData[this.index];
-                this.backgroundColor = this.widgetData.config && this.widgetData.config.backGroundColor || "#fff";
+                this.widget = gridStackData[this.index];
+                this.backgroundColor = this.widget.config && this.widget.config.backgroundColor || "#fff";
             });
         }, 200);
     }

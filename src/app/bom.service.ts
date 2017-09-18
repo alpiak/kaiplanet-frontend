@@ -11,4 +11,7 @@ export class BomService {
     windowResize(): Observable<any> {
         return Observable.fromEvent(window, "resize");
     }
+    documentClick(): Observable<any> {
+        return Observable.fromEvent(document, "click");
+    }
 }

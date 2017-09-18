@@ -96,10 +96,10 @@ export class GridStackService {
     getWidgetData(): Observable<any> {
         return Observable.create((subscriber: Subscriber<any>) => {
             if (this.widgets.length) {
-                subscriber.next(jQuery.extend([], this.widgets));
+                subscriber.next(jQuery.extend(true, [], this.widgets));
             } else {
                 this.prepare().subscribe(() => {
-                    subscriber.next(jQuery.extend([], this.widgets));
+                    subscriber.next(jQuery.extend(true, [], this.widgets));
                 });
             }
         });
@@ -231,8 +231,9 @@ export class GridStackService {
             });
         this.userService.updateGridStackData(JSON.stringify(this.widgets));
     }
-    updateGridStackData(index: number, gridData: any) {
-        this.widgets[index] = gridData;
+    updateGridStackData(index: number, gridData: Widget) {
+        this.widgets[index].data = jQuery.extend(true, {}, gridData.data);
+        this.widgets[index].config = jQuery.extend(true, {}, gridData.config);
 
         this.userService.updateGridStackData(JSON.stringify(this.widgets));
     }
