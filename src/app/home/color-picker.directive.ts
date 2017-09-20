@@ -3,18 +3,17 @@
  */
 
 import { Subscription } from "rxjs";
-import { Directive, ElementRef, AfterViewInit, OnDestroy, Input } from "@angular/core";
+import { Directive, ElementRef, AfterViewInit, OnDestroy, EventEmitter, Input, Output } from "@angular/core";
 
 import { BomService } from "../bom.service";
 
 @Directive({ selector: "[color-picker]" })
 export class ColorPickerDirective implements AfterViewInit, OnDestroy {
-    @Input() index: string;
-    subscriptions: Subscription[];
+    @Input("color-picker") color: string | null;
+    @Output() onPicked = new EventEmitter<string>();
+    subscriptions: Subscription[] = [];
 
-    constructor(private el: ElementRef, private bomService: BomService) {
-        this.subscriptions = [];
-    }
+    constructor(private el: ElementRef, private bomService: BomService) { }
 
     ngAfterViewInit() {
         const jQuery = require("jquery"),
@@ -46,7 +45,7 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
         require("colorjoe/css/colorjoe");
 
         const colorjoe = require("colorjoe"),
-            joe = colorjoe.hsl($overlay.get(0), "hsla(1, 1, 1, 0.54)", [
+            joe = colorjoe.hsl($overlay.get(0), this.color || "hsla(1, 1, 1, 0.54)", [
                 "alpha",
                 "currentColor",
                 ["fields", {space: "HSLA", limit: 100}],
@@ -65,11 +64,8 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             }
         });
 
-        const $input = $el.find("input").first();
-
-        joe.on("done", function(color: any) {
-            $input.val(color.cssa());
-            $switch.css("fill", color.cssa());
+        joe.on("done", (color: any) => {
+            this.onPicked.emit(color.cssa());
         });
         $el.bind("click", (e: any) => {
             e.stopPropagation()
@@ -77,7 +73,8 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
         this.subscriptions.push(this.bomService.documentClick().subscribe(() => {
             $picker.css("display", "none");
         }));
-        $input.bind("click", () => $picker.css("display", "block"));
+
+        $el.find("input").first().bind("click", () => $picker.css("display", "block"));
     }
 
     ngOnDestroy() {

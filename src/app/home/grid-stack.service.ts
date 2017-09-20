@@ -236,6 +236,7 @@ export class GridStackService {
         this.widgets[index].config = jQuery.extend(true, {}, gridData.config);
 
         this.userService.updateGridStackData(JSON.stringify(this.widgets));
+        this.updateSubject.next({ update: [ index ] });
     }
     on(eventType: string): Observable<any> {
         switch (eventType) {

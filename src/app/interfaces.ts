@@ -15,10 +15,14 @@ interface Widget {
 interface WidgetConfig {
     type?: string;
     types?: Object[];
-    backgroundColor?: string;
+    background?: Background;
 }
 interface WidgetData {
     imgUrl?: string;
+}
+interface Background {
+    color?: string;
+    image?: string;
 }
 
 interface User {

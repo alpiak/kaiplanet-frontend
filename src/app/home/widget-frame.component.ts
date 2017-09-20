@@ -3,7 +3,7 @@
  */
 
 import { Compiler, Component, EventEmitter, Input, Output, NgModuleFactory } from "@angular/core";
-import { MdDialog } from "@angular/material";
+import { MdDialog, MdDialogRef } from "@angular/material";
 
 import { WidgetsModule } from "../widgets/widgets.module";
 
@@ -16,7 +16,7 @@ import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.componen
     template: require("./widget-frame.component.pug"),
     styles: [ require("./widget-frame.component.scss") ]
 })
-export class widgetFrameComponent {
+export class widgetFrameComponent{
     @Input() index: number;
     @Input() widgetType: string;
     private widgetsModule: NgModuleFactory<any>;
@@ -27,13 +27,21 @@ export class widgetFrameComponent {
     }
 
     openSettings() {
-        this.dialog.open(WidgetSettingsDialogComponent, {
-            data: { index: this.index },
+        const dialogRef = this.dialog.open(WidgetSettingsDialogComponent, {
+            data: { index: this.index }
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            if (result !== "md-dialog-close") {
+                this.gridStackService.updateGridStackData(this.index, result);
+            }
         });
     }
+
     enterManageMode() {
         this.gridStackService.enterManageMode();
     }
+
     close(index: number) {
         this.onClose.emit(index);
     }
