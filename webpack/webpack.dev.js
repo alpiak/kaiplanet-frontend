@@ -100,7 +100,7 @@ module.exports = {
                 app: {
                     beforeContent: `
                     (function() {   
-                        if (window.$ && TweenLite) {
+                        if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");
                             var loading = {
                                 progress: $counter.data("loaded-percent") || 0
@@ -120,7 +120,7 @@ module.exports = {
                 vendors: {
                     beforeContent: `
                     (function() {    
-                        if (window.$ && TweenLite) {
+                        if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");
                             var loading = {
                                 progress: $counter.data("loaded-percent") || 0

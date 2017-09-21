@@ -32,7 +32,7 @@ export class widgetFrameComponent{
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            if (result !== "md-dialog-close") {
+            if (result) {
                 this.gridStackService.updateGridStackData(this.index, result);
             }
         });

@@ -14,7 +14,7 @@ md-dialog-content
             md-expansion-panel-header
                 md-panel-title(i18n="Panel title|the title of a panel in a dialog for changing widget settings") Basic Settings
             md-form-field(
-                color-picker="widget.config.background.color"
+                [color-picker]="widget.config.background.color"
                 "(onPicked)"="onBackgroundColorPicked($event)"
             )
                 input(
@@ -42,6 +42,6 @@ md-dialog-actions
     ) Submit
     button(
         md-button
-        md-dialog-close
+        md-dialog-close=""
         i18n="Button text|the text of a button to close the widget settings dialog without submitting the changes of widget settings"
     ) Close

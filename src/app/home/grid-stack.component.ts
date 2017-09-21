@@ -3,12 +3,10 @@
  */
 
 import { Subscription } from "rxjs";
-import { Compiler, Component, NgModuleFactory, AfterViewInit, OnDestroy } from "@angular/core";
+import { Component, AfterViewInit, OnDestroy } from "@angular/core";
 
 import "gridstack";
 import "gridstack/dist/gridstack.css";
-
-import { WidgetsModule } from "../widgets/widgets.module";
 
 import { GridStackService } from "./grid-stack.service";
 
@@ -21,33 +19,29 @@ import { Widget } from "../interfaces";
 })
 export class gridStackComponent implements AfterViewInit, OnDestroy {
     widgets: Widget[];
-    widgetsModule: NgModuleFactory<any>;
-    subscriptions: Subscription[];
+    gridStack: HTMLElement;
+    subscriptions: Subscription[] = [];
 
-    constructor(compiler: Compiler, private gridStackService: GridStackService) {
-        this.widgetsModule = compiler.compileModuleSync(WidgetsModule);
-        this.subscriptions = [];
-    }
+    constructor(private gridStackService: GridStackService) { }
 
     ngAfterViewInit() {
-        let jQuery = require("jquery");
-
-        let options = {
-            acceptWidgets: true,
-            cellHeight: "auto",
-            verticalMargin: 10,
-            alwaysShowResizeHandle: true,
-            animate: true,
-            disableDrag: true,
-            disableResize: true,
-            handle: ".grid-stack-item-handle",
-            removable: true
-        };
-
         this.gridStackService.prepare().subscribe((gridStackData: any) => {
             this.widgets = gridStackData;
             setTimeout(() => {
-                this.gridStackService.init(jQuery(".grid-stack").get(0), options).subscribe(() => {
+                const jQuery = require("jquery"),
+                    options = {
+                    acceptWidgets: true,
+                    cellHeight: "auto",
+                    verticalMargin: 10,
+                    alwaysShowResizeHandle: true,
+                    animate: true,
+                    disableDrag: true,
+                    disableResize: true,
+                    handle: ".grid-stack-item-handle",
+                    removable: true
+                };
+
+                this.gridStackService.init(this.gridStack = jQuery(".grid-stack").get(0), options).subscribe(() => {
                     this.subscriptions.push(this.gridStackService.on("resizestart").subscribe((event) => {
                         jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
                     }));
@@ -62,6 +56,38 @@ export class gridStackComponent implements AfterViewInit, OnDestroy {
                     }));
                 });
             }, 200);
+        });
+        this.gridStackService.on("update").subscribe((mutation) => {
+
+            this.gridStackService.getWidgetData().subscribe(gridStackData => {
+                if (mutation.add) {
+                    mutation.add.forEach((widgetIndex: number) => this.widgets[widgetIndex] = gridStackData[widgetIndex]);
+                }
+                if (mutation.update) {
+                    mutation.update.forEach((widgetIndex: number) => {
+                        this.widgets[widgetIndex].config = gridStackData[widgetIndex].config;
+                        this.widgets[widgetIndex].data = gridStackData[widgetIndex].data;
+                    });
+                }if (mutation.remove) {
+                    mutation.remove.forEach((widgetIndex: number) => this.widgets.splice(widgetIndex, 1));
+                }
+
+                setTimeout(() => {
+                    if (mutation.add) {
+                        mutation.add.forEach((widgetIndex: number) => {
+                            const widgetEl = jQuery(this.gridStack)
+                                .children(".grid-stack-item")
+                                .eq(widgetIndex)
+                                .get(0);
+
+                            jQuery(this.gridStack)
+                                .data("gridstack")
+                                .makeWidget(widgetEl);
+                        });
+                    }
+                    this.gridStackService.updateGridStackPositionData();
+                }, 200);
+            });
         });
     }
     ngOnDestroy() {

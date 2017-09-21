@@ -15,33 +15,35 @@ export class WidgetComponent implements OnInit, AfterViewInit, OnDestroy {
 
     constructor(protected gridStackService: GridStackService, protected el: ElementRef) { }
 
-    ngOnInit;
+    ngOnInit () { }
 
     ngAfterViewInit () {
         setTimeout(() => {
             const jQuery = require("jquery");
 
-            this.index = jQuery(this.el.nativeElement)
-                .parent()
-                .parent()
-                .attr("data-index");
+            this.index = Number(
+                jQuery(this.el.nativeElement)
+                    .parent()
+                    .parent()
+                    .attr("data-index")
+            );
 
-            this.gridStackService.getWidgetData().subscribe(gridStackData => {
+            this.gridStackService.getWidgetData().subscribe((gridStackData: Widget[]) => {
                 this.widget = gridStackData[this.index];
                 this.backgroundColor = this.widget.config && this.widget.config.background.color || "#fff";
             });
         }, 200);
         this.gridStackService.on("update").subscribe((mutation) => {
-            if (mutation.update.length === 1 && mutation.update[0] === this.index) {
+            if (mutation.update && mutation.update[0] === this.index) {
                 this.gridStackService.getWidgetData().subscribe(gridStackData => {
                     this.widget = gridStackData[this.index];
+                    this.ngOnDestroy();
+                    this.ngOnInit();
+                    this.ngAfterViewInit();
                 });
-                this.ngOnDestroy();
-                this.ngOnInit();
-                this.ngAfterViewInit();
             }
         });
     }
 
-    ngOnDestroy;
+    ngOnDestroy () { }
 }

@@ -35,6 +35,9 @@ export class WidgetSettingsDialogComponent implements OnInit{
             if (!this.widget.config) {
                 this.widget.config = {};
             }
+            if (!this.widget.data) {
+                this.widget.data = {};
+            }
             if (!this.widget.config.background) {
                 this.widget.config.background = {};
             }

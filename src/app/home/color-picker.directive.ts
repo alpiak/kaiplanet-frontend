@@ -44,14 +44,21 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
 
         require("colorjoe/css/colorjoe");
 
-        const colorjoe = require("colorjoe"),
-            joe = colorjoe.hsl($overlay.get(0), this.color || "hsla(1, 1, 1, 0.54)", [
+        const colorjoe = require("colorjoe");
+
+        setTimeout(() => {
+            const joe = colorjoe.hsl($overlay.get(0), this.color || "hsla(1, 1, 1, 0.54)", [
                 "alpha",
                 "currentColor",
                 ["fields", {space: "HSLA", limit: 100}],
                 "hex",
                 "close"
             ]);
+
+            joe.on("done", (color: any) => {
+                this.onPicked.emit(color.cssa());
+            });
+        }, 200);
 
         const $switch = $el.find(".color-picker__switch"),
             $picker = jQuery("#hslPicker");
@@ -62,10 +69,6 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             } else {
                 $picker.css("display", "block");
             }
-        });
-
-        joe.on("done", (color: any) => {
-            this.onPicked.emit(color.cssa());
         });
         $el.bind("click", (e: any) => {
             e.stopPropagation()

@@ -15,22 +15,15 @@ import { Widget } from "../interfaces";
     template: require("./drawing-board-widget.component.pug"),
     styles: [ require("./widget.component.scss"), require("./drawing-board-widget.component.scss") ]
 })
-export class DrawingBoardWidgetComponent extends WidgetComponent implements AfterViewInit{
+export class DrawingBoardWidgetComponent extends WidgetComponent implements AfterViewInit {
     private imgUrl: string;
 
     constructor(gridStackService: GridStackService, el: ElementRef) { super(gridStackService, el); }
 
     ngAfterViewInit() {
+        super.ngAfterViewInit();
         setTimeout(() => {
-            const jQuery = require("jquery");
-
-            this.index = jQuery(this.el.nativeElement)
-                .parent()
-                .parent()
-                .attr("data-index");
-
-            this.gridStackService.getWidgetData().subscribe(gridStackData => {
-                this.widget = gridStackData[this.index];
+            this.gridStackService.getWidgetData().subscribe(() => {
                 if (!this.widget.data) {
                     this.widget.data = {};
                 }
@@ -39,7 +32,7 @@ export class DrawingBoardWidgetComponent extends WidgetComponent implements Afte
                     this.imgUrl = imgUrl;
                 }
             });
-        }, 200);
+        }, 300);
     }
     onDrew(imgUrl: string) {
         Object.assign(this.widget.data, { imgUrl: imgUrl});

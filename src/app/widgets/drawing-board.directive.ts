@@ -35,6 +35,7 @@ export class DrawingBoardDirective implements AfterViewInit {
                 sessionStorage.setItem("drawing-board-" + this.index, this.imgUrl);
                 drawingBoard = new window["DrawingBoard"].Board(this.el.nativeElement, this.index, {
                     controlsPosition: "top right",
+                    background: false,
                     droppable: true,
                     stretchImg: true
                 });
@@ -64,6 +65,7 @@ export class DrawingBoardDirective implements AfterViewInit {
                         jQuery(this.el.nativeElement).show();
                         setTimeout(() => {
                             drawingBoard.resize();
+                            console.log(drawingBoard.id, drawingBoard);
                             drawingBoard.restoreWebStorage();
                         }, 200);
                     }
