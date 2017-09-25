@@ -52,7 +52,8 @@ export class WeatherService {
                                     return "Fog";
                                 case "cloudy":
                                     return "Cloudy";
-                                case "partly-cloudy-day" || "partly-cloudy-night":
+                                case "partly-cloudy-day":
+                                case "partly-cloudy-night":
                                     return "Partly Cloudy";
                                 case "snow":
                                     return "Snow";

@@ -7,6 +7,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
 import { ReactiveFormsModule }   from "@angular/forms";
 
+import { FileSelectDirective, FileDropDirective } from "ng2-file-upload";
+
 import { MaterialModule } from "../material.module";
 
 import { HomeRoutingModule } from "./home-routing.module";
@@ -33,6 +35,8 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
         WidgetsModule
     ],
     declarations: [
+        FileSelectDirective,
+        FileDropDirective,
         HomeComponent,
         leftNavComponent,
         gridStackComponent,

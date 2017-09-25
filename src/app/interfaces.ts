@@ -22,7 +22,11 @@ interface WidgetData {
 }
 interface Background {
     color?: string;
-    image?: string;
+    images?: image[];
+}
+interface image {
+    url: string,
+    title: string
 }
 
 interface User {

@@ -10,6 +10,8 @@ import { Component, OnInit, Inject } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MD_DIALOG_DATA } from "@angular/material";
 
+import { FileUploader } from "ng2-file-upload";
+
 import { GridStackService } from "./grid-stack.service";
 
 import { Widget } from "../interfaces";
@@ -19,15 +21,17 @@ import { Widget } from "../interfaces";
     styles: [ require("./widget-settings-dialog.component.scss") ]
 })
 export class WidgetSettingsDialogComponent implements OnInit{
-    widgetSettingsForm: FormGroup;
-    widget: Widget;
+    private widgetSettingsForm: FormGroup;
+    private widget: Widget;
+    private showBackgroundImageConfig: boolean = false;
+    private uploader:FileUploader = new FileUploader({url: require("../../config.json").urlBase + "/upload/files"});
 
     constructor(@Inject(MD_DIALOG_DATA) private data: any, private formBuilder: FormBuilder, private gridStackService: GridStackService) { }
 
     ngOnInit() {
         this.widgetSettingsForm = this.formBuilder.group({
             basic: this.formBuilder.group({
-                backgroundColor: ["", Validators.required]
+                backgroundColor: ""
             })
         });
         this.gridStackService.getWidgetData().subscribe(gridStackData => {
@@ -43,10 +47,32 @@ export class WidgetSettingsDialogComponent implements OnInit{
             }
             this.widgetSettingsForm.setValue({
                 basic: {
-                    backgroundColor: this.widget.config.background.color || null
+                    backgroundColor: this.widget.config.background.color || null,
                 }
             });
         });
+
+        let images: any[] = [];
+
+        this.uploader.onSuccessItem = (item, response: any) => {
+            response = JSON.parse(response);
+
+            if (response.code === 1) {
+                images.push({
+                    url: response.data.file.url,
+                    title: item.file.name
+                });
+            } else {
+                // TODO: add error handler
+            }
+        };
+
+        this.uploader.onCompleteAll = () => {
+            this.widget.config.background.images = images;
+            this.showBackgroundImageConfig = false;
+            images = [];
+            this.uploader.clearQueue();
+        };
     }
 
     saveSettings(): Widget {
