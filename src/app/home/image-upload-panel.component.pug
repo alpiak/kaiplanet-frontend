@@ -1,0 +1,68 @@
+//
+   Created by qhyang on 2017/9/26.
+
+
+md-card
+    md-card-title Background Images
+    md-card-content
+        div(*ngIf="!showBackgroundImageConfig")
+            md-grid-list(
+                *ngIf="images?.length"
+                cols="2"
+                rowHeight="16:9"
+            )
+                md-grid-tile(
+                    "*ngFor"="let image of images"
+                )
+                    img(
+                        [src]="image.url"
+                        "[alt]"="image.title"
+                    )
+            div(*ngIf="!images?.length") No background image configured
+        div(*ngIf="showBackgroundImageConfig")
+            div(
+                ng2FileDrop
+                [uploader]="uploader"
+            ) Drop file here or...
+            input(
+                type="file"
+                ng2FileSelect
+                [uploader]="uploader"
+                multiple
+            )
+            table(
+                *ngIf="uploader.queue.length"
+            )
+                thead
+                    tr
+                        th Name
+                        th Size
+                        th Actions
+                tbody
+                    tr(*ngFor="let item of uploader.queue")
+                        td {{ item?.file?.name }}
+                        td(*ngIf="uploader.isHTML5") {{ item?.file?.size/1024/1024 | number:'.2' }} MB
+                        td(*ngIf="!uploader.isHTML5")
+                        td
+                            button(
+                                (click)="item.remove()"
+                                md-icon-button
+                            )
+                                svg.color-picker__switch.item__icon_with-text.svg-ic_20px-dims
+                                    use(xlink:href="#ic_delete_24px")
+            md-progress-bar(
+                *ngIf="uploader.isUploading"
+                mode="determinate"
+                "[value]"="uploader.progress"
+            )
+    md-card-actions
+        button(
+            *ngIf="showBackgroundImageConfig"
+            "(click)"="uploader.uploadAll()"
+            "[disabled]"="!uploader.getNotUploadedItems().length"
+            md-button
+        ) Add
+        button(
+            (click)="showBackgroundImageConfig = !showBackgroundImageConfig"
+            md-button
+        ) {{ showBackgroundImageConfig ? "Cancel" : "Change" }}

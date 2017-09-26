@@ -22,9 +22,9 @@ interface WidgetData {
 }
 interface Background {
     color?: string;
-    images?: image[];
+    images?: Image[];
 }
-interface image {
+interface Image {
     url: string,
     title: string
 }
@@ -33,4 +33,4 @@ interface User {
     userId: number
 }
 
-export { Widget, WidgetConfig, User };
+export { Widget, WidgetConfig, Image, User };

@@ -6,12 +6,13 @@ import { OnInit, AfterViewInit, OnDestroy, ElementRef } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 
-import { Widget } from "../interfaces";
+import { Widget, Image } from "../interfaces";
 
 export class WidgetComponent implements OnInit, AfterViewInit, OnDestroy {
     protected index: number;
     protected widget: Widget;
     protected backgroundColor: string;
+    protected backgroundImages: Image[];
 
     constructor(protected gridStackService: GridStackService, protected el: ElementRef) { }
 
@@ -31,6 +32,7 @@ export class WidgetComponent implements OnInit, AfterViewInit, OnDestroy {
             this.gridStackService.getWidgetData().subscribe((gridStackData: Widget[]) => {
                 this.widget = gridStackData[this.index];
                 this.backgroundColor = this.widget.config && this.widget.config.background.color || "transparent";
+                this.backgroundImages = this.widget.config && this.widget.config.background.images;
             });
         }, 200);
         this.gridStackService.on("update").subscribe((mutation) => {

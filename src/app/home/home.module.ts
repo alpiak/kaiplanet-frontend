@@ -20,6 +20,7 @@ import { leftNavComponent } from "./left-nav.component";
 import { gridStackComponent } from "./grid-stack.component";
 import { widgetFrameComponent } from "./widget-frame.component";
 import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.component";
+import { ImageUploadPanelComponent } from "./image-upload-panel.component";
 
 import { ColorPickerDirective } from "./color-picker.directive";
 
@@ -42,6 +43,7 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
         gridStackComponent,
         widgetFrameComponent,
         WidgetSettingsDialogComponent,
+        ImageUploadPanelComponent,
         ColorPickerDirective,
         WidgetComponentPipe
     ],

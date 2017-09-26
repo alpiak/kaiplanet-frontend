@@ -16,7 +16,7 @@ md-dialog-content
         )
             md-expansion-panel-header
                 md-panel-title(i18n="Panel title|the title of a panel in a dialog for changing widget settings") Basic Settings
-            div
+            section
                 md-form-field(
                     [color-picker]="widget.config.background.color"
                     "(onPicked)"="onBackgroundColorPicked($event)"
@@ -32,70 +32,15 @@ md-dialog-content
                         [style.fill]="widget.config.background.color || 'rgba(0, 0, 0, 0.54)'"
                     )
                         use(xlink:href="#ic_apps_24px")
-            div
-                md-card
-                    md-card-title Background Images
-                    md-card-content
-                        div(*ngIf="!showBackgroundImageConfig")
-                            md-grid-list(
-                                *ngIf="widget?.config?.background?.images?.length"
-                                cols="2"
-                                rowHeight="16:9"
-                            )
-                                md-grid-tile(
-                                    "*ngFor"="let image of widget?.config?.background?.images"
-                                )
-                                    img(
-                                        [src]="image.url"
-                                        "[alt]"="image.title"
-                                    )
-                            div(*ngIf="!widget?.config?.background?.images?.length") No background image configured
-                        div(*ngIf="showBackgroundImageConfig")
-                            div(
-                                ng2FileDrop
-                                [uploader]="uploader"
-                            ) Drop file here or...
-                            input(
-                                type="file"
-                                ng2FileSelect
-                                [uploader]="uploader"
-                                multiple
-                            )
-                            table(
-                                *ngIf="uploader.queue.length"
-                            )
-                                thead
-                                    tr
-                                        th Name
-                                        th Size
-                                        th Actions
-                                tbody
-                                    tr(*ngFor="let item of uploader.queue")
-                                        td {{ item?.file?.name }}
-                                        td(*ngIf="uploader.isHTML5") {{ item?.file?.size/1024/1024 | number:'.2' }} MB
-                                        td(*ngIf="!uploader.isHTML5")
-                                        td
-                                            button(
-                                                (click)="item.remove()"
-                                                md-icon-button
-                                            )
-                                                svg.color-picker__switch.item__icon_with-text.svg-ic_20px-dims
-                                                    use(xlink:href="#ic_delete_24px")
-                    md-card-actions
-                        button(
-                            *ngIf="showBackgroundImageConfig"
-                            "(click)"="uploader.uploadAll()"
-                            "[disabled]"="!uploader.getNotUploadedItems().length"
-                            md-button
-                        ) Add
-                        button(
-                            (click)="showBackgroundImageConfig = !showBackgroundImageConfig"
-                            md-button
-                        ) {{ showBackgroundImageConfig ? "Cancel" : "Change" }}
+            section
+                image-upload-panel(
+                    [images]="widget?.config?.background?.images"
+                    "(onUploaded)"="onBackgroundImagesUploaded($event)"
+                )
 md-dialog-actions
     button(
         "[md-dialog-close]"="saveSettings()"
-        "[disabled]"="widgetSettingsForm.status !== 'VALID' || this.uploader.isUploading"
+        "[disabled]"="widgetSettingsForm.status !== 'VALID' || imageUploadPanelComponents?.first?.uploader?.isUploading"
         md-button
         i18n="Button text|the text of a button to submit the changes of widget settings and  close the widget settings dialog"
     ) Submit

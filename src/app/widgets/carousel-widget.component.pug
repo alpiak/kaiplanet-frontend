@@ -7,5 +7,6 @@ div.carousel-container.background(
     "[images]"="images"
     "(click)"="navigateTo('/earth')"
     "[style.backgroundColor]"="backgroundColor"
+    "[style.backgroundImage]"="backgroundImages ? 'url(' + backgroundImages[0].url + ')' : 'none'"
 )
 //div.instructions click and drag to control the animation

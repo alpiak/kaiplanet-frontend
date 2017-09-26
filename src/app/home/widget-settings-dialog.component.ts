@@ -6,15 +6,22 @@
  * Created by qhyang on 2017/8/15.
  */
 
-import { Component, OnInit, Inject } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, OnInit, Inject, ViewChildren, QueryList } from "@angular/core";
+import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl } from "@angular/forms";
 import { MD_DIALOG_DATA } from "@angular/material";
 
-import { FileUploader } from "ng2-file-upload";
+import { ImageUploadPanelComponent } from "./image-upload-panel.component";
 
 import { GridStackService } from "./grid-stack.service";
 
-import { Widget } from "../interfaces";
+import { Widget, Image } from "../interfaces";
+
+function allowedTextValidator(nameRe: RegExp): ValidatorFn {
+    return (control: AbstractControl): {[key: string]: any} => {
+        const valid = nameRe.test(control.value);
+        return valid ? null : {'forbidden': {value: control.value}};
+    };
+}
 
 @Component({
     template: require("./widget-settings-dialog.component.pug"),
@@ -23,15 +30,15 @@ import { Widget } from "../interfaces";
 export class WidgetSettingsDialogComponent implements OnInit{
     private widgetSettingsForm: FormGroup;
     private widget: Widget;
-    private showBackgroundImageConfig: boolean = false;
-    private uploader:FileUploader = new FileUploader({url: require("../../config.json").urlBase + "/upload/files"});
+    @ViewChildren(ImageUploadPanelComponent)
+    private imageUploadPanelComponents: QueryList<ImageUploadPanelComponent>;
 
     constructor(@Inject(MD_DIALOG_DATA) private data: any, private formBuilder: FormBuilder, private gridStackService: GridStackService) { }
 
     ngOnInit() {
         this.widgetSettingsForm = this.formBuilder.group({
             basic: this.formBuilder.group({
-                backgroundColor: ""
+                backgroundColor: ["", allowedTextValidator(/^(?:rgba\(\s*(?:[0-9]+\.?[0-9]*,\s*){3}[0-9]+\.?[0-9]*\s*\)|#[a-f]{3,6})*$/i)]
             })
         });
         this.gridStackService.getWidgetData().subscribe(gridStackData => {
@@ -51,28 +58,6 @@ export class WidgetSettingsDialogComponent implements OnInit{
                 }
             });
         });
-
-        let images: any[] = [];
-
-        this.uploader.onSuccessItem = (item, response: any) => {
-            response = JSON.parse(response);
-
-            if (response.code === 1) {
-                images.push({
-                    url: response.data.file.url,
-                    title: item.file.name
-                });
-            } else {
-                // TODO: add error handler
-            }
-        };
-
-        this.uploader.onCompleteAll = () => {
-            this.widget.config.background.images = images;
-            this.showBackgroundImageConfig = false;
-            images = [];
-            this.uploader.clearQueue();
-        };
     }
 
     saveSettings(): Widget {
@@ -88,5 +73,9 @@ export class WidgetSettingsDialogComponent implements OnInit{
     onBackgroundColorPicked(color: string) {
         this.widgetSettingsForm.patchValue({ basic: { backgroundColor: color } });
         this.widget.config.background.color = color;
+    }
+
+    onBackgroundImagesUploaded(images: Image[]) {
+        this.widget.config.background.images = images;
     }
 }
