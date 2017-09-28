@@ -2,11 +2,19 @@
    Created by qhyang on 2017/3/9.
 
 
-div.carousel-container.background(
-    threeImageTransition
-    "[images]"="images"
-    "(click)"="navigateTo('/earth')"
+div.background(
+    *ngIf="images"
     "[style.backgroundColor]"="backgroundColor"
     "[style.backgroundImage]"="backgroundImages ? 'url(' + backgroundImages[0].url + ')' : 'none'"
 )
+    div.carousel-container(
+        *ngIf="images.length"
+        threeImageTransition
+        "[images]"="images"
+        "(click)"="navigateTo('/earth')"
+    )
+    div(
+        *ngIf="!images.length"
+        i18n="message text|A message to tell the user no image is configured to the specific widget"
+    ) No image added
 //div.instructions click and drag to control the animation

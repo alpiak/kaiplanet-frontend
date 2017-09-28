@@ -27,7 +27,7 @@ export class widgetFrameComponent{
     }
 
     openSettings() {
-        const dialogRef = this.dialog.open(WidgetSettingsDialogComponent, {
+        const dialogRef: MdDialogRef<WidgetSettingsDialogComponent> = this.dialog.open(WidgetSettingsDialogComponent, {
             data: { index: this.index }
         });
 

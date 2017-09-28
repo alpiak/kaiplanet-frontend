@@ -16,7 +16,6 @@ import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
 import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
 import { SNSWidgetComponent } from "./sns-widget.component";
-import { AddWidgetFormComponent } from "../home/add-widget-form.component";
 import { LoginDialogComponent } from "../login-dialog.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
@@ -24,8 +23,6 @@ import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive"
 import { DrawingBoardDirective } from "./drawing-board.directive";
 import { WaterfallDirective } from "./waterfall.directive";
 import { AnimatedBackgroundDirective } from "./animated-background.directive";
-
-import { ArrayPipe } from "../array.pipe";
 
 @NgModule({
     imports: [
@@ -42,14 +39,12 @@ import { ArrayPipe } from "../array.pipe";
         SNSWidgetComponent,
         WaterfallWidgetComponent,
         PlainWidgetComponent,
-        AddWidgetFormComponent,
         LoginDialogComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,
         WaterfallDirective,
-        AnimatedBackgroundDirective,
-        ArrayPipe
+        AnimatedBackgroundDirective
     ],
     entryComponents: [
         HeaderWidgetComponent,

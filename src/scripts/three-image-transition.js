@@ -1170,7 +1170,7 @@ module.exports = function (container, images) {
             slide.visible = false;
             var l1 = new THREE.ImageLoader();
             l1.setCrossOrigin('Anonymous');
-            l1.load(image, function(img) {
+            l1.load(image.url, function(img) {
                 slide.setImage(img);
             })
             slides.out.push(slide);
@@ -1180,7 +1180,7 @@ module.exports = function (container, images) {
             slide2.visible = false;
             var l2 = new THREE.ImageLoader();
             l2.setCrossOrigin('Anonymous');
-            l2.load(images[nextIndex], function(img) {
+            l2.load(images[nextIndex].url, function(img) {
                 slide2.setImage(img);
             })
             slides.in.push(slide2);

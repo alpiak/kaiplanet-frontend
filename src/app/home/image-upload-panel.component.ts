@@ -15,7 +15,9 @@ import { Image } from "../interfaces";
 })
 export class ImageUploadPanelComponent implements OnInit {
     @Input() images: Image[];
+    @Input() title: string;
     @Output() onUploaded = new EventEmitter<Image[]>();
+    @Output() onRemoved = new EventEmitter<number>();
     private showBackgroundImageConfig: boolean = false;
     private uploader:FileUploader = new FileUploader({url: require("../../config.json").urlBase + "/upload/files"});
 
@@ -41,5 +43,9 @@ export class ImageUploadPanelComponent implements OnInit {
             images = [];
             this.uploader.clearQueue();
         };
+    }
+
+    remove (index: number) {
+        this.onRemoved.emit(index);
     }
 }

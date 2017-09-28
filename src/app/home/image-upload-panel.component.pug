@@ -3,7 +3,7 @@
 
 
 md-card
-    md-card-title Background Images
+    md-card-title {{ title }}
     md-card-content
         div(*ngIf="!showBackgroundImageConfig")
             md-grid-list(
@@ -12,12 +12,18 @@ md-card
                 rowHeight="16:9"
             )
                 md-grid-tile(
-                    "*ngFor"="let image of images"
+                    "*ngFor"="let image of images; let i=index"
                 )
                     img(
                         [src]="image.url"
                         "[alt]"="image.title"
                     )
+                    button.item-remove-button(
+                        (click)="remove(i)"
+                        md-icon-button
+                    )
+                        svg.svg-ic_20px-dims
+                            use(xlink:href="#ic_delete_24px")
             div(*ngIf="!images?.length") No background image configured
         div(*ngIf="showBackgroundImageConfig")
             div(
@@ -48,7 +54,7 @@ md-card
                                 (click)="item.remove()"
                                 md-icon-button
                             )
-                                svg.color-picker__switch.item__icon_with-text.svg-ic_20px-dims
+                                svg.color-picker__switch.svg-ic_20px-dims
                                     use(xlink:href="#ic_delete_24px")
             md-progress-bar(
                 *ngIf="uploader.isUploading"

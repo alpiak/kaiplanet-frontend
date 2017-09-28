@@ -19,12 +19,14 @@ import { HomeComponent } from "./home.component";
 import { leftNavComponent } from "./left-nav.component";
 import { gridStackComponent } from "./grid-stack.component";
 import { widgetFrameComponent } from "./widget-frame.component";
-import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.component";
+import { AddWidgetDialogComponent } from "./add-widget-dialog.component";
 import { ImageUploadPanelComponent } from "./image-upload-panel.component";
+import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.component";
 
 import { ColorPickerDirective } from "./color-picker.directive";
 
 import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
+import { ArrayPipe } from "../array.pipe";
 
 @NgModule({
     imports: [
@@ -42,11 +44,16 @@ import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
         leftNavComponent,
         gridStackComponent,
         widgetFrameComponent,
+        AddWidgetDialogComponent,
         WidgetSettingsDialogComponent,
         ImageUploadPanelComponent,
         ColorPickerDirective,
-        WidgetComponentPipe
+        WidgetComponentPipe,
+        ArrayPipe
     ],
-    entryComponents: [ WidgetSettingsDialogComponent ]
+    entryComponents: [
+        AddWidgetDialogComponent,
+        WidgetSettingsDialogComponent
+    ]
 })
 export class HomeModule { }

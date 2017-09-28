@@ -1,6 +1,7 @@
 //
    Created by qhyang on 2017/9/13.
 
+
 h5(
     md-dialog-title
     i18n="Dialog title|the title of a dialog for changing widget settings"
@@ -35,12 +36,37 @@ md-dialog-content
             section
                 image-upload-panel(
                     [images]="widget?.config?.background?.images"
+                    title="Background Images"
                     "(onUploaded)"="onBackgroundImagesUploaded($event)"
+                    "(onRemoved)"="onBackgroundImageRemoved($event)"
                 )
+        md-expansion-panel(
+            *ngIf="widget.type === 'carousel' || widget.type === 'plain'"
+            formGroupName="detail"
+            expanded
+        )
+            md-expansion-panel-header
+                md-panel-title(i18n="panel title|The title of a panel in a dialog for changing widget settings") Detail Settings
+            section(*ngIf="widget.type === 'carousel'")
+                image-upload-panel(
+                    [images]="widget?.data?.images"
+                    title = "Carousel Images"
+                    "(onUploaded)"="onImagesUploaded($event)"
+                    "(onRemoved)"="onImageRemoved($event)"
+                )
+            section(*ngIf="widget.type === 'plain'")
+                md-select(
+                    placeholder="Type"
+                    formControlName="plainType"
+                )
+                    md-option(
+                        *ngFor="let type of widgetTypes.plain.config.types"
+                        "[value]"="type.id"
+                    ) {{ type.text }}
 md-dialog-actions
     button(
-        "[md-dialog-close]"="saveSettings()"
-        "[disabled]"="widgetSettingsForm.status !== 'VALID' || imageUploadPanelComponents?.first?.uploader?.isUploading"
+        "[md-dialog-close]"="getCurrentSettings()"
+        "[disabled]"="widgetSettingsForm.status !== 'VALID' || imageUploadPanelComponents?.first?.uploader?.isUploading || imageUploadPanelComponents?.last?.uploader?.isUploading"
         md-button
         i18n="Button text|the text of a button to submit the changes of widget settings and  close the widget settings dialog"
     ) Submit

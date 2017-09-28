@@ -31,8 +31,8 @@ export class WidgetComponent implements OnInit, AfterViewInit, OnDestroy {
 
             this.gridStackService.getWidgetData().subscribe((gridStackData: Widget[]) => {
                 this.widget = gridStackData[this.index];
-                this.backgroundColor = this.widget.config && this.widget.config.background.color || "transparent";
-                this.backgroundImages = this.widget.config && this.widget.config.background.images;
+                this.backgroundColor = this.widget.config && this.widget.config.background && this.widget.config.background.color || "transparent";
+                this.backgroundImages = this.widget.config && this.widget.config.background && this.widget.config.background.images;
             });
         }, 200);
         this.gridStackService.on("update").subscribe((mutation) => {

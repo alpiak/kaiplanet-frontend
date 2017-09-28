@@ -10,7 +10,6 @@ import "material-design-lite/dist/material.blue_grey-amber.min";
 import "material-design-lite/material.js";
 import "../styles/languages";
 import "./parallax";
-import "dialog-polyfill/dialog-polyfill.css";
 
 import "../styles/base";
 import "../styles/default.theme";

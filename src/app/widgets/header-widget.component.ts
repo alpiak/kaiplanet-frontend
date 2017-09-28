@@ -2,17 +2,17 @@
  * Created by qhyang on 2017/3/15.
  */
 
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from "@angular/core";
-import { MdDialog } from "@angular/material";
+import { Component, OnInit, OnDestroy, ElementRef } from "@angular/core";
+import { MdDialog, MdDialogRef } from "@angular/material";
 
 import { UserService } from "../user.service";
 import { LocaleService } from "../locale.service";
 import { GridStackService } from "../home/grid-stack.service";
 
-import { AddWidgetFormComponent } from "../home/add-widget-form.component";
+import { AddWidgetDialogComponent } from "../home/add-widget-dialog.component";
 import { LoginDialogComponent } from "../login-dialog.component";
-
 import { WidgetComponent } from "./widget.component";
+
 import { Widget, User } from "../interfaces";
 
 const jQuery = require("jquery");
@@ -26,7 +26,6 @@ export class HeaderWidgetComponent extends WidgetComponent implements OnInit, On
     private user: User;
     private currentLocale: string;
     private widgetTypes: Object;
-    @ViewChild(AddWidgetFormComponent) private addWidgetFormComponent: AddWidgetFormComponent;
 
     constructor(private userService: UserService, private localeService: LocaleService, protected gridStackService: GridStackService, private dialog: MdDialog, protected el:ElementRef) {
         super(gridStackService, el);
@@ -49,17 +48,15 @@ export class HeaderWidgetComponent extends WidgetComponent implements OnInit, On
         this.dialog.open(LoginDialogComponent);
     }
     openAddWidgetDialog() {
-        const dialogPolyfill = require("dialog-polyfill/dialog-polyfill.js");
+        const dialogRef: MdDialogRef<AddWidgetDialogComponent> = this.dialog.open(AddWidgetDialogComponent);
 
-        let dialog: any = jQuery("#header-widget__dialog").get(0);
-
-        if (! dialog.showModal) {
-            dialogPolyfill.registerDialog(dialog);
-        }
-        dialog.showModal();
-        jQuery(dialog).find(".close").bind("click", () => {
-            this.addWidgetFormComponent.clearConfig();
-            dialog.close();
+        dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+                this.gridStackService.addWidget(result);
+                setTimeout(() => {
+                    this.gridStackService.enterManageMode();
+                }, 0);
+            }
         });
     }
     enterManageMode() {
@@ -67,13 +64,6 @@ export class HeaderWidgetComponent extends WidgetComponent implements OnInit, On
     }
     logOut() {
         this.userService.logOut();
-    }
-    addWidget(widget: Widget) {
-        if ((widget.x ? /^[0-9]?$/.test(widget.x.toString()) : true) && (widget.y ? /^[0-9]?$/.test(widget.y.toString()) : true) && (widget.width ? /^[0-9]?$/.test(widget.width.toString()) : true) && (widget.height ? /^[0-9]?$/.test(widget.height.toString()) : true) && (widget.zIndex ? /^[0-9]*$/.test(widget.zIndex.toString()) : true)) {
-            this.gridStackService.addWidget(widget);
-            this.addWidgetFormComponent.clearConfig();
-            jQuery("#header-widget__dialog").get(0).close();
-        }
     }
     changeLocale(locale: string) {
         this.localeService.setLocale(locale);

@@ -15,12 +15,4 @@ import { WidgetComponent } from "./widget.component";
 })
 export class PlainWidgetComponent extends WidgetComponent implements AfterViewInit {
     constructor(gridStackService: GridStackService, el: ElementRef) { super(gridStackService, el); }
-
-    ngAfterViewInit() {
-        const jQuery = require("jquery");
-
-        setTimeout(() => {
-            this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
-        }, 200);
-    }
 }

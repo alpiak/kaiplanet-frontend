@@ -2,24 +2,31 @@
  * Created by qhyang on 2017/3/14.
  */
 
-import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
+import { Directive, ElementRef, OnChanges, Input } from "@angular/core";
 
 import { delay } from "rxjs/operator/delay";
 
 import { GridStackService } from "../home/grid-stack.service";
 import { BomService } from "../bom.service";
 
+import { Image } from "../interfaces";
+
+const jQuery = require("jquery");
+
 @Directive({ selector: "[threeImageTransition]" })
-export class ThreeImageTransitionDirective implements AfterViewInit {
-    @Input() images: string[];
+export class ThreeImageTransitionDirective implements OnChanges {
+    @Input() images: Image[];
     gridItemContainer: HTMLElement;
 
     constructor(private el: ElementRef, private gridStackService: GridStackService, private bomService: BomService) { }
 
-    ngAfterViewInit() {
-        const jQuery = require("jquery");
+    ngOnChanges() {
+        jQuery(this.el.nativeElement).empty();
+        this.init();
+    }
 
-        this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);
+    init() {
+        this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().parent().get(0);
 
         let threeImageTransition: any;
 

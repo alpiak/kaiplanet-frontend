@@ -1,0 +1,63 @@
+//
+   Created by qhyang on 2017/9/27.
+
+
+h5(
+    md-dialog-title
+    i18n="Dialog title|the title of a dialog to add a new widget"
+) Add a Widget
+md-dialog-content
+    form(
+        [formGroup]="widgetSettingsForm"
+        novalidate
+    )
+        md-expansion-panel(
+            formGroupName="basic"
+            expanded
+        )
+            md-expansion-panel-header
+                md-panel-title(i18n="Panel title|the title of a panel in a dialog for adding new widget") Basic Settings
+            section
+                md-select(
+                    placeholder="Type"
+                    formControlName="type"
+                )
+                    md-option(
+                        *ngFor="let type of widgetTypes| array"
+                        "[value]"="type.value.id"
+                    ) {{ type.value.text }}
+        md-expansion-panel(
+            *ngIf="widget.type === 'carousel' || widget.type === 'plain'"
+            formGroupName="detail"
+            expanded
+        )
+            md-expansion-panel-header
+                md-panel-title(i18n="panel title|The title of a panel in a dialog for adding new widget") Detail Settings
+            section(*ngIf="widget.type === 'carousel'")
+                image-upload-panel(
+                    [images]="widget.data?.images"
+                    title = "Carousel Images"
+                    "(onUploaded)"="onImagesUploaded($event)"
+                    "(onRemoved)"="onImageRemoved($event)"
+                )
+            section(*ngIf="widget.type === 'plain'")
+                md-select(
+                    placeholder="Type"
+                    formControlName="plainType"
+                )
+                    md-option(
+                        *ngFor="let type of widgetTypes.plain.config.types"
+                        "[value]"="type.id"
+                    ) {{ type.text }}
+md-dialog-actions
+    button(
+        "[md-dialog-close]"="getCurrentSettings()"
+        "[disabled]"="widgetSettingsForm.status !== 'VALID' || imageUploadPanelComponents?.first?.uploader?.isUploading"
+        md-button
+        i18n="Button text|the text of a button to submit the configures to actually add a widget to the grid stack and  close the dialog"
+    ) Add
+    button(
+        md-button
+        md-dialog-close=""
+        i18n="Button text|the text of a button to close the \"add a widget\" dialog without adding the widget"
+    ) Cancel

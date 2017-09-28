@@ -72,17 +72,3 @@ div.container.background(
                 svg.item__icon_with-text.svg-ic_20px-dims
                     use(xlink:href="#ic_picture_in_picture_24px")
                 span.item__text(i18n="Option text|the text of an option to open a dialog to change theme of the page") Change theme
-    dialog#header-widget__dialog.mdl-dialog
-        h6.mdl-dialog__title(i18n="Dialog title|the title of a dialog for adding a widget") Add a widget
-        div.mdl-dialog__content
-            add-widget-form([widgetTypes]="widgetTypes")
-        div.mdl-dialog__actions
-            button.mdl-button.mdl-js-button.mdl-js-ripple-effect(
-                (click)="addWidget(addWidgetFormComponent.getConfig())"
-                type="button"
-                i18n="Button text|the text of a button to add a widget to the widget board"
-            ) Add
-            button.close.mdl-button.mdl-js-button.mdl-js-ripple-effect(
-                type="button"
-                i18n="Button text|the text of a button to close the dialog for adding a widget without adding any widget to the widget board"
-            ) Cancel
