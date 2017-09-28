@@ -8,6 +8,7 @@ import { HeaderWidgetComponent } from "./header-widget.component";
 import { CarouselWidgetComponent } from "./carousel-widget.component";
 import { WeatherCardWidgetComponent } from "./weather-card-widget.component";
 import { DrawingBoardWidgetComponent } from "./drawing-board-widget.component";
+import { RichTextWidgetComponent } from "./rich-text-widget.component";
 import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
 import { WaterfallWidgetComponent} from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
@@ -32,6 +33,8 @@ export class WidgetComponentPipe implements PipeTransform {
                 return HeaderWidgetComponent;
             case "drawing-board":
                 return DrawingBoardWidgetComponent;
+            case "rich-text":
+                return RichTextWidgetComponent;
             case "moon-ocean":
                 return MoonOceanWidgetComponent;
             case "waterfall":

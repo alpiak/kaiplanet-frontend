@@ -55,7 +55,7 @@ export class HeaderWidgetComponent extends WidgetComponent implements OnInit, On
                 this.gridStackService.addWidget(result);
                 setTimeout(() => {
                     this.gridStackService.enterManageMode();
-                }, 0);
+                }, 200);
             }
         });
     }

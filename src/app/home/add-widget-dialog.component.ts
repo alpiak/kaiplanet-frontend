@@ -12,8 +12,7 @@ import { GridStackService } from "./grid-stack.service";
 import { Widget, Image } from "../interfaces";
 
 @Component({
-    template: require("./add-widget-dialog.component.pug"),
-    // styles: [ require("./add-widget-dialog.component.scss") ]
+    template: require("./add-widget-dialog.component.pug")
 })
 export class AddWidgetDialogComponent implements OnInit {
     private widgetSettingsForm: FormGroup;
@@ -25,9 +24,9 @@ export class AddWidgetDialogComponent implements OnInit {
     constructor(private formBuilder: FormBuilder, private gridStackService: GridStackService) {
         this.widget = {
             x: 0,
-            y: 0,
-            width: 2,
-            height: 2,
+            y: 2,
+            width: 5,
+            height: 3,
             type: ""
         };
     }
@@ -60,6 +59,11 @@ export class AddWidgetDialogComponent implements OnInit {
             if (!widget.data.images) {
                 widget.data.images = [];
             }
+        }
+
+        if (widget.type === "sns") {
+            widget.config = {};
+            widget.config.types = [{"id":"weibo","text":"Weibo","src":"https://passport.weibo.cn/signin/welcome"},{"id":"mop","text":"Mop","src":"http://3g3.mop.com/login.html"}];
         }
 
         if (widget.type === "plain") {

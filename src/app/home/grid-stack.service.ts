@@ -44,6 +44,10 @@ export class GridStackService {
             text: "Drawing board",
             id: "drawing-board"
         },
+        richText: {
+            text: "Rich text",
+            id: "rich-text"
+        },
         moonOcean: {
             text: "Moon and Ocean",
             id: "moon-ocean"

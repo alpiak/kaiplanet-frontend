@@ -12,6 +12,7 @@ import { HeaderWidgetComponent } from "./header-widget.component";
 import { CarouselWidgetComponent } from "./carousel-widget.component";
 import { WeatherCardWidgetComponent } from "./weather-card-widget.component";
 import { DrawingBoardWidgetComponent } from "./drawing-board-widget.component";
+import { RichTextWidgetComponent } from "./rich-text-widget.component";
 import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
 import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
@@ -35,6 +36,7 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
         CarouselWidgetComponent,
         WeatherCardWidgetComponent,
         DrawingBoardWidgetComponent,
+        RichTextWidgetComponent,
         MoonOceanWidgetComponent,
         SNSWidgetComponent,
         WaterfallWidgetComponent,
@@ -51,6 +53,7 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
         CarouselWidgetComponent,
         WeatherCardWidgetComponent,
         DrawingBoardWidgetComponent,
+        RichTextWidgetComponent,
         MoonOceanWidgetComponent,
         WaterfallWidgetComponent,
         PlainWidgetComponent,
@@ -62,6 +65,7 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
         CarouselWidgetComponent,
         WeatherCardWidgetComponent,
         DrawingBoardWidgetComponent,
+        RichTextWidgetComponent,
         MoonOceanWidgetComponent,
         WaterfallWidgetComponent,
         PlainWidgetComponent,

@@ -34,6 +34,14 @@ md-dialog-content
                     )
                         use(xlink:href="#ic_apps_24px")
             section
+                md-form-field
+                    input(
+                        formControlName="zIndex"
+                        type="number"
+                        placeholder="Stack Order Priority(z-index)"
+                        mdInput
+                    )
+            section
                 image-upload-panel(
                     [images]="widget?.config?.background?.images"
                     title="Background Images"

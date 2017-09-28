@@ -36,10 +36,11 @@ export class WidgetSettingsDialogComponent implements OnInit {
         this.widgetTypes = this.gridStackService.getWidgetTypes();
         this.widgetSettingsForm = this.formBuilder.group({
             basic: this.formBuilder.group({
-                backgroundColor: ["", allowedTextValidator(/^(?:rgba\(\s*(?:[0-9]+\.?[0-9]*,\s*){3}[0-9]+\.?[0-9]*\s*\)|#[a-f]{3,6})*$/i)]
+                backgroundColor: ["", allowedTextValidator(/^(?:rgba\(\s*(?:[0-9]+\.?[0-9]*,\s*){3}[0-9]+\.?[0-9]*\s*\)|#[a-f]{3,6})*$/i)],
+                zIndex: [0, Validators.required]
             }),
             detail: this.formBuilder.group({
-                plainType: ["", Validators.required] // for the plain widget
+                plainType: "" // for the plain widget
             })
         });
         this.gridStackService.getWidgetData().subscribe(gridStackData => {
@@ -59,7 +60,8 @@ export class WidgetSettingsDialogComponent implements OnInit {
 
             this.widgetSettingsForm.setValue({
                 basic: {
-                    backgroundColor: this.widget.config.background.color || null
+                    backgroundColor: this.widget.config.background.color || "",
+                    zIndex: this.widget.zIndex
                 },
                 detail: {
                     plainType: this.widget.type === "plain" ? this.widget.config.type : null
@@ -78,6 +80,8 @@ export class WidgetSettingsDialogComponent implements OnInit {
         } else {
             delete widget.config.background.color;
         }
+
+        widget.zIndex = formModel.basic.zIndex;
 
         if (formModel.detail.plainType) {
             widget.config.type = formModel.detail.plainType;

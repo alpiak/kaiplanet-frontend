@@ -26,6 +26,14 @@ md-dialog-content
                         *ngFor="let type of widgetTypes| array"
                         "[value]"="type.value.id"
                     ) {{ type.value.text }}
+            section
+                md-form-field
+                    input(
+                        formControlName="zIndex"
+                        type="number"
+                        placeholder="Stack Order Priority(z-index)"
+                        mdInput
+                    )
         md-expansion-panel(
             *ngIf="widget.type === 'carousel' || widget.type === 'plain'"
             formGroupName="detail"
