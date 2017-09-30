@@ -43,16 +43,20 @@ export class gridStackComponent implements AfterViewInit, OnDestroy {
 
                 this.gridStackService.init(this.gridStack = jQuery(".grid-stack").get(0), options).subscribe(() => {
                     this.subscriptions.push(this.gridStackService.on("resizestart").subscribe((event) => {
-                        jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        jQuery(event.target).addClass("mdl-shadow--2dp mdl-shadow--6dp");
                     }));
                     this.subscriptions.push(this.gridStackService.on("resizestop").subscribe((event) => {
-                        jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        jQuery(event.target).removeClass("mdl-shadow--2dp mdl-shadow--6dp");
                     }));
                     this.subscriptions.push(this.gridStackService.on("dragstart").subscribe((event) => {
-                        jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        if (jQuery(event.target).hasClass("grid-stack-item")) {
+                            jQuery(event.target).addClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        }
                     }));
                     this.subscriptions.push(this.gridStackService.on("dragstop").subscribe((event) => {
-                        jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        if (jQuery(event.target).hasClass("grid-stack-item")) {
+                            jQuery(event.target).removeClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        }
                     }));
                 });
             }, 200);

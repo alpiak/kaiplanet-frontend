@@ -6,6 +6,8 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
+const QuillModule = require("ngx-quill/bundles/index.js").QuillModule;
+
 import { MaterialModule } from "../material.module";
 
 import { HeaderWidgetComponent } from "./header-widget.component";
@@ -22,6 +24,7 @@ import { LoginDialogComponent } from "../login-dialog.component";
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
 import { DrawingBoardDirective } from "./drawing-board.directive";
+import { EmojiPanelDirective } from "../widgets/emoji-panel.directive";
 import { WaterfallDirective } from "./waterfall.directive";
 import { AnimatedBackgroundDirective } from "./animated-background.directive";
 
@@ -29,6 +32,7 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
     imports: [
         CommonModule,
         FormsModule,
+        QuillModule,
         MaterialModule
     ],
     declarations: [
@@ -45,6 +49,7 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,
+        EmojiPanelDirective,
         WaterfallDirective,
         AnimatedBackgroundDirective
     ],

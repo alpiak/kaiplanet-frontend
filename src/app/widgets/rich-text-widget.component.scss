@@ -4,15 +4,23 @@
   height: 15px;
   fill: rgba(0,0,0,.54);
 }
-.toolbar {
-  display: flex;
+.svg-ic_20px-dims {
+  width: 20px;
   height: 20px;
-  box-sizing: border-box;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  white-space: nowrap;
+  fill: rgba(0,0,0,.54);
 }
-.spacer {
-  flex: 1 1 auto;
+.editor-toolbar-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.editor-container {
+  height: 100%;
+  padding-top: 42px;
+}
+[md-icon-button] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }

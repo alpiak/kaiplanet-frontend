@@ -31,3 +31,6 @@ content = content.substr(0, 43) + " style='display:none'" + content.substr(43);
 const jQuery = require("jquery");
 
 jQuery("body").prepend(action + device + content);
+
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css";

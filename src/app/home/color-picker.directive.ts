@@ -32,7 +32,7 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             const offset = $el.offset();
 
             $overlay.offset({
-                top: offset.top + 50,
+                top: offset.top + 60,
                 left: offset.left + $el.width() - 380
             });
         };

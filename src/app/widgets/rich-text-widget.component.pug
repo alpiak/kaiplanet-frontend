@@ -2,11 +2,25 @@
    Created by qhyang on 2017/9/28.
 
 
-div.toolbar
-    span.spacer
-    button(
-        md-icon-button
-        color="accent"
-    )
-        svg.svg-ic_15px-dims(mdTooltip="Edit")
-            use(xlink:href="#ic_create_24px")
+div.editor-toolbar-container#rich-text-widget__editor-toolbar
+    span.ql-formats
+        select.ql-size
+            option(value="small")
+            option(selected)
+            option(value="large")
+            option(value="huge")
+    span.ql-formats
+        button(
+            emojiPanel
+            type="button"
+        )
+            svg.svg-ic_20px-dims
+                use(xlink:href="#ic_face_24px")
+div.editor-container
+    quill-editor([modules]="{ toolbar: '#rich-text-widget__editor-toolbar' }")
+button(
+    md-icon-button
+    color="accent"
+)
+    svg.svg-ic_15px-dims(mdTooltip="Edit")
+        use(xlink:href="#ic_create_24px")
