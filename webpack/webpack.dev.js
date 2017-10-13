@@ -51,6 +51,11 @@ module.exports = {
                 loader: "url-loader?limit=8192"
             },
             {
+                test: /\.json$/,
+                include: [ path.resolve(rootDir, "src", "scripts", "emojis.json") ],
+                loader: "url-loader?limit=8192"
+            },
+            {
                 test: /\.scss$/,
                 include: [
                     path.resolve(rootDir, "src", "style"),

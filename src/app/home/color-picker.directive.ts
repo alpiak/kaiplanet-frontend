@@ -7,6 +7,11 @@ import { Directive, ElementRef, AfterViewInit, OnDestroy, EventEmitter, Input, O
 
 import { BomService } from "../bom.service";
 
+const jQuery = require("jquery"),
+    $container = jQuery(`
+    <div style="position: fixed; z-index: 1000; pointer-events: none; top: 0; left: 0; height: 100%; width: 100%;"></div>
+`);
+
 @Directive({ selector: "[color-picker]" })
 export class ColorPickerDirective implements AfterViewInit, OnDestroy {
     @Input("color-picker") color: string | null;
@@ -16,16 +21,12 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
     constructor(private el: ElementRef, private bomService: BomService) { }
 
     ngAfterViewInit() {
-        const jQuery = require("jquery"),
-            $overlay = jQuery(`
+        const $overlay = jQuery(`
                 <div id="hslPicker" style="display: none; position: absolute; width: 410px; pointer-events: auto; z-index: 1000; box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);"></div>
             `),
             $el = jQuery(this.el.nativeElement);
 
-        jQuery(`
-            <div style="position: fixed; z-index: 1000; pointer-events: none; top: 0; left: 0; height: 100%; width: 100%;"></div>
-        `)
-            .append($overlay)
+        $container.append($overlay)
             .appendTo($el);
 
         const updateOverlayPosition = () => {
@@ -37,7 +38,6 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             });
         };
 
-        updateOverlayPosition();
         this.subscriptions.push(this.bomService.windowResize().subscribe(() => {
             updateOverlayPosition();
         }));
@@ -64,10 +64,11 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             $picker = jQuery("#hslPicker");
 
         $switch.bind("click", () => {
-            if ($picker.css("display") !== "none") {
-                $picker.css("display", "none");
-            } else {
+            if ($picker.css("display") === "none") {
                 $picker.css("display", "block");
+                updateOverlayPosition();
+            } else {
+                $picker.css("display", "none");
             }
         });
         $el.bind("click", (e: any) => {
@@ -77,12 +78,16 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             $picker.css("display", "none");
         }));
 
-        $el.find("input").first().bind("click", () => $picker.css("display", "block"));
+        $el.find("input").first().bind("click", () => {
+            $picker.css("display", "block");
+            updateOverlayPosition();
+        });
     }
 
     ngOnDestroy() {
         this.subscriptions.forEach(subscription => {
             subscription.unsubscribe();
         });
+        $container.remove();
     }
 }

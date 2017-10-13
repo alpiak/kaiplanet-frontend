@@ -10,6 +10,8 @@ import "material-design-lite/dist/material.blue_grey-amber.min";
 import "material-design-lite/material.js";
 import "../styles/languages";
 import "./parallax";
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css";
 
 import "../styles/base";
 import "../styles/default.theme";
@@ -32,5 +34,9 @@ const jQuery = require("jquery");
 
 jQuery("body").prepend(action + device + content);
 
-import "quill/dist/quill.core.css";
-import "quill/dist/quill.snow.css";
+const Quill = require("quill");
+
+// Add fonts to whitelist
+const Font = Quill.import('formats/font');
+Font.whitelist = ['mirza', 'aref'];
+Quill.register(Font, true);

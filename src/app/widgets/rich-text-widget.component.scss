@@ -9,13 +9,13 @@
   height: 20px;
   fill: rgba(0,0,0,.54);
 }
-.editor-toolbar-container {
+[quill-editor-toolbar] {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
 }
-.editor-container {
+quill-editor {
   height: 100%;
   padding-top: 42px;
 }

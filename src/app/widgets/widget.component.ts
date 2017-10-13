@@ -19,7 +19,7 @@ export class WidgetComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit () { }
 
     ngAfterViewInit () {
-        setTimeout(() => {
+        this.gridStackService.on("init").subscribe(() => {
             const jQuery = require("jquery");
 
             this.index = Number(
@@ -34,7 +34,7 @@ export class WidgetComponent implements OnInit, AfterViewInit, OnDestroy {
                 this.backgroundColor = this.widget.config && this.widget.config.background && this.widget.config.background.color || "transparent";
                 this.backgroundImages = this.widget.config && this.widget.config.background && this.widget.config.background.images;
             });
-        }, 200);
+        });
         this.gridStackService.on("update").subscribe((mutation) => {
             if (mutation.update && mutation.update[0] === this.index) {
                 this.gridStackService.getWidgetData().subscribe(gridStackData => {

@@ -20,6 +20,7 @@ interface WidgetConfig {
 interface WidgetData {
     imgUrl?: string;
     images?: Image[];
+    text?: any;
 }
 interface Background {
     color?: string;

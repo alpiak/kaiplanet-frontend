@@ -69,6 +69,7 @@ export class gridStackComponent implements AfterViewInit, OnDestroy {
                 }
                 if (mutation.update) {
                     mutation.update.forEach((widgetIndex: number) => {
+                        this.widgets[widgetIndex].zIndex = gridStackData[widgetIndex].zIndex;
                         this.widgets[widgetIndex].config = gridStackData[widgetIndex].config;
                         this.widgets[widgetIndex].data = gridStackData[widgetIndex].data;
                     });

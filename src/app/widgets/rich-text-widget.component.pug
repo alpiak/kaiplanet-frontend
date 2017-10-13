@@ -2,25 +2,132 @@
    Created by qhyang on 2017/9/28.
 
 
-div.editor-toolbar-container#rich-text-widget__editor-toolbar
-    span.ql-formats
-        select.ql-size
-            option(value="small")
-            option(selected)
-            option(value="large")
-            option(value="huge")
-    span.ql-formats
-        button(
+div(
+    [style.display]="editable ? 'none' : 'block'"
+    "[richText]"="widget?.data?.text"
+)
+quill-editor(
+    [style.display]="editable ? 'block' : 'none'"
+    "(onEditorCreated)" = "onEditorCreated($event)"
+)
+    div(quill-editor-toolbar)
+        span.ql-formats
+            span
+                select.ql-font
+                    option(value="aref") Aref Ruqaa
+                    option(value="mirza") Mirza
+                    option(selected) Roboto
+            select.ql-size
+                option(value="small")
+                option(selected)
+                option(value="large")
+                option(value="huge")
+        span.ql-formats
+            button.ql-bold(type="button")
+            button.ql-italic(type="button")
+            button.ql-underline(type="button")
+            button.ql-strike(type="button")
+        span.ql-formats
+            select.ql-color
+                option(selected)
+                option(value="#e60000")
+                option(value="#ff9900")
+                option(value="#ffff00")
+                option(value="#008a00")
+                option(value="#0066cc")
+                option(value="#9933ff")
+                option(value="#ffffff")
+                option(value="#facccc")
+                option(value="#ffebcc")
+                option(value="#ffffcc")
+                option(value="#cce8cc")
+                option(value="#cce0f5")
+                option(value="#ebd6ff")
+                option(value="#bbbbbb")
+                option(value="#f06666")
+                option(value="#ffc266")
+                option(value="#ffff66")
+                option(value="#66b966")
+                option(value="#66a3e0")
+                option(value="#c285ff")
+                option(value="#888888")
+                option(value="#a10000")
+                option(value="#b26b00")
+                option(value="#b2b200")
+                option(value="#006100")
+                option(value="#0047b2")
+                option(value="#6b24b2")
+                option(value="#444444")
+                option(value="#5c0000")
+                option(value="#663d00")
+                option(value="#666600")
+                option(value="#003700")
+                option(value="#002966")
+                option(value="#3d1466")
+            select.ql-background
+                option(value="#000000")
+                option(value="#e60000")
+                option(value="#ff9900")
+                option(value="#ffff00")
+                option(value="#008a00")
+                option(value="#0066cc")
+                option(value="#9933ff")
+                option(selected)
+                option(value="#facccc")
+                option(value="#ffebcc")
+                option(value="#ffffcc")
+                option(value="#cce8cc")
+                option(value="#cce0f5")
+                option(value="#ebd6ff")
+                option(value="#bbbbbb")
+                option(value="#f06666")
+                option(value="#ffc266")
+                option(value="#ffff66")
+                option(value="#66b966")
+                option(value="#66a3e0")
+                option(value="#c285ff")
+                option(value="#888888")
+                option(value="#a10000")
+                option(value="#b26b00")
+                option(value="#b2b200")
+                option(value="#006100")
+                option(value="#0047b2")
+                option(value="#6b24b2")
+                option(value="#444444")
+                option(value="#5c0000")
+                option(value="#663d00")
+                option(value="#666600")
+                option(value="#003700")
+                option(value="#002966")
+                option(value="#3d1466")
+        span.ql-formats
+            button(
             emojiPanel
+            "(onEmojiSelect)"="onEmojiSelect($event)"
             type="button"
-        )
-            svg.svg-ic_20px-dims
-                use(xlink:href="#ic_face_24px")
-div.editor-container
-    quill-editor([modules]="{ toolbar: '#rich-text-widget__editor-toolbar' }")
+            )
+                svg.svg-ic_20px-dims
+                    use(xlink:href="#ic_face_24px")
+        | {{ width }}
 button(
+    [style.display]="editable ? 'none' : 'block'"
     md-icon-button
     color="accent"
 )
-    svg.svg-ic_15px-dims(mdTooltip="Edit")
+    svg.svg-ic_15px-dims(
+        (click)="editable = true"
+        mdTooltip="Edit"
+        mdTooltipPosition="above"
+    )
         use(xlink:href="#ic_create_24px")
+button(
+    [style.display]="editable ? 'block' : 'none'"
+    md-icon-button
+    color="accent"
+)
+    svg.svg-ic_15px-dims(
+        (click)="onSave()"
+        mdTooltip="Save"
+        mdTooltipPosition="above"
+    )
+        use(xlink:href="#ic_save_24px")

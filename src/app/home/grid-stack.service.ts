@@ -18,7 +18,7 @@ let jQuery = require("jquery");
 
 @Injectable()
 export class GridStackService {
-    private gridStack: HTMLElement;
+    private gridStackEl: HTMLElement;
     private widgetTypes = {
         plain: {
             text: "Plain",
@@ -118,8 +118,9 @@ export class GridStackService {
             });
         });
     }
+
     init(el: HTMLElement, options: Object): Observable<any> {
-        this.gridStack = el;
+        this.gridStackEl = el;
         jQuery(el).addClass("static").gridstack(options);
         window["componentHandler"].upgradeElements(el);
         this.resizeStartObservable = Observable.create((subscriber: Subscriber<any>) => {
@@ -151,26 +152,30 @@ export class GridStackService {
             subscriber.complete();
         });
     }
+
     destroy() {
         this.leaveManageMode();
-        jQuery(this.gridStack).off("resizestart resizestop dragstart dragstop");
+        jQuery(this.gridStackEl).off("resizestart resizestop dragstart dragstop");
         this.widgets = [];
     }
+
     getWidgetTypes(): any {
         return this.widgetTypes;
     }
+
     removeWidget(index: number): void {
         this.updateSubject.next({ remove: [ index ] });
 
-        let $gridStackItem = jQuery(this.gridStack)
+        let $gridStackItem = jQuery(this.gridStackEl)
             .children("[data-index=" + index + "]")
             .fadeOut("fast", () => {
-                jQuery(this.gridStack)
+                jQuery(this.gridStackEl)
                     .data("gridstack")
                     .removeWidget($gridStackItem.get(0), false);
                 this.widgets.splice(index, 1);
             });
     }
+
     addWidget(widget: Widget): number {
         let len = this.widgets.push(widget);
 
@@ -178,8 +183,9 @@ export class GridStackService {
 
         return len - 1;
     }
+
     enterManageMode() {
-        jQuery(this.gridStack)
+        jQuery(this.gridStackEl)
             .removeClass("static")
             .data("gridstack")
             .enable();
@@ -190,25 +196,27 @@ export class GridStackService {
             this.leaveManageMode();
             this.snackBarRef.dismiss();
         });
-        jQuery(this.gridStack)
+        jQuery(this.gridStackEl)
             .find(".grid-stack-item")
             .addClass("grid-stack-item__shake");
     }
+
     leaveManageMode() {
         if (this.snackBarRef) {
             this.snackBarRef.dismiss();
         }
-        jQuery(this.gridStack)
+        jQuery(this.gridStackEl)
             .addClass("static")
             .data("gridstack")
             .disable();
-        jQuery(this.gridStack)
+        jQuery(this.gridStackEl)
             .find(".grid-stack-item")
             .removeClass("grid-stack-item__shake");
         this.leaveManageModeSubject.next();
     }
+
     updateGridStackPositionData() {
-        jQuery(this.gridStack)
+        jQuery(this.gridStackEl)
             .children(".grid-stack-item")
             .each((index: number, el: HTMLElement) => {
                 const $el = jQuery(el);
@@ -222,11 +230,20 @@ export class GridStackService {
             });
         this.userService.updateGridStackData(JSON.stringify(this.widgets));
     }
+
     updateGridStackData(index: number, gridData: Widget) {
         this.widgets[index] = jQuery.extend(true, {}, gridData);
         this.userService.updateGridStackData(JSON.stringify(this.widgets));
         this.updateSubject.next({ update: [ index ] });
     }
+
+    getWidgetWidth(index: number) {
+        return jQuery(this.gridStackEl)
+            .find(".grid-stack-item")
+            .eq(index)
+            .width();
+    }
+
     on(eventType: string): Observable<any> {
         switch (eventType) {
             case "init":

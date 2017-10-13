@@ -27,6 +27,7 @@ import { DrawingBoardDirective } from "./drawing-board.directive";
 import { EmojiPanelDirective } from "../widgets/emoji-panel.directive";
 import { WaterfallDirective } from "./waterfall.directive";
 import { AnimatedBackgroundDirective } from "./animated-background.directive";
+import { RichTextDirective } from "./rich-text.directive";
 
 @NgModule({
     imports: [
@@ -51,7 +52,8 @@ import { AnimatedBackgroundDirective } from "./animated-background.directive";
         DrawingBoardDirective,
         EmojiPanelDirective,
         WaterfallDirective,
-        AnimatedBackgroundDirective
+        AnimatedBackgroundDirective,
+        RichTextDirective
     ],
     entryComponents: [
         HeaderWidgetComponent,
