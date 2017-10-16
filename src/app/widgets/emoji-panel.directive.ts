@@ -9,7 +9,7 @@ import { BomService } from "../bom.service";
 
 const jQuery = require("jquery"),
     $container = jQuery(`
-        <div style="position: fixed; z-index: 1000; pointer-events: none; top: 0; left: 0; height: 100%; width: 100%;"></div>
+        <div style="display: none; position: fixed; z-index: 1000; top: 0; left: 0; height: 100%; width: 100%;"></div>
     `);
 
 
@@ -22,7 +22,7 @@ export class EmojiPanelDirective implements AfterViewInit, OnDestroy {
 
     ngAfterViewInit() {
         const $overlay = jQuery(`
-                <div style="display: none; position:absolute; pointer-events: all;"></div>
+                <div style="position:absolute;"></div>
             `);
 
         $container.append($overlay)
@@ -41,11 +41,11 @@ export class EmojiPanelDirective implements AfterViewInit, OnDestroy {
 
         $el.bind("click", (e: any) => {
             e.stopPropagation();
-            if ($overlay.css("display") === "none") {
-               $overlay.css("display", "block");
+            if ($container.css("display") === "none") {
+                $container.css("display", "block");
                 updateOverlayPosition();
             } else {
-               $overlay.css("display", "none");
+                $container.css("display", "none");
             }
         });
         this.subscriptions.push(this.bomService.windowResize().subscribe(() => {
@@ -55,7 +55,7 @@ export class EmojiPanelDirective implements AfterViewInit, OnDestroy {
             e.stopPropagation();
         });
         this.subscriptions.push(this.bomService.documentClick().subscribe(() => {
-            $overlay.css("display", "none");
+            $container.css("display", "none");
         }));
 
         require("../../styles/emojipanel");
@@ -69,7 +69,7 @@ export class EmojiPanelDirective implements AfterViewInit, OnDestroy {
 
         emojiPanel.addListener('select', (emoji: any) => {
             this.onEmojiSelect.emit(emoji);
-            $overlay.css("display", "none");
+            $container.css("display", "none");
 
         });
     }

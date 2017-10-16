@@ -37,6 +37,6 @@ jQuery("body").prepend(action + device + content);
 const Quill = require("quill");
 
 // Add fonts to whitelist
-const Font = Quill.import('formats/font');
-Font.whitelist = ['mirza', 'aref'];
+const Font = Quill.import("formats/font");
+Font.whitelist = ["sofia", "slabo", "roboto", "inconsolata", "ubuntu", "mirza", "aref"];
 Quill.register(Font, true);

@@ -79,25 +79,52 @@ img.emoji {
 // Quill
 
 // Set default font-family
-[quill-editor-element] {
-  font-family: "Roboto";
+.ql-editor {
+  font-family: "Roboto", serif;
 }
 
 // Set dropdown font-families
-[quill-editor-toolbar] .ql-font span[data-label="Aref Ruqaa"]::before {
-  font-family: "Aref Ruqaa";
+[quill-editor-toolbar] .ql-font span[data-label="Sofia Pro"]::before {
+  font-family: "Sofia Pro", sans-serif;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Slabo 13px"]::before {
+  font-family: "Slabo 13px", sans-serif;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Roboto Slab"]::before {
+  font-family: "Roboto Slab", serif;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Inconsolata"]::before {
+  font-family: "Inconsolata", monospace;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Ubuntu Mono"]::before {
+  font-family: "Ubuntu Mono", monospace;
 }
 [quill-editor-toolbar] .ql-font span[data-label="Mirza"]::before {
-  font-family: "Mirza";
+  font-family: "Mirza", serif;
 }
-[quill-editor-toolbar] .ql-font span[data-label="Roboto"]::before {
-  font-family: "Roboto";
+[quill-editor-toolbar] .ql-font span[data-label="Aref Ruqaa"]::before {
+  font-family: "Aref Ruqaa", serif;
 }
 
 // Set content font-families
+.ql-font-sofia {
+  font-family: "Sofia Pro", sans-serif;
+}
+.ql-font-slabo {
+  font-family: "Slabo 13px", sans-serif;
+}
+.ql-font-roboto {
+  font-family: "Roboto Slab", serif;
+}
+.ql-font-inconsolata {
+  font-family: "Inconsolata", monospace;
+}
+.ql-font-ubuntu {
+  font-family: "Ubuntu Mono", monospace;
+}
 .ql-font-mirza {
-  font-family: "Mirza";
+  font-family: "Mirza", serif;
 }
 .ql-font-aref {
-  font-family: "Aref Ruqaa";
+  font-family: "Aref Ruqaa", serif;
 }

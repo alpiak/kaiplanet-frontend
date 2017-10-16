@@ -239,8 +239,7 @@ export class GridStackService {
 
     getWidgetWidth(index: number) {
         return jQuery(this.gridStackEl)
-            .find(".grid-stack-item")
-            .eq(index)
+            .find(".grid-stack-item[data-index=" + index + "]")
             .width();
     }
 

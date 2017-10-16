@@ -11,9 +11,14 @@ quill-editor(
     "(onEditorCreated)" = "onEditorCreated($event)"
 )
     div(quill-editor-toolbar)
-        span.ql-formats
-            span
+        span.ql-formats([style.display]="width > 300 ? 'inline-block' : 'none'")
+            span([style.display]="width > 636 ? 'inline-block' : 'none'")
                 select.ql-font
+                    option(value="sofia") Sofia Pro
+                    option(value="slabo") Slabo 13px
+                    option(value="roboto") Roboto Slab
+                    option(value="inconsolata") Inconsolata
+                    option(value="ubuntu") Ubuntu Mono
                     option(value="aref") Aref Ruqaa
                     option(value="mirza") Mirza
                     option(selected) Roboto
@@ -22,12 +27,12 @@ quill-editor(
                 option(selected)
                 option(value="large")
                 option(value="huge")
-        span.ql-formats
+        span.ql-formats([style.display]="width > 187 ? 'inline-block' : 'none'")
             button.ql-bold(type="button")
             button.ql-italic(type="button")
             button.ql-underline(type="button")
             button.ql-strike(type="button")
-        span.ql-formats
+        span.ql-formats([style.display]="width > 457 ? 'inline-block' : 'none'")
             select.ql-color
                 option(selected)
                 option(value="#e60000")
@@ -100,15 +105,74 @@ quill-editor(
                 option(value="#003700")
                 option(value="#002966")
                 option(value="#3d1466")
+        span.ql-formats([style.display]="width > 1045 ? 'inline-block' : 'none'")
+            button.ql-script(
+                value="super"
+                type="button"
+            )
+            button.ql-script(
+                value="sub"
+                type="button"
+            )
+        span.ql-formats([style.display]="width > 974 ? 'inline-block' : 'none'")
+            button.ql-header(
+                value="1"
+                type="button"
+            )
+            button.ql-header(
+                value="2"
+                type="button"
+            )
+            button.ql-blockquote(type="button")
+            button.ql-code-block(type="button")
+        span.ql-formats([style.display]="width > 847 ? 'inline-block' : 'none'")
+            button.ql-list(
+                value="ordered"
+                type="button"
+            )
+            button.ql-list(
+                value="bullet"
+                type="button"
+            )
+            button.ql-indent(
+                value="-1"
+                type="button"
+            )
+            button.ql-indent(
+                value="+1"
+                type="button"
+            )
+        span.ql-formats([style.display]="width > 528 ? 'inline-block' : 'none'")
+            button.ql-direction(type="button")
+            select.ql-align
+                option(selected)
+                option(value="center")
+                option(value="right")
+                option(value="justify")
+        span.ql-formats([style.display]="width > 343 ? 'inline-block' : 'none'")
+            button.ql-link(
+                [style.display]="width > 692 ? 'inline-block' : 'none'"
+                type="button"
+            )
+            button.ql-image(type="button")
+            button.ql-video(
+                [style.display]="width > 664 ? 'inline-block' : 'none'"
+                type="button"
+            )
+            button.ql-formula(
+                [style.display]="width > 720 ? 'inline-block' : 'none'"
+                type="button"
+            )
+        span.ql-formats([style.display]="width > 386 ? 'inline-block' : 'none'")
+            button.ql-clean(type="button")
         span.ql-formats
             button(
-            emojiPanel
-            "(onEmojiSelect)"="onEmojiSelect($event)"
-            type="button"
+                emojiPanel
+                "(onEmojiSelect)"="onEmojiSelect($event)"
+                type="button"
             )
                 svg.svg-ic_20px-dims
                     use(xlink:href="#ic_face_24px")
-        | {{ width }}
 button(
     [style.display]="editable ? 'none' : 'block'"
     md-icon-button
