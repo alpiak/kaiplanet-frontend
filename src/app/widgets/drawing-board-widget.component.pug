@@ -7,4 +7,5 @@ div.container.background(
     "[imgUrl]"="imgUrl"
     "(onDrew)"="onDrew($event)"
     "[style.backgroundColor]"="backgroundColor"
+    "[style.backgroundImage]"="backgroundImages && backgroundImages[0] ? 'url(' + backgroundImages[0].url + ')' : 'none'"
 )

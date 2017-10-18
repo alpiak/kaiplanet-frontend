@@ -21,6 +21,7 @@ interface WidgetData {
     imgUrl?: string;
     images?: Image[];
     text?: any;
+    linkUrl?: string;
 }
 interface Background {
     color?: string;

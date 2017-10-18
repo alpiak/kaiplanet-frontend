@@ -62,6 +62,13 @@ md-dialog-content
                     "(onUploaded)"="onImagesUploaded($event)"
                     "(onRemoved)"="onImageRemoved($event)"
                 )
+            section(*ngIf="widget.type === 'carousel'")
+                md-form-field
+                    input(
+                        formControlName="linkUrl"
+                        mdInput
+                        placeholder="Link To"
+                    )
             section(*ngIf="widget.type === 'plain'")
                 md-select(
                     placeholder="Type"

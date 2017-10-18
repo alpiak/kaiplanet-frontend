@@ -8,9 +8,14 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class BomService {
+    navigateTo(url: string) {
+        window.location.href = url;
+    }
+
     windowResize(): Observable<any> {
         return Observable.fromEvent(window, "resize");
     }
+
     documentClick(): Observable<any> {
         return Observable.fromEvent(document, "click");
     }

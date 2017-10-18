@@ -11,7 +11,8 @@ div.background(
         *ngIf="images.length"
         threeImageTransition
         "[images]"="images"
-        "(click)"="navigateTo('/earth')"
+        "(click)"="navigateTo(widget.data.linkUrl)"
+        "[style.cursor]"="widget.data.linkUrl ? 'pointer' : 'default'"
     )
     div(
         *ngIf="!images.length"

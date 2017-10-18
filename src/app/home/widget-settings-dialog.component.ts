@@ -40,7 +40,8 @@ export class WidgetSettingsDialogComponent implements OnInit {
                 zIndex: [0, Validators.required]
             }),
             detail: this.formBuilder.group({
-                plainType: "" // for the plain widget
+                plainType: null, // For the plain widget
+                linkUrl: null // For the carousel widget
             })
         });
         this.gridStackService.getWidgetData().subscribe(gridStackData => {
@@ -64,7 +65,8 @@ export class WidgetSettingsDialogComponent implements OnInit {
                     zIndex: this.widget.zIndex
                 },
                 detail: {
-                    plainType: this.widget.type === "plain" ? this.widget.config.type : null
+                    plainType: this.widget.type === "plain" ? this.widget.config.type || null : null,
+                    linkUrl: this.widget.type === "carousel" ? this.widget.data.linkUrl || null : null
                 }
             });
         });
@@ -85,6 +87,9 @@ export class WidgetSettingsDialogComponent implements OnInit {
 
         if (formModel.detail.plainType) {
             widget.config.type = formModel.detail.plainType;
+        }
+        if (formModel.detail.linkUrl) {
+            widget.data.linkUrl = formModel.detail.linkUrl;
         }
 
         return widget;
