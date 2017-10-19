@@ -3,10 +3,10 @@
  */
 
 import { NgModule } from "@angular/core";
-import { MdButtonModule, MdMenuModule, MdDialogModule, MdSnackBarModule, MdExpansionModule, MdInputModule, MdSelectModule, MdGridListModule, MdCardModule, MdFormFieldModule, MdProgressBarModule, MdTooltipModule } from "@angular/material";
+import { MdButtonModule, MdMenuModule, MdDialogModule, MdSnackBarModule, MdInputModule, MdSelectModule, MdFormFieldModule, MdRadioModule, MdGridListModule, MdCardModule, MdProgressBarModule, MdExpansionModule, MdTooltipModule } from "@angular/material";
 
 @NgModule({
-    imports: [ MdButtonModule, MdMenuModule, MdDialogModule, MdSnackBarModule, MdExpansionModule, MdInputModule, MdSelectModule, MdGridListModule, MdCardModule, MdProgressBarModule, MdFormFieldModule, MdTooltipModule ],
-    exports: [ MdButtonModule, MdMenuModule, MdDialogModule, MdSnackBarModule, MdExpansionModule, MdInputModule, MdSelectModule, MdGridListModule, MdCardModule, MdProgressBarModule, MdFormFieldModule, MdTooltipModule ],
+    imports: [ MdButtonModule, MdMenuModule, MdDialogModule, MdSnackBarModule, MdInputModule, MdSelectModule, MdFormFieldModule, MdRadioModule, MdGridListModule, MdCardModule, MdProgressBarModule, MdExpansionModule, MdTooltipModule ],
+    exports: [ MdButtonModule, MdMenuModule, MdDialogModule, MdSnackBarModule, MdInputModule, MdSelectModule, MdFormFieldModule, MdRadioModule, MdGridListModule, MdCardModule, MdProgressBarModule, MdExpansionModule, MdTooltipModule ],
 })
 export class MaterialModule { }

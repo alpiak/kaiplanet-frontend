@@ -18,6 +18,8 @@ import { widgetFrameComponent } from "./widget-frame.component";
 import { AddWidgetDialogComponent } from "./add-widget-dialog.component";
 import { ImageUploadPanelComponent } from "./image-upload-panel.component";
 import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.component";
+import { LoginDialogComponent } from "../login-dialog.component";
+import { UserProfileDialogComponent } from "../home/user-profile-dialog.component";
 
 import { FileSelectDirective, FileDropDirective } from "ng2-file-upload";
 
@@ -44,6 +46,8 @@ import { ArrayPipe } from "../array.pipe";
         widgetFrameComponent,
         AddWidgetDialogComponent,
         WidgetSettingsDialogComponent,
+        LoginDialogComponent,
+        UserProfileDialogComponent,
         ImageUploadPanelComponent,
         ColorPickerDirective,
         WidgetComponentPipe,
@@ -51,7 +55,9 @@ import { ArrayPipe } from "../array.pipe";
     ],
     entryComponents: [
         AddWidgetDialogComponent,
-        WidgetSettingsDialogComponent
+        WidgetSettingsDialogComponent,
+        LoginDialogComponent,
+        UserProfileDialogComponent
     ]
 })
 export class HomeModule { }

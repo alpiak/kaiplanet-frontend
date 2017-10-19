@@ -48,13 +48,13 @@ export class EmojiPanelDirective implements AfterViewInit, OnDestroy {
                 $container.css("display", "none");
             }
         });
-        this.subscriptions.push(this.bomService.windowResize().subscribe(() => {
+        this.subscriptions.push(this.bomService.onWindowResize().subscribe(() => {
             updateOverlayPosition();
         }));
         $overlay.bind("click", (e: any) => {
             e.stopPropagation();
         });
-        this.subscriptions.push(this.bomService.documentClick().subscribe(() => {
+        this.subscriptions.push(this.bomService.onDocumentClick().subscribe(() => {
             $container.css("display", "none");
         }));
 

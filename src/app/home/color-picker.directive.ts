@@ -38,7 +38,7 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             });
         };
 
-        this.subscriptions.push(this.bomService.windowResize().subscribe(() => {
+        this.subscriptions.push(this.bomService.onWindowResize().subscribe(() => {
             updateOverlayPosition();
         }));
 
@@ -74,7 +74,7 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
         $el.bind("click", (e: any) => {
             e.stopPropagation()
         });
-        this.subscriptions.push(this.bomService.documentClick().subscribe(() => {
+        this.subscriptions.push(this.bomService.onDocumentClick().subscribe(() => {
             $picker.css("display", "none");
         }));
 

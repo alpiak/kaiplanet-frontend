@@ -40,7 +40,7 @@ export class ThreeImageTransitionDirective implements OnChanges {
                     setTimeout(() => threeImageTransition.resize(), 300);
                 }
             });
-            delay.call(this.bomService.windowResize(), 300)
+            delay.call(this.bomService.onWindowResize(), 300)
                 .subscribe(() => threeImageTransition.resize());
         });
     }

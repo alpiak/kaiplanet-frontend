@@ -3,7 +3,7 @@
  */
 
 import { Component, OnInit, Inject, ViewChildren, QueryList } from "@angular/core";
-import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MD_DIALOG_DATA } from "@angular/material";
 
 import { ImageUploadPanelComponent } from "./image-upload-panel.component";
@@ -11,13 +11,6 @@ import { ImageUploadPanelComponent } from "./image-upload-panel.component";
 import { GridStackService } from "./grid-stack.service";
 
 import { Widget, Image } from "../interfaces";
-
-function allowedTextValidator(nameRe: RegExp): ValidatorFn {
-    return (control: AbstractControl): {[key: string]: any} => {
-        const valid = nameRe.test(control.value);
-        return valid ? null : {'forbidden': {value: control.value}};
-    };
-}
 
 @Component({
     template: require("./widget-settings-dialog.component.pug"),
@@ -36,7 +29,7 @@ export class WidgetSettingsDialogComponent implements OnInit {
         this.widgetTypes = this.gridStackService.getWidgetTypes();
         this.widgetSettingsForm = this.formBuilder.group({
             basic: this.formBuilder.group({
-                backgroundColor: ["", allowedTextValidator(/^(?:rgba\(\s*(?:[0-9]+\.?[0-9]*,\s*){3}[0-9]+\.?[0-9]*\s*\)|#[a-f]{3,6})*$/i)],
+                backgroundColor: ["", Validators.pattern(/^(?:rgba\(\s*(?:[0-9]+\.?[0-9]*,\s*){3}[0-9]+\.?[0-9]*\s*\)|#[a-f]{3,6})*$/i)],
                 zIndex: [0, Validators.required]
             }),
             detail: this.formBuilder.group({
@@ -62,7 +55,7 @@ export class WidgetSettingsDialogComponent implements OnInit {
             this.widgetSettingsForm.setValue({
                 basic: {
                     backgroundColor: this.widget.config.background.color || "",
-                    zIndex: this.widget.zIndex
+                    zIndex: this.widget.zIndex || null
                 },
                 detail: {
                     plainType: this.widget.type === "plain" ? this.widget.config.type || null : null,

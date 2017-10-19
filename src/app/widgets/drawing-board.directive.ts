@@ -76,7 +76,7 @@ export class DrawingBoardDirective implements AfterViewInit {
         window.addEventListener("resize", () => {
             setTimeout(() => drawingBoard.resize(), 300);
         });
-        delay.call(this.bomService.windowResize(), 300)
+        delay.call(this.bomService.onWindowResize(), 300)
             .subscribe(() => {
                 drawingBoard.resize();
                 drawingBoard.restoreWebStorage();

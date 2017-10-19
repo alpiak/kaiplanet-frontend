@@ -40,7 +40,7 @@ export class AnimatedBackgroundDirective implements OnChanges {
                     setTimeout(() => randomWalkers.resize(), 300);
                 }
             });
-            delay.call(this.bomService.windowResize(), 300)
+            delay.call(this.bomService.onWindowResize(), 300)
                 .subscribe(() => randomWalkers.resize());
         }
     }

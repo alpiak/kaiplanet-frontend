@@ -19,7 +19,6 @@ import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
 import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
 import { SNSWidgetComponent } from "./sns-widget.component";
-import { LoginDialogComponent } from "../login-dialog.component";
 
 import { ThreeImageTransitionDirective } from "./three-image-transition.directive";
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
@@ -46,7 +45,6 @@ import { RichTextDirective } from "./rich-text.directive";
         SNSWidgetComponent,
         WaterfallWidgetComponent,
         PlainWidgetComponent,
-        LoginDialogComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,
@@ -65,7 +63,6 @@ import { RichTextDirective } from "./rich-text.directive";
         WaterfallWidgetComponent,
         PlainWidgetComponent,
         SNSWidgetComponent,
-        LoginDialogComponent
     ],
     exports: [
         HeaderWidgetComponent,

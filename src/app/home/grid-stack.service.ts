@@ -97,9 +97,11 @@ export class GridStackService {
         return Observable.create((subscriber: Subscriber<any>) => {
             if (this.widgets.length) {
                 subscriber.next(jQuery.extend(true, [], this.widgets));
+                subscriber.complete();
             } else {
                 this.prepare().subscribe(() => {
                     subscriber.next(jQuery.extend(true, [], this.widgets));
+                    subscriber.complete();
                 });
             }
         });
@@ -228,12 +230,12 @@ export class GridStackService {
                     this.widgets[$el.attr("data-index")].height = $el.attr("data-gs-height");
                 }
             });
-        this.userService.updateGridStackData(JSON.stringify(this.widgets));
+        this.userService.updateGridStackData(JSON.stringify(this.widgets)).subscribe(); //TODO: add error handler
     }
 
     updateGridStackData(index: number, gridData: Widget) {
         this.widgets[index] = jQuery.extend(true, {}, gridData);
-        this.userService.updateGridStackData(JSON.stringify(this.widgets));
+        this.userService.updateGridStackData(JSON.stringify(this.widgets)).subscribe(); //TODO: add error handler
         this.updateSubject.next({ update: [ index ] });
     }
 

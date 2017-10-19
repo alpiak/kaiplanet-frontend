@@ -30,7 +30,7 @@ export class RichTextWidgetComponent extends WidgetComponent implements AfterVie
                 this.editor.setContents(this.widget.data.text);
             }
             this.width = this.gridStackService.getWidgetWidth(this.index);
-            this.subscriptions.push(this.bomService.windowResize().subscribe(() => {
+            this.subscriptions.push(this.bomService.onWindowResize().subscribe(() => {
                 this.width = this.gridStackService.getWidgetWidth(this.index);
             }));
             this.subscriptions.push(this.gridStackService.on("resizestop").subscribe(() => {

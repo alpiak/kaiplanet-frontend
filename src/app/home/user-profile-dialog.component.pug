@@ -1,0 +1,62 @@
+//
+   Created by qhyang on 2017/10/18.
+
+h5(
+    md-dialog-title
+    i18n="Dialog title|the title of a dialog for changing user profile"
+) User Profile
+md-dialog-content
+    form(
+        [formGroup]="userProfileForm"
+        novalidate
+    )
+        md-expansion-panel(
+            formGroupName="basic"
+            expanded
+        )
+            md-expansion-panel-header
+                md-panel-title(i18n="Panel title|the title of a panel in a dialog for changing user profile") Basic Settings
+            section
+                md-form-field
+                    input(
+                        formControlName="nickName"
+                        placeholder="Nick Name"
+                        mdInput
+                    )
+            section
+                md-form-field
+                    input(
+                        formControlName="birthday"
+                        placeholder="Birthday"
+                        mdInput
+                    )
+                    md-error(
+                        *ngIf="userProfileForm.controls.basic.controls.birthday.valid === false"
+                        i18n="Error message|the error massage displayed under a input field when the date the user input can't be parsed"
+                    ) Not a valid date
+            section
+                md-radio-group(formControlName="gender")
+                    md-radio-button(
+                        [value]="1"
+                        i18n="Option text|the text of an option of a radio group for the user to choose the gender"
+                    ) Male
+                    md-radio-button(
+                        [value]="2"
+                        i18n="Option text|the text of an option of a radio group for the user to choose the gender"
+                    ) Female
+                    md-radio-button(
+                        [value]="0"
+                        i18n="Option text|the text of an option of a radio group for the user to choose the gender"
+                    ) Other
+md-dialog-actions
+    button(
+        "[md-dialog-close]"="getCurrentSettings()"
+        "[disabled]"="userProfileForm.status !== 'VALID'"
+        md-button
+        i18n="Button text|the text of a button to submit the changes of user profile and close the user profile dialog"
+    ) Submit
+    button(
+        md-button
+        md-dialog-close=""
+        i18n="Button text|the text of a button to close the user profile dialog without submitting the changes of user profile"
+    ) Close

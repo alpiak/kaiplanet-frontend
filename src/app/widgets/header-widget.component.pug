@@ -40,9 +40,12 @@ div.container.background(
             button.tool-pane__button(
                 [mdMenuTriggerFor]="userMenu"
                 md-button
-            ) {{ user?.nickName }}
+            ) {{ user?.nickName || "Guest" }}
             md-menu(#userMenu="mdMenu")
-                button(md-menu-item)
+                button(
+                    (click)="openUserProfileDialog()"
+                    md-menu-item
+                )
                     svg.item__icon_with-text.svg-ic_20px-dims
                         use(xlink:href="#ic_create_24px")
                     span.item__text(i18n="Option text|the text of an option to open user profile dialog") Profile

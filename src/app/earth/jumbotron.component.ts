@@ -24,7 +24,7 @@ export class JumbotronComponent implements OnInit {
 
     ngOnInit() {
         new Parallax(document.getElementById("scene"));
-        this.bomService.windowResize()
+        this.bomService.onWindowResize()
             .map((event: any) => event.target)
             .subscribe((target: Window) => {
                 this.height = target.innerHeight;

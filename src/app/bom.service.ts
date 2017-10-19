@@ -12,11 +12,11 @@ export class BomService {
         window.location.href = url;
     }
 
-    windowResize(): Observable<any> {
+    onWindowResize(): Observable<any> {
         return Observable.fromEvent(window, "resize");
     }
 
-    documentClick(): Observable<any> {
+    onDocumentClick(): Observable<any> {
         return Observable.fromEvent(document, "click");
     }
 }
