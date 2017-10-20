@@ -76,7 +76,7 @@ export class UserService {
 
         urlSearchParams.set("data", data);
 
-        return this.http.post(require("../config.json").urlBase + "/user/gridstack/update", urlSearchParams.toString(), { headers: new Headers({"Content-Type": "application/x-www-form-urlencoded"})});
+        return this.http.post(require("../config.json").urlBase + "/user/gridstack/update", urlSearchParams.toString().replace(/\+/g,'%2B'), { headers: new Headers({"Content-Type": "application/x-www-form-urlencoded"})});
     }
 
 

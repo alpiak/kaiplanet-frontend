@@ -29,6 +29,7 @@ md-card
             div(
                 ng2FileDrop
                 [uploader]="uploader"
+                i18n="User hint| text to hint the user to drop file(s) there to upload"
             ) Drop file here or...
             input(
                 type="file"
@@ -53,6 +54,7 @@ md-card
                             button(
                                 (click)="item.remove()"
                                 md-icon-button
+                                title="Remove"
                             )
                                 svg.color-picker__switch.svg-ic_20px-dims
                                     use(xlink:href="#ic_delete_24px")
@@ -67,8 +69,9 @@ md-card
             "(click)"="uploader.uploadAll()"
             "[disabled]"="!uploader.getNotUploadedItems().length"
             md-button
+            i18n="Button text|the text of a button to enter a panel to add images"
         ) Add
         button(
             (click)="showBackgroundImageConfig = !showBackgroundImageConfig"
             md-button
-        ) {{ showBackgroundImageConfig ? "Cancel" : "Change" }}
+        ) {{ showBackgroundImageConfig ? "Cancel" : "Add" }}

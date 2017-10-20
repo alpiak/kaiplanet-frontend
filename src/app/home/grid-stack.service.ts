@@ -124,6 +124,17 @@ export class GridStackService {
     init(el: HTMLElement, options: Object): Observable<any> {
         this.gridStackEl = el;
         jQuery(el).addClass("static").gridstack(options);
+
+        //TODO: remove when the gridstack customization feature added
+        this.userService.getUserGridStackData().subscribe((res:any) => {
+            res = res.json();
+            if (res.code !== 1) {
+                jQuery(this.gridStackEl).css({
+                    "max-width": "1438px"
+                });
+            }
+        });
+
         window["componentHandler"].upgradeElements(el);
         this.resizeStartObservable = Observable.create((subscriber: Subscriber<any>) => {
             jQuery(el).on("resizestart", (event: Event) => {

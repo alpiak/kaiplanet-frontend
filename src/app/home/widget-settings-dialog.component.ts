@@ -55,7 +55,7 @@ export class WidgetSettingsDialogComponent implements OnInit {
             this.widgetSettingsForm.setValue({
                 basic: {
                     backgroundColor: this.widget.config.background.color || "",
-                    zIndex: this.widget.zIndex || null
+                    zIndex: typeof this.widget.zIndex === "number" ? this.widget.zIndex : null
                 },
                 detail: {
                     plainType: this.widget.type === "plain" ? this.widget.config.type || null : null,
