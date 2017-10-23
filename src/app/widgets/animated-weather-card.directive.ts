@@ -5,19 +5,20 @@
 import { merge } from "rxjs/operator/merge";
 import { bufferCount } from "rxjs/operator/bufferCount";
 
-import { Directive, ElementRef, AfterViewInit } from "@angular/core";
+import { Directive, ElementRef, AfterViewInit, OnDestroy } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 import { WeatherService } from "../weather.service";
 import { TimeService } from "../time.service";
 
 @Directive({ selector: "[animatedWeatherCard]" })
-export class AnimatedWeatherCardDirective implements AfterViewInit {
-    type: string;
-    summary: string;
-    temperature: string;
-    time: Date;
-    location: string;
+export class AnimatedWeatherCardDirective implements AfterViewInit, OnDestroy {
+    private type: string;
+    private summary: string;
+    private temperature: string;
+    private time: Date;
+    private location: string;
+    private animatedWeatherCards: any;
     private gridItemContainer: HTMLElement;
 
     constructor(private weatherService: WeatherService, private timeService: TimeService, private el: ElementRef, private gridStackService: GridStackService) { }
@@ -32,8 +33,6 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
         const moment = require("moment");
         const AnimatedWeatherCards = require("../../scripts/animated-weather-cards");
 
-        let animatedWeatherCards: any;
-
         const weatherObservable = this.weatherService.getCurrentWeather();
         const timeObservable = this.timeService.getCurrentServerTime();
         bufferCount.call(merge.call(weatherObservable, timeObservable), 2).subscribe((x:Array<any>) => {
@@ -47,7 +46,7 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
                     this.time = el;
                 }
             });
-            animatedWeatherCards = AnimatedWeatherCards(this.el.nativeElement, {
+            this.animatedWeatherCards = AnimatedWeatherCards(this.el.nativeElement, {
                 type: this.type,
                 summary: this.summary,
                 temperature: parseInt(this.temperature, 10),
@@ -105,9 +104,13 @@ export class AnimatedWeatherCardDirective implements AfterViewInit {
         this.gridStackService.on("init").subscribe(() => {
             this.gridStackService.on("resizestop").subscribe((event) => {
                 if (event.target === this.gridItemContainer) {
-                    animatedWeatherCards.resize();
+                    this.animatedWeatherCards.resize();
                 }
             });
         });
+    }
+
+    ngOnDestroy() {
+        this.animatedWeatherCards.destroy();
     }
 }

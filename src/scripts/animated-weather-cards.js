@@ -718,6 +718,11 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
     }
 
     animatedWeatherCards.resize = onResize;
+    animatedWeatherCards.destroy = function () {
+      if (lightningTimeout) {
+          clearTimeout(lightningTimeout);
+      }
+    };
 
     return animatedWeatherCards;
 };

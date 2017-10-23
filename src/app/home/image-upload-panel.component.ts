@@ -22,7 +22,7 @@ export class ImageUploadPanelComponent implements OnInit {
     private uploader:FileUploader = new FileUploader({url: require("../../config.json").urlBase + "/upload/files"});
 
     ngOnInit() {
-        let images: Image[] = [];
+        let images: Image[] = this.images || [];
 
         this.uploader.onSuccessItem = (item, response: any) => {
             response = JSON.parse(response);
@@ -40,7 +40,6 @@ export class ImageUploadPanelComponent implements OnInit {
         this.uploader.onCompleteAll = () => {
             this.onUploaded.emit(images);
             this.showBackgroundImageConfig = false;
-            images = [];
             this.uploader.clearQueue();
         };
     }

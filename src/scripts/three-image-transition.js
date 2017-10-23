@@ -1161,7 +1161,8 @@ module.exports = function (container, images) {
                 in: [],
                 out: []
             },
-            tls = [];
+            tls = [],
+            tlTimeout;
 
         images.forEach(function (image, index) {
             var nextIndex = index < images.length - 1 ? index + 1 : 0;
@@ -1172,7 +1173,7 @@ module.exports = function (container, images) {
             l1.setCrossOrigin('Anonymous');
             l1.load(image.url, function(img) {
                 slide.setImage(img);
-            })
+            });
             slides.out.push(slide);
             root.scene.add(slide);
 
@@ -1182,12 +1183,12 @@ module.exports = function (container, images) {
             l2.setCrossOrigin('Anonymous');
             l2.load(images[nextIndex].url, function(img) {
                 slide2.setImage(img);
-            })
+            });
             slides.in.push(slide2);
             root.scene.add(slide2);
 
             var tl = new TimelineMax({onComplete: function () {
-                setTimeout(function () {
+                tlTimeout = setTimeout(function () {
                     slides.in[nextIndex].visible = true;
                     slides.out[nextIndex].visible = true;
                     slides.in[index].visible = false;
@@ -1211,7 +1212,14 @@ module.exports = function (container, images) {
             }
         });
 
-        return root;
+        return  {
+            root: root,
+            destroy: function () {
+                if (tlTimeout) {
+                    clearTimeout(tlTimeout);
+                }
+            }
+        };
     }
 
 ////////////////////

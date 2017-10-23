@@ -70,15 +70,14 @@ md-dialog-content
                         placeholder="Link To"
                     )
             section(*ngIf="widget.type === 'plain'")
-                md-form-field
-                    md-select(
-                        placeholder="Type"
-                        formControlName="plainType"
-                    )
-                        md-option(
-                            *ngFor="let type of widgetTypes.plain.config.types"
-                            "[value]"="type.id"
-                        ) {{ type.text }}
+                md-select(
+                    placeholder="Type"
+                    formControlName="plainType"
+                )
+                    md-option(
+                        *ngFor="let type of widgetTypes.plain.config.types"
+                        "[value]"="type.id"
+                    ) {{ type.text }}
 md-dialog-actions
     button(
         "[md-dialog-close]"="getCurrentSettings()"
