@@ -2,9 +2,20 @@
    Created by qhyang on 2017/3/9.
 
 
-div.carousel-container(
-    threeImageTransition
-    "[images]"="images"
-    "(click)"="navigateTo('/earth')"
+div.background(
+    *ngIf="images"
+    "[style.backgroundColor]"="backgroundColor"
+    "[style.backgroundImage]"="backgroundImages && backgroundImages[0] ? 'url(' + backgroundImages[0].url + ')' : 'none'"
 )
+    div.carousel-container(
+        *ngIf="images.length > 1"
+        threeImageTransition
+        "[images]"="images"
+        "(click)"="navigateTo(widget.data.linkUrl)"
+        "[style.cursor]"="widget.data.linkUrl ? 'pointer' : 'default'"
+    )
+    div(
+        *ngIf="images.length <= 1"
+        i18n="message text|A message to tell the user more image(s) is needed to be configured to the carousel widget to display the carousel"
+    ) Please add more than one picture to show the carousel
 //div.instructions click and drag to control the animation

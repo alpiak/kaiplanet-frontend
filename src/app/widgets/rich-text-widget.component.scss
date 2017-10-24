@@ -1,0 +1,26 @@
+
+.svg-ic_15px-dims {
+  width: 15px;
+  height: 15px;
+  fill: rgba(0,0,0,.54);
+}
+.svg-ic_20px-dims {
+  width: 20px;
+  height: 20px;
+  fill: #444;
+}
+[quill-editor-toolbar] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+quill-editor {
+  height: 100%;
+  padding-top: 42px;
+}
+[md-icon-button] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

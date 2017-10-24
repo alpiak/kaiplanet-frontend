@@ -1,8 +1,7 @@
 
-:host{
-  background-image: url(../../assets/34.jpg);
-  background-position: bottom center;
-  background-size: cover;
+.container {
+  width: 100%;
+  height: 100%;
 }
 .logo {
   position: absolute;
@@ -10,22 +9,25 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 120px;
-  height: 80px;
+  width: 76.8px;
+  height: 102.4px;
   margin: auto;
-}
-@media (max-width: 992px) {
-  .logo {
+
+  @media (max-width: 992px) {
     margin-left: 10%;
-    width: 90px;
-    height: 60px;
+    width: 57.6px;
+    height: 76.8px;
   }
-}
-@media (max-width: 768px) {
-  .logo {
-    width: 60px;
-    height: 40px;
+
+  @media (max-width: 768px) {
+    width: 38.4px;
+    height: 59.2px;
   }
+
+  //@media (min-width: 1200px) {
+  //  width: 96px;
+  //  height: 128px;
+  //}
 }
 .tool-pane {
   position: absolute;
@@ -53,6 +55,7 @@
 .svg-ic_20px-dims {
   width: 20px;
   height: 20px;
+  fill: rgba(0,0,0,.54);
 }
 .item__icon_with-text {
   margin-right: 5px;

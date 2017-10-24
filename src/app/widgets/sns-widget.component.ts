@@ -6,23 +6,24 @@ import { Component, AfterViewInit, ElementRef } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 
+import { WidgetComponent } from "./widget.component";
+
 @Component({
     selector: "sns-widget",
     template: require("./sns-widget.component.pug"),
-    styles: [ require("./widget.component"), require("./sns-widget.component.scss") ]
+    styles: [ require("./widget.component.scss"), require("./sns-widget.component.scss") ]
 })
-export class SNSWidgetComponent implements AfterViewInit{
-    private index: number;
+export class SNSWidgetComponent extends WidgetComponent implements AfterViewInit{
     private types: Object[];
 
-    constructor(private gridStackService: GridStackService, private el: ElementRef) { }
+    constructor(gridStackService: GridStackService, el: ElementRef) { super(gridStackService, el); }
 
     ngAfterViewInit() {
-        const jQuery = require("jquery");
+        this.gridStackService.getWidgetData().subscribe(gridStackData => {
+            const jQuery = require("jquery");
 
-        setTimeout(() => {
             this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
-            this.types = this.gridStackService.getWidgetData()[this.index].config.types;
+            this.types = gridStackData[this.index].config.types;
 
             setTimeout(() => {
                 jQuery(this.el.nativeElement)
@@ -38,6 +39,6 @@ export class SNSWidgetComponent implements AfterViewInit{
                             .attr("src", jQuery(this).attr("data-src"))
                     });
             }, 200);
-        }, 200);
+        });
     }
 }

@@ -2,4 +2,8 @@
    Created by qhyang on 2017/4/1.
 
 
-div(animated-background [type]="type")
+div(
+    animated-background
+    [index]="index"
+    "[type]"="widget?.config?.type"
+)

@@ -6,29 +6,36 @@ import { Component, AfterViewInit, ElementRef } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
 
+import { WidgetComponent } from "./widget.component";
+
+import { Widget } from "../interfaces";
+
 @Component({
     selector: "drawing-board-widget",
     template: require("./drawing-board-widget.component.pug"),
-    styles: [ require("./widget.component"), require("./drawing-board-widget.component.scss") ]
+    styles: [ require("./widget.component.scss"), require("./drawing-board-widget.component.scss") ]
 })
-export class DrawingBoardWidgetComponent implements AfterViewInit{
-    private index: number;
+export class DrawingBoardWidgetComponent extends WidgetComponent implements AfterViewInit {
     private imgUrl: string;
 
-    constructor(private el: ElementRef, private gridStackService: GridStackService) { }
+    constructor(gridStackService: GridStackService, el: ElementRef) { super(gridStackService, el); }
 
     ngAfterViewInit() {
+        super.ngAfterViewInit();
         setTimeout(() => {
-            const jQuery = require("jquery");
-
-            this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
-
-            let widgetData = this.gridStackService.getWidgetData(),
-                imgUrl = widgetData[this.index].data && widgetData[this.index].data.imgUrl;
-
-            if (imgUrl) {
-                this.imgUrl = imgUrl;
-            }
-        }, 200);
+            this.gridStackService.getWidgetData().subscribe(() => {
+                if (!this.widget.data) {
+                    this.widget.data = {};
+                }
+                let imgUrl = this.widget.data.imgUrl;
+                if (imgUrl) {
+                    this.imgUrl = imgUrl;
+                }
+            });
+        }, 300);
+    }
+    onDrew(imgUrl: string) {
+        Object.assign(this.widget.data, { imgUrl: imgUrl});
+        this.gridStackService.updateGridStackData(this.index, this.widget);
     }
 }

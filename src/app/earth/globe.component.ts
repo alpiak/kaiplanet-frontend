@@ -18,7 +18,7 @@ export class GlobeComponent implements OnInit {
 
     ngOnInit() {
         this.height = this.bomService.getWindowHeight();
-        this.bomService.windowResize()
+        this.bomService.onWindowResize()
             .subscribe(() => this.height = this.bomService.getWindowHeight());
     }
 }

@@ -13,7 +13,15 @@ export class BomService {
 
         return jQuery(window).height();
     }
-    windowResize(): Observable<any> {
+    navigateTo(url: string) {
+        window.location.href = url;
+    }
+
+    onWindowResize(): Observable<any> {
         return Observable.fromEvent(window, "resize");
+    }
+
+    onDocumentClick(): Observable<any> {
+        return Observable.fromEvent(document, "click");
     }
 }

@@ -4,7 +4,7 @@
 
 $speed: 2s;
 
-.animated-weather-cards, .background
+.animated-weather-cards, .animated-weather-cards .background
 {
   width: 100%;
   height: 100%;
@@ -18,7 +18,7 @@ $speed: 2s;
   background: #eee;
   background: linear-gradient(0deg, rgba(0, 0, 200, 0.2) , rgba(0, 0, 200, 0) );
 
-  .background
+  .animated-weather-cards .background
   {
     background: #eee;
     background: linear-gradient(120deg, rgba(50, 150, 100, 0.2) , rgba(0, 0, 100, 0) );
@@ -121,7 +121,7 @@ $speed: 2s;
         margin: 4px 0;
       }
 
-      .summary
+      .summary, .location
       {
         font-weight: 600;
         font-size: 22px;
@@ -141,6 +141,12 @@ $speed: 2s;
         }
 
       }
+    }
+
+    .details-bottom {
+      top: auto;
+      bottom: 0;
+      justify-content: flex-end;
     }
   }
 
@@ -177,13 +183,24 @@ $speed: 2s;
     }
   }
 
-  .outer, .back
+  .back
   {
     position: absolute;
     pointer-events: none;
 
   }
 
+}
+
+.animated-weather-card__outer
+{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
 }
 
 $container: animated-weather-cards;

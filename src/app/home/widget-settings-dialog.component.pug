@@ -1,0 +1,92 @@
+//
+   Created by qhyang on 2017/9/13.
+
+
+h5(
+    md-dialog-title
+    i18n="Dialog title|the title of a dialog for changing widget settings"
+) Widget Settings
+md-dialog-content
+    form(
+        [formGroup]="widgetSettingsForm"
+        novalidate
+    )
+        md-expansion-panel(
+            formGroupName="basic"
+            expanded
+        )
+            md-expansion-panel-header
+                md-panel-title(i18n="Panel title|the title of a panel in a dialog for changing widget settings") Basic Settings
+            section
+                md-form-field(
+                    [color-picker]="widget.config.background.color"
+                    "(onPicked)"="onBackgroundColorPicked($event)"
+                )
+                    input(
+                        formControlName="backgroundColor"
+                        mdInput
+                        placeholder="Background Color"
+                        "[style.color]"="widget.config.background.color || 'currentColor'"
+                    )
+                    svg.color-picker__switch.item__icon_with-text.svg-ic_20px-dims(
+                        mdSuffix
+                        [style.fill]="widget.config.background.color || 'rgba(0, 0, 0, 0.54)'"
+                    )
+                        use(xlink:href="#ic_apps_24px")
+            section
+                md-form-field
+                    input(
+                        formControlName="zIndex"
+                        type="number"
+                        placeholder="Stack Order Priority(z-index)"
+                        mdInput
+                    )
+            section
+                image-upload-panel(
+                    [images]="widget?.config?.background?.images"
+                    title="Background Images"
+                    "(onUploaded)"="onBackgroundImagesUploaded($event)"
+                    "(onRemoved)"="onBackgroundImageRemoved($event)"
+                )
+        md-expansion-panel(
+            *ngIf="widget.type === 'carousel' || widget.type === 'plain'"
+            formGroupName="detail"
+            expanded
+        )
+            md-expansion-panel-header
+                md-panel-title(i18n="panel title|The title of a panel in a dialog for changing widget settings") Detail Settings
+            section(*ngIf="widget.type === 'carousel'")
+                image-upload-panel(
+                    [images]="widget?.data?.images"
+                    title = "Carousel Images"
+                    "(onUploaded)"="onImagesUploaded($event)"
+                    "(onRemoved)"="onImageRemoved($event)"
+                )
+            section(*ngIf="widget.type === 'carousel'")
+                md-form-field
+                    input(
+                        formControlName="linkUrl"
+                        mdInput
+                        placeholder="Link To"
+                    )
+            section(*ngIf="widget.type === 'plain'")
+                md-select(
+                    placeholder="Type"
+                    formControlName="plainType"
+                )
+                    md-option(
+                        *ngFor="let type of widgetTypes.plain.config.types"
+                        "[value]"="type.id"
+                    ) {{ type.text }}
+md-dialog-actions
+    button(
+        "[md-dialog-close]"="getCurrentSettings()"
+        "[disabled]"="widgetSettingsForm.status !== 'VALID' || imageUploadPanelComponents?.first?.uploader?.isUploading || imageUploadPanelComponents?.last?.uploader?.isUploading"
+        md-button
+        i18n="Button text|the text of a button to submit the changes of widget settings and  close the widget settings dialog"
+    ) Submit
+    button(
+        md-button
+        md-dialog-close=""
+        i18n="Button text|the text of a button to close the widget settings dialog without submitting the changes of widget settings"
+    ) Close

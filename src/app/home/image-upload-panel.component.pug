@@ -1,0 +1,77 @@
+//
+   Created by qhyang on 2017/9/26.
+
+
+md-card
+    md-card-title {{ title }}
+    md-card-content
+        div(*ngIf="!showBackgroundImageConfig")
+            md-grid-list(
+                *ngIf="images?.length"
+                cols="2"
+                rowHeight="16:9"
+            )
+                md-grid-tile(
+                    "*ngFor"="let image of images; let i=index"
+                )
+                    img(
+                        [src]="image.url"
+                        "[alt]"="image.title"
+                    )
+                    button.item-remove-button(
+                        (click)="remove(i)"
+                        md-icon-button
+                    )
+                        svg.svg-ic_20px-dims
+                            use(xlink:href="#ic_delete_24px")
+            div(*ngIf="!images?.length") No background image configured
+        div(*ngIf="showBackgroundImageConfig")
+            div(
+                ng2FileDrop
+                [uploader]="uploader"
+                i18n="User hint| text to hint the user to drop file(s) there to upload"
+            ) Drop file here or...
+            input(
+                type="file"
+                ng2FileSelect
+                [uploader]="uploader"
+                multiple
+            )
+            table(
+                *ngIf="uploader.queue.length"
+            )
+                thead
+                    tr
+                        th Name
+                        th Size
+                        th Actions
+                tbody
+                    tr(*ngFor="let item of uploader.queue")
+                        td {{ item?.file?.name }}
+                        td(*ngIf="uploader.isHTML5") {{ item?.file?.size/1024/1024 | number:'.2' }} MB
+                        td(*ngIf="!uploader.isHTML5")
+                        td
+                            button(
+                                (click)="item.remove()"
+                                md-icon-button
+                                title="Remove"
+                            )
+                                svg.color-picker__switch.svg-ic_20px-dims
+                                    use(xlink:href="#ic_delete_24px")
+            md-progress-bar(
+                *ngIf="uploader.isUploading"
+                mode="determinate"
+                "[value]"="uploader.progress"
+            )
+    md-card-actions
+        button(
+            *ngIf="showBackgroundImageConfig"
+            "(click)"="uploader.uploadAll()"
+            "[disabled]"="!uploader.getNotUploadedItems().length"
+            md-button
+            i18n="Button text|the text of a button to enter a panel to add images"
+        ) Add
+        button(
+            (click)="showBackgroundImageConfig = !showBackgroundImageConfig"
+            md-button
+        ) {{ showBackgroundImageConfig ? "Cancel" : "Add" }}

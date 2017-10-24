@@ -2,60 +2,104 @@
  * Created by qhyang on 2017/3/7.
  */
 
-import { Compiler, Component, NgModuleFactory, AfterViewInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { Component, AfterViewInit, OnDestroy } from "@angular/core";
 
 import "gridstack";
 import "gridstack/dist/gridstack.css";
 
-import { WidgetsModule } from "../widgets/widgets.module";
-
 import { GridStackService } from "./grid-stack.service";
 
-import { Widget } from "../../scripts/interfaces";
+import { Widget } from "../interfaces";
 
 @Component({
     selector: "grid-stack",
     template: require("./grid-stack.component.pug"),
     styles: [ require("./grid-stack.component.scss") ]
 })
-export class gridStackComponent implements AfterViewInit {
+export class gridStackComponent implements AfterViewInit, OnDestroy {
     widgets: Widget[];
-    widgetsModule: NgModuleFactory<any>;
+    gridStack: HTMLElement;
+    subscriptions: Subscription[] = [];
 
-    constructor(compiler: Compiler, private gridStackService: GridStackService) {
-        this.widgets = gridStackService.getWidgetData();
-        this.widgetsModule = compiler.compileModuleSync(WidgetsModule);
-    }
+    constructor(private gridStackService: GridStackService) { }
 
     ngAfterViewInit() {
-        let jQuery = require("jquery");
+        this.gridStackService.prepare().subscribe((gridStackData: any) => {
+            this.widgets = gridStackData;
+            setTimeout(() => {
+                const jQuery = require("jquery"),
+                    options = {
+                    acceptWidgets: true,
+                    cellHeight: "auto",
+                    verticalMargin: 10,
+                    alwaysShowResizeHandle: true,
+                    animate: true,
+                    disableDrag: true,
+                    disableResize: true,
+                    handle: ".grid-stack-item-handle",
+                    removable: true
+                };
 
-        this.gridStackService.on("init").subscribe(() => {
-            this.gridStackService.on("resizestart").subscribe((event) => {
-                jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
-            });
-            this.gridStackService.on("resizestop").subscribe((event) => {
-                jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
-            });
-            this.gridStackService.on("dragstart").subscribe((event) => {
-                jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
-            });
-            this.gridStackService.on("dragstop").subscribe((event) => {
-                jQuery(event.target).toggleClass("mdl-shadow--2dp mdl-shadow--6dp");
+                this.gridStackService.init(this.gridStack = jQuery(".grid-stack").get(0), options).subscribe(() => {
+                    this.subscriptions.push(this.gridStackService.on("resizestart").subscribe((event) => {
+                        jQuery(event.target).addClass("mdl-shadow--2dp mdl-shadow--6dp");
+                    }));
+                    this.subscriptions.push(this.gridStackService.on("resizestop").subscribe((event) => {
+                        jQuery(event.target).removeClass("mdl-shadow--2dp mdl-shadow--6dp");
+                    }));
+                    this.subscriptions.push(this.gridStackService.on("dragstart").subscribe((event) => {
+                        if (jQuery(event.target).hasClass("grid-stack-item")) {
+                            jQuery(event.target).addClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        }
+                    }));
+                    this.subscriptions.push(this.gridStackService.on("dragstop").subscribe((event) => {
+                        if (jQuery(event.target).hasClass("grid-stack-item")) {
+                            jQuery(event.target).removeClass("mdl-shadow--2dp mdl-shadow--6dp");
+                        }
+                    }));
+                });
+            }, 200);
+        });
+        this.gridStackService.on("update").subscribe((mutation) => {
+
+            this.gridStackService.getWidgetData().subscribe(gridStackData => {
+                if (mutation.add) {
+                    mutation.add.forEach((widgetIndex: number) => this.widgets[widgetIndex] = gridStackData[widgetIndex]);
+                }
+                if (mutation.update) {
+                    mutation.update.forEach((widgetIndex: number) => {
+                        this.widgets[widgetIndex].zIndex = gridStackData[widgetIndex].zIndex;
+                        this.widgets[widgetIndex].config = gridStackData[widgetIndex].config;
+                        this.widgets[widgetIndex].data = gridStackData[widgetIndex].data;
+                    });
+                }if (mutation.remove) {
+                    mutation.remove.forEach((widgetIndex: number) => this.widgets.splice(widgetIndex, 1));
+                }
+
+                setTimeout(() => {
+                    if (mutation.add) {
+                        mutation.add.forEach((widgetIndex: number) => {
+                            const widgetEl = jQuery(this.gridStack)
+                                .children(".grid-stack-item")
+                                .eq(widgetIndex)
+                                .get(0);
+
+                            jQuery(this.gridStack)
+                                .data("gridstack")
+                                .makeWidget(widgetEl);
+                        });
+                    }
+                    this.gridStackService.updateGridStackPositionData();
+                }, 200);
             });
         });
-
-        let options = {
-            acceptWidgets: true,
-            cellHeight: "auto",
-            verticalMargin: 10,
-            alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
-            animate: true,
-            handle: ".grid-stack-item-handle",
-            removable: true
-        };
-
-        this.gridStackService.init(jQuery(".grid-stack")[0], options);
+    }
+    ngOnDestroy() {
+        this.subscriptions.forEach(subscription => {
+            subscription.unsubscribe();
+        });
+        this.gridStackService.destroy();
     }
     onClose(index: number) {
         if (this.widgets[index].type !== "header") {

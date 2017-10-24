@@ -52,6 +52,11 @@ module.exports = {
                 loader: "url-loader?limit=8192"
             },
             {
+                test: /\.json$/,
+                include: [ path.resolve(rootDir, "src", "scripts", "emojis.json") ],
+                loader: "url-loader?limit=8192"
+            },
+            {
                 test: /\.scss$/,
                 include: [
                     path.resolve(rootDir, "src", "style"),
@@ -102,7 +107,7 @@ module.exports = {
                 app: {
                     beforeContent: `
                     (function() {   
-                        if ($ && TweenLite) {
+                        if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");
                             var loading = {
                                 progress: $counter.data("loaded-percent") || 0
@@ -122,7 +127,7 @@ module.exports = {
                 vendors: {
                     beforeContent: `
                     (function() {    
-                        if ($ && TweenLite) {
+                        if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");
                             var loading = {
                                 progress: $counter.data("loaded-percent") || 0

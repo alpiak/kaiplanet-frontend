@@ -3,27 +3,29 @@
 
 div.grid-stack-item-handle
     div.toolbar__button-group
-        button.toolbar__button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect.mdl-button--colored(
-            "[attr.id]"="'toolbar__button_more'+index"
-        )
-            svg.svg-ic_widgets_15px-dims
+        button.toolbar__button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect([mdMenuTriggerFor]="widgetMenu")
+            svg.svg-ic_widgets_15px-dims(style="fill:#bbb")
                 use(xlink:href="#ic_more_vert_24px")
-        ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(
-            "[attr.for]"="'toolbar__button_more'+index"
-        )
-            li.mdl-menu__item((click)="openSettings()")
+        md-menu(#widgetMenu="mdMenu")
+            li(
+                (click)="openSettings()"
+                md-menu-item
+            )
                 svg.svg-ic_widgets_20px-dims
                     use(xlink:href="#ic_settings_24px")
                 span.item__text(i18n="Option text|the text of an option to open a widget settings dialog") Settings
-            li.mdl-menu__item
+            li(
+                (click)="enterManageMode()"
+                md-menu-item
+            )
                 svg.svg-ic_widgets_20px-dims
                     use(xlink:href="#ic_open_with_24px")
                 span.item__text(i18n="Option text|the text of an option to enter the wigdets-managing mode of a specific widget") Resize
-        button.toolbar__button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect.mdl-button--colored(
+        button.toolbar__button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect(
             *ngIf="widgetType !== 'header'"
             "(click)"="close(index)"
         )
-            svg.svg-ic_widgets_15px-dims
+            svg.svg-ic_widgets_15px-dims(style="fill:#bbb")
                 use(xlink:href="#ic_close_24px")
 div.grid-stack-item-content.mdl-card__actions.mdl-card--border
     div(*ngComponentOutlet="widgetType | widgetComponent; ngModuleFactory: widgetsModule;")

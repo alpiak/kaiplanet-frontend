@@ -2,4 +2,10 @@
    Created by qhyang on 2017/3/16.
 
 
-div.container("[drawingBoard]"="index" "[imgUrl]"="imgUrl")
+div.container.background(
+    "[drawingBoard]"="index"
+    "[imgUrl]"="imgUrl"
+    "(onDrew)"="onDrew($event)"
+    "[style.backgroundColor]"="backgroundColor"
+    "[style.backgroundImage]"="backgroundImages && backgroundImages[0] ? 'url(' + backgroundImages[0].url + ')' : 'none'"
+)

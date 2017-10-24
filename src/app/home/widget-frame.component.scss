@@ -1,7 +1,10 @@
 .grid-stack-item-handle {
   height: 20px;
-  background-color: #eee;
+  background-color: #f8f8f8;
   cursor: move;
+}
+:host-context(.grid-stack.static) .grid-stack-item-handle {
+  cursor: default;
 }
 :host > .grid-stack-item-content {
   left: 0;
@@ -12,7 +15,7 @@
 }
 .toolbar__button-group {
   float: right;
-  margin-right: 5px;
+  margin-right: 2px;
 }
 .toolbar__button {
   width: 20px;
@@ -20,8 +23,11 @@
   min-width: 20px;
   font-size: 0;
 }
-.mdl-button--colored svg {
-  fill: #607d8b;
+:host-context(.grid-stack.static) .toolbar__button:last-child {
+  display: none;
+}
+[md-menu-item] svg {
+  fill: rgba(0, 0, 0, 0.54);
 }
 .svg-ic_widgets_15px-dims {
   width: 15px;

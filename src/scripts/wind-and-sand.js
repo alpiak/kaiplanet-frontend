@@ -72,6 +72,7 @@
     }
 
     // window.onload = function() {
+    setTimeout(() => {
         document.onmousemove = handleMouseMove;
         context.drawImage(img, 0, 0 );
         myData = context.getImageData(0, 0, img.width, img.height);
@@ -80,6 +81,7 @@
         mouseX=0;
         mouseY=0;
         requestAnimationFrame(loop);
+    }, 0);
     // };
 
 

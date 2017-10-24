@@ -2,3 +2,129 @@
 body {
   background-color: #000;
 }
+
+//Color picker hack
+#hslPicker {
+  .oned, .extras {
+    .pointer{
+      .shape {
+        position: absolute;
+        background: 0;
+        margin: 0;
+        right: -3px;
+        left: -3px;
+        border-width: 4px 3px;
+        border-style: solid;
+        border-color: #aaa;
+        width: auto;
+        height: 3px;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        opacity: .9;
+        z-index: 5;
+        cursor: ns-resize;
+        box-sizing: content-box;
+      }
+      .shape:before {
+        content: " ";
+        position: absolute;
+        left: -2px;
+        right: -2px;
+        top: -3px;
+        bottom: -3px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+#hslPicker .twod .pointer .shape {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  margin-left: 0;
+  margin-top: 0;
+  background: transparent;
+  border: 1.5px solid #aaa;
+  border-radius: 50%;
+  border-color: rgba(128,128,128,.5);
+  box-shadow: none;
+  cursor: move;
+  opacity: 1;
+  z-index: 10;
+  box-sizing: content-box;
+}
+#hslPicker .twod .pointer .shape:after {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  left: -2px;
+  top: -2px;
+  border: 1.5px solid #f9f9f9;
+  border-color: rgba(255,255,255,.8);
+  border-radius: 50%;
+  content: " ";
+  box-sizing: content-box;
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+}
+
+// Quill
+
+// Set default font-family
+.ql-editor {
+  font-family: "Roboto", serif;
+}
+
+// Set dropdown font-families
+[quill-editor-toolbar] .ql-font span[data-label="Sofia Pro"]::before {
+  font-family: "Sofia Pro", sans-serif;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Slabo 13px"]::before {
+  font-family: "Slabo 13px", sans-serif;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Roboto Slab"]::before {
+  font-family: "Roboto Slab", serif;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Inconsolata"]::before {
+  font-family: "Inconsolata", monospace;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Ubuntu Mono"]::before {
+  font-family: "Ubuntu Mono", monospace;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Mirza"]::before {
+  font-family: "Mirza", serif;
+}
+[quill-editor-toolbar] .ql-font span[data-label="Aref Ruqaa"]::before {
+  font-family: "Aref Ruqaa", serif;
+}
+
+// Set content font-families
+.ql-font-sofia {
+  font-family: "Sofia Pro", sans-serif;
+}
+.ql-font-slabo {
+  font-family: "Slabo 13px", sans-serif;
+}
+.ql-font-roboto {
+  font-family: "Roboto Slab", serif;
+}
+.ql-font-inconsolata {
+  font-family: "Inconsolata", monospace;
+}
+.ql-font-ubuntu {
+  font-family: "Ubuntu Mono", monospace;
+}
+.ql-font-mirza {
+  font-family: "Mirza", serif;
+}
+.ql-font-aref {
+  font-family: "Aref Ruqaa", serif;
+}

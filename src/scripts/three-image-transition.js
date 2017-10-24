@@ -1133,29 +1133,78 @@ module.exports = function (container, images) {
         var width = 100;
         var height = 60;
 
-        var slide = new Slide(width, height, 'out');
-        var l1 = new THREE.ImageLoader();
-        l1.setCrossOrigin('Anonymous');
-        l1.load(images[0], function(img) {
-            slide.setImage(img);
-        })
-        root.scene.add(slide);
+        // var slide = new Slide(width, height, 'out');
+        // var l1 = new THREE.ImageLoader();
+        // l1.setCrossOrigin('Anonymous');
+        // l1.load(images[0], function(img) {
+        //     slide.setImage(img);
+        // })
+        // root.scene.add(slide);
+        //
+        // var slide2 = new Slide(width, height, 'in');
+        // var l2 = new THREE.ImageLoader();
+        // l2.setCrossOrigin('Anonymous');
+        // l2.load(images[1], function(img) {
+        //     slide2.setImage(img);
+        // })
+        //
+        // root.scene.add(slide2);
+        //
+        // var tl = new TimelineMax({repeat:-1, repeatDelay:1.0, yoyo: true});
+        //
+        // tl.add(slide.transition(), 0);
+        // tl.add(slide2.transition(), 0);
+        //
+        // createTweenScrubber(tl);
 
-        var slide2 = new Slide(width, height, 'in');
-        var l2 = new THREE.ImageLoader();
-        l2.setCrossOrigin('Anonymous');
-        l2.load(images[1], function(img) {
-            slide2.setImage(img);
-        })
+        var slides = {
+                in: [],
+                out: []
+            },
+            tls = [],
+            tlTimeout;
 
-        root.scene.add(slide2);
+        images.forEach(function (image, index) {
+            var nextIndex = index < images.length - 1 ? index + 1 : 0;
 
-        var tl = new TimelineMax({repeat:-1, repeatDelay:1.0, yoyo: true});
+            var slide = new Slide(width, height, 'out');
+            slide.visible = false;
+            var l1 = new THREE.ImageLoader();
+            l1.setCrossOrigin('Anonymous');
+            l1.load(image.url, function(img) {
+                slide.setImage(img);
+            });
+            slides.out.push(slide);
+            root.scene.add(slide);
 
-        tl.add(slide.transition(), 0);
-        tl.add(slide2.transition(), 0);
+            var slide2 = new Slide(width, height, 'in');
+            slide2.visible = false;
+            var l2 = new THREE.ImageLoader();
+            l2.setCrossOrigin('Anonymous');
+            l2.load(images[nextIndex].url, function(img) {
+                slide2.setImage(img);
+            });
+            slides.in.push(slide2);
+            root.scene.add(slide2);
 
-        createTweenScrubber(tl);
+            var tl = new TimelineMax({onComplete: function () {
+                tlTimeout = setTimeout(function () {
+                    slides.in[nextIndex].visible = true;
+                    slides.out[nextIndex].visible = true;
+                    slides.in[index].visible = false;
+                    slides.out[index].visible = false;
+                    tls[nextIndex].restart();
+                }, 3000);
+            }});
+
+            tl.pause();
+            tl.add(slide.transition(), 0);
+            tl.add(slide2.transition(), 0);
+
+            tls.push(tl);
+        });
+
+        tls[0].play();
 
         window.addEventListener('keyup', function(e) {
             if (e.keyCode === 80) {
@@ -1163,7 +1212,17 @@ module.exports = function (container, images) {
             }
         });
 
-        return root;
+        return  {
+            root: root,
+            destroy: function () {
+                if (tlTimeout) {
+                    clearTimeout(tlTimeout);
+                }
+                tls.forEach(function (tl) {
+                    tl.kill();
+                });
+            }
+        };
     }
 
 ////////////////////

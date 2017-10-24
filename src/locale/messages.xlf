@@ -82,19 +82,28 @@
       </trans-unit>
       <trans-unit id="27994c58bd7ae6a172cb7641e90c41bb9e0903df" datatype="html">
         <source>Add a widget</source>
-        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to open a dialog for adding a widget</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="26c40cfbe32edc7af7c77e95f3b14429d2a3aafc" datatype="html">
         <source>Manage widgets</source>
-        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to enter the wigdets-managing mode</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="e528cb0f83bad4fa91f93d4362ce32be1490506c" datatype="html">
         <source>Log in</source>
-        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a button to open dialog to log in or sign up</note>
         <note priority="1" from="meaning">Button text</note>
       </trans-unit>
@@ -154,13 +163,19 @@
       </trans-unit>
       <trans-unit id="d47fb79541d930ba3019ec7bf4ea21029292c621" datatype="html">
         <source>Settings</source>
-        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-frame.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to open a widget settings dialog</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="6e36eb58a1e939715da253f8674a1aa5f301fc9b" datatype="html">
         <source>Resize</source>
-        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-frame.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to enter the wigdets-managing mode of a specific widget</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>

@@ -252,8 +252,9 @@
             } else {
                 document.getElementsByClassName("app-loading__counter")[0].style.display = "none";
             }
+
             window.addEventListener("load", function() {
-                if ($ && TweenLite) {
+                if (window.$ && window.TweenLite) {
                     updateProgress(100);
                     $(".app-loading").fadeOut();
                 } else {
@@ -262,5 +263,5 @@
             });
         }());
     </script>
-</body>
+    </body>
 </html>

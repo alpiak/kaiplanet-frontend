@@ -2,27 +2,17 @@
  * Created by qhyang on 2017/4/1.
  */
 
-import { Component, AfterViewInit, ElementRef } from "@angular/core";
+import { Component, ElementRef } from "@angular/core";
 
 import { GridStackService } from "../home/grid-stack.service";
+
+import { WidgetComponent } from "./widget.component";
 
 @Component({
     selector: "plain-widget",
     template: require("./plain-widget.component.pug"),
-    styles: [ require("./widget.component"), require("./plain-widget.component.scss") ]
+    styles: [ require("./widget.component.scss"), require("./plain-widget.component.scss") ]
 })
-export class PlainWidgetComponent implements AfterViewInit{
-    private index: number;
-    private type: string;
-
-    constructor(private gridStackService: GridStackService, private el: ElementRef) { }
-
-    ngAfterViewInit() {
-        const jQuery = require("jquery");
-
-        setTimeout(() => {
-            this.index = jQuery(this.el.nativeElement).parent().parent().attr("data-index");
-            this.type = this.gridStackService.getWidgetData()[this.index].config.type;
-        }, 200);
-    }
+export class PlainWidgetComponent extends WidgetComponent {
+    constructor(gridStackService: GridStackService, el: ElementRef) { super(gridStackService, el); }
 }
