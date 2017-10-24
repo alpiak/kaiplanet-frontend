@@ -9,25 +9,25 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 96px;
-  height: 128px;
+  width: 76.8px;
+  height: 102.4px;
   margin: auto;
 
   @media (max-width: 992px) {
     margin-left: 10%;
-    width: 72px;
-    height: 96px;
+    width: 57.6px;
+    height: 76.8px;
   }
 
   @media (max-width: 768px) {
-    width: 48px;
-    height: 74px;
+    width: 38.4px;
+    height: 59.2px;
   }
 
-  @media (min-width: 1200px) {
-    width: 120px;
-    height: 160px;
-  }
+  //@media (min-width: 1200px) {
+  //  width: 96px;
+  //  height: 128px;
+  //}
 }
 .tool-pane {
   position: absolute;

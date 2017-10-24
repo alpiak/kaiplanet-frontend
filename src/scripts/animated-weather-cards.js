@@ -722,6 +722,7 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
       if (lightningTimeout) {
           clearTimeout(lightningTimeout);
       }
+      TweenMax.killAll();
     };
 
     return animatedWeatherCards;

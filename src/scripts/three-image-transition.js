@@ -1218,6 +1218,9 @@ module.exports = function (container, images) {
                 if (tlTimeout) {
                     clearTimeout(tlTimeout);
                 }
+                tls.forEach(function (tl) {
+                    tl.kill();
+                });
             }
         };
     }

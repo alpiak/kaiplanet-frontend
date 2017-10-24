@@ -27,7 +27,7 @@ export class ColorPickerDirective implements AfterViewInit, OnDestroy {
             $el = jQuery(this.el.nativeElement);
 
         $container.append($overlay)
-            .appendTo($el);
+            .appendTo(document.body);
 
         const updateOverlayPosition = () => {
             const offset = $el.offset();
