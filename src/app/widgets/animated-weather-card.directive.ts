@@ -111,6 +111,8 @@ export class AnimatedWeatherCardDirective implements AfterViewInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.animatedWeatherCards.destroy();
+        if (this.animatedWeatherCards) {
+            this.animatedWeatherCards.destroy();
+        }
     }
 }

@@ -22,7 +22,7 @@ export class DrawingBoardWidgetComponent extends WidgetComponent implements Afte
 
     ngAfterViewInit() {
         super.ngAfterViewInit();
-        setTimeout(() => {
+        this.gridStackService.on("init").subscribe(() => {
             this.gridStackService.getWidgetData().subscribe(() => {
                 if (!this.widget.data) {
                     this.widget.data = {};
@@ -32,8 +32,9 @@ export class DrawingBoardWidgetComponent extends WidgetComponent implements Afte
                     this.imgUrl = imgUrl;
                 }
             });
-        }, 300);
+        });
     }
+
     onDrew(imgUrl: string) {
         Object.assign(this.widget.data, { imgUrl: imgUrl});
         this.gridStackService.updateGridStackData(this.index, this.widget);
