@@ -152,6 +152,8 @@ LeafScene.prototype.init = function() {
     };
 }
 
+LeafScene.prototype.active = true
+
 LeafScene.prototype.render = function() {
     this._updateWind();
     for (var i = 0; i < this.leaves.length; i++) {
@@ -160,7 +162,30 @@ LeafScene.prototype.render = function() {
 
     this.timer++;
 
-    requestAnimationFrame(this.render.bind(this));
+    if (this.active) {
+        requestAnimationFrame(this.render.bind(this));
+    }
+}
+
+LeafScene.prototype.pause = function() {
+    this.active = false;
+}
+
+LeafScene.prototype.resume = function () {
+    var that = this;
+
+    that.active = false;
+    requestAnimationFrame(function () {
+        that.active = true;
+        requestAnimationFrame(that.render.bind(that));
+    });
+}
+
+LeafScene.prototype.destroy = function () {
+    this.active = false;
+    if (this.viewport) {
+        jQuery(this.viewport).remove();
+    }
 }
 
 module.exports = LeafScene;

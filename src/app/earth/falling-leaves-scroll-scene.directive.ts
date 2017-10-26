@@ -2,22 +2,34 @@
  * Created by qhyang on 2017/3/22.
  */
 
-import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
+import { Directive, ElementRef, AfterViewInit, OnDestroy, Input } from "@angular/core";
 
 import { BomService } from "../bom.service";
 import { ScrollSceneService } from "./scroll-scene.service"
 
 @Directive({ selector: "[fallingLeavesScrollScene]" })
-export class FallingLeavesScrollSceneDirective implements AfterViewInit {
+export class FallingLeavesScrollSceneDirective implements AfterViewInit, OnDestroy {
     @Input("fallingLeavesScrollScene") leafAmount: number;
     @Input() offset: string;
     @Input() duration: string;
+    private leafScene: any;
 
     constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
 
     ngAfterViewInit() {
+        // Falling leaves
+
+        const LeafScene = require("../../scripts/falling-leaves");
+
+        this.leafScene = new LeafScene(this.el.nativeElement, {
+            numLeaves: this.leafAmount
+        });
+
+        this.leafScene.init();
+
 
         // ScrollMagic
+
         require("gsap/tweenLite");
 
         const ScrollMagic = require("scrollmagic");
@@ -27,8 +39,7 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
         require("../../styles/falling-leaves");
 
         const jQuery = require("jquery"),
-            TweenLite = require("TweenLite"),
-            LeafScene = require("../../scripts/falling-leaves");
+            TweenLite = require("TweenLite");
 
         jQuery(this.el.nativeElement).css("opacity", "0");
 
@@ -40,13 +51,7 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
             })
                 .on("enter", () => {
                     jQuery(this.el.nativeElement).addClass("fixed falling-leaves");
-
-                    let leaves = new LeafScene(this.el.nativeElement, {
-                            numLeaves: this.leafAmount
-                        });
-
-                    leaves.init();
-                    leaves.render();
+                    this.leafScene.resume();
                     TweenLite.to(this.el.nativeElement, 2, {
                         opacity: 1,
                         ease: "Sine.easeOut"
@@ -58,10 +63,14 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit {
                         ease: "Sine.easeOut",
                         onComplete: () => {
                             jQuery(this.el.nativeElement).removeClass("fixed falling-leaves");
-                            jQuery(this.el.nativeElement).empty();
+                            this.leafScene.pause();
                         }
                     });
                 })
         );
+    }
+
+    ngOnDestroy() {
+        this.leafScene.destroy();
     }
 }

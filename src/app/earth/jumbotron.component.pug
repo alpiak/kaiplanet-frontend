@@ -45,15 +45,6 @@ ul.scene#parallax-scene(
                 )
                 - n++
     li.layer.full-size(data-depth="0.80")
-        div.bubble-cluster-2(scrollUp offset="0%" duration="125%")
-            - var n = 1;
-            while n < 30
-                img.bubble(
-                    class="bubble-" + n
-                    src="../../assets/bubble.svg"
-                )
-                - n++
-    li.layer.full-size(data-depth="1.20")
         div.full-size(
             astralScrollScene="30"
             offset="600%"
@@ -64,7 +55,16 @@ ul.scene#parallax-scene(
             offset="1050%"
             duration="450%"
         )
-        div.scroll-scene-text(style="height: 20%")
+        div.bubble-cluster-2(scrollUp offset="0%" duration="125%")
+            - var n = 1;
+            while n < 30
+                img.bubble(
+                    class="bubble-" + n
+                    src="../../assets/bubble.svg"
+                )
+                - n++
+    li.layer.full-size(data-depth="1.20")
+        div.scroll-scene-text(style="height: 20%;")
             h3(
                 scrollSceneText
                 offset="-30%"
@@ -77,34 +77,60 @@ ul.scene#parallax-scene(
                 duration="150%"
                 i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
             ) Here I found star lights, sweet breezes...
-        div.scroll-scene-text(style="height: 10%")
+        div.scroll-scene-text(style="height: 10%;")
             h3(
                 scrollSceneText
                 offset="290%"
                 duration="200%"
                 i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
             ) and a beating heart
-        div.scroll-scene-text(style="height: 20%")
+        div.scroll-scene-text(style="height: 20%;")
+            svg(style="display: none;")
+                path#wave(d="M10,20  q100,30 200,0 t200,0 200,0")
             h3(
                 scrollSceneText
                 offset="580%"
                 duration="360%"
-                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
-            ) Look, the shooting stars in the sky...
+                style="left: -20%; top: -10%;"
+            )
+                svg(
+                    width="600"
+                    height="100"
+                    viewBox="0 0 600 100"
+                    fill="#fff"
+                )
+                    text(transform="translate(0,30)")
+                        textPath(
+                            xlink:href="#wave"
+                            i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+                        ) Look, the shooting stars in the sky...
             h3(
                 scrollSceneText
                 offset="730%"
                 duration="230%"
-                i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
-            ) and the amazing fireflies around
-        div.scroll-scene-text(style="height: 10%")
+                style="left: 21%; top: 10%;"
+            )
+                svg(
+                    width="600"
+                    height="100"
+                    viewBox="0 0 600 100"
+                    fill="#fff"
+                )
+                    text(transform="translate(0,30)")
+                        textPath(
+                            xlink:href="#wave"
+                            startOffset="30%"
+                            i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
+                        ) and the amazing fireflies around
+        div.scroll-scene-text(style="height: 10%;")
             h3(
                 scrollSceneText
                 offset="1040%"
                 duration="360%"
+                style="left: -50%; top: 200%;"
                 i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
             ) then the wind starts...
-        div.scroll-scene-text(style="height: 10%")
+        div.scroll-scene-text(style="height: 10%;")
             h3(
                 scrollSceneText
                 offset="1660%"
@@ -120,7 +146,6 @@ ul.scene#parallax-scene(
                     src="../../assets/bubble.svg"
                 )
                 - n++
-    li.layer.full-size(data-depth="5.00")
     li.layer.full-size(data-depth="0.60")
         div(scrollUp offset="0%" duration="220%")
             div(

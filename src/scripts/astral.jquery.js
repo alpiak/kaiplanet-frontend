@@ -7,9 +7,20 @@
     var pxs = [];
     var rint = 50;
 
+    var active = true;
+
     $.fn.astral = function (astralAmount) {
         this.append($('<canvas id="astral"></canvas>'));
         setup(this, astralAmount);
+
+        return {
+            pause: pause,
+            resume: resume,
+            destroy: function () {
+                active = false;
+                $(this).find("canvas").remove();
+            }
+        }
     };
 
     function setup (container, astralAmount) {
@@ -46,7 +57,9 @@
             pxs[i].draw();
         }
 
-        requestAnimationFrame(draw);
+        if (active === true) {
+            requestAnimationFrame(draw);
+        }
     }
 
     function Circle() {
@@ -127,5 +140,17 @@
         this.getY = function() {
             return this.y;
         };
+    }
+    
+    function pause() {
+        active = false;
+    }
+
+    function resume() {
+        active = false;
+        requestAnimationFrame(function () {
+            active = true;
+            requestAnimationFrame(draw);
+        });
     }
 })();
