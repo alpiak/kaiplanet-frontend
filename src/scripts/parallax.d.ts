@@ -33,4 +33,5 @@ declare class Parallax {
     scalar(scalarX: boolean|number, scalarY: boolean|number): void;
     friction(frictionX: boolean|number, frictionY: boolean|number): void;
     origin(originX: boolean|number, originY: boolean|number): void;
+    destroy(): void;
 }

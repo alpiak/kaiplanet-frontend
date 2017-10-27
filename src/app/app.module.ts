@@ -3,7 +3,7 @@
  */
 
 import { NgModule } from "@angular/core";
-import { HttpModule } from '@angular/http';
+import { HttpModule } from "@angular/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";

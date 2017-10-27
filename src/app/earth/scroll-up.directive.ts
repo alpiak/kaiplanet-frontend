@@ -2,15 +2,16 @@
  * Created by qhyang on 2017/3/22.
  */
 
-import { Directive, ElementRef, AfterViewInit, Input } from "@angular/core";
+import { Directive, ElementRef, AfterViewInit, OnDestroy, Input } from "@angular/core";
 
 import { BomService } from "../bom.service";
 import { ScrollSceneService } from "./scroll-scene.service"
 
 @Directive({ selector: "[scrollUp]" })
-export class ScrollUpDirective implements AfterViewInit {
+export class ScrollUpDirective implements AfterViewInit, OnDestroy {
     @Input() offset: string;
     @Input() duration: string;
+    private scrollScene: any;
 
     constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
 
@@ -32,7 +33,7 @@ export class ScrollUpDirective implements AfterViewInit {
 
         // build scroll scene
         this.scrollSceneService.addScene(
-            new ScrollMagic.Scene({
+            this.scrollScene = new ScrollMagic.Scene({
                 offset: parseInt(this.offset, 10) / 100 * this.bomService.getWindowHeight(),
                 duration: this.duration
             })
@@ -40,5 +41,10 @@ export class ScrollUpDirective implements AfterViewInit {
                     top: "-120%"
                 })
         );
+    }
+
+    ngOnDestroy() {
+        this.scrollSceneService.removeScene(this.scrollScene);
+        this.scrollScene.destroy();
     }
 }

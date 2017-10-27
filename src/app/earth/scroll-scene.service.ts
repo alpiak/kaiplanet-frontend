@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ScrollSceneService {
-    private controller: Object;
+    private controller: any;
 
     constructor() {
 
@@ -26,5 +26,13 @@ export class ScrollSceneService {
 
     addScene(scene: any) {
         scene.addTo(this.controller);
+    }
+
+    removeScene(scene: any) {
+        this.controller.removeScene(scene);
+    }
+
+    destroy() {
+        this.controller.destroy();
     }
 }

@@ -63,7 +63,10 @@ ul.scene#parallax-scene(
                     src="../../assets/bubble.svg"
                 )
                 - n++
-    li.layer.full-size(data-depth="1.20")
+    li.layer.full-size(
+        data-depth="1.20"
+        "[ngClass]"="langClasses"
+    )
         div.scroll-scene-text(style="height: 20%;")
             h3(
                 scrollSceneText
@@ -86,7 +89,7 @@ ul.scene#parallax-scene(
             ) and a beating heart
         div.scroll-scene-text(style="height: 20%;")
             svg(style="display: none;")
-                path#wave(d="M10,20  q100,30 200,0 t200,0 200,0")
+                path#wave(d="M10,20  q100,30 200,0 t200,0 200,0 200,0 200,0")
             h3(
                 scrollSceneText
                 offset="580%"
@@ -111,9 +114,9 @@ ul.scene#parallax-scene(
                 style="left: 21%; top: 10%;"
             )
                 svg(
-                    width="600"
+                    width="1000"
                     height="100"
-                    viewBox="0 0 600 100"
+                    viewBox="0 0 1000 100"
                     fill="#fff"
                 )
                     text(transform="translate(0,30)")
@@ -127,7 +130,7 @@ ul.scene#parallax-scene(
                 scrollSceneText
                 offset="1040%"
                 duration="360%"
-                style="left: -50%; top: 200%;"
+                style="left: -30%; top: 200%;"
                 i18n="Scroll scene text|The text showed in the progress the user scroll through the scroll scene"
             ) then the wind starts...
         div.scroll-scene-text(style="height: 10%;")

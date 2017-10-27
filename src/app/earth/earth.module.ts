@@ -3,6 +3,7 @@
  */
 
 import { NgModule }      from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 import { EarthComponent } from "./earth.component";
 import { EarthRoutingModule } from "./earth-routing.module";
@@ -28,7 +29,10 @@ import { ScrollRollDirective } from "./scroll-roll.directive";
 import { ScrollFadeDirective } from "./scroll-fade.directive";
 
 @NgModule({
-    imports:      [ EarthRoutingModule ],
+    imports: [
+        CommonModule,
+        EarthRoutingModule
+    ],
     providers:    [ ScrollSceneService ],
     declarations: [
         EarthComponent,

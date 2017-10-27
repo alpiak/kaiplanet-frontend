@@ -190,7 +190,7 @@
       </trans-unit>
       <trans-unit id="2596c1cf2dcf0d70d647016018ca5d6cf068c9d1" datatype="html">
         <source>and the amazing fireflies around</source>
-        <target>そして、周りに奇妙な火垂るもいっぱい</target>
+      <target>そして、周りに奇妙なホタルもいっぱい</target>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>

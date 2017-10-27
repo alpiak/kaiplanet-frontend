@@ -15,8 +15,8 @@ export class ScrollToDirective implements OnInit {
         if (this.where === "bottom") {
             let jQuery = require("jquery");
 
-            jQuery(this.el.nativeElement).click(() => {
-                jQuery("body").animate({
+            jQuery(this.el.nativeElement).bind("click", () => {
+                jQuery("body,html").animate({
                     scrollTop: jQuery(document).height()
                 }, this.duration)
             });
