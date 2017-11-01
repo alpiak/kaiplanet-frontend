@@ -53,7 +53,6 @@ export class DrawingBoardDirective implements AfterViewInit {
                         });
                     });
                 });
-                window["drawingBoard"] = drawingBoard;
                 drawingBoard.restoreWebStorage();
                 this.gridStackService.on("resizestart").subscribe((event) => {
                     if (event.target === this.gridItemContainer) {
@@ -65,7 +64,6 @@ export class DrawingBoardDirective implements AfterViewInit {
                         jQuery(this.el.nativeElement).show();
                         setTimeout(() => {
                             drawingBoard.resize();
-                            console.log(drawingBoard.id, drawingBoard);
                             drawingBoard.restoreWebStorage();
                         }, 200);
                     }
