@@ -19,6 +19,11 @@ if (!window["$"] && !window["jQuery"]) {
     window["$"] = window["jQuery"] = require("jquery/dist/jquery");
 }
 
+// Fallback to loading TweenLite from a local path if the CDN is unavailable
+if (!window["TweenLite"]) {
+    window["TweenLite"] = require("gsap/TweenLite");
+}
+
 // Material Design SVG symbol sprite icons
 let action = require("material-design-icons/sprites/svg-sprite/svg-sprite-action-symbol.svg"),
     device = require("material-design-icons/sprites/svg-sprite/svg-sprite-content-symbol.svg"),

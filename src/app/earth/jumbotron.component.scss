@@ -54,7 +54,7 @@
       @include square(5 * $depth + random() * 6 * $depth + px);
       left: percentage(random());
       $bottom: random();
-      bottom: percentage($bottom * $bottom);
+      bottom: percentage((1.6 - $depth) / 8 + $bottom * $bottom);
       @if random() > 0.5 {
         animation-name: flow-up-#{$depth * 10};
       } @else {
@@ -122,15 +122,16 @@
 }
 
 .lang_en .scroll-scene-text h3 {
-  font-family: "Reenie Beanie", sans-serif;
+  font-family: "Reenie Beanie", "851手書き雑", sans-serif;
 }
 
 .lang_zh .scroll-scene-text h3 {
-  font-family: "851手書き雑", sans-serif;
+  font-family: "851手書き雑", 微软雅黑, sans-serif;
+  letter-spacing: 2px;
 }
 
 .lang_ja .scroll-scene-text h3 {
-  font-family: "851手書き雑", sans-serif;
+  font-family: "851手書き雑", 微软雅黑, sans-serif;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');

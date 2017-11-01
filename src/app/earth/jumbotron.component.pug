@@ -33,8 +33,8 @@ ul.scene#parallax-scene(
     )
         div.full-size(
             astralScrollScene="60"
-            offset="600%"
-            duration="450%"
+            offset="700%"
+            duration="350%"
         )
         div.bubble-cluster-1(scrollUp offset="0%" duration="200%")
             - var n = 1;
@@ -47,8 +47,8 @@ ul.scene#parallax-scene(
     li.layer.full-size(data-depth="0.80")
         div.full-size(
             astralScrollScene="30"
-            offset="600%"
-            duration="450%"
+            offset="700%"
+            duration="350%"
         )
         div.full-size(
             fallingLeavesScrollScene="30"
@@ -72,8 +72,9 @@ ul.scene#parallax-scene(
                 scrollSceneText
                 offset="-30%"
                 duration="230%"
-                i18n="User welcome|The text showed after enter the earth page"
-            ) Welcome to the play ground!
+            )
+                <span *ngIf="userName"> {{ userName }}, </span>
+                span(i18n="User welcome|The text showed after enter the earth page") Welcome to the play ground!
             h3(
                 scrollSceneText
                 offset="90%"

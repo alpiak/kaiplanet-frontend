@@ -8,8 +8,9 @@ nav#left-nav.two-step
         i18n="navigation option text|the text of a nav option to route to another page"
     ) Home
     a(
-        routerLink="/earth"
+        (click)="routeTo('/earth')"
         i18n="navigation option text|the text of a nav option to route to another page"
+        href="javascript:;"
     ) Earth (experimental showcase)
     a(
         i18n="navigation option text|the text of a nav option to route to another page"

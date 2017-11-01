@@ -5,8 +5,9 @@
 ul(bsRipple)
     li
         a(
-            routerLink="/home"
+            (click)="routeTo('/home')"
             i18n="navigation option text|the text of a nav option to route to another page"
+            href="javascript:;"
         ) Home
     li
         a(

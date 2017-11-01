@@ -3,6 +3,9 @@
  */
 
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+
+import { LoadingService } from "../loading.service";
 
 @Component({
     selector: "left-nav",
@@ -10,6 +13,8 @@ import { Component, OnInit } from "@angular/core";
     styles: [ require("./left-nav.component.scss") ]
 })
 export class leftNavComponent implements OnInit {
+    constructor(private loadingService: LoadingService, private router: Router) { }
+
     ngOnInit() {
         const jQuery = require("jquery");
 
@@ -18,6 +23,12 @@ export class leftNavComponent implements OnInit {
 
         jQuery("#left-nav").stairwayNav({
             stairs: 2
+        });
+    }
+
+    routeTo(link: string) {
+        this.loadingService.start(() => {
+            this.router.navigate([ link ]);
         });
     }
 }

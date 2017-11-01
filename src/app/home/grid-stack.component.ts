@@ -9,6 +9,7 @@ import "gridstack";
 import "gridstack/dist/gridstack.css";
 
 import { GridStackService } from "./grid-stack.service";
+import { LoadingService } from "../loading.service";
 
 import { Widget } from "../interfaces";
 
@@ -22,7 +23,7 @@ export class gridStackComponent implements AfterViewInit, OnDestroy {
     gridStack: HTMLElement;
     subscriptions: Subscription[] = [];
 
-    constructor(private gridStackService: GridStackService) { }
+    constructor(private gridStackService: GridStackService, private loadingService: LoadingService) { }
 
     ngAfterViewInit() {
         this.gridStackService.prepare().subscribe((gridStackData: any) => {
@@ -59,6 +60,8 @@ export class gridStackComponent implements AfterViewInit, OnDestroy {
                         }
                     }));
                 });
+
+                this.loadingService.finish();
             }, 200);
         });
         this.gridStackService.on("update").subscribe((mutation) => {

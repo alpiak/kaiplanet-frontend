@@ -7,6 +7,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 
 import { BomService } from "../bom.service";
 import { LocaleService } from "../locale.service";
+import { UserService } from "../user.service";
 
 @Component({
     selector: "jumbotron",
@@ -18,8 +19,9 @@ export class JumbotronComponent implements OnInit, OnDestroy {
     width: number;
     parallax: Parallax;
     langClasses: any = {};
+    userName: string;
 
-    constructor(private bomService: BomService, private localeService: LocaleService) { }
+    constructor(private bomService: BomService, private localeService: LocaleService, private userService: UserService) { }
 
     ngOnInit() {
         this.height = this.bomService.getWindowHeight();
@@ -41,11 +43,17 @@ export class JumbotronComponent implements OnInit, OnDestroy {
                 this.langClasses.lang_en = true;
                 break;
         }
+
+        this.userService.getUserInfo().subscribe((data: any) => {
+            if (data && data.nickName) {
+                this.userName = data.nickName;
+            }
+        });
     }
 
     ngOnDestroy() {
         if (this.parallax) {
-            this.parallax.destroy();
+            this.parallax.disable();
         }
     }
 }

@@ -12,13 +12,13 @@ export class LoadingService {
     private loadedPercent: number;
     private inProgress: boolean;
 
-    start() {
+    start(callback?: any) {
         this.loadedPercent = 0;
         if (!this.inProgress) {
             this.inProgress = true;
             jQuery(".app-loading__counter h1").text("0%");
             jQuery(".app-loading__counter hr").width("0%");
-            jQuery(".app-loading").fadeIn();
+            jQuery(".app-loading").fadeIn("normal", callback);
         }
     }
     progress(progress: number) {
