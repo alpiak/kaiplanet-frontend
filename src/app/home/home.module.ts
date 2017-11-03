@@ -7,6 +7,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule }   from "@angular/forms";
 import { ReactiveFormsModule }   from "@angular/forms";
 
+import { FileUploadModule } from "ng2-file-upload";
+
 import { MaterialModule } from "../material.module";
 import { HomeRoutingModule } from "./home-routing.module";
 import { WidgetsModule } from "../widgets/widgets.module";
@@ -21,8 +23,6 @@ import { WidgetSettingsDialogComponent } from "./widget-settings-dialog.componen
 import { LoginDialogComponent } from "../login-dialog.component";
 import { UserProfileDialogComponent } from "../home/user-profile-dialog.component";
 
-import { FileSelectDirective, FileDropDirective } from "ng2-file-upload";
-
 import { ColorPickerDirective } from "./color-picker.directive";
 
 import { WidgetComponentPipe } from "../widgets/widget-component.pipe";
@@ -33,13 +33,12 @@ import { ArrayPipe } from "../array.pipe";
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
+        FileUploadModule,
         MaterialModule,
         HomeRoutingModule,
         WidgetsModule
     ],
     declarations: [
-        FileSelectDirective,
-        FileDropDirective,
         HomeComponent,
         leftNavComponent,
         gridStackComponent,
