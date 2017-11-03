@@ -104,7 +104,7 @@
           <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
           <context context-type="linenumber">3</context>
         </context-group>
-        <note priority="1" from="description">the text of a button to open dialog to log in or sign up</note>
+        <note priority="1" from="description">the text of a button to open dialog to log in</note>
         <note priority="1" from="meaning">Button text</note>
       </trans-unit>
       <trans-unit id="6732b7869034a4db2809713413f15292f127a920" datatype="html">
@@ -160,6 +160,15 @@
         <target/>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
+      </trans-unit>
+      <trans-unit id="8cd852746c20f4a843a0c99212e9722270607af0" datatype="html">
+        <source>Widget Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-settings-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the title of a dialog for changing widget settings</note>
+        <note priority="1" from="meaning">Dialog title</note>
       </trans-unit>
       <trans-unit id="d47fb79541d930ba3019ec7bf4ea21029292c621" datatype="html">
         <source>Settings</source>

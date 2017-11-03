@@ -54,21 +54,46 @@ module.exports = function(grunt) {
         clean: ["./i18n", "./i18n/tsconfig.json"]
     };
     try {
-        let fileMappings = grunt.file.expandMapping("src/**/*.component.ts", "./i18n");
+        let fileMappings = grunt.file.expandMapping("src/**/*.ts", "./i18n");
         let loadHtmlTasks = {};
         for (let i = 0, len = fileMappings.length; i < len; i++) {
             const src = fileMappings[i].src[0],
-                dest = fileMappings[i].dest;
-            let replacements = [{
-                from: "require(\"." + src.substring(src.lastIndexOf("/"), src.lastIndexOf(".")) + ".pug\")",
-                to: "`" + grunt.file.read("./i18n/" + src.replace(".ts", ".html")) + "`"
-            }];
-            if (grunt.file.read(src).indexOf("styles") !== -1) {
+                dest = fileMappings[i].dest,
+                srcFile = grunt.file.read(src);
+
+            let replacements = [];
+
+            if (srcFile.indexOf(".pug") !== -1) {
                 replacements.push({
-                    from: /styles:(?:.|\n)*?]/g,
+                    from: "require(\"." + src.substring(src.lastIndexOf("/"), src.lastIndexOf(".")) + ".pug\")",
+                    to: "`" + grunt.file.read("./i18n/" + src.replace(".ts", ".html")) + "`"
+                });
+            }
+
+            if (srcFile.indexOf("styles") !== -1) {
+                replacements.push({
+                    from: /styles:(?:.|\n)*?],?/g,
                     to: ""
                 });
             }
+
+            // Remove specific unsupported lines
+
+            if (srcFile.indexOf("const QuillModule = require(\"ngx-quill/bundles/index.js\").QuillModule;") !== -1) {
+                replacements.push({
+                    from: "const QuillModule = require(\"ngx-quill/bundles/index.js\").QuillModule;",
+                    to: ""
+                });
+            }
+
+            if (srcFile.indexOf("QuillModule,") !== -1) {
+                replacements.push({
+                    from: "QuillModule,",
+                    to: ""
+                });
+            }
+
+
             loadHtmlTasks["task" + i] = {
                 src: src,
                 dest: dest,
