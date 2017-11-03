@@ -252,15 +252,7 @@
             } else {
                 document.getElementsByClassName("app-loading__counter")[0].style.display = "none";
             }
-            window.addEventListener("load", function() {
-                if ($ && TweenLite) {
-                    updateProgress(100);
-                    $(".app-loading").fadeOut();
-                } else {
-                    document.getElementsByClassName("app-loading")[0].style.display = "none";
-                }
-            });
         }());
     </script>
-<script type="text/javascript" src="vendors.bundle.js"></script><script type="text/javascript" src="coreJS.bundle.js"></script><script type="text/javascript" src="app.bundle.js"></script></body>
+    <script type="text/javascript" src="vendors.bundle.js"></script><script type="text/javascript" src="app.bundle.js"></script><script type="text/javascript" src="coreJS.bundle.js"></script></body>
 </html>
