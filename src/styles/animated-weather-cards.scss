@@ -16,12 +16,14 @@ $speed: 2s;
 .animated-weather-cards
 {
   background: #eee;
-  background: linear-gradient(0deg, rgba(0, 0, 200, 0.2) , rgba(0, 0, 200, 0) );
+  //background: linear-gradient(0deg, rgba(0, 0, 200, 0.2) , rgba(0, 0, 200, 0) );
+  background: linear-gradient(0deg, rgba(96, 125, 139, 0.2) , rgba(0, 0, 200, 0) );
 
   .animated-weather-cards .background
   {
     background: #eee;
-    background: linear-gradient(120deg, rgba(50, 150, 100, 0.2) , rgba(0, 0, 100, 0) );
+    //background: linear-gradient(120deg, rgba(50, 150, 100, 0.2) , rgba(0, 0, 100, 0) );
+    background: linear-gradient(120deg, rgba(255, 193, 7, 0.2) , rgba(0, 0, 100, 0) );
   }
 
   .container
@@ -38,7 +40,8 @@ $speed: 2s;
     position: relative;
 
     background: #eee;
-    background: linear-gradient(240deg, rgba(150, 50, 50, 0.3) , rgba(0, 0, 200, 0) );
+    //background: linear-gradient(240deg, rgba(150, 50, 50, 0.3) , rgba(0, 0, 200, 0) );
+    background: linear-gradient(240deg, rgba(96, 125, 139, 0.2) , rgba(0, 0, 200, 0) );
 
     &.cloud
     {
