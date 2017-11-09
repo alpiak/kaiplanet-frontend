@@ -10,33 +10,29 @@
     var active = true;
 
     $.fn.astral = function (astralAmount) {
-        this.append($('<canvas id="astral"></canvas>'));
+        var that = this;
+
+        canvas = $('<canvas></canvas>').appendTo(this);
         setup(this, astralAmount);
 
         return {
             pause: pause,
             resume: resume,
+            resize: function () {
+                WIDTH = $(that).width();
+                HEIGHT = $(that).height();
+                canvas.attr('width', WIDTH).attr('height', HEIGHT);
+            },
             destroy: function () {
                 active = false;
-                $(this).find("canvas").remove();
+                $(that).find("canvas").remove();
             }
         }
     };
 
     function setup (container, astralAmount) {
-        var windowSize = function() {
-            WIDTH = container.innerWidth();
-            HEIGHT = container.innerHeight();
-            canvas = container.find('#astral');
-            canvas.attr('width', WIDTH).attr('height', HEIGHT);
-        };
-
-        windowSize();
-
-        $(window).resize(function() {
-            windowSize();
-        });
-
+        WIDTH = $(container).width();
+        HEIGHT = $(container).height();
         con = canvas[0].getContext('2d');
 
         for (var i = 0; i < astralAmount; i++) {
@@ -46,6 +42,30 @@
 
         requestAnimationFrame(draw);
     }
+
+    // function setup (container, astralAmount) {
+    //     var windowSize = function() {
+    //         WIDTH = container.innerWidth();
+    //         HEIGHT = container.innerHeight();
+    //         canvas = container.find('#astral');
+    //         canvas.attr('width', WIDTH).attr('height', HEIGHT);
+    //     };
+    //
+    //     windowSize();
+    //
+    //     $(window).resize(function() {
+    //         windowSize();
+    //     });
+    //
+    //     con = canvas[0].getContext('2d');
+    //
+    //     for (var i = 0; i < astralAmount; i++) {
+    //         pxs[i] = new Circle();
+    //         pxs[i].reset();
+    //     }
+    //
+    //     requestAnimationFrame(draw);
+    // }
 
     function draw () {
         con.clearRect(0, 0, WIDTH, HEIGHT);

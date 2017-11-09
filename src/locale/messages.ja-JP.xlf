@@ -2,249 +2,499 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="723b7d821a6fa8aab397fdb9515db5ece0b65e91" datatype="html">
-        <source>Widget type:</source>
-        <target>ウィジェット類型：</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="73cfb2b9085a37a183acf44c8883cb86d9d333ae" datatype="html">
+        <source>No background image configured</source>
+        <target>背景画像はいまつけていません</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/image-upload-panel.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">text to hint the user no background image is currently added to the widget</note>
+        <note priority="1" from="meaning">User hint</note>
       </trans-unit>
-      <trans-unit id="231a8d473783ab8a5ab149977f1e64805d396b2d" datatype="html">
-        <source>X:</source>
-      <target>X:</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="ae74a0545f3f3c68267eba573e7ff0d34949c6a3" datatype="html">
+        <source>Drop file here or...</source>
+        <target>ファイルを引いてここに放す、あるいは...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/image-upload-panel.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description"> text to hint the user to drop file(s) there to upload</note>
+        <note priority="1" from="meaning">User hint</note>
       </trans-unit>
-      <trans-unit id="41ce5ae442971f8cc1b7fdb7eac66da3b4f1e03f" datatype="html">
-        <source>Number...</source>
-        <target>数字...</target>
-        <note priority="1" from="description">Tip of input field</note>
-        <note priority="1" from="meaning">Text of a tip</note>
+      <trans-unit id="ffb76f558a46046484b5bb4cda396b3d1f77cb98" datatype="html">
+        <source>Add</source>
+        <target>追加</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/image-upload-panel.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/add-widget-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the text of a button to enter a panel to add images</note>
+        <note priority="1" from="meaning">Button text</note>
       </trans-unit>
-      <trans-unit id="2022499921c1cfe779802f718edbddb18a01c1df" datatype="html">
-        <source>Input is not a integer between 0~9!</source>
-        <target>入力は整数ではありません！</target>
-        <note priority="1" from="description">Warn the user the input is not valid</note>
-        <note priority="1" from="meaning">Warning text of a input field</note>
+      <trans-unit id="056fd537176bd0f261259256539fbac63595ca65" datatype="html">
+        <source>Add a Widget</source>
+        <target>ウィジェット追加</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/add-widget-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the title of a dialog to add a new widget</note>
+        <note priority="1" from="meaning">Dialog title</note>
       </trans-unit>
-      <trans-unit id="a70d9477ea00a2c678819adbd201f14520768b42" datatype="html">
-        <source>Y:</source>
-        <target>Y:</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="517313b2620adb18cf1c4215f88462ef9424df99" datatype="html">
+        <source>Basic Settings</source>
+        <target>基本設定</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/add-widget-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-settings-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the title of a panel in a dialog for adding new widget</note>
+        <note priority="1" from="meaning">Panel title</note>
       </trans-unit>
-      <trans-unit id="d496e68cb7b0250425f9c254818a62fd0c08da3c" datatype="html">
-        <source>Width:</source>
-        <target>幅：</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="52392a593302d257be6f4700840df3bea85b7fd6" datatype="html">
+        <source>Detail Settings</source>
+        <target>詳しい設定</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/add-widget-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-settings-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">The title of a panel in a dialog for adding new widget</note>
+        <note priority="1" from="meaning">panel title</note>
       </trans-unit>
-      <trans-unit id="081998eb9a1d0921d0cc520ca68c500f9cbcec03" datatype="html">
-        <source>Height:</source>
-        <target>高さ：</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="ad64a0228a93e65c6bce3a11fd902598fecd387b" datatype="html">
+        <source>Cancel</source>
+        <target>閉じる</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/add-widget-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the text of a button to close the &quot;add a widget&quot; dialog without adding the widget</note>
+        <note priority="1" from="meaning">Button text</note>
       </trans-unit>
-      <trans-unit id="9aa8513894cdac40982132566e6b207d21de9a6e" datatype="html">
-        <source>Z-index:</source>
-        <target>Z-index:</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="b3d997d5c0f40e256d604b91b83cbc5262ffd9aa" datatype="html">
+        <source>Login</source>
+        <target>ログイン</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/login-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">the header text of the login dialog</note>
+        <note priority="1" from="meaning">dialog header text</note>
       </trans-unit>
-      <trans-unit id="0636d959e942f3bf75cc9fb990571bf2266c3884" datatype="html">
-        <source>Input is not a integer bigger than 0!</source>
-        <target>入力はゼロ以上の整数ではありません！</target>
-        <note priority="1" from="description">Warn the user the input is not valid</note>
-        <note priority="1" from="meaning">Warning text of a input field</note>
+      <trans-unit id="bdf4aa92f9e96df3b8138773bf0b224d01cfb17a" datatype="html">
+        <source>Choose a login method</source>
+        <target>ログイン方選択</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/login-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">the title of the login dialog</note>
+        <note priority="1" from="meaning">dialog title</note>
       </trans-unit>
-      <trans-unit id="e7328c5e5ae4a12814c21f11b9787921eaaf0f2c" datatype="html">
-        <source>Type:</source>
-        <target>類型：</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="b6cf9d574fcd6fab6744be8fdb67af739c411203" datatype="html">
+        <source>Close</source>
+        <target>閉じる</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/login-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-settings-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the text of a button to close the login dialog</note>
+        <note priority="1" from="meaning">Button text</note>
       </trans-unit>
-      <trans-unit id="a9967a13167a95928072f3db194a328558f7b425" datatype="html">
-        <source>Types:</source>
-        <target>類型：</target>
-        <note priority="1" from="description">Label of input field</note>
-        <note priority="1" from="meaning">Label text</note>
+      <trans-unit id="7ccf8500552683a3fb37e5a4693dbb764494fb53" datatype="html">
+        <source>User Profile</source>
+        <target>ユーザー設定</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">the title of a dialog for changing user profile</note>
+        <note priority="1" from="meaning">Dialog title</note>
       </trans-unit>
-      <trans-unit id="29539eb85866ab331f5345afc6e1df20c6c92a25" datatype="html">
-        <source>Fork me on GitHub</source>
-        <target>Fork me on GitHub</target>
+      <trans-unit id="d1b4f0ebc62d48b3e151db1d2595612f6f6005fc" datatype="html">
+        <source>Not a valid date</source>
+        <target>ご入力は有効な日付ではありません</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">the error massage displayed under a input field when the date the user input can&apos;t be parsed</note>
+        <note priority="1" from="meaning">Error message</note>
+      </trans-unit>
+      <trans-unit id="11191a0048f74f95cb57507022c8190d5fdf6810" datatype="html">
+        <source>Male</source>
+        <target>男</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">the text of an option of a radio group for the user to choose the gender</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="b81a669cae63c0d532f8958a9091835775e753e7" datatype="html">
+        <source>Female</source>
+        <target>女</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">the text of an option of a radio group for the user to choose the gender</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="c25a4a9c4ac840ad5a2b1f002f808be0e09f0c71" datatype="html">
+        <source>Other</source>
+        <target>他の</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">the text of an option of a radio group for the user to choose the gender</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="c5047c172c70c4c14ae7806698ad7cb509e0d93d" datatype="html">
+        <source>Submit</source>
+        <target>传送</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/user-profile-dialog.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-settings-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the text of a button to submit the changes of user profile and close the user profile dialog</note>
+        <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="bfde9e3c408fb57b80a14736d2e686e6d761e63a" datatype="html">
+        <source>Grab me on GitHub</source>
+        <target>Grab me on GitHub</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/top-tool-pane.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a button to go to the GitHub repository of the site</note>
         <note priority="1" from="meaning">Button text</note>
       </trans-unit>
       <trans-unit id="64146209927b967aca185aa08be6f54566bbaf97" datatype="html">
         <source>Widgets</source>
         <target>ウィジェット</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a button to open a menu to manage widgets</note>
         <note priority="1" from="meaning">Button text</note>
       </trans-unit>
       <trans-unit id="27994c58bd7ae6a172cb7641e90c41bb9e0903df" datatype="html">
         <source>Add a widget</source>
         <target>ウィジェット追加</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to open a dialog for adding a widget</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="26c40cfbe32edc7af7c77e95f3b14429d2a3aafc" datatype="html">
         <source>Manage widgets</source>
         <target>ウィジェット管理</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to enter the wigdets-managing mode</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="e528cb0f83bad4fa91f93d4362ce32be1490506c" datatype="html">
         <source>Log in</source>
         <target>ログイン</target>
-        <note priority="1" from="description">the text of a button to open dialog to log in or sign up</note>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the text of a button to open a dialog to log in</note>
         <note priority="1" from="meaning">Button text</note>
+      </trans-unit>
+      <trans-unit id="be829894883aac0eaf4768cb0fd7bcf3b69d548d" datatype="html">
+        <source>Profile</source>
+        <target>ユーザー設定</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the text of an option to open user profile dialog</note>
+        <note priority="1" from="meaning">Option text</note>
+      </trans-unit>
+      <trans-unit id="0ac6adb5519bef92851d124f136a52c68823cabc" datatype="html">
+        <source>Log out</source>
+        <target>ログアウト</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the text of an option log out</note>
+        <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="6732b7869034a4db2809713413f15292f127a920" datatype="html">
         <source>Change theme</source>
         <target>テーマ変更</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/header-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to open a dialog to change theme of the page</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
-      <trans-unit id="79530f9da8b6cca540550d2a519957135cf71933" datatype="html">
-        <source>Add a widget</source>
-        <target>ウィジェット追加</target>
-        <note priority="1" from="description">the title of a dialog for adding a widget</note>
-        <note priority="1" from="meaning">Dialog title</note>
-      </trans-unit>
-      <trans-unit id="ffb76f558a46046484b5bb4cda396b3d1f77cb98" datatype="html">
-        <source>Add</source>
-        <target>追加</target>
-        <note priority="1" from="description">the text of a button to add a widget to the widget board</note>
-        <note priority="1" from="meaning">Button text</note>
-      </trans-unit>
-      <trans-unit id="ad64a0228a93e65c6bce3a11fd902598fecd387b" datatype="html">
-        <source>Cancel</source>
-        <target>閉じる</target>
-        <note priority="1" from="description">the text of a button to close the dialog for adding a widget without adding any widget to the widget board</note>
-        <note priority="1" from="meaning">Button text</note>
+      <trans-unit id="655826c20c10297fece0ae98374614f9206e9df7" datatype="html">
+        <source>Please add more than one picture to show the carousel</source>
+        <target>カルーセルを始動するため、少なくとも画像をふたつ添付してください</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/widgets/carousel-widget.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">A message to tell the user more image(s) is needed to be configured to the carousel widget to display the carousel</note>
+        <note priority="1" from="meaning">message text</note>
       </trans-unit>
       <trans-unit id="1c7b50f3ee735a3ae2e423aa217c296a4c465ed1" datatype="html">
         <source>Home</source>
         <target>ホーム</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/left-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/crystal-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="42f2bbe3f1190a2c7c3e4cf6e92c99f860f5f433" datatype="html">
         <source>Earth (experimental showcase)</source>
         <target>地球(実験展示)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/left-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="82efbc0e620e897652aad4139e8048bec64696de" datatype="html">
         <source>Music of the day (in development)</source>
         <target>今日のうた（開発中）</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/left-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="2274b9875ebf558694d6f58cb033e41136c9c559" datatype="html">
         <source>Strike! (in development)</source>
         <target>ストライク!（開発中）</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/left-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="6c5a42a42dc32994217b12b5a5c7dbfd15aef6d3" datatype="html">
         <source>Pokemon Star (in development)</source>
         <target>ポケモン•スター（開発中）</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/left-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
+      <trans-unit id="8cd852746c20f4a843a0c99212e9722270607af0" datatype="html">
+        <source>Widget Settings</source>
+        <target>ウィジェット設定</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-settings-dialog.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">the title of a dialog for changing widget settings</note>
+        <note priority="1" from="meaning">Dialog title</note>
+      </trans-unit>
       <trans-unit id="d47fb79541d930ba3019ec7bf4ea21029292c621" datatype="html">
         <source>Settings</source>
-        <target>セッティング</target>
+        <target>ウィジェット設定</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-frame.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to open a widget settings dialog</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
-      <trans-unit id="6e36eb58a1e939715da253f8674a1aa5f301fc9b" datatype="html">
-        <source>Resize</source>
-        <target>サイズ変更</target>
+      <trans-unit id="a5b3d810bbfceca0bc1b204f1e8f3dc1bf7f0edc" datatype="html">
+        <source>Manage</source>
+        <target>ウィジェット管理</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/widget-frame.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
         <note priority="1" from="description">the text of an option to enter the wigdets-managing mode of a specific widget</note>
         <note priority="1" from="meaning">Option text</note>
       </trans-unit>
       <trans-unit id="56af3f492cecd0c52d55a295ae351280dbd82a6a" datatype="html">
         <source>Welcome to the play ground!</source>
         <target>遊園地にようこそ！</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">The text showed after enter the earth page</note>
         <note priority="1" from="meaning">User welcome</note>
       </trans-unit>
       <trans-unit id="623dfcf5047411b7c67d9d622006a9e64a5b2929" datatype="html">
         <source>Here I found star lights, sweet breezes...</source>
         <target>ここには美しい星空が見える</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="0a0be9ff9574abce4d8fbef7d5c8c76a3786c067" datatype="html">
         <source>and a beating heart</source>
         <target>そのうえ、わくわくしてるこころだ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="9fd224fde5264bff3fd7dd0912c8f918f6e53872" datatype="html">
         <source>Look, the shooting stars in the sky...</source>
         <target>ほら、流れ星</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="2596c1cf2dcf0d70d647016018ca5d6cf068c9d1" datatype="html">
         <source>and the amazing fireflies around</source>
-      <target>そして、周りに奇妙なホタルもいっぱい</target>
+        <target>そして、周りに奇妙なホタルもいっぱい</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="b6dfce680d09e955ab7c3c7a51ad4a8944bb9152" datatype="html">
         <source>then the wind starts...</source>
         <target>ちょっと、かぜが吹き始めてる</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="42cf71b5ee90d189220ff6a94356d2ef6b1466ca" datatype="html">
         <source>Do you hear the breathe of the Earth?</source>
-        <target>この地球の呼吸が聞こえるか</target>
+      <target>この地球の息が聞こえるか</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">The text showed in the progress the user scroll through the scroll scene</note>
         <note priority="1" from="meaning">Scroll scene text</note>
       </trans-unit>
       <trans-unit id="e5da37fce31753991e825c2a2395d1ae6d6c8963" datatype="html">
         <source>SCROLL</source>
         <target>SCROLL</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/jumbotron.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">Text of a tip to let the user to scroll down</note>
         <note priority="1" from="meaning">Tip text</note>
       </trans-unit>
       <trans-unit id="528665650a7eae5968e2375c892d5e5c694d5032" datatype="html">
         <source>Earth</source>
         <target>地球</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/crystal-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="997b26a486d082a7ec2c66e0ba11897e937cabf4" datatype="html">
         <source>Music of the day</source>
         <target>今日のうた</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/crystal-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="8a10fbdf5a128c6f322a5740f6487a4f9ff71577" datatype="html">
         <source>Strike!</source>
         <target>ストライク!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/crystal-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
       <trans-unit id="2d9a3fda2a55b9839720682f4df29f8cbb0b24c9" datatype="html">
         <source>Pokemon Star</source>
         <target>ポケモン•スター</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/crystal-nav.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
-      </trans-unit>
-      <trans-unit id="e2833c9ac0a99381cb764b9c9a3d348c0518f836" datatype="html">
-        <source>Fork me on GitHub</source>
-        <target>Fork me on GitHub</target>
-        <note priority="1" from="description">the text of a button to go to the GitHub repository of the site</note>
-        <note priority="1" from="meaning">Button text</note>
       </trans-unit>
       <trans-unit id="26b51c69149a22f1d6ad0b9bed40b39a61ee0fa6" datatype="html">
         <source>Skip</source>
         <target>下へ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/earth/top-tool-pane.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
         <note priority="1" from="description">text of the button to skip the scroll scene and go to the bottom directly on the earth page</note>
         <note priority="1" from="meaning">button text</note>
       </trans-unit>

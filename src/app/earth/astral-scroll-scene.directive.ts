@@ -27,8 +27,11 @@ export class AstralScrollSceneDirective extends ScrollSceneDirective implements 
         require("../../scripts/astral.jquery");
 
         this.astral = jQuery(this.el.nativeElement).astral(this.astralAmount);
-
         this.astral.pause();
+
+        setTimeout(() => {
+            this.astral.resize();
+        }, 200);
 
 
         // ScrollMagic
@@ -48,6 +51,7 @@ export class AstralScrollSceneDirective extends ScrollSceneDirective implements 
                 offset: parseInt(this.offset) / 100 * this.bomService.getWindowHeight()
             })
                 .on("enter", () => {
+                    this.astral.resize();
                     jQuery(this.el.nativeElement).addClass("fixed");
                     TweenLite.to(this.el.nativeElement, 2, {
                         opacity: 1,

@@ -2,6 +2,7 @@
  * Created by qhyang on 2017/3/22.
  */
 
+import { Subscription } from "rxjs";
 import { Directive, ElementRef, AfterViewInit, OnDestroy, Input } from "@angular/core";
 
 import { BomService } from "../bom.service";
@@ -13,6 +14,7 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit, OnDestr
     @Input() offset: string;
     @Input() duration: string;
     private leafScene: any;
+    subscriptions: Subscription[] = [];
 
     constructor(private el: ElementRef, private scrollSceneService: ScrollSceneService, private bomService: BomService) { }
 
@@ -25,7 +27,15 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit, OnDestr
             numLeaves: this.leafAmount
         });
 
-        this.leafScene.init();
+        window['leafScene'] = this.leafScene;
+
+        setTimeout(() => {
+            this.leafScene.init();
+        }, 1000);
+
+        this.subscriptions.push(this.bomService.onWindowResize().subscribe(() => {
+            this.leafScene.resize();
+        }));
 
 
         // ScrollMagic
@@ -72,5 +82,8 @@ export class FallingLeavesScrollSceneDirective implements AfterViewInit, OnDestr
 
     ngOnDestroy() {
         this.leafScene.destroy();
+        this.subscriptions.forEach(subscription => {
+            subscription.unsubscribe();
+        });
     }
 }

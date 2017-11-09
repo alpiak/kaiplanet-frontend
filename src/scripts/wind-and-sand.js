@@ -72,7 +72,7 @@
     }
 
     // window.onload = function() {
-    setTimeout(() => {
+    setTimeout(function() {
         document.onmousemove = handleMouseMove;
         context.drawImage(img, 0, 0 );
         myData = context.getImageData(0, 0, img.width, img.height);

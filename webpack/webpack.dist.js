@@ -16,7 +16,7 @@ const rootDir = path.resolve(__dirname, "..");
 module.exports = {
     entry: {
         coreJS: [ "core-js" ],
-        app: [ path.resolve(rootDir, "src", "app", "main-dist") ],
+        app: [ path.resolve(rootDir, "src", "app", "main") ],
         vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },
     module: {

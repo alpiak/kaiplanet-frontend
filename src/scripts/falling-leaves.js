@@ -144,12 +144,14 @@ LeafScene.prototype.init = function() {
     this.world.style.oPerspective = "400px";
     this.world.style.perspective = "400px";
 
-    // reset window height/width on resize
-    var self = this;
-    window.onresize = function(event) {
-        self.width = self.viewport.offsetWidth;
-        self.height = self.viewport.offsetHeight;
-    };
+    // // reset window height/width on resize
+    // var self = this;
+    // window.onresize = function(event) {
+    //     self.width = self.viewport.offsetWidth;
+    //     self.height = self.viewport.offsetHeight;
+    // };
+
+    this.resize();
 }
 
 LeafScene.prototype.active = true
@@ -165,6 +167,11 @@ LeafScene.prototype.render = function() {
     if (this.active) {
         requestAnimationFrame(this.render.bind(this));
     }
+}
+
+LeafScene.prototype.resize = function () {
+    this.width = this.viewport.offsetWidth;
+    this.height = this.viewport.offsetHeight;
 }
 
 LeafScene.prototype.pause = function() {

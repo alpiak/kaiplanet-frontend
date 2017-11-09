@@ -24,7 +24,10 @@ md-card
                     )
                         svg.svg-ic_20px-dims
                             use(xlink:href="#ic_delete_24px")
-            div(*ngIf="!images?.length") No background image configured
+            div(
+                *ngIf="!images?.length"
+                i18n="User hint|text to hint the user no background image is currently added to the widget"
+            ) No background image configured
         div(*ngIf="showBackgroundImageConfig")
             div(
                 ng2FileDrop
