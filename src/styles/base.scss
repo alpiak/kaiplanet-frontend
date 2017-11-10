@@ -1,4 +1,11 @@
 
+@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+
+@font-face {
+  font-family: "851手書き雑";
+  src: url(../assets/851tegaki_zatsu_0875.ttf);
+}
+
 @import "./theme";
 
 body {
@@ -27,6 +34,7 @@ body {
         cursor: ns-resize;
         box-sizing: content-box;
       }
+
       .shape:before {
         content: " ";
         position: absolute;
@@ -40,6 +48,7 @@ body {
     }
   }
 }
+
 #hslPicker .twod .pointer .shape {
   position: absolute;
   left: -10px;
@@ -58,6 +67,7 @@ body {
   z-index: 10;
   box-sizing: content-box;
 }
+
 #hslPicker .twod .pointer .shape:after {
   position: absolute;
   bottom: -2px;
@@ -85,48 +95,80 @@ img.emoji {
   font-family: "Roboto", serif;
 }
 
+
 // Set dropdown font-families
+
 [quill-editor-toolbar] .ql-font span[data-label="Sofia Pro"]::before {
   font-family: "Sofia Pro", sans-serif;
 }
+
 [quill-editor-toolbar] .ql-font span[data-label="Slabo 13px"]::before {
   font-family: "Slabo 13px", sans-serif;
 }
+
 [quill-editor-toolbar] .ql-font span[data-label="Roboto Slab"]::before {
   font-family: "Roboto Slab", serif;
 }
+
 [quill-editor-toolbar] .ql-font span[data-label="Inconsolata"]::before {
   font-family: "Inconsolata", monospace;
 }
+
 [quill-editor-toolbar] .ql-font span[data-label="Ubuntu Mono"]::before {
   font-family: "Ubuntu Mono", monospace;
 }
+
 [quill-editor-toolbar] .ql-font span[data-label="Mirza"]::before {
   font-family: "Mirza", serif;
 }
+
 [quill-editor-toolbar] .ql-font span[data-label="Aref Ruqaa"]::before {
   font-family: "Aref Ruqaa", serif;
 }
 
+[quill-editor-toolbar] .ql-font span[data-label="Reenie Beanie"]::before {
+  font-family: "Reenie Beanie", "851手書き雑", sans-serif;
+}
+
+[quill-editor-toolbar] .ql-font span[data-label="851手書き雑"]::before {
+  font-family: "851手書き雑", 微软雅黑, sans-serif;
+}
+
+
 // Set content font-families
+
 .ql-font-sofia {
   font-family: "Sofia Pro", sans-serif;
 }
+
 .ql-font-slabo {
   font-family: "Slabo 13px", sans-serif;
 }
+
 .ql-font-roboto {
   font-family: "Roboto Slab", serif;
 }
+
 .ql-font-inconsolata {
   font-family: "Inconsolata", monospace;
 }
+
 .ql-font-ubuntu {
   font-family: "Ubuntu Mono", monospace;
 }
+
 .ql-font-mirza {
   font-family: "Mirza", serif;
 }
+
 .ql-font-aref {
   font-family: "Aref Ruqaa", serif;
+}
+
+.ql-font-reenie {
+  font-family: "Reenie Beanie", "851手書き雑", sans-serif;
+}
+
+.ql-font-tegaki {
+  font-family: "851手書き雑", 微软雅黑, sans-serif;
 }
