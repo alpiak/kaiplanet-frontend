@@ -7,9 +7,6 @@ import "bootstrap/dist/css/bootstrap";
 import "material-design-lite/dist/material.blue_grey-amber.min";
 import "material-design-lite/material.js";
 import "../styles/languages";
-import "./parallax";
-import "quill/dist/quill.core.css";
-import "quill/dist/quill.snow.css";
 
 import "../styles/base";
 import "../styles/default.theme";
@@ -36,10 +33,3 @@ content = content.substr(0, 43) + " style='display:none'" + content.substr(43);
 const jQuery = require("jquery");
 
 jQuery("body").prepend(action + device + content);
-
-const Quill = require("quill");
-
-// Add fonts to whitelist
-const Font = Quill.import("formats/font");
-Font.whitelist = [ "sofia", "slabo", "roboto", "inconsolata", "ubuntu", "mirza", "aref", "reenie", "tegaki" ];
-Quill.register(Font, true);

@@ -2,6 +2,9 @@
  * Created by qhyang on 2017/9/28.
  */
 
+import "quill/dist/quill.core.css";
+import "quill/dist/quill.snow.css";
+
 import { Subscription } from "rxjs";
 import { Component, AfterViewInit, OnDestroy, ElementRef } from "@angular/core";
 
@@ -9,6 +12,13 @@ import { GridStackService } from "../home/grid-stack.service";
 import { BomService } from "../bom.service";
 
 import { WidgetComponent } from "./widget.component";
+
+const Quill = require("quill");
+
+// Add fonts to whitelist
+const Font = Quill.import("formats/font");
+Font.whitelist = [ "sofia", "slabo", "roboto", "inconsolata", "ubuntu", "mirza", "aref", "reenie", "tegaki" ];
+Quill.register(Font, true);
 
 @Component({
     selector: "rich-text-widget",

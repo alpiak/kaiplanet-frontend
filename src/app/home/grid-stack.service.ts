@@ -74,10 +74,10 @@ export class GridStackService {
                 ]
             }
         },
-        waterfall: {
-            text: "Waterfall",
-            id: "waterfall"
-        }
+        // waterfall: {
+        //     text: "Waterfall",
+        //     id: "waterfall"
+        // }
     };
     private widgets: Widget[];
     private isInit: boolean = false;

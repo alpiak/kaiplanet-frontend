@@ -16,7 +16,7 @@ import { WeatherCardWidgetComponent } from "./weather-card-widget.component";
 import { DrawingBoardWidgetComponent } from "./drawing-board-widget.component";
 import { RichTextWidgetComponent } from "./rich-text-widget.component";
 import { MoonOceanWidgetComponent } from "./moon-ocean-widget.component";
-import { WaterfallWidgetComponent } from "./waterfall-widget.component";
+// import { WaterfallWidgetComponent } from "./waterfall-widget.component";
 import { PlainWidgetComponent } from "./plain-widget.component";
 import { SNSWidgetComponent } from "./sns-widget.component";
 
@@ -24,7 +24,7 @@ import { ThreeImageTransitionDirective } from "./three-image-transition.directiv
 import { AnimatedWeatherCardDirective } from "./animated-weather-card.directive";
 import { DrawingBoardDirective } from "./drawing-board.directive";
 import { EmojiPanelDirective } from "../widgets/emoji-panel.directive";
-import { WaterfallDirective } from "./waterfall.directive";
+// import { WaterfallDirective } from "./waterfall.directive";
 import { AnimatedBackgroundDirective } from "./animated-background.directive";
 import { RichTextDirective } from "./rich-text.directive";
 
@@ -43,13 +43,13 @@ import { RichTextDirective } from "./rich-text.directive";
         RichTextWidgetComponent,
         MoonOceanWidgetComponent,
         SNSWidgetComponent,
-        WaterfallWidgetComponent,
+        // WaterfallWidgetComponent,
         PlainWidgetComponent,
         ThreeImageTransitionDirective,
         AnimatedWeatherCardDirective,
         DrawingBoardDirective,
         EmojiPanelDirective,
-        WaterfallDirective,
+        // WaterfallDirective,
         AnimatedBackgroundDirective,
         RichTextDirective
     ],
@@ -60,7 +60,7 @@ import { RichTextDirective } from "./rich-text.directive";
         DrawingBoardWidgetComponent,
         RichTextWidgetComponent,
         MoonOceanWidgetComponent,
-        WaterfallWidgetComponent,
+        // WaterfallWidgetComponent,
         PlainWidgetComponent,
         SNSWidgetComponent,
     ],
@@ -71,7 +71,7 @@ import { RichTextDirective } from "./rich-text.directive";
         DrawingBoardWidgetComponent,
         RichTextWidgetComponent,
         MoonOceanWidgetComponent,
-        WaterfallWidgetComponent,
+        // WaterfallWidgetComponent,
         PlainWidgetComponent,
         SNSWidgetComponent
     ]

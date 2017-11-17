@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { MaterialModule } from "./material.module";
-import { EarthModule } from "./earth/earth.module";
 
 import { AppComponent }  from "./app.component";
 import { MDLUpgradeDirective } from "./mdl-upgrade.directive";
@@ -29,8 +28,7 @@ import { LoggerService } from "./logger.service";
         HttpModule,
         BrowserAnimationsModule,
         MaterialModule,
-        AppRoutingModule,
-        EarthModule,
+        AppRoutingModule
     ],
     providers: [
         UserService,

@@ -109,9 +109,9 @@ module.exports = {
                                 progress: $counter.data("loaded-percent") || 0
                             };
                             
-                            $counter.data("loaded-percent", 90);
+                            $counter.data("loaded-percent", 80);
                             TweenLite.to(loading, 0.5, {
-                                progress: 90,
+                                progress: 80,
                                 onUpdate: function() {
                                     $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
                                     $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");

@@ -7,8 +7,8 @@ import { RouterModule, Routes } from "@angular/router";
 
 const appRoutes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
-    { path: "home", loadChildren: "./home/home.module#HomeModule" },
-    { path: "earth", loadChildren: "./earth/earth.module#EarthModule" }
+    { path: "earth", loadChildren: "./earth/earth.module#EarthModule" },
+    { path: "home", loadChildren: "./home/home.module#HomeModule" }
 ];
 
 @NgModule({
