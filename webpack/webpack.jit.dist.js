@@ -16,7 +16,7 @@ const rootDir = path.resolve(__dirname, "..");
 module.exports = {
     entry: {
         coreJS: [ "core-js" ],
-        app: [ path.resolve(rootDir, "src", "app", "main") ],
+        app: [ path.resolve(rootDir, "src", "main-jit") ],
         vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },
     module: {
@@ -30,7 +30,7 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                loader: "ts-loader"
+                loaders: [ "babel-loader?presets[]=es2015", "ts-loader", "angular-router-loader" ]
             },
             {
                 test: /\.scss$/,
@@ -96,12 +96,12 @@ module.exports = {
         new HtmlWebpack({
             filename: "index.html",
             inject: "body",
-            template: path.resolve(rootDir, "src", "index.html")
+            template: path.resolve(rootDir, "src", "index-jit.html")
         }),
         new BannerWebpack({
             chunks: {
                 app: {
-                    beforeContent: `
+                    beforeContent: `//
                     (function() {   
                         if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");
@@ -121,7 +121,7 @@ module.exports = {
                     }());
                 `},
                 vendors: {
-                    beforeContent: `
+                    beforeContent: `//
                     (function() {    
                         if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");

@@ -2,7 +2,7 @@
  * Created by qhyang on 2017/3/14.
  */
 
-module.exports = function AnimatedWeatherCards(widgetContainer, options, viewContainer) {
+export default function AnimatedWeatherCards(widgetContainer, options, viewContainer) {
     var widegetContainerClass = "animated-weather-cards-" + Math.round(Math.random() * 1000);
     $(widgetContainer)
         .addClass("animated-weather-cards")
@@ -133,6 +133,8 @@ module.exports = function AnimatedWeatherCards(widgetContainer, options, viewCon
         { type: 'sun', name: 'Sunny'},
         { type: 'cloud', name: 'Cloudy'}
     ];
+
+    var currentWeather;
 
 // 🛠 app settings
 // in an object so the values can be animated in tweenmax

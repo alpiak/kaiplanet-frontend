@@ -8,8 +8,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from "./app-routing.module";
 
-import { HomeModule } from "./home/home.module";
-import { WidgetsModule } from "./widgets/widgets.module";
+import { MaterialModule } from "./material.module";
 import { EarthModule } from "./earth/earth.module";
 
 import { AppComponent }  from "./app.component";
@@ -29,9 +28,8 @@ import { LoggerService } from "./logger.service";
     imports: [
         HttpModule,
         BrowserAnimationsModule,
+        MaterialModule,
         AppRoutingModule,
-        HomeModule,
-        WidgetsModule,
         EarthModule,
     ],
     providers: [

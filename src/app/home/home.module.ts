@@ -2,10 +2,12 @@
  * Created by qhyang on 2017/3/6.
  */
 
-import { NgModule }      from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { FormsModule }   from "@angular/forms";
-import { ReactiveFormsModule }   from "@angular/forms";
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+
+import { Compiler, CompilerFactory } from "../compiler.service";
 
 import { FileUploadModule } from "ng2-file-upload";
 
@@ -30,13 +32,16 @@ import { ArrayPipe } from "../array.pipe";
 
 @NgModule({
     imports: [
-        BrowserModule,
+        CommonModule,
         FormsModule,
         ReactiveFormsModule,
         FileUploadModule,
         MaterialModule,
         HomeRoutingModule,
         WidgetsModule
+    ],
+    providers: [
+        { provide: Compiler, useFactory: CompilerFactory }
     ],
     declarations: [
         HomeComponent,

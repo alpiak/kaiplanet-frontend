@@ -6,7 +6,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
-const QuillModule = require("ngx-quill/bundles/index.js").QuillModule;
+import { QuillModule } from "../vendors/quill.module";
 
 import { MaterialModule } from "../material.module";
 

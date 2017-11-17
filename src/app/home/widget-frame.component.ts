@@ -2,8 +2,10 @@
  * Created by qhyang on 2017/3/12.
  */
 
-import { Compiler, Component, EventEmitter, Input, Output, NgModuleFactory } from "@angular/core";
+import { Component, EventEmitter, Input, Output, NgModuleFactory, Inject } from "@angular/core";
 import { MdDialog, MdDialogRef } from "@angular/material";
+
+import { Compiler } from "../compiler.service";
 
 import { WidgetsModule } from "../widgets/widgets.module";
 
@@ -22,7 +24,7 @@ export class widgetFrameComponent{
     private widgetsModule: NgModuleFactory<any>;
     @Output() onClose = new EventEmitter<number>();
 
-    constructor(private compiler: Compiler, private gridStackService: GridStackService, private dialog: MdDialog) {
+    constructor(@Inject(Compiler) private compiler: any, private gridStackService: GridStackService, private dialog: MdDialog) {
         this.widgetsModule = compiler.compileModuleSync(WidgetsModule);
     }
 

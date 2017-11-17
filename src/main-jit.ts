@@ -7,8 +7,8 @@ import "zone.js";
 import "hammerjs";
 
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { getTranslationProviders } from "./i18n-providers";
-import { AppModule } from "./app.module";
+import { getTranslationProviders } from "./app/i18n-providers";
+import { AppModule } from "./app/app.module";
 
 import { enableProdMode } from '@angular/core';
 
@@ -22,7 +22,7 @@ if (!sessionStorage.getItem("locale")) {
     sessionStorage.setItem("locale", window.navigator.language || "en-US");
 }
 
-getTranslationProviders().then(providers => {
+getTranslationProviders().then((providers: any) => {
     const options = { providers };
     platformBrowserDynamic().bootstrapModule(AppModule, options);
 });

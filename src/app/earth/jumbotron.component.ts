@@ -9,6 +9,8 @@ import { BomService } from "../bom.service";
 import { LocaleService } from "../locale.service";
 import { UserService } from "../user.service";
 
+import "../../scripts/parallax";
+
 @Component({
     selector: "jumbotron",
     template: require("./jumbotron.component.pug"),

@@ -1,5 +1,5 @@
 /**
- * Created by qhyang on 2017/2/10.
+ * Created by qhyang on 2017/4/13.
  */
 
 "use strict";
@@ -9,17 +9,13 @@ const path = require("path");
 const webpack = require("webpack");
 const ChunkWebpack = webpack.optimize.CommonsChunkPlugin;
 const BannerWebpack = require("banner-webpack-plugin");
+const UglifyJSWebpack = require("uglifyjs-webpack-plugin");
 
 const rootDir = path.resolve(__dirname, "..");
 
 module.exports = {
-    devServer: {
-        contentBase: path.resolve(rootDir, "dist"),
-        port: "9999"
-    },
-    devtool: "source-map",
     entry: {
-        app: [ path.resolve(rootDir, "src", "main-jit") ],
+        app: [ path.resolve(rootDir, "src", "main") ],
         vendors: [ path.resolve(rootDir, "src", "scripts", "vendors") ]
     },
     module: {
@@ -32,12 +28,11 @@ module.exports = {
             },
             {
                 test: /\.ts$/,
-                exclude: /node_modules/,
-                loaders: [ "babel-loader?presets[]=es2015", "ts-loader", "angular-router-loader" ]
+                loader: "ts-loader"
             },
             {
                 test: /\.scss$/,
-                include: [ path.resolve(rootDir, "src", "app") ],
+                include: [ path.resolve(rootDir, "temp", "src", "app") ],
                 loaders: [ "css-to-string-loader", "css-loader", "sass-loader" ]
             },
             {
@@ -52,12 +47,13 @@ module.exports = {
             },
             {
                 test: /\.json$/,
-                include: [ path.resolve(rootDir, "src", "scripts", "emojis.json") ],
+                include: [ path.resolve(rootDir, "temp", "src", "scripts", "emojis.json") ],
                 loader: "url-loader?limit=8192"
             },
             {
                 test: /\.scss$/,
                 include: [
+                    path.resolve(rootDir, "temp", "src", "style"),
                     path.resolve(rootDir, "src", "style"),
                     path.resolve(rootDir, "node_modules")
                 ],
@@ -76,7 +72,7 @@ module.exports = {
                 test: /\.(?:xlf|svg)$/,
                 include: [
                     path.resolve(rootDir, "node_modules", "material-design-icons"),
-                    path.resolve(rootDir, "src", "locale")
+                    path.resolve(rootDir, "temp", "src", "locale")
                 ],
                 loader: "raw-loader"
             }
@@ -88,7 +84,7 @@ module.exports = {
     },
     output: {
         filename: "[name].bundle.js",
-        path: path.resolve(rootDir, "build")
+        path: path.resolve(rootDir, "dist")
     },
     plugins: [
         new ChunkWebpack({
@@ -99,12 +95,12 @@ module.exports = {
         new HtmlWebpack({
             filename: "index.html",
             inject: "body",
-            template: path.resolve(rootDir, "src", "index-jit.html")
+            template: path.resolve(rootDir, "src", "index.html")
         }),
         new BannerWebpack({
             chunks: {
                 app: {
-                    beforeContent: `//
+                    beforeContent: `
                     (function() {   
                         if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");
@@ -124,7 +120,7 @@ module.exports = {
                     }());
                 `},
                 vendors: {
-                    beforeContent: `//
+                    beforeContent: `
                     (function() {    
                         if (window.$ && window.TweenLite) {
                             var $counter = $(".app-loading__counter");
@@ -144,7 +140,8 @@ module.exports = {
                     }());
                 `}
             }
-        })
+        }),
+        new UglifyJSWebpack()
     ],
     resolve: {
         extensions: [ ".ts", ".scss", ".pug", ".js", ".css", ".xlf" ],

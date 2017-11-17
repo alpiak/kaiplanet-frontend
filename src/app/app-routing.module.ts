@@ -6,11 +6,9 @@ import { NgModule }             from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 const appRoutes: Routes = [
-    {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full"
-    }
+    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "home", loadChildren: "./home/home.module#HomeModule" },
+    { path: "earth", loadChildren: "./earth/earth.module#EarthModule" }
 ];
 
 @NgModule({

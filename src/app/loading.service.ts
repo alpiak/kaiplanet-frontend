@@ -76,8 +76,9 @@ export class LoadingService {
                 jQuery(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
             }
         });
-        jQuery(".app-loading").fadeOut();
-        this.loadedPercent = 0;
+        jQuery(".app-loading").fadeOut("normal", () => {
+            this.loadedPercent = 0;
+        });
         this.inProgress = false;
     }
 }

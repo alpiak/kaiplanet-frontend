@@ -33,7 +33,8 @@ interface Image {
 }
 
 interface User {
-    userId: number
+    userId: number,
+    nickName: string
 }
 
 export { Widget, WidgetConfig, Image, User };
