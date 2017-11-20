@@ -11,6 +11,7 @@ const jQuery = require("jquery"),
 export class LoadingService {
     private loadedPercent: number;
     private inProgress: boolean;
+    isInit = false;
 
     start(callback?: any) {
         this.loadedPercent = 0;
@@ -31,6 +32,7 @@ export class LoadingService {
         };
 
         this.loadedPercent = progress;
+
         TweenLite.to(loading, 0.5, {
             progress: progress,
             onUpdate: function() {
@@ -60,6 +62,8 @@ export class LoadingService {
         });
     }
     finish() {
+        this.isInit = true;
+
         if (!this.inProgress) {
             this.start();
         }

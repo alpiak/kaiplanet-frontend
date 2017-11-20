@@ -22,19 +22,12 @@
   -webkit-mask-image: radial-gradient(ellipse farthest-corner at 50% 80%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
   overflow: hidden;
 }
+
 .background-front {
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-image: url("../../assets/h8nxgssjqxs-jonatan-pie-front.png");
-}
-@media screen and (min-width: 768px) {
-  .background {
-    background-image: url("../../assets/h8nxgssjqxs-jonatan-pie-back.jpg");
-  }
-  .background-front {
-    background-image: url("../../assets/h8nxgssjqxs-jonatan-pie-front.png");
-  }
 }
 
 @mixin square($size) {
@@ -79,14 +72,17 @@
       0% {
         transform: translateY(#{$depth * 80}px);
       }
+
       100% {
         transform: translateY(0);
       }
     }
+    
     @keyframes flow-down-#{$depth * 10}  {
       0% {
         transform: translateY(#{$depth * -80}px);
       }
+
       100% {
         transform: translateY(0);
       }

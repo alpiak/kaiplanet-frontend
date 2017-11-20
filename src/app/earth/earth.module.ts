@@ -23,7 +23,6 @@ import { ScrollSceneTextDirective } from "./scroll-scene-text.directive";
 import { StickUpDirective } from "../stick-up.directive";
 import { RippleDirective } from "../ripple.directive";
 import { ScrollSceneBackgroundColorDirective } from "./scroll-scene-background-color.directive";
-import { PageLoadingDirective } from "../page-loading.directive";
 import { ScrollToDirective } from "../scroll-to.directive";
 import { ScrollRollDirective } from "./scroll-roll.directive";
 import { ScrollFadeDirective } from "./scroll-fade.directive";
@@ -48,7 +47,6 @@ import { ScrollFadeDirective } from "./scroll-fade.directive";
         RippleDirective,
         StickUpDirective,
         ScrollSceneBackgroundColorDirective,
-        PageLoadingDirective,
         ScrollToDirective,
         ScrollRollDirective,
         ScrollFadeDirective
