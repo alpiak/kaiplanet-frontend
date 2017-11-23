@@ -36,6 +36,7 @@ module.exports = function(grunt) {
                         "compilerOptions": {
                             "emitDecoratorMetadata": true,
                             "experimentalDecorators": true,
+                            "lib": ["es2015", "dom"],
                             "module": "commonjs",
                             "moduleResolution": "node",
                             "noImplicitAny": true,
@@ -113,6 +114,14 @@ module.exports = function(grunt) {
             //         to: "`" + grunt.file.read("./temp/" + src.slice(0, src.lastIndexOf("/"))) + "`"
             //     });
             // }
+
+            // Remove this later
+            if (srcFile.indexOf("styles") !== -1) {
+                replacements.push({
+                    from: /styles:(?:.|\n)*?],?/g,
+                    to: ""
+                });
+            }
 
 
             // Remove specific lines

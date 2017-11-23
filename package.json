@@ -10,7 +10,7 @@
     "build": "webpack --config ./webpack/webpack.dev.js",
     "jit-dist": "webpack --config ./webpack/webpack.jit.dist.js",
     "aot-dist": "webpack --config ./webpack/webpack.aot.dist.js",
-    "i18n": "grunt prepare && grunt compile-pug && grunt load-external && ng-xi18n -p ./i18n/tsconfig.json && grunt i18n-output && grunt clean"
+    "i18n": "grunt prepare && grunt compile-pug && grunt load-external && ng-xi18n -p ./temp/tsconfig.json && grunt i18n-output && grunt clean"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "@angular/cdk": "^2.0.0-beta.10",
     "@angular/common": "^4.3.1",
     "@angular/compiler": "^4.3.1",
-    "@angular/compiler-cli": "^4.4.6",
+    "@angular/compiler-cli": "^2.4.8",
     "@angular/core": "^4.3.4",
     "@angular/forms": "^4.3.4",
     "@angular/http": "^4.3.5",
