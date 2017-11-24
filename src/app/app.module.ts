@@ -11,6 +11,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { MaterialModule } from "./material.module";
 
 import { AppComponent }  from "./app.component";
+
 import { MDLUpgradeDirective } from "./mdl-upgrade.directive";
 
 import {UserService} from "./user.service";
@@ -27,8 +28,8 @@ import { LoggerService } from "./logger.service";
     imports: [
         HttpModule,
         BrowserAnimationsModule,
-        MaterialModule,
-        AppRoutingModule
+        AppRoutingModule,
+        MaterialModule
     ],
     providers: [
         UserService,
