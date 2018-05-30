@@ -174,7 +174,7 @@
   .star-7,
   .star-22,
   .star-30 {
-    animation: shooting-star 10s ease-out 1s forwards;
+    animation: shooting-star 10s ease-out 1s forwards infinite;
   }
   .star-22 {
     animation-delay: 4s;
@@ -188,7 +188,7 @@
   }
   .star-11,
   .star-16 {
-    animation: shooting-star 10s ease-out 8s forwards;
+    animation: shooting-star 10s ease-out 8s forwards infinite;
   }
   .star-16 {
     animation-delay: 1s;
@@ -203,7 +203,7 @@
   .star-47,
   .star-62,
   .star-70 {
-    animation: shooting-star 10s ease-out 1s forwards;
+    animation: shooting-star 10s ease-out 1s forwards infinite;
   }
   .star-62 {
     animation-delay: 4s;
@@ -217,7 +217,7 @@
   }
   .star-51,
   .star-56 {
-    animation: shooting-star 10s ease-out 8s forwards;
+    animation: shooting-star 10s ease-out 8s forwards infinite;
   }
   .star-56 {
     animation-delay: 1s;

@@ -7,7 +7,7 @@ import { Component, AfterViewInit } from "@angular/core";
 @Component({
     template: require("./earth.component.pug")
 })
-export class EarthComponent implements AfterViewInit{
+export class EarthComponent implements AfterViewInit {
     ngAfterViewInit() {
         const jQuery = require("jquery");
 

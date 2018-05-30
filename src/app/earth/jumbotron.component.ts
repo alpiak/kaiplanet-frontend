@@ -43,7 +43,6 @@ export class JumbotronComponent implements OnInit, OnDestroy {
         ]);
 
         function handleFileLoad(event: any) {
-            console.log(event);
             const item = event.item;
 
             switch (event.item.id) {
