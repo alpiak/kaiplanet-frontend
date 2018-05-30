@@ -308,11 +308,11 @@
         <note priority="1" from="description">the text of a nav option to route to another page</note>
         <note priority="1" from="meaning">navigation option text</note>
       </trans-unit>
-      <trans-unit id="82efbc0e620e897652aad4139e8048bec64696de" datatype="html">
-        <source>Music of the day (in development)</source>
-        <target>来点音乐（开发中）</target>
+      <trans-unit id="28d31ed95dac05d16f48062f986bce1a9f5d6e3e" datatype="html">
+        <source>Music of the day (Beta)</source>
+        <target>Kai Player（Beta）</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">E:/projects/bubblesoft-frontend/i18n/src/app/home/left-nav.component.ts</context>
+          <context context-type="sourcefile">E:/projects/kaisoft-frontend/temp/src/app/home/left-nav.component.ts</context>
           <context context-type="linenumber">3</context>
         </context-group>
         <note priority="1" from="description">the text of a nav option to route to another page</note>

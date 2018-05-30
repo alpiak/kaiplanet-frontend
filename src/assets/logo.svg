@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg width="90" height="120" viewBox="0 0 90 120" style="stroke-width: 5px; stroke-linecap: round; fill: none;" xmlns="http://www.w3.org/2000/svg">
-    <path d="M45 60L3 90"
-          style="stroke: rgb(255, 193, 7);"/>
-    <path d="M45 3L45 60L88 90"
-          style="stroke: #aaa;"/>
-    <path d="M88 30L88 90L45 118L3 90L3 30L45 3"
-          style="stroke: #fff;"/>
+<path d="M45 60L3 90"
+      style="stroke: rgb(255, 193, 7);"/>
+<path d="M45 3L45 60L88 90"
+      style="stroke: #aaa;"/>
+<path d="M88 30L88 90L45 118L3 90L3 30L45 3"
+      style="stroke: #fff;"/>
 </svg>

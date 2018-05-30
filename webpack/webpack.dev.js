@@ -33,7 +33,17 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                loaders: [ "babel-loader?presets[]=es2015", "ts-loader", "angular-router-loader" ]
+                loaders: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets: [ "env" ],
+                            plugins: [ "transform-runtime", "syntax-dynamic-import" ]
+                        }
+                    },
+                    { loader: "ts-loader" },
+                    { loader: "angular-router-loader" }
+                ]
             },
             {
                 test: /\.scss$/,
@@ -130,7 +140,7 @@ module.exports = {
                             var $counter = $(".app-loading__counter");
                             var loading = {
                                 progress: $counter.data("loaded-percent") || 0
-                            };
+                              };
                             
                             $counter.data("loaded-percent", 30);
                             TweenLite.to(loading, 0.5, {

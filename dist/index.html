@@ -227,24 +227,32 @@
         </div>
     </div>
     <bs-app></bs-app>
-    <script src="jquery.min.js"></script>
-    <script src="preloadjs-0.6.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
     <script>
         (function() {
-            var loadQueue = new createjs.LoadQueue(true);
+            function updateProgress(progress) {
+                var $counter = $(".app-loading__counter");
+                var loading = {
+                    progress: $counter.data("loaded-percent") || 0
+                };
 
-            loadQueue.on("progress", handleProgress, this);
+                $counter.data("loaded-percent", progress);
+                TweenLite.to(loading, 0.5, {
+                    progress: progress,
+                    onUpdate: function() {
+                        $(".app-loading__counter h1").text(loading.progress.toFixed() + "%");
+                        $(".app-loading__counter hr").width(loading.progress.toFixed() + "%");
+                    }
+                });
+            }
 
-            loadQueue.loadManifest([
-                "./vendors.bundle.js",
-                "./app.bundle.js"
-            ]);
-
-            function handleProgress(event) {
-                $(".app-loading__counter h1").text((event.progress * 80).toFixed() + "%");
-                $(".app-loading__counter hr").width((event.progress * 80).toFixed() + "%");
+            if (window.$ && window.TweenLite) {
+                updateProgress(10);
+            } else {
+                document.getElementsByClassName("app-loading__counter")[0].style.display = "none";
             }
         }());
     </script>
-    </body>
+    <script type="text/javascript" src="vendors.bundle.js"></script><script type="text/javascript" src="app.bundle.js"></script><script type="text/javascript" src="coreJS.bundle.js"></script></body>
 </html>

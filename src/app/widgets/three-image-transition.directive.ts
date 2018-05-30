@@ -33,8 +33,8 @@ export class ThreeImageTransitionDirective implements OnChanges, OnDestroy {
     init() {
         this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().parent().get(0);
 
-        this.gridStackService.on("init").subscribe(() => {
-            const ThreeImageTransition = require("../../scripts/three-image-transition");
+        this.gridStackService.on("init").subscribe(async () => {
+            const ThreeImageTransition = await import("../../scripts/three-image-transition");
 
             this.threeImageTransition = ThreeImageTransition(this.el.nativeElement, this.images);
             this.gridStackService.on("resizestop").subscribe((event) => {

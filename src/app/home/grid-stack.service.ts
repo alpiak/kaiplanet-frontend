@@ -127,7 +127,7 @@ export class GridStackService {
 
             //TODO: remove when the gridstack customization feature added
             .css({
-                "max-width": "1438px",
+                "width": "1200px",
                 "margin-left": "auto",
                 "margin-right": "auto"
             })

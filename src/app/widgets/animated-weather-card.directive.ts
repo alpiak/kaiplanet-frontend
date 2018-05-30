@@ -25,7 +25,9 @@ export class AnimatedWeatherCardDirective implements AfterViewInit, OnDestroy {
 
     constructor(private weatherService: WeatherService, private timeService: TimeService, private el: ElementRef, private gridStackService: GridStackService) { }
 
-    ngAfterViewInit() {
+    async ngAfterViewInit() {
+        const AnimatedWeatherCards = (await import("../../scripts/animated-weather-cards")).default;
+
         const jQuery = require("jquery");
 
         this.gridItemContainer = jQuery(this.el.nativeElement).parent().parent().parent().get(0);

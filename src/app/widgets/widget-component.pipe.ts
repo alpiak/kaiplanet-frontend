@@ -23,7 +23,7 @@ import { SNSWidgetComponent } from "./sns-widget.component";
  */
 @Pipe({name: "widgetComponent"})
 export class WidgetComponentPipe implements PipeTransform {
-    transform(value: string): Component {
+    transform(value: string): any {
         switch (value) {
             case "carousel":
                 return CarouselWidgetComponent;

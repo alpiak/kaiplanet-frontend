@@ -2,6 +2,9 @@
  * Created by qhyang on 2017/2/13.
  */
 
+// import { jQuery, $ } from "jquery";
+
+import "core-js";
 import "bootstrap/dist/css/bootstrap";
 // import "@angular/material/prebuilt-themes/deeppurple-amber";
 import "material-design-lite/dist/material.blue_grey-amber.min";

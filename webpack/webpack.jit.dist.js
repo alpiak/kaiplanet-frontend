@@ -30,7 +30,17 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                loaders: [ "babel-loader?presets[]=es2015", "ts-loader", "angular-router-loader" ]
+                loaders: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets: [ "env" ],
+                            plugins: [ "transform-runtime", "syntax-dynamic-import" ]
+                        }
+                    },
+                    { loader: "ts-loader" },
+                    { loader: "angular-router-loader" }
+                ]
             },
             {
                 test: /\.scss$/,
